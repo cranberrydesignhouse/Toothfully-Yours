@@ -41,12 +41,15 @@ export const Footer = () => {
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-10">
                     {/* Logo + tagline */}
                     <div className="md:col-span-5 lg:col-span-4">
-                        <img
-                            src={LOGO_INVERTED}
-                            alt="Toothfully Yours"
-                            className="h-32 md:h-36 w-auto object-contain -ml-1"
-                            data-testid="footer-logo"
-                        />
+                {/* Crop the bottom tagline of the logo for visual balance */}
+                <div className="overflow-hidden h-[88px] md:h-[112px] flex items-start -ml-1">
+                    <img
+                        src={LOGO_INVERTED}
+                        alt="Toothfully Yours"
+                        className="h-[120px] md:h-[160px] w-auto object-contain block"
+                        data-testid="footer-logo"
+                    />
+                </div>
                         <p className="mt-5 font-dmsans text-[0.95rem] text-white/75 leading-relaxed max-w-sm">
                             A NYU-trained, Mumbai-based dental practice
                             crafting cosmetic, restorative, and corrective

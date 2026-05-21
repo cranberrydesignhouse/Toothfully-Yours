@@ -29,9 +29,9 @@ const IMG = {
         "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/9rrz4g9h_TMJ.jpg",
     ],
     team: [
-        "https://images.unsplash.com/photo-1594824476967-48c8b964273f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzJ8MHwxfHNlYXJjaHw0fHxmcmllbmRseSUyMG1lZGljYWwlMjBwcm9mZXNzaW9uYWwlMjBwb3J0cmFpdHxlbnwwfHx8fDE3NzkzNTEzNjh8MA&ixlib=rb-4.1.0&q=85",
+        "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/d1ptotq3_Dr.%20Manish%20Kachhara.png",
         "https://images.unsplash.com/photo-1622253694238-3b22139576c6?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzJ8MHwxfHNlYXJjaHwyfHxmcmllbmRseSUyMG1lZGljYWwlMjBwcm9mZXNzaW9uYWwlMjBwb3J0cmFpdHxlbnwwfHx8fDE3NzkzNTEzNjh8MA&ixlib=rb-4.1.0&q=85",
-        "https://images.unsplash.com/photo-1730597842283-943c7986ee2c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzJ8MHwxfHNlYXJjaHwxfHxmcmllbmRseSUyMG1lZGljYWwlMjBwcm9mZXNzaW9uYWwlMjBwb3J0cmFpdHxlbnwwfHx8fDE3NzkzNTEzNjh8MA&ixlib=rb-4.1.0&q=85",
+        "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/n84xg6ne_Dr.%20Paras%20Kothari.jpg",
     ],
     gallery: [
         "https://images.unsplash.com/photo-1619040766540-4b1ea1639c8f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA3MDR8MHwxfHNlYXJjaHw0fHxjYW5kaWQlMjBoYXBweSUyMHNtaWxpbmclMjBkaXZlcnNlJTIwcGVvcGxlJTIwd2FybSUyMHRvbmV8ZW58MHx8fHwxNzc5MzUxMzY4fDA&ixlib=rb-4.1.0&q=85",
@@ -171,9 +171,9 @@ export default function Landing() {
             <section
                 id="hero"
                 data-testid="section-hero"
-                className="relative bg-white pt-28 md:pt-32 pb-20 md:pb-28"
+                className="relative bg-white pt-24 md:pt-32 pb-16 md:pb-28"
             >
-                <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 items-center">
+                <div className="max-w-7xl mx-auto px-5 md:px-12 lg:px-16 grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 items-center">
                     <div className="md:col-span-6 lg:col-span-6">
                         <Reveal>
                             <span className="section-label">
@@ -181,7 +181,7 @@ export default function Landing() {
                             </span>
                             <h1
                                 data-testid="hero-headline"
-                                className="heading-serif text-[2rem] leading-[1.08] sm:text-[2.4rem] md:text-[2.7rem] lg:text-[3.1rem] text-[#1A1A1A]"
+                                className="heading-serif text-[1.85rem] leading-[1.1] sm:text-[2.3rem] md:text-[2.7rem] lg:text-[3.1rem] text-[#1A1A1A]"
                             >
                                 Every version of you deserves a{" "}
                                 <span className="text-[#EB8A2C]">
@@ -190,7 +190,7 @@ export default function Landing() {
                             </h1>
                             <p
                                 data-testid="hero-subheadline"
-                                className="mt-6 max-w-xl font-dmsans text-base md:text-[1.05rem] leading-relaxed text-[#5C5C5C]"
+                                className="mt-5 max-w-xl font-dmsans text-[0.95rem] md:text-[1.05rem] leading-relaxed text-[#5C5C5C]"
                             >
                                 Cosmetic and Comprehensive Dentistry,
                                 designed around you — by Dr. Amruta Godbole, in
@@ -224,12 +224,12 @@ export default function Landing() {
                             </div>
 
                             {/* Trust strip — compact */}
-                            <div className="mt-10 flex items-center gap-7 sm:gap-10">
-                                <div data-testid="trust-experience" className="text-center sm:text-left">
-                                    <p className="font-dmsans font-bold text-3xl md:text-[2rem] text-[#EB8A2C] leading-none tracking-tight">
+                            <div className="mt-9 flex items-center gap-5 sm:gap-10">
+                                <div data-testid="trust-experience" className="text-left">
+                                    <p className="font-dmsans font-bold text-[1.7rem] md:text-[2rem] text-[#EB8A2C] leading-none tracking-tight">
                                         10+ yrs
                                     </p>
-                                    <p className="mt-2 font-dmsans text-xs md:text-[0.78rem] text-[#1A1A1A] leading-tight">
+                                    <p className="mt-2 font-dmsans text-[0.7rem] md:text-[0.78rem] text-[#1A1A1A] leading-tight">
                                         Across two continents
                                     </p>
                                 </div>
@@ -239,19 +239,19 @@ export default function Landing() {
                                     target="_blank"
                                     rel="noreferrer"
                                     data-testid="trust-google-reviews"
-                                    className="text-center sm:text-left group"
+                                    className="text-left group"
                                 >
-                                    <p className="font-dmsans font-bold text-3xl md:text-[2rem] text-[#EB8A2C] leading-none tracking-tight inline-flex items-center gap-1">
+                                    <p className="font-dmsans font-bold text-[1.7rem] md:text-[2rem] text-[#EB8A2C] leading-none tracking-tight inline-flex items-center gap-1">
                                         5
                                         <Star
-                                            size={22}
+                                            size={20}
                                             fill="#EB8A2C"
                                             color="#EB8A2C"
                                             strokeWidth={0}
                                             className="translate-y-[-1px]"
                                         />
                                     </p>
-                                    <p className="mt-2 font-dmsans text-xs md:text-[0.78rem] text-[#1A1A1A] leading-tight group-hover:text-[#EB8A2C] transition-colors">
+                                    <p className="mt-2 font-dmsans text-[0.7rem] md:text-[0.78rem] text-[#1A1A1A] leading-tight group-hover:text-[#EB8A2C] transition-colors">
                                         Google Reviews
                                     </p>
                                 </a>
@@ -267,7 +267,7 @@ export default function Landing() {
                                     src={IMG.hero}
                                     alt="Dentist treating a relaxed patient in a modern clinic"
                                     data-testid="hero-image"
-                                    className="w-full h-[420px] md:h-[560px] object-cover rounded-[32px] shadow-[0_30px_60px_-30px_rgba(0,0,0,0.35)]"
+                                    className="w-full h-[340px] sm:h-[420px] md:h-[560px] object-cover rounded-[28px] md:rounded-[32px] shadow-[0_30px_60px_-30px_rgba(0,0,0,0.35)]"
                                 />
                             </div>
                         </Reveal>
@@ -279,17 +279,17 @@ export default function Landing() {
             <section
                 id="services"
                 data-testid="section-services"
-                className="bg-[#F5F2EF] py-24 md:py-32"
+                className="bg-[#F5F2EF] py-16 md:py-32"
             >
-                <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 text-center">
+                <div className="max-w-7xl mx-auto px-5 md:px-12 lg:px-16 text-center">
                     <Reveal>
                         <span className="section-label">Our Services</span>
-                        <h2 className="heading-serif text-4xl sm:text-5xl md:text-[3.25rem] text-[#1A1A1A] max-w-2xl mx-auto">
+                        <h2 className="heading-serif text-[2rem] sm:text-4xl md:text-[3.25rem] text-[#1A1A1A] max-w-2xl mx-auto">
                             Solutions that adapt to you.
                         </h2>
                     </Reveal>
 
-                    <div className="mt-16 md:mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-8">
+                    <div className="mt-12 md:mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-8">
                         {SERVICES.map((s, i) => (
                             <Reveal key={s.title} delay={i * 100}>
                                 <article
@@ -321,9 +321,9 @@ export default function Landing() {
             <section
                 id="about"
                 data-testid="section-about"
-                className="bg-white py-24 md:py-32"
+                className="bg-white py-16 md:py-32"
             >
-                <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 items-center">
+                <div className="max-w-7xl mx-auto px-5 md:px-12 lg:px-16 grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 items-center">
                     <div className="md:col-span-7 order-2 md:order-1">
                         <Reveal>
                             <span className="section-label">
@@ -430,18 +430,18 @@ export default function Landing() {
             <section
                 id="team"
                 data-testid="section-team"
-                className="bg-white py-24 md:py-32"
+                className="bg-white py-16 md:py-32"
             >
-                <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 text-center">
+                <div className="max-w-7xl mx-auto px-5 md:px-12 lg:px-16 text-center">
                     <Reveal>
                         <span className="section-label">Meet the Team</span>
-                        <h2 className="heading-serif text-4xl sm:text-5xl md:text-[3.25rem] text-[#1A1A1A]">
+                        <h2 className="heading-serif text-[2rem] sm:text-4xl md:text-[3.25rem] text-[#1A1A1A]">
                             You're in{" "}
                             <span className="text-[#EB8A2C]">good</span> hands.
                         </h2>
                     </Reveal>
 
-                    <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
+                    <div className="mt-12 md:mt-16 grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
                         {TEAM.map((m, i) => (
                             <Reveal key={m.name} delay={i * 100}>
                                 <article
@@ -451,7 +451,7 @@ export default function Landing() {
                                     <img
                                         src={m.img}
                                         alt={m.name}
-                                        className="circle-photo w-56 h-56 md:w-60 md:h-60 border-4 border-white shadow-xl"
+                                        className="circle-photo w-52 h-52 md:w-60 md:h-60 border-4 border-white shadow-xl object-top"
                                     />
                                     <h3 className="font-dmsans font-semibold text-[1.05rem] md:text-[1.1rem] text-[#1A1A1A] mt-6 tracking-tight">
                                         {m.name}
@@ -470,17 +470,17 @@ export default function Landing() {
             <section
                 id="testimonials"
                 data-testid="section-testimonials"
-                className="bg-[#F5F2EF] py-24 md:py-32"
+                className="bg-[#F5F2EF] py-16 md:py-32"
             >
-                <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
+                <div className="max-w-7xl mx-auto px-5 md:px-12 lg:px-16">
                     <Reveal>
                         <div className="text-center max-w-2xl mx-auto">
                             <span className="section-label">Testimonials</span>
-                            <h2 className="heading-serif text-4xl sm:text-5xl md:text-[3.25rem] text-[#1A1A1A]">
+                            <h2 className="heading-serif text-[2rem] sm:text-4xl md:text-[3.25rem] text-[#1A1A1A]">
                                 The Tooth{" "}
                                 <span className="text-[#EB8A2C]">Speaks.</span>
                             </h2>
-                            <p className="mt-5 font-dmsans text-[#5C5C5C] text-base">
+                            <p className="mt-4 font-dmsans text-[#5C5C5C] text-[0.95rem] md:text-base">
                                 Real, verified reviews from our Google
                                 Business profile.
                             </p>
@@ -488,7 +488,7 @@ export default function Landing() {
                     </Reveal>
 
                     <Reveal delay={120}>
-                        <div className="mt-14">
+                        <div className="mt-10 md:mt-14">
                             <TestimonialsCarousel />
                         </div>
 
@@ -511,23 +511,23 @@ export default function Landing() {
             <section
                 id="gallery"
                 data-testid="section-gallery"
-                className="bg-[#E9E2DB] py-24 md:py-32"
+                className="bg-[#E9E2DB] py-16 md:py-32"
             >
-                <div className="max-w-[1400px] mx-auto px-6 md:px-12 lg:px-16">
+                <div className="max-w-[1400px] mx-auto px-5 md:px-12 lg:px-16">
                     <Reveal>
                         <div className="text-center max-w-2xl mx-auto">
                             <span className="section-label">Happy Smiles</span>
-                            <h2 className="heading-serif text-4xl sm:text-5xl md:text-[3.25rem] text-[#1A1A1A]">
+                            <h2 className="heading-serif text-[2rem] sm:text-4xl md:text-[3.25rem] text-[#1A1A1A]">
                                 Unfiltered.
                             </h2>
-                            <p className="mt-5 font-dmsans text-[#5C5C5C]">
+                            <p className="mt-4 font-dmsans text-[#5C5C5C] text-[0.95rem] md:text-base">
                                 Real patients, candid moments, warm light.
                             </p>
                         </div>
                     </Reveal>
 
                     <Reveal delay={120}>
-                        <div className="mt-14 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 md:gap-4">
+                        <div className="mt-10 md:mt-14 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 md:gap-4">
                             {IMG.gallery.map((src, i) => (
                                 <div
                                     key={src}
@@ -649,11 +649,12 @@ export default function Landing() {
                                     title="Toothfully Yours clinic location"
                                     src={MAP_EMBED_SRC}
                                     width="100%"
-                                    height="520"
+                                    height="380"
                                     style={{ border: 0, display: "block" }}
                                     loading="lazy"
                                     referrerPolicy="no-referrer-when-downgrade"
                                     allowFullScreen
+                                    className="md:!h-[520px]"
                                 />
                                 <a
                                     href={MAP_DIRECTIONS_URL}

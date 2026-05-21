@@ -45,19 +45,22 @@ export const Navbar = ({ onOpenBooking }) => {
                     : "bg-white/60 backdrop-blur-sm"
             }`}
         >
-            <nav className="max-w-7xl mx-auto px-5 md:px-10 lg:px-12 h-20 md:h-28 flex items-center justify-between">
+            <nav className="max-w-7xl mx-auto px-5 md:px-10 lg:px-12 h-20 md:h-24 flex items-center justify-between">
                 <a
                     href="#hero"
                     onClick={(e) => handleNavClick(e, "#hero")}
                     data-testid="nav-logo"
-                    className="flex items-center gap-2 group"
+                    className="flex items-center group"
                     aria-label="Toothfully Yours — home"
                 >
-                    <img
-                        src={LOGO_URL}
-                        alt="Toothfully Yours"
-                        className="h-16 md:h-[92px] w-auto object-contain"
-                    />
+                    {/* Crop the bottom tagline of the logo for visual balance */}
+                    <div className="overflow-hidden h-14 md:h-[78px] flex items-start">
+                        <img
+                            src={LOGO_URL}
+                            alt="Toothfully Yours"
+                            className="h-[78px] md:h-[110px] w-auto object-contain block"
+                        />
+                    </div>
                 </a>
 
                 <ul className="hidden md:flex items-center gap-8">
@@ -67,7 +70,7 @@ export const Navbar = ({ onOpenBooking }) => {
                                 href={link.href}
                                 onClick={(e) => handleNavClick(e, link.href)}
                                 data-testid={`nav-link-${link.label.toLowerCase()}`}
-                                className="font-dmsans text-sm text-[#1A1A1A] hover:text-[#EB8A2C] transition-colors relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-px after:w-0 after:bg-[#EB8A2C] hover:after:w-full after:transition-all"
+                                className="font-dmsans text-[0.95rem] text-[#1A1A1A] hover:text-[#EB8A2C] transition-colors relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-px after:w-0 after:bg-[#EB8A2C] hover:after:w-full after:transition-all"
                             >
                                 {link.label}
                             </a>
@@ -84,7 +87,7 @@ export const Navbar = ({ onOpenBooking }) => {
                         className="inline-flex items-center gap-2 h-10 md:h-11 px-3 md:px-4 rounded-full border border-[#1A1A1A] text-[#1A1A1A] hover:bg-[#1A1A1A] hover:text-white transition-colors"
                     >
                         <Phone size={16} strokeWidth={1.8} />
-                        <span className="hidden lg:inline font-dmsans text-sm font-medium tracking-tight">
+                        <span className="hidden lg:inline font-dmsans text-[0.92rem] font-medium tracking-tight">
                             +91 87690 05504
                         </span>
                     </a>
@@ -93,7 +96,7 @@ export const Navbar = ({ onOpenBooking }) => {
                         type="button"
                         onClick={handleBook}
                         data-testid="nav-cta-book"
-                        className="hidden md:inline-flex btn-primary !py-2.5 !px-5 !text-sm"
+                        className="hidden md:inline-flex btn-primary !py-2.5 !px-5 !text-[0.92rem]"
                     >
                         Book My Consultation
                     </button>
