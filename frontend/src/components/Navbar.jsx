@@ -54,11 +54,11 @@ export const Navbar = ({ onOpenBooking }) => {
                     aria-label="Toothfully Yours — home"
                 >
                     {/* Crop the bottom tagline of the logo for visual balance */}
-                    <div className="overflow-hidden h-14 md:h-[78px] flex items-start">
+                    <div className="overflow-hidden h-12 md:h-[68px] flex items-start mt-1 md:mt-1.5">
                         <img
                             src={LOGO_URL}
                             alt="Toothfully Yours"
-                            className="h-[78px] md:h-[110px] w-auto object-contain block"
+                            className="h-[66px] md:h-[96px] w-auto object-contain block"
                         />
                     </div>
                 </a>

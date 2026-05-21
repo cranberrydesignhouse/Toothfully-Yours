@@ -34,6 +34,7 @@ const IMG = {
         "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/n84xg6ne_Dr.%20Paras%20Kothari.jpg",
     ],
     gallery: [
+        "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/5sspdraq_happy-smiles-1.webp",
         "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/w76lxasr_happy-smiles-15.webp",
         "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/0lt9d93r_happy-smiles-6.webp",
         "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/x16srlj0_happy-smiles-8.webp",
@@ -527,25 +528,17 @@ export default function Landing() {
                     </Reveal>
 
                     <Reveal delay={120}>
-                        <div className="mt-10 md:mt-14 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 md:gap-4">
+                        <div className="mt-10 md:mt-14 grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-5">
                             {IMG.gallery.map((src, i) => (
                                 <div
                                     key={src}
                                     data-testid={`gallery-image-${i}`}
-                                    className={`overflow-hidden rounded-2xl bg-white/40 ${
-                                        i === 0
-                                            ? "row-span-2 aspect-[3/4]"
-                                            : i === 2
-                                              ? "aspect-square"
-                                              : i === 4
-                                                ? "row-span-2 aspect-[3/4]"
-                                                : "aspect-square"
-                                    }`}
+                                    className="overflow-hidden rounded-2xl bg-white aspect-square"
                                 >
                                     <img
                                         src={src}
                                         alt={`Patient smile ${i + 1}`}
-                                        className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+                                        className="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-[1.04]"
                                     />
                                 </div>
                             ))}
