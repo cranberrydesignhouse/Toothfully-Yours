@@ -5,7 +5,6 @@ import {
     Hand,
     HeartHandshake,
     Languages,
-    Quote,
     Clock,
     Phone,
     Mail,
@@ -18,6 +17,7 @@ import {
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BookingModal from "@/components/BookingModal";
+import TestimonialsCarousel from "@/components/TestimonialsCarousel";
 
 const IMG = {
     hero: "https://images.unsplash.com/photo-1662837625421-5fd8ed6131a0?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2ODh8MHwxfHNlYXJjaHwzfHxkZW50aXN0JTIwdHJlYXRpbmclMjBwYXRpZW50JTIwbW9kZXJuJTIwY2xpbmljfGVufDB8fHx8MTc3OTM1MTM2OHww&ixlib=rb-4.1.0&q=85",
@@ -118,20 +118,8 @@ const TEAM = [
     },
 ];
 
-const TESTIMONIALS = [
-    {
-        name: "Ismeet Kohli",
-        quote: "Dr. Amruta is meticulous and refreshingly honest. She erased every bit of the dental anxiety I walked in with — I left feeling cared for, not processed.",
-    },
-    {
-        name: "Shraddha Tandon",
-        quote: "Her skill and gentleness are remarkable. The clinic is spotless, the team is professional, and the experience consistently exceeds what you expect from a dental visit.",
-    },
-    {
-        name: "Sanjay Joshi",
-        quote: "A complicated implant procedure handled with complete confidence and care. I recommend Dr. Amruta to anyone looking for genuine, high-craft dentistry.",
-    },
-];
+const TESTIMONIALS_REMOVED = null; // testimonials now live in TestimonialsCarousel component
+
 
 // Reveal-on-scroll wrapper with safety fallback
 const Reveal = ({ children, delay = 0, className = "" }) => {
@@ -492,44 +480,30 @@ export default function Landing() {
                                 The Tooth{" "}
                                 <span className="text-[#EB8A2C]">Speaks.</span>
                             </h2>
+                            <p className="mt-5 font-dmsans text-[#5C5C5C] text-base">
+                                Real, verified reviews from our Google
+                                Business profile.
+                            </p>
                         </div>
                     </Reveal>
 
-                    <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-7">
-                        {TESTIMONIALS.map((t, i) => (
-                            <Reveal key={t.name} delay={i * 110}>
-                                <article
-                                    data-testid={`testimonial-card-${i}`}
-                                    className="h-full bg-white rounded-3xl p-8 md:p-9 shadow-[0_30px_60px_-40px_rgba(0,0,0,0.25)] flex flex-col"
-                                >
-                                    <Quote
-                                        size={28}
-                                        color="#EB8A2C"
-                                        strokeWidth={1.4}
-                                    />
-                                    <p className="mt-5 font-dmsans text-[#1A1A1A]/90 text-[0.98rem] leading-relaxed flex-1">
-                                        “{t.quote}”
-                                    </p>
-                                    <div className="mt-7 pt-6 border-t border-black/5 flex items-center justify-between">
-                                        <p className="font-dmsans font-medium text-[1.02rem] text-[#1A1A1A]">
-                                            {t.name}
-                                        </p>
-                                        <div className="flex">
-                                            {[0, 1, 2, 3, 4].map((s) => (
-                                                <Star
-                                                    key={s}
-                                                    size={14}
-                                                    fill="#EB8A2C"
-                                                    color="#EB8A2C"
-                                                    strokeWidth={0}
-                                                />
-                                            ))}
-                                        </div>
-                                    </div>
-                                </article>
-                            </Reveal>
-                        ))}
-                    </div>
+                    <Reveal delay={120}>
+                        <div className="mt-14">
+                            <TestimonialsCarousel />
+                        </div>
+
+                        <div className="mt-10 text-center">
+                            <a
+                                href={GOOGLE_REVIEWS_URL}
+                                target="_blank"
+                                rel="noreferrer"
+                                data-testid="testimonials-google-link"
+                                className="inline-flex items-center gap-2 font-dmsans text-sm text-[#EB8A2C] hover:underline"
+                            >
+                                Read all reviews on Google →
+                            </a>
+                        </div>
+                    </Reveal>
                 </div>
             </section>
 
