@@ -45,7 +45,9 @@ const IMG = {
 const ADDRESS_TEXT =
     "Homeo House, 15th Road, Diagonally Opp. Lane to Starbucks (Red Chillies Bldg.), Khar West, Mumbai, Maharashtra 400052";
 const MAP_EMBED_SRC =
-    "https://www.google.com/maps?q=Homeo+House+15th+Road+Khar+West+Mumbai+Maharashtra+400052&output=embed";
+    "https://www.google.com/maps?q=Toothfully+Yours+Dental+Care+Homeo+House+15th+Road+Khar+West+Mumbai&output=embed";
+const MAP_DIRECTIONS_URL = "https://maps.app.goo.gl/ewPtPEuq9jfuq8Ea7";
+const GOOGLE_REVIEWS_URL = "https://share.google/CUmUWCUzr3muFYeo4";
 
 const SERVICES = [
     {
@@ -227,7 +229,7 @@ export default function Landing() {
                                             });
                                     }}
                                     data-testid="hero-cta-explore"
-                                    className="btn-secondary w-full sm:w-auto"
+                                    className="btn-secondary-dark w-full sm:w-auto"
                                 >
                                     Explore Services
                                 </a>
@@ -237,38 +239,39 @@ export default function Landing() {
                             <div className="mt-12 flex flex-col sm:flex-row sm:items-center gap-6 sm:gap-10">
                                 {/* Prominent: 10+ years */}
                                 <div data-testid="trust-experience">
-                                    <p className="heading-serif text-[2.4rem] md:text-[2.8rem] text-[#EB8A2C] leading-none">
+                                    <p className="font-dmsans font-bold text-[3rem] md:text-[3.4rem] text-[#EB8A2C] leading-[0.95] tracking-tight">
                                         10+ yrs
                                     </p>
-                                    <p className="mt-1 font-dmsans text-xs tracking-[0.16em] uppercase text-[#5C5C5C]">
+                                    <p className="mt-2 font-dmsans text-xs tracking-[0.16em] uppercase text-[#5C5C5C]">
                                         Across two continents
                                     </p>
                                 </div>
-                                <span className="hidden sm:block h-12 w-px bg-black/10" />
+                                <span className="hidden sm:block h-14 w-px bg-black/10" />
                                 {/* Google 5-star */}
                                 <a
-                                    href="https://www.google.com/search?q=Toothfully+Yours+Dental+Care"
+                                    href={GOOGLE_REVIEWS_URL}
                                     target="_blank"
                                     rel="noreferrer"
                                     data-testid="trust-google-reviews"
                                     className="flex items-center gap-3 group"
                                 >
-                                    <div className="flex">
-                                        {[0, 1, 2, 3, 4].map((i) => (
-                                            <Star
-                                                key={i}
-                                                size={18}
-                                                fill="#EB8A2C"
-                                                color="#EB8A2C"
-                                                strokeWidth={0}
-                                            />
-                                        ))}
+                                    <div className="flex items-baseline gap-1.5">
+                                        <span className="font-dmsans font-bold text-[3rem] md:text-[3.4rem] text-[#EB8A2C] leading-[0.95]">
+                                            5
+                                        </span>
+                                        <Star
+                                            size={28}
+                                            fill="#EB8A2C"
+                                            color="#EB8A2C"
+                                            strokeWidth={0}
+                                            className="translate-y-[-2px]"
+                                        />
                                     </div>
                                     <div>
-                                        <p className="font-dmsans text-sm font-semibold text-[#1A1A1A] leading-tight">
-                                            5-Star Google Reviews
+                                        <p className="font-dmsans font-semibold text-sm text-[#1A1A1A] leading-tight">
+                                            Google Reviews
                                         </p>
-                                        <p className="font-dmsans text-[0.72rem] tracking-[0.12em] uppercase text-[#5C5C5C] group-hover:text-[#EB8A2C] transition-colors">
+                                        <p className="font-dmsans text-[0.72rem] tracking-[0.12em] uppercase text-[#5C5C5C] group-hover:text-[#EB8A2C] transition-colors mt-1">
                                             Read what patients say
                                         </p>
                                     </div>
@@ -322,10 +325,10 @@ export default function Landing() {
                                             className="circle-photo relative w-44 h-44 md:w-52 md:h-52 border-4 border-white"
                                         />
                                     </div>
-                                    <h3 className="font-dmsans font-semibold text-base md:text-[1.05rem] text-[#1A1A1A] mt-7 tracking-tight">
+                                    <h3 className="font-dmsans font-semibold text-base md:text-[1.05rem] text-[#1A1A1A] mt-6 tracking-tight">
                                         {s.title}
                                     </h3>
-                                    <p className="mt-3 font-dmsans text-sm text-[#5C5C5C] leading-relaxed max-w-[18rem]">
+                                    <p className="mt-1.5 font-dmsans text-sm text-[#5C5C5C] leading-snug max-w-[18rem]">
                                         {s.copy}
                                     </p>
                                 </article>
@@ -471,10 +474,10 @@ export default function Landing() {
                                         alt={m.name}
                                         className="circle-photo w-56 h-56 md:w-60 md:h-60 border-4 border-white shadow-xl"
                                     />
-                                    <h3 className="heading-serif text-2xl md:text-[1.65rem] text-[#1A1A1A] mt-7">
+                                    <h3 className="font-dmsans font-semibold text-[1.05rem] md:text-[1.1rem] text-[#1A1A1A] mt-6 tracking-tight">
                                         {m.name}
                                     </h3>
-                                    <p className="mt-2 font-dmsans text-sm tracking-wider text-[#EB8A2C]">
+                                    <p className="mt-1.5 font-dmsans text-xs tracking-wider text-[#EB8A2C]">
                                         {m.role}
                                     </p>
                                 </article>
@@ -688,7 +691,7 @@ export default function Landing() {
                                     allowFullScreen
                                 />
                                 <a
-                                    href="https://www.google.com/maps/dir/?api=1&destination=Homeo+House+15th+Road+Khar+West+Mumbai+Maharashtra+400052"
+                                    href={MAP_DIRECTIONS_URL}
                                     target="_blank"
                                     rel="noreferrer"
                                     data-testid="contact-directions"
@@ -718,8 +721,10 @@ const ValueCard = ({ icon: Icon, title, copy, testId }) => (
         <div className="h-12 w-12 rounded-full border border-[#EB8A2C]/40 flex items-center justify-center mb-6">
             <Icon size={22} strokeWidth={1.6} color="#EB8A2C" />
         </div>
-        <h3 className="heading-serif text-2xl text-white">{title}</h3>
-        <p className="mt-3 font-dmsans text-sm text-white/70 leading-relaxed">
+        <h3 className="font-dmsans font-semibold text-base md:text-[1.05rem] text-white tracking-tight">
+            {title}
+        </h3>
+        <p className="mt-2 font-dmsans text-sm text-white/70 leading-relaxed">
             {copy}
         </p>
     </div>

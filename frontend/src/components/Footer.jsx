@@ -25,7 +25,7 @@ export const Footer = () => {
                 <img
                     src={LOGO_INVERTED}
                     alt="Toothfully Yours"
-                    className="h-24 md:h-28 w-auto object-contain"
+                    className="h-36 md:h-44 w-auto object-contain"
                     data-testid="footer-logo"
                 />
 

@@ -81,10 +81,10 @@ export const Navbar = ({ onOpenBooking }) => {
                         href="tel:+918769005504"
                         data-testid="nav-call-button"
                         aria-label="Call +91 87690 05504"
-                        className="inline-flex items-center gap-2 h-10 md:h-11 px-3 md:px-4 rounded-full border border-[#EB8A2C]/40 text-[#EB8A2C] hover:bg-[#EB8A2C] hover:text-white transition-colors"
+                        className="inline-flex items-center gap-2 h-10 md:h-11 px-3 md:px-4 rounded-full border border-[#1A1A1A] text-[#1A1A1A] hover:bg-[#1A1A1A] hover:text-white transition-colors"
                     >
                         <Phone size={16} strokeWidth={1.8} />
-                        <span className="hidden lg:inline font-dmsans text-sm tracking-tight">
+                        <span className="hidden lg:inline font-dmsans text-sm font-medium tracking-tight">
                             +91 87690 05504
                         </span>
                     </a>
