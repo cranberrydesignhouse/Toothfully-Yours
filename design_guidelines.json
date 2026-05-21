@@ -1,0 +1,127 @@
+{
+  "theme": "Light",
+  "archetype": "Organic & Earthy",
+  "colors": {
+    "primary": "#EB8A2C",
+    "background_white": "#FFFFFF",
+    "background_light": "#F5F2EF",
+    "background_warm": "#E9E2DB",
+    "background_dark": "#545454",
+    "text_dark": "#1A1A1A",
+    "text_light": "#FFFFFF"
+  },
+  "typography": {
+    "headings": {
+      "fontFamily": "Playfair Display, serif",
+      "style": "italic",
+      "weights": ["400", "600"],
+      "classes": "font-playfair italic tracking-tight"
+    },
+    "body": {
+      "fontFamily": "DM Sans, sans-serif",
+      "weights": ["400", "500"],
+      "classes": "font-dmsans text-base leading-relaxed"
+    },
+    "section_labels": {
+      "classes": "text-xs uppercase tracking-[0.2em] text-[#EB8A2C] font-semibold mb-4 block"
+    }
+  },
+  "buttons": {
+    "primary": "rounded-full bg-[#EB8A2C] text-white hover:bg-[#D97A1B] transition-colors px-6 py-3 font-medium",
+    "secondary": "rounded-full border border-[#EB8A2C] text-[#EB8A2C] hover:bg-[#EB8A2C]/10 transition-colors px-6 py-3 font-medium"
+  },
+  "components": [
+    {
+      "name": "Navigation",
+      "instructions": "Sticky top nav. bg-white/90 backdrop-blur-md z-50. Include Logo text ('Toothfully Yours' in Playfair), center links, right primary CTA button."
+    },
+    {
+      "name": "Hero",
+      "background": "#FFFFFF",
+      "layout": "grid-cols-1 md:grid-cols-2 gap-12 items-center min-h-[80vh] px-6 md:px-12 lg:px-24 max-w-7xl mx-auto",
+      "instructions": "Headline text-5xl md:text-6xl+ font-playfair italic text-[#545454]. Subhead text-lg text-gray-600. Flex row for buttons."
+    },
+    {
+      "name": "Services",
+      "background": "#F5F2EF",
+      "layout": "py-24 px-6 md:px-12 lg:px-24 text-center max-w-7xl mx-auto",
+      "instructions": "4-col grid on desktop, 1 col mobile. Each card: Circular photo (w-48 h-48 mx-auto object-cover rounded-full shadow-lg border-4 border-white), followed by h4 heading."
+    },
+    {
+      "name": "About",
+      "background": "#FFFFFF",
+      "layout": "grid-cols-1 md:grid-cols-2 gap-16 py-24 px-6 md:px-12 lg:px-24 items-center max-w-7xl mx-auto",
+      "instructions": "Text on left, doctor photo on right. Image should have soft shadow and rounded-3xl or circular crop."
+    },
+    {
+      "name": "Values",
+      "background": "#545454",
+      "layout": "py-24 px-6 md:px-12 lg:px-24 text-center text-white max-w-7xl mx-auto",
+      "instructions": "Bento grid for 5 cards. Top row: 3 cards (grid-cols-3). Bottom row: 2 cards (flex justify-center or grid-cols-2). Cards have bg-white/5 border border-white/10 p-8 rounded-2xl. Use Lucide icons colored #EB8A2C."
+    },
+    {
+      "name": "Team",
+      "background": "#FFFFFF",
+      "layout": "py-24 px-6 md:px-12 lg:px-24 text-center max-w-7xl mx-auto",
+      "instructions": "3-col grid. Circular photos (w-56 h-56 mx-auto object-cover rounded-full), name in Playfair italic, role in DM sans #EB8A2C."
+    },
+    {
+      "name": "Testimonials",
+      "background": "#F5F2EF",
+      "layout": "py-24 px-6 md:px-12 lg:px-24 text-center max-w-7xl mx-auto",
+      "instructions": "3 cards side-by-side. Cards: bg-white p-8 rounded-3xl shadow-sm. Use quote icons in #EB8A2C."
+    },
+    {
+      "name": "Gallery",
+      "background": "#E9E2DB",
+      "layout": "py-24 px-6 md:px-12 lg:px-24 max-w-[1400px] mx-auto",
+      "instructions": "Horizontal photo mosaic of 5 candid patient photos. Use grid-cols-2 md:grid-cols-5 gap-4. Images should have warm tones, rounded-2xl, varying heights or aspect ratios to look like a mosaic."
+    },
+    {
+      "name": "Contact",
+      "background": "#FFFFFF",
+      "layout": "grid-cols-1 md:grid-cols-2 gap-16 py-24 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto",
+      "instructions": "Left: info stack (hours, phone, email, address, social icons). Right: Form using Netlify standard attributes (`data-netlify=\"true\"`). Fields: Name, Phone, Email, Service dropdown, Message. Primary CTA to submit."
+    },
+    {
+      "name": "Footer",
+      "background": "#545454",
+      "layout": "py-12 px-6 md:px-12 lg:px-24 text-white flex flex-col items-center text-center",
+      "instructions": "Logo + tagline 'Cosmetic · Smiles · Restorations'. Nav links. Copyright."
+    }
+  ],
+  "media": {
+    "hero": "https://images.unsplash.com/photo-1662837625421-5fd8ed6131a0?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2ODh8MHwxfHNlYXJjaHwzfHxkZW50aXN0JTIwdHJlYXRpbmclMjBwYXRpZW50JTIwbW9kZXJuJTIwY2xpbmljfGVufDB8fHx8MTc3OTM1MTM2OHww&ixlib=rb-4.1.0&q=85",
+    "doctor": "https://images.pexels.com/photos/12660379/pexels-photo-12660379.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "services": [
+      "https://images.unsplash.com/photo-1656894592570-7c3af33e1477?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODl8MHwxfHNlYXJjaHw0fHxiZWF1dGlmdWwlMjBzbWlsZSUyMGNsb3NlJTIwdXAlMjB3YXJtJTIwdG9uZXxlbnwwfHx8fDE3NzkzNTEzNzR8MA&ixlib=rb-4.1.0&q=85",
+      "https://images.pexels.com/photos/19543050/pexels-photo-19543050.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "https://images.unsplash.com/photo-1598911642263-b81130ed8ce8?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODl8MHwxfHNlYXJjaHwzfHxiZWF1dGlmdWwlMjBzbWlsZSUyMGNsb3NlJTIwdXAlMjB3YXJtJTIwdG9uZXxlbnwwfHx8fDE3NzkzNTEzNzR8MA&ixlib=rb-4.1.0&q=85",
+      "https://images.pexels.com/photos/31762859/pexels-photo-31762859.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    ],
+    "team": [
+      "https://images.unsplash.com/photo-1594824476967-48c8b964273f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzJ8MHwxfHNlYXJjaHw0fHxmcmllbmRseSUyMG1lZGljYWwlMjBwcm9mZXNzaW9uYWwlMjBwb3J0cmFpdHxlbnwwfHx8fDE3NzkzNTEzNjh8MA&ixlib=rb-4.1.0&q=85",
+      "https://images.unsplash.com/photo-1622253694238-3b22139576c6?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzJ8MHwxfHNlYXJjaHwyfHxmcmllbmRseSUyMG1lZGljYWwlMjBwcm9mZXNzaW9uYWwlMjBwb3J0cmFpdHxlbnwwfHx8fDE3NzkzNTEzNjh8MA&ixlib=rb-4.1.0&q=85",
+      "https://images.unsplash.com/photo-1730597842283-943c7986ee2c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzJ8MHwxfHNlYXJjaHwxfHxmcmllbmRseSUyMG1lZGljYWwlMjBwcm9mZXNzaW9uYWwlMjBwb3J0cmFpdHxlbnwwfHx8fDE3NzkzNTEzNjh8MA&ixlib=rb-4.1.0&q=85"
+    ],
+    "gallery": [
+      "https://images.unsplash.com/photo-1619040766540-4b1ea1639c8f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA3MDR8MHwxfHNlYXJjaHw0fHxjYW5kaWQlMjBoYXBweSUyMHNtaWxpbmclMjBkaXZlcnNlJTIwcGVvcGxlJTIwd2FybSUyMHRvbmV8ZW58MHx8fHwxNzc5MzUxMzY4fDA&ixlib=rb-4.1.0&q=85",
+      "https://images.unsplash.com/photo-1772724317387-7e763804b637?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzV8MHwxfHNlYXJjaHw0fHxjYW5kaWQlMjBsYXVnaGluZyUyMHNtaWxpbmclMjBkaXZlcnNlJTIwcGVvcGxlJTIwb3V0ZG9vciUyMHdhcm18ZW58MHx8fHwxNzc5MzUxMzc0fDA&ixlib=rb-4.1.0&q=85",
+      "https://images.unsplash.com/photo-1622352496174-9e1d969b1945?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA3MDR8MHwxfHNlYXJjaHwyfHxjYW5kaWQlMjBoYXBweSUyMHNtaWxpbmclMjBkaXZlcnNlJTIwcGVvcGxlJTIwd2FybSUyMHRvbmV8ZW58MHx8fHwxNzc5MzUxMzY4fDA&ixlib=rb-4.1.0&q=85",
+      "https://images.pexels.com/photos/8764963/pexels-photo-8764963.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "https://images.pexels.com/photos/7148441/pexels-photo-7148441.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+    ]
+  },
+  "testing": {
+    "rules": "All interactive and key informational elements MUST include a data-testid attribute. e.g., data-testid='hero-book-consultation', data-testid='contact-form', data-testid='contact-submit-button'"
+  },
+  "instructions_to_main_agent": [
+    "Ensure Playfair Display and DM Sans are imported from Google Fonts in index.html.",
+    "Ensure tailwind.config.js is updated with custom colors (brand: #EB8A2C, bg-light: #F5F2EF, bg-dark: #545454, bg-warm: #E9E2DB) and custom font families.",
+    "Use Lucide-React for all icons and strictly color them #EB8A2C.",
+    "Do NOT use placeholder images. Use exactly the URLs provided in the media object.",
+    "Maintain the layout structure: sections full width, internal containers bounded with padding.",
+    "Section labels MUST sit above headings: uppercase, small-caps, wide tracking, color #EB8A2C.",
+    "Mobile layout must stack into single column, with full-width CTAs. Increase top/bottom paddings generously to ensure luxury breathing room."
+  ]
+}
