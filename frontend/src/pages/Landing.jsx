@@ -23,10 +23,10 @@ const IMG = {
     hero: "https://images.unsplash.com/photo-1662837625421-5fd8ed6131a0?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2ODh8MHwxfHNlYXJjaHwzfHxkZW50aXN0JTIwdHJlYXRpbmclMjBwYXRpZW50JTIwbW9kZXJuJTIwY2xpbmljfGVufDB8fHx8MTc3OTM1MTM2OHww&ixlib=rb-4.1.0&q=85",
     doctor: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/3izcsf0q_de1aeb63-8b3a-4c3c-8f8f-2445283a1c69.JPG",
     services: [
-        "https://images.unsplash.com/photo-1656894592570-7c3af33e1477?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODl8MHwxfHNlYXJjaHw0fHxiZWF1dGlmdWwlMjBzbWlsZSUyMGNsb3NlJTIwdXAlMjB3YXJtJTIwdG9uZXxlbnwwfHx8fDE3NzkzNTEzNzR8MA&ixlib=rb-4.1.0&q=85",
-        "https://images.pexels.com/photos/19543050/pexels-photo-19543050.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=900&w=900",
-        "https://images.unsplash.com/photo-1598911642263-b81130ed8ce8?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODl8MHwxfHNlYXJjaHwzfHxiZWF1dGlmdWwlMjBzbWlsZSUyMGNsb3NlJTIwdXAlMjB3YXJtJTIwdG9uZXxlbnwwfHx8fDE3NzkzNTEzNzR8MA&ixlib=rb-4.1.0&q=85",
-        "https://images.pexels.com/photos/31762859/pexels-photo-31762859.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=900&w=900",
+        "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/cxdgduas_T%20cosmetic%20image.jpg",
+        "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/gjc4aqb9_RESTORATIVE%20tv.jpg",
+        "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/hgm3tltf_alignemnt%20TY.jpg",
+        "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/9rrz4g9h_TMJ.jpg",
     ],
     team: [
         "https://images.unsplash.com/photo-1594824476967-48c8b964273f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzJ8MHwxfHNlYXJjaHw0fHxmcmllbmRseSUyMG1lZGljYWwlMjBwcm9mZXNzaW9uYWwlMjBwb3J0cmFpdHxlbnwwfHx8fDE3NzkzNTEzNjh8MA&ixlib=rb-4.1.0&q=85",
@@ -235,46 +235,37 @@ export default function Landing() {
                                 </a>
                             </div>
 
-                            {/* Trust strip */}
-                            <div className="mt-12 flex flex-col sm:flex-row sm:items-center gap-6 sm:gap-10">
-                                {/* Prominent: 10+ years */}
-                                <div data-testid="trust-experience">
-                                    <p className="font-dmsans font-bold text-[3rem] md:text-[3.4rem] text-[#EB8A2C] leading-[0.95] tracking-tight">
+                            {/* Trust strip — compact */}
+                            <div className="mt-10 flex items-center gap-7 sm:gap-10">
+                                <div data-testid="trust-experience" className="text-center sm:text-left">
+                                    <p className="font-dmsans font-bold text-3xl md:text-[2rem] text-[#EB8A2C] leading-none tracking-tight">
                                         10+ yrs
                                     </p>
-                                    <p className="mt-2 font-dmsans text-xs tracking-[0.16em] uppercase text-[#5C5C5C]">
+                                    <p className="mt-2 font-dmsans text-xs md:text-[0.78rem] text-[#1A1A1A] leading-tight">
                                         Across two continents
                                     </p>
                                 </div>
-                                <span className="hidden sm:block h-14 w-px bg-black/10" />
-                                {/* Google 5-star */}
+                                <span className="block h-10 w-px bg-black/15" />
                                 <a
                                     href={GOOGLE_REVIEWS_URL}
                                     target="_blank"
                                     rel="noreferrer"
                                     data-testid="trust-google-reviews"
-                                    className="flex items-center gap-3 group"
+                                    className="text-center sm:text-left group"
                                 >
-                                    <div className="flex items-baseline gap-1.5">
-                                        <span className="font-dmsans font-bold text-[3rem] md:text-[3.4rem] text-[#EB8A2C] leading-[0.95]">
-                                            5
-                                        </span>
+                                    <p className="font-dmsans font-bold text-3xl md:text-[2rem] text-[#EB8A2C] leading-none tracking-tight inline-flex items-center gap-1">
+                                        5
                                         <Star
-                                            size={28}
+                                            size={22}
                                             fill="#EB8A2C"
                                             color="#EB8A2C"
                                             strokeWidth={0}
-                                            className="translate-y-[-2px]"
+                                            className="translate-y-[-1px]"
                                         />
-                                    </div>
-                                    <div>
-                                        <p className="font-dmsans font-semibold text-sm text-[#1A1A1A] leading-tight">
-                                            Google Reviews
-                                        </p>
-                                        <p className="font-dmsans text-[0.72rem] tracking-[0.12em] uppercase text-[#5C5C5C] group-hover:text-[#EB8A2C] transition-colors mt-1">
-                                            Read what patients say
-                                        </p>
-                                    </div>
+                                    </p>
+                                    <p className="mt-2 font-dmsans text-xs md:text-[0.78rem] text-[#1A1A1A] leading-tight group-hover:text-[#EB8A2C] transition-colors">
+                                        Google Reviews
+                                    </p>
                                 </a>
                             </div>
                         </Reveal>

@@ -108,21 +108,6 @@ export const BookingModal = ({ open, onClose }) => {
                     </div>
 
                     <div className="mt-5">
-                        <label htmlFor="m-email" className="field-label">
-                            Email
-                        </label>
-                        <input
-                            id="m-email"
-                            type="email"
-                            name="email"
-                            required
-                            placeholder="you@example.com"
-                            data-testid="contact-input-email"
-                            className="field-input"
-                        />
-                    </div>
-
-                    <div className="mt-5">
                         <label htmlFor="m-service" className="field-label">
                             Service
                         </label>

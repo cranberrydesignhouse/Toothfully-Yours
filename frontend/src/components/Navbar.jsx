@@ -45,7 +45,7 @@ export const Navbar = ({ onOpenBooking }) => {
                     : "bg-white/60 backdrop-blur-sm"
             }`}
         >
-            <nav className="max-w-7xl mx-auto px-5 md:px-10 lg:px-12 h-16 md:h-20 flex items-center justify-between">
+            <nav className="max-w-7xl mx-auto px-5 md:px-10 lg:px-12 h-20 md:h-28 flex items-center justify-between">
                 <a
                     href="#hero"
                     onClick={(e) => handleNavClick(e, "#hero")}
@@ -56,7 +56,7 @@ export const Navbar = ({ onOpenBooking }) => {
                     <img
                         src={LOGO_URL}
                         alt="Toothfully Yours"
-                        className="h-10 md:h-12 w-auto object-contain"
+                        className="h-16 md:h-[92px] w-auto object-contain"
                     />
                 </a>
 
