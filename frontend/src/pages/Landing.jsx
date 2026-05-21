@@ -1,6 +1,5 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
-    Sparkles,
     GraduationCap,
     Activity,
     Hand,
@@ -12,15 +11,17 @@ import {
     Mail,
     MapPin,
     Instagram,
-    Facebook,
+    Linkedin,
+    Star,
     ArrowRight,
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import BookingModal from "@/components/BookingModal";
 
 const IMG = {
     hero: "https://images.unsplash.com/photo-1662837625421-5fd8ed6131a0?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2ODh8MHwxfHNlYXJjaHwzfHxkZW50aXN0JTIwdHJlYXRpbmclMjBwYXRpZW50JTIwbW9kZXJuJTIwY2xpbmljfGVufDB8fHx8MTc3OTM1MTM2OHww&ixlib=rb-4.1.0&q=85",
-    doctor: "https://images.pexels.com/photos/12660379/pexels-photo-12660379.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=900&w=900",
+    doctor: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/3izcsf0q_de1aeb63-8b3a-4c3c-8f8f-2445283a1c69.JPG",
     services: [
         "https://images.unsplash.com/photo-1656894592570-7c3af33e1477?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODl8MHwxfHNlYXJjaHw0fHxiZWF1dGlmdWwlMjBzbWlsZSUyMGNsb3NlJTIwdXAlMjB3YXJtJTIwdG9uZXxlbnwwfHx8fDE3NzkzNTEzNzR8MA&ixlib=rb-4.1.0&q=85",
         "https://images.pexels.com/photos/19543050/pexels-photo-19543050.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=900&w=900",
@@ -40,6 +41,11 @@ const IMG = {
         "https://images.pexels.com/photos/7148441/pexels-photo-7148441.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=900&w=900",
     ],
 };
+
+const ADDRESS_TEXT =
+    "Homeo House, 15th Road, Diagonally Opp. Lane to Starbucks (Red Chillies Bldg.), Khar West, Mumbai, Maharashtra 400052";
+const MAP_EMBED_SRC =
+    "https://www.google.com/maps?q=Homeo+House+15th+Road+Khar+West+Mumbai+Maharashtra+400052&output=embed";
 
 const SERVICES = [
     {
@@ -125,7 +131,7 @@ const TESTIMONIALS = [
     },
 ];
 
-// Small reveal-on-scroll wrapper
+// Reveal-on-scroll wrapper with safety fallback
 const Reveal = ({ children, delay = 0, className = "" }) => {
     const ref = useRef(null);
     useEffect(() => {
@@ -144,7 +150,6 @@ const Reveal = ({ children, delay = 0, className = "" }) => {
             { threshold: 0.04, rootMargin: "0px 0px -5% 0px" },
         );
         io.observe(node);
-        // Safety fallback: reveal after a short delay regardless
         const t = setTimeout(() => {
             if (node && !node.classList.contains("in")) {
                 node.style.transitionDelay = `${delay}ms`;
@@ -164,9 +169,13 @@ const Reveal = ({ children, delay = 0, className = "" }) => {
 };
 
 export default function Landing() {
+    const [bookingOpen, setBookingOpen] = useState(false);
+    const openBooking = () => setBookingOpen(true);
+    const closeBooking = () => setBookingOpen(false);
+
     return (
         <div data-testid="landing-page" className="bg-white">
-            <Navbar />
+            <Navbar onOpenBooking={openBooking} />
 
             {/* HERO */}
             <section
@@ -182,35 +191,41 @@ export default function Landing() {
                             </span>
                             <h1
                                 data-testid="hero-headline"
-                                className="heading-serif text-[2.6rem] leading-[1.05] sm:text-5xl md:text-[3.4rem] lg:text-[4.1rem] text-[#1A1A1A]"
+                                className="heading-serif text-[2rem] leading-[1.08] sm:text-[2.4rem] md:text-[2.7rem] lg:text-[3.1rem] text-[#1A1A1A]"
                             >
-                                Every version of
-                                <br />
-                                you deserves a
-                                <br />
+                                Every version of you deserves a{" "}
                                 <span className="text-[#EB8A2C]">
                                     great smile.
                                 </span>
                             </h1>
                             <p
                                 data-testid="hero-subheadline"
-                                className="mt-6 max-w-xl font-dmsans text-base md:text-lg leading-relaxed text-[#5C5C5C]"
+                                className="mt-6 max-w-xl font-dmsans text-base md:text-[1.05rem] leading-relaxed text-[#5C5C5C]"
                             >
                                 Cosmetic and Comprehensive Dentistry,
-                                designed around you — by Dr. Amruta Godbole,
-                                NYU-trained, in the heart of Khar West, Mumbai.
+                                designed around you — by Dr. Amruta Godbole, in
+                                the heart of Khar West, Mumbai.
                             </p>
                             <div className="mt-9 flex flex-col sm:flex-row gap-3 sm:gap-4">
-                                <a
-                                    href="#contact"
+                                <button
+                                    type="button"
+                                    onClick={openBooking}
                                     data-testid="hero-cta-book"
                                     className="btn-primary w-full sm:w-auto"
                                 >
                                     Book My Consultation
                                     <ArrowRight size={16} strokeWidth={2} />
-                                </a>
+                                </button>
                                 <a
                                     href="#services"
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        document
+                                            .querySelector("#services")
+                                            ?.scrollIntoView({
+                                                behavior: "smooth",
+                                            });
+                                    }}
                                     data-testid="hero-cta-explore"
                                     className="btn-secondary w-full sm:w-auto"
                                 >
@@ -218,15 +233,46 @@ export default function Landing() {
                                 </a>
                             </div>
 
-                            <div className="mt-12 flex items-center gap-6 text-xs font-dmsans text-[#5C5C5C] tracking-wide">
-                                <div className="flex items-center gap-2">
-                                    <span className="h-1.5 w-1.5 rounded-full bg-[#EB8A2C]" />
-                                    NYU-trained
+                            {/* Trust strip */}
+                            <div className="mt-12 flex flex-col sm:flex-row sm:items-center gap-6 sm:gap-10">
+                                {/* Prominent: 10+ years */}
+                                <div data-testid="trust-experience">
+                                    <p className="heading-serif text-[2.4rem] md:text-[2.8rem] text-[#EB8A2C] leading-none">
+                                        10+ yrs
+                                    </p>
+                                    <p className="mt-1 font-dmsans text-xs tracking-[0.16em] uppercase text-[#5C5C5C]">
+                                        Across two continents
+                                    </p>
                                 </div>
-                                <div className="flex items-center gap-2">
-                                    <span className="h-1.5 w-1.5 rounded-full bg-[#EB8A2C]" />
-                                    10+ years across two continents
-                                </div>
+                                <span className="hidden sm:block h-12 w-px bg-black/10" />
+                                {/* Google 5-star */}
+                                <a
+                                    href="https://www.google.com/search?q=Toothfully+Yours+Dental+Care"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    data-testid="trust-google-reviews"
+                                    className="flex items-center gap-3 group"
+                                >
+                                    <div className="flex">
+                                        {[0, 1, 2, 3, 4].map((i) => (
+                                            <Star
+                                                key={i}
+                                                size={18}
+                                                fill="#EB8A2C"
+                                                color="#EB8A2C"
+                                                strokeWidth={0}
+                                            />
+                                        ))}
+                                    </div>
+                                    <div>
+                                        <p className="font-dmsans text-sm font-semibold text-[#1A1A1A] leading-tight">
+                                            5-Star Google Reviews
+                                        </p>
+                                        <p className="font-dmsans text-[0.72rem] tracking-[0.12em] uppercase text-[#5C5C5C] group-hover:text-[#EB8A2C] transition-colors">
+                                            Read what patients say
+                                        </p>
+                                    </div>
+                                </a>
                             </div>
                         </Reveal>
                     </div>
@@ -241,21 +287,6 @@ export default function Landing() {
                                     data-testid="hero-image"
                                     className="w-full h-[420px] md:h-[560px] object-cover rounded-[32px] shadow-[0_30px_60px_-30px_rgba(0,0,0,0.35)]"
                                 />
-                                <div className="hidden md:flex absolute -bottom-6 -left-6 lg:-left-10 bg-white rounded-2xl shadow-xl px-5 py-4 items-center gap-3 border border-black/5">
-                                    <Sparkles
-                                        size={22}
-                                        color="#EB8A2C"
-                                        strokeWidth={1.6}
-                                    />
-                                    <div>
-                                        <p className="font-dmsans text-[0.7rem] uppercase tracking-[0.18em] text-[#EB8A2C]">
-                                            Smile Design
-                                        </p>
-                                        <p className="heading-serif text-lg text-[#1A1A1A]">
-                                            Crafted, not rushed.
-                                        </p>
-                                    </div>
-                                </div>
                             </div>
                         </Reveal>
                     </div>
@@ -291,10 +322,10 @@ export default function Landing() {
                                             className="circle-photo relative w-44 h-44 md:w-52 md:h-52 border-4 border-white"
                                         />
                                     </div>
-                                    <h3 className="heading-serif text-2xl md:text-[1.65rem] text-[#1A1A1A] mt-7">
+                                    <h3 className="font-dmsans font-semibold text-base md:text-[1.05rem] text-[#1A1A1A] mt-7 tracking-tight">
                                         {s.title}
                                     </h3>
-                                    <p className="mt-3 font-dmsans text-sm md:text-[0.95rem] text-[#5C5C5C] leading-relaxed max-w-[18rem]">
+                                    <p className="mt-3 font-dmsans text-sm text-[#5C5C5C] leading-relaxed max-w-[18rem]">
                                         {s.copy}
                                     </p>
                                 </article>
@@ -364,7 +395,7 @@ export default function Landing() {
                                     src={IMG.doctor}
                                     alt="Dr. Amruta Godbole"
                                     data-testid="about-doctor-image"
-                                    className="circle-photo w-72 h-72 sm:w-80 sm:h-80 md:w-[26rem] md:h-[26rem] mx-auto border-[6px] border-white"
+                                    className="circle-photo w-72 h-72 sm:w-80 sm:h-80 md:w-[26rem] md:h-[26rem] mx-auto border-[6px] border-white object-cover"
                                 />
                             </div>
                         </Reveal>
@@ -485,13 +516,21 @@ export default function Landing() {
                                     <p className="mt-5 font-dmsans text-[#1A1A1A]/90 text-[0.98rem] leading-relaxed flex-1">
                                         “{t.quote}”
                                     </p>
-                                    <div className="mt-7 pt-6 border-t border-black/5">
-                                        <p className="heading-serif text-xl text-[#1A1A1A]">
+                                    <div className="mt-7 pt-6 border-t border-black/5 flex items-center justify-between">
+                                        <p className="font-dmsans font-medium text-[1.02rem] text-[#1A1A1A]">
                                             {t.name}
                                         </p>
-                                        <p className="font-dmsans text-xs tracking-[0.18em] uppercase text-[#EB8A2C] mt-1">
-                                            Patient
-                                        </p>
+                                        <div className="flex">
+                                            {[0, 1, 2, 3, 4].map((s) => (
+                                                <Star
+                                                    key={s}
+                                                    size={14}
+                                                    fill="#EB8A2C"
+                                                    color="#EB8A2C"
+                                                    strokeWidth={0}
+                                                />
+                                            ))}
+                                        </div>
                                     </div>
                                 </article>
                             </Reveal>
@@ -558,10 +597,10 @@ export default function Landing() {
                     <div className="md:col-span-5">
                         <Reveal>
                             <span className="section-label">Contact Us</span>
-                            <h2 className="heading-serif text-4xl sm:text-5xl md:text-[3.25rem] text-[#1A1A1A]">
+                            <h2 className="heading-serif text-3xl sm:text-4xl md:text-[2.6rem] text-[#1A1A1A] leading-tight">
                                 We'd love to{" "}
                                 <span className="text-[#EB8A2C]">
-                                    meet you!
+                                    meet you.
                                 </span>
                             </h2>
                             <p className="mt-5 font-dmsans text-[#5C5C5C] max-w-md leading-relaxed">
@@ -592,7 +631,7 @@ export default function Landing() {
                                 <ContactRow
                                     icon={MapPin}
                                     label="Address"
-                                    value="Hamam House, 15th Road, Diagonally Opp. Lane to Starbucks (Red Chillies Bldg.), Khar West, Mumbai 400052"
+                                    value={ADDRESS_TEXT}
                                 />
                             </ul>
 
@@ -608,166 +647,65 @@ export default function Landing() {
                                     <Instagram size={18} strokeWidth={1.6} />
                                 </a>
                                 <a
-                                    href="https://facebook.com/"
+                                    href="https://linkedin.com/"
                                     target="_blank"
                                     rel="noreferrer"
-                                    data-testid="social-facebook"
-                                    aria-label="Facebook"
+                                    data-testid="social-linkedin"
+                                    aria-label="LinkedIn"
                                     className="h-11 w-11 rounded-full border border-[#EB8A2C]/40 text-[#EB8A2C] flex items-center justify-center hover:bg-[#EB8A2C] hover:text-white transition-colors"
                                 >
-                                    <Facebook size={18} strokeWidth={1.6} />
+                                    <Linkedin size={18} strokeWidth={1.6} />
                                 </a>
                             </div>
+
+                            <button
+                                type="button"
+                                onClick={openBooking}
+                                data-testid="contact-cta-book"
+                                className="btn-primary mt-10 w-full sm:w-auto"
+                            >
+                                Book My Consultation
+                                <ArrowRight size={16} strokeWidth={2} />
+                            </button>
                         </Reveal>
                     </div>
 
-                    {/* Right: form */}
+                    {/* Right: Map */}
                     <div className="md:col-span-7">
                         <Reveal delay={120}>
-                            <form
-                                name="contact"
-                                method="POST"
-                                action="/thank-you"
-                                data-netlify="true"
-                                netlify-honeypot="bot-field"
-                                data-testid="contact-form"
-                                className="bg-[#F5F2EF] rounded-3xl p-7 md:p-10 border border-black/5"
+                            <div
+                                data-testid="contact-map"
+                                className="relative rounded-3xl overflow-hidden bg-[#F5F2EF] border border-black/5 shadow-[0_30px_60px_-40px_rgba(0,0,0,0.25)]"
                             >
-                                <input
-                                    type="hidden"
-                                    name="form-name"
-                                    value="contact"
+                                <iframe
+                                    title="Toothfully Yours clinic location"
+                                    src={MAP_EMBED_SRC}
+                                    width="100%"
+                                    height="520"
+                                    style={{ border: 0, display: "block" }}
+                                    loading="lazy"
+                                    referrerPolicy="no-referrer-when-downgrade"
+                                    allowFullScreen
                                 />
-                                <p hidden>
-                                    <label>
-                                        Don't fill this out:{" "}
-                                        <input name="bot-field" />
-                                    </label>
-                                </p>
-
-                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                                    <div>
-                                        <label
-                                            htmlFor="name"
-                                            className="field-label"
-                                        >
-                                            Name
-                                        </label>
-                                        <input
-                                            id="name"
-                                            type="text"
-                                            name="name"
-                                            required
-                                            placeholder="Your full name"
-                                            data-testid="contact-input-name"
-                                            className="field-input"
-                                        />
-                                    </div>
-                                    <div>
-                                        <label
-                                            htmlFor="phone"
-                                            className="field-label"
-                                        >
-                                            Phone
-                                        </label>
-                                        <input
-                                            id="phone"
-                                            type="tel"
-                                            name="phone"
-                                            required
-                                            placeholder="+91 ..."
-                                            data-testid="contact-input-phone"
-                                            className="field-input"
-                                        />
-                                    </div>
-                                </div>
-
-                                <div className="mt-5">
-                                    <label
-                                        htmlFor="email"
-                                        className="field-label"
-                                    >
-                                        Email
-                                    </label>
-                                    <input
-                                        id="email"
-                                        type="email"
-                                        name="email"
-                                        required
-                                        placeholder="you@example.com"
-                                        data-testid="contact-input-email"
-                                        className="field-input"
-                                    />
-                                </div>
-
-                                <div className="mt-5">
-                                    <label
-                                        htmlFor="service"
-                                        className="field-label"
-                                    >
-                                        Service
-                                    </label>
-                                    <select
-                                        id="service"
-                                        name="service"
-                                        required
-                                        defaultValue=""
-                                        data-testid="contact-select-service"
-                                        className="field-input appearance-none bg-white"
-                                    >
-                                        <option value="" disabled>
-                                            Select a service
-                                        </option>
-                                        <option value="Cosmetic & Aesthetic Care">
-                                            Cosmetic & Aesthetic Care
-                                        </option>
-                                        <option value="Implants & Restoration">
-                                            Implants & Restoration
-                                        </option>
-                                        <option value="Corrective Alignment">
-                                            Corrective Alignment
-                                        </option>
-                                        <option value="Neuromuscular Dentistry">
-                                            Neuromuscular Dentistry
-                                        </option>
-                                        <option value="General Checkup">
-                                            General Checkup
-                                        </option>
-                                    </select>
-                                </div>
-
-                                <div className="mt-5">
-                                    <label
-                                        htmlFor="message"
-                                        className="field-label"
-                                    >
-                                        Message
-                                    </label>
-                                    <textarea
-                                        id="message"
-                                        name="message"
-                                        rows={5}
-                                        placeholder="Tell us a little about what you're looking for..."
-                                        data-testid="contact-input-message"
-                                        className="field-input resize-none"
-                                    />
-                                </div>
-
-                                <button
-                                    type="submit"
-                                    data-testid="contact-submit-button"
-                                    className="btn-primary mt-8 w-full sm:w-auto"
+                                <a
+                                    href="https://www.google.com/maps/dir/?api=1&destination=Homeo+House+15th+Road+Khar+West+Mumbai+Maharashtra+400052"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    data-testid="contact-directions"
+                                    className="absolute bottom-4 left-4 inline-flex items-center gap-2 bg-white/95 backdrop-blur rounded-full px-4 py-2 shadow-md font-dmsans text-sm text-[#1A1A1A] hover:text-[#EB8A2C] transition-colors"
                                 >
-                                    Book My Consultation
-                                    <ArrowRight size={16} strokeWidth={2} />
-                                </button>
-                            </form>
+                                    <MapPin size={14} color="#EB8A2C" />
+                                    Get Directions
+                                </a>
+                            </div>
                         </Reveal>
                     </div>
                 </div>
             </section>
 
             <Footer />
+
+            <BookingModal open={bookingOpen} onClose={closeBooking} />
         </div>
     );
 }

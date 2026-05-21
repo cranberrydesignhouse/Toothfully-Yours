@@ -6,6 +6,9 @@ const FOOTER_LINKS = [
     { label: "Contact", href: "#contact" },
 ];
 
+const LOGO_INVERTED =
+    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/9mp1q9ea_TY%20inverted%20logo.png";
+
 export const Footer = () => {
     const handleClick = (e, href) => {
         e.preventDefault();
@@ -16,20 +19,15 @@ export const Footer = () => {
     return (
         <footer
             data-testid="site-footer"
-            className="bg-[#545454] text-white"
+            className="bg-[#545454] text-white relative"
         >
             <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 py-16 md:py-20 flex flex-col items-center text-center">
-                <div className="flex items-baseline gap-2">
-                    <span className="heading-serif text-3xl md:text-4xl">
-                        Toothfully
-                    </span>
-                    <span className="font-dmsans text-xl md:text-2xl text-[#EB8A2C] font-medium">
-                        Yours
-                    </span>
-                </div>
-                <p className="mt-3 font-dmsans text-sm tracking-[0.18em] uppercase text-white/70">
-                    Cosmetic · Smiles · Restorations
-                </p>
+                <img
+                    src={LOGO_INVERTED}
+                    alt="Toothfully Yours"
+                    className="h-24 md:h-28 w-auto object-contain"
+                    data-testid="footer-logo"
+                />
 
                 <ul className="mt-10 flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
                     {FOOTER_LINKS.map((link) => (
@@ -53,6 +51,15 @@ export const Footer = () => {
                     reserved.
                 </p>
             </div>
+
+            {/* Designed by — bottom corner */}
+            <p
+                data-testid="footer-credit"
+                className="absolute bottom-3 right-4 md:right-6 font-dmsans text-[0.65rem] tracking-wider text-white/40"
+            >
+                Designed by{" "}
+                <span className="text-white/70">Cranberry Design House</span>
+            </p>
         </footer>
     );
 };

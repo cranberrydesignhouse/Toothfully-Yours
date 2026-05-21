@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
 
 const NAV_LINKS = [
     { label: "Services", href: "#services" },
@@ -9,7 +9,10 @@ const NAV_LINKS = [
     { label: "Contact", href: "#contact" },
 ];
 
-export const Navbar = () => {
+const LOGO_URL =
+    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/kh779mbu_TOOTHFULLY-YOURS-LOGO-FINAL-1.png";
+
+export const Navbar = ({ onOpenBooking }) => {
     const [scrolled, setScrolled] = useState(false);
     const [open, setOpen] = useState(false);
 
@@ -27,28 +30,34 @@ export const Navbar = () => {
         if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
     };
 
+    const handleBook = (e) => {
+        e.preventDefault();
+        setOpen(false);
+        onOpenBooking?.();
+    };
+
     return (
         <header
             data-testid="site-navbar"
             className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
                 scrolled
-                    ? "bg-white/85 backdrop-blur-md border-b border-black/5"
-                    : "bg-white/40 backdrop-blur-sm"
+                    ? "bg-white/90 backdrop-blur-md border-b border-black/5 shadow-[0_2px_18px_-12px_rgba(0,0,0,0.25)]"
+                    : "bg-white/60 backdrop-blur-sm"
             }`}
         >
-            <nav className="max-w-7xl mx-auto px-6 md:px-10 lg:px-12 h-16 md:h-20 flex items-center justify-between">
+            <nav className="max-w-7xl mx-auto px-5 md:px-10 lg:px-12 h-16 md:h-20 flex items-center justify-between">
                 <a
                     href="#hero"
                     onClick={(e) => handleNavClick(e, "#hero")}
                     data-testid="nav-logo"
                     className="flex items-center gap-2 group"
+                    aria-label="Toothfully Yours — home"
                 >
-                    <span className="heading-serif text-[1.45rem] md:text-[1.65rem] text-[#1A1A1A] leading-none">
-                        Toothfully
-                    </span>
-                    <span className="font-dmsans text-[1.15rem] md:text-[1.25rem] tracking-tight text-[#EB8A2C] font-medium leading-none">
-                        Yours
-                    </span>
+                    <img
+                        src={LOGO_URL}
+                        alt="Toothfully Yours"
+                        className="h-10 md:h-12 w-auto object-contain"
+                    />
                 </a>
 
                 <ul className="hidden md:flex items-center gap-8">
@@ -66,15 +75,28 @@ export const Navbar = () => {
                     ))}
                 </ul>
 
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-2 md:gap-3">
+                    {/* Phone call button */}
                     <a
-                        href="#contact"
-                        onClick={(e) => handleNavClick(e, "#contact")}
+                        href="tel:+918769005504"
+                        data-testid="nav-call-button"
+                        aria-label="Call +91 87690 05504"
+                        className="inline-flex items-center gap-2 h-10 md:h-11 px-3 md:px-4 rounded-full border border-[#EB8A2C]/40 text-[#EB8A2C] hover:bg-[#EB8A2C] hover:text-white transition-colors"
+                    >
+                        <Phone size={16} strokeWidth={1.8} />
+                        <span className="hidden lg:inline font-dmsans text-sm tracking-tight">
+                            +91 87690 05504
+                        </span>
+                    </a>
+
+                    <button
+                        type="button"
+                        onClick={handleBook}
                         data-testid="nav-cta-book"
                         className="hidden md:inline-flex btn-primary !py-2.5 !px-5 !text-sm"
                     >
                         Book My Consultation
-                    </a>
+                    </button>
                     <button
                         type="button"
                         aria-label="Open menu"
@@ -107,13 +129,13 @@ export const Navbar = () => {
                             </li>
                         ))}
                     </ul>
-                    <a
-                        href="#contact"
-                        onClick={(e) => handleNavClick(e, "#contact")}
+                    <button
+                        type="button"
+                        onClick={handleBook}
                         className="btn-primary w-full mt-6 !py-3"
                     >
                         Book My Consultation
-                    </a>
+                    </button>
                 </div>
             )}
         </header>
