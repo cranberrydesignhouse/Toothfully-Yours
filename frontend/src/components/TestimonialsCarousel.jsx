@@ -8,14 +8,14 @@ const REVIEWS = [
         initial: "I",
         color: "#C9356F",
         meta: "3 reviews · 5 months ago",
-        quote: "I've been going to Dr. Amruta at Toothfully Yours for over a year now, and I genuinely can't recommend her enough. She's incredibly meticulous, patient, and kind — qualities that are rare to find together. What really stands out is how detail-oriented she is, and how she goes the extra mile to make sure the issue is fully taken care of, not just temporarily fixed. She never recommends a procedure unless it's truly necessary and strongly believes in preserving natural teeth for as long as possible. Grateful to have found a dentist like her.",
+        quote: "I've been going to Dr. Amruta at Toothfully Yours for over a year now, and I genuinely can't recommend her enough. She's incredibly meticulous, patient, and kind- qualities that are rare to find together. What really stands out is how detail-oriented she is and how she goes the extra mile to make sure the issue is fully taken care of, not just temporarily fixed. She never recommends a procedure unless it's truly necessary and strongly believes in preserving natural teeth for as long as possible. That philosophy has stayed with me and built so much trust. Grateful to have found a dentist like her.",
     },
     {
         name: "Chandru Watwani",
         initial: "C",
         color: "#7C4DFF",
         meta: "2 reviews · 8 months ago",
-        quote: "I had come to Toothfully Yours Dental clinic for my dental problems and met Dr Amruta. She checked my dental problems and advised me to go for dental implants — six lower and six upper. The procedure was long but very well done with due care taken. Earlier it was embarrassing to even smile and laugh, but after the implants I can eat and chew just like normal teeth and smile at will. Dr Amruta took good care of the procedure with minimum pain.",
+        quote: "I had come to Toothfully yours Dental clinic for my dental problems and met Dr Amruta. She checked my dental problems and advised me to go for dental implants six lower and six upper. After considering everything I decided to go for dental implants as suggested by Dr Amruta. The procedure was long but it was very well done with due care taken. Earlier it was embarrassing to even smile and laugh. But after the implant and new prosthesis I can eat and chew just like normal teeth and smile and laugh at will. Dr Amruta took good care of procedure with minimum pain.",
     },
     {
         name: "Shivalika Tandon",
@@ -29,14 +29,49 @@ const REVIEWS = [
         initial: "R",
         color: "#FFB400",
         meta: "7 reviews · 5 months ago",
-        quote: "I have been terrified of dentists all my life and hence suffered poor oral health — but Dr Godbole and her colleagues were exceptional in not only physically taking care of me but calming me down too. They have literally helped me get over my fear of dentists. I've had multiple visits that include a tooth extraction as well, which was a complicated surgery but was done so craftily. Thank you Toothfully Yours for genuinely being ours.",
+        quote: "I have been terrified of dentists all my life and hence suffered poor oral health.. but Dr Godbole and her colleagues were exceptional in not only physically taking care of me but calming me down too. They have literally helped me get over my fear of dentists. I've had multiple visits that include a tooth extraction as well which was a complicated surgery but it was done so craftily. Thank you Toothfully yours for genuinely being ours.",
     },
     {
         name: "Rathore Spice Factory",
         initial: "R",
         color: "#8B5E3C",
         meta: "1 review · 5 months ago",
-        quote: "After visiting multiple so-called 'top' dental clinics across Mumbai, the first thing that struck me at Toothfully Yours was how genuinely patient-centric the space felt. Toothfully Yours offered a level of precision, hygiene, and genuine care that immediately put me at ease. Dr. Amruta's treatment approach is meticulous — every step is explained, every concern addressed, nothing rushed or mechanical. For anyone looking for high-quality dental care, Dr. Amruta Godbole and Toothfully Yours are in a completely different league.",
+        quote: "After visiting multiple so-called “top” dental clinics across Mumbai, the first thing that struck me at Toothfully Yours was how genuinely patient-centric the space felt. Every seat in the waiting area was actually comfortable and thoughtfully arranged, something you'd expect from a quality dental practice but surprisingly rarely see.\n\nIn complete contrast, Toothfully Yours offered a level of precision, hygiene, and genuine care that immediately put me at ease. Dr. Amruta Godbole's treatment approach is meticulous and every step is explained, every concern is addressed, and nothing feels rushed or mechanical. The procedure plan she curated for me was clear, structured, and delivered with both expertise and empathy.\n\nHer understanding of dental anatomy, cosmetic considerations, and patient comfort is exceptional. She takes the time to ensure you actually understand what's happening and why, something very few dentists bother to do.\n\nFor anyone looking for high-quality dental care, from routine treatments to detailed procedures—Dr. Amruta Godbole and Toothfully Yours are in a completely different league.",
+    },
+    {
+        name: "Chetna Chakravarthy",
+        initial: "C",
+        color: "#5E3FBE",
+        meta: "Local Guide · 15 reviews · 2 photos · 4 years ago",
+        quote: "Dr Amruta has the most delicate hands I've known a dentist to have. From getting my cavities  sorted to getting regular clean-ups, my teeth and gums feel healthy and well taken care of. She is patient, gentle and on point.\n\nI, first, sought an appointment for a terrible toothache and with precise diagnosis as well as quick treatment, the pain was gone within 24 hours and in two sittings (within a week) my tooth and gums were healed. She is meticulous and will not recommend procedures or medicines unnecessarily.\n\nI've also had my teeth whitened by Dr Amruta and the results were my brighter, shinier and natural looking toothy smile. I now go for regular clean-ups because I'm not afraid of the dentist's chairs and tools. Anyone looking for a good dentist in Mumbai, Dr Amruta is an awesome one.",
+    },
+    {
+        name: "Ashwin Bhat",
+        initial: "A",
+        color: "#1E5BB0",
+        meta: "1 review · 4 years ago",
+        quote: "I visited Toothfully Yours as I had tooth sensitivity.\n\nDr. Amruta Godbole accurately diagnosed and resolved the issue using composite filling, which looks completely natural. At each step, she took time to explain the procedure and it's benefits, and resolved all my queries patiently.\n\nEven after the procedure, Dr. Amruta followed up with me on a regular basis checking up on how I am doing. She takes very good care of her patients.\n\nToothfully Yours is an excellent dental clinic with modern equipment and techniques.\nMany thanks to Dr. Amruta Godbole and her team. Best wishes!!",
+    },
+    {
+        name: "Devendra Choudhary",
+        initial: "D",
+        color: "#E91E63",
+        meta: "3 reviews · 2 years ago",
+        quote: "I first visited Dr. Godbole at Toothfully Yours for heavy stain removal on my teeth due to a habit. My teeth looked super new and very clean, stain free after a thorough cleaning by the doctor & her supporting team which is great!  Dr. Godbole also placed an implant and unlike the stories I've heard about Dental Implants, it didn't hurt at all, during the procedure and post-surgery healing was absolutely without pain and swelling.\nA great place to visit for all your dental needs. Highly recommend Toothfully Yours for any dental treatments.",
+    },
+    {
+        name: "Renee' Melek",
+        initial: "R",
+        color: "#4A4A4A",
+        meta: "1 review · 1 photo · 11 months ago",
+        quote: "Dr Amruta is just too good with kids. My 9 yr old is always petrified of doctors n injections but with Dr Amruta he is so so comfortable and free of any fear . He in fact looks forward to meet her for his cavities. I feel very stress free with her . She is super talented and can be fully trusted . 10 stars from us 😁 ...",
+    },
+    {
+        name: "Vivaan Bhingarde",
+        initial: "V",
+        color: "#6B7AC7",
+        meta: "3 reviews · 11 months ago",
+        quote: "My experience at Toothfully Yours was truly exceptional. I had been searching for a reliable dentist due to persistent tooth sensitivity and ongoing pain in one of my teeth. The treatment I received here made a noticeable difference. Dr. Amruta is an extremely skilled and knowledgeable dentist, with several years of practical experience in the U.S., which clearly reflects in her approach and care.",
     },
 ];
 
@@ -95,7 +130,7 @@ export const TestimonialsCarousel = () => {
                 className="overflow-hidden -mx-3 md:-mx-4"
                 ref={emblaRef}
             >
-                <div className="flex">
+                <div className="flex items-start">
                     {REVIEWS.map((r, i) => (
                         <div
                             key={r.name}
@@ -155,27 +190,27 @@ export const TestimonialsCarousel = () => {
 };
 
 const ReviewCard = ({ r }) => (
-    <article className="h-full bg-white rounded-3xl p-7 md:p-8 shadow-[0_30px_60px_-40px_rgba(0,0,0,0.25)] flex flex-col min-h-[420px]">
+    <article className="bg-white rounded-3xl p-7 md:p-8 shadow-[0_30px_60px_-40px_rgba(0,0,0,0.25)] flex flex-col">
         {/* Header */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-start gap-3">
             <div
                 className="h-11 w-11 rounded-full flex items-center justify-center text-white font-dmsans font-semibold text-base shrink-0"
                 style={{ backgroundColor: r.color }}
             >
                 {r.initial}
             </div>
-            <div className="min-w-0">
-                <p className="font-dmsans font-medium text-[1rem] text-[#1A1A1A] leading-tight truncate">
+            <div className="min-w-0 flex-1">
+                <p className="font-dmsans font-medium text-[1rem] text-[#1A1A1A] leading-tight">
                     {r.name}
                 </p>
-                <p className="font-dmsans text-[0.72rem] text-[#5C5C5C] mt-0.5 truncate">
+                <p className="font-dmsans text-[0.72rem] text-[#5C5C5C] mt-1 leading-snug">
                     {r.meta}
                 </p>
             </div>
             {/* Google G */}
             <svg
                 viewBox="0 0 24 24"
-                className="ml-auto h-5 w-5 shrink-0"
+                className="h-5 w-5 shrink-0"
                 aria-label="Google review"
             >
                 <path
@@ -211,7 +246,7 @@ const ReviewCard = ({ r }) => (
         </div>
 
         {/* Quote */}
-        <p className="mt-5 font-dmsans text-[0.95rem] leading-[1.65] text-[#1A1A1A]/85 flex-1">
+        <p className="mt-5 font-dmsans text-[0.95rem] leading-[1.65] text-[#1A1A1A]/85 flex-1 whitespace-pre-line">
             {r.quote}
         </p>
     </article>
