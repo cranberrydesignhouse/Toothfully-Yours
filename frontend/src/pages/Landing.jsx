@@ -34,11 +34,11 @@ const IMG = {
         "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/n84xg6ne_Dr.%20Paras%20Kothari.jpg",
     ],
     gallery: [
-        "https://images.unsplash.com/photo-1619040766540-4b1ea1639c8f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA3MDR8MHwxfHNlYXJjaHw0fHxjYW5kaWQlMjBoYXBweSUyMHNtaWxpbmclMjBkaXZlcnNlJTIwcGVvcGxlJTIwd2FybSUyMHRvbmV8ZW58MHx8fHwxNzc5MzUxMzY4fDA&ixlib=rb-4.1.0&q=85",
-        "https://images.unsplash.com/photo-1772724317387-7e763804b637?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzV8MHwxfHNlYXJjaHw0fHxjYW5kaWQlMjBsYXVnaGluZyUyMHNtaWxpbmclMjBkaXZlcnNlJTIwcGVvcGxlJTIwb3V0ZG9vciUyMHdhcm18ZW58MHx8fHwxNzc5MzUxMzc0fDA&ixlib=rb-4.1.0&q=85",
-        "https://images.unsplash.com/photo-1622352496174-9e1d969b1945?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA3MDR8MHwxfHNlYXJjaHwyfHxjYW5kaWQlMjBoYXBweSUyMHNtaWxpbmclMjBkaXZlcnNlJTIwcGVvcGxlJTIwd2FybSUyMHRvbmV8ZW58MHx8fHwxNzc5MzUxMzY4fDA&ixlib=rb-4.1.0&q=85",
-        "https://images.pexels.com/photos/8764963/pexels-photo-8764963.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=900&w=900",
-        "https://images.pexels.com/photos/7148441/pexels-photo-7148441.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=900&w=900",
+        "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/w76lxasr_happy-smiles-15.webp",
+        "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/0lt9d93r_happy-smiles-6.webp",
+        "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/x16srlj0_happy-smiles-8.webp",
+        "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/6ahoqdmo_happy-smiles-3.webp",
+        "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/akfp68ue_happy-smiles-2.webp",
     ],
 };
 
