@@ -107,6 +107,18 @@ const IMG = {
             src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/ll2i0mkx_happy-smiles-29.jpg",
             pos: "50% 35%",
         },
+        {
+            src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/wm8k64lh_CCE184C7-DF3E-47BE-8E60-43AD7C6518E3.JPG",
+            pos: "50% 40%",
+        },
+        {
+            src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/c4hycjsb_happy-smiles-19.jpg",
+            pos: "50% 30%",
+        },
+        {
+            src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/5fgo7p2m_happy-smiles-20.jpg",
+            pos: "50% 35%",
+        },
     ],
 };
 
