@@ -2,19 +2,13 @@ import { useCallback, useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-// Split a flat list into pages of `perPage` items, padding the
-// last page by looping from the start so each page is visually full.
+// Split items into pages of `perPage` size. Last page may be partial — we no
+// longer pad with looped items because the visible repeat reads as a duplicate.
 const paginate = (items, perPage) => {
     if (items.length === 0) return [];
     const pages = [];
     for (let i = 0; i < items.length; i += perPage) {
-        const chunk = items.slice(i, i + perPage);
-        let j = 0;
-        while (chunk.length < perPage) {
-            chunk.push(items[j % items.length]);
-            j += 1;
-        }
-        pages.push(chunk);
+        pages.push(items.slice(i, i + perPage));
     }
     return pages;
 };
