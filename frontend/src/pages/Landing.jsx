@@ -19,6 +19,7 @@ import Footer from "@/components/Footer";
 import BookingModal from "@/components/BookingModal";
 import TestimonialsCarousel from "@/components/TestimonialsCarousel";
 import GalleryCarousel from "@/components/GalleryCarousel";
+import { Link } from "react-router-dom";
 
 const IMG = {
     hero: "https://images.unsplash.com/photo-1662837625421-5fd8ed6131a0?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2ODh8MHwxfHNlYXJjaHwzfHxkZW50aXN0JTIwdHJlYXRpbmclMjBwYXRpZW50JTIwbW9kZXJuJTIwY2xpbmljfGVufDB8fHx8MTc3OTM1MTM2OHww&ixlib=rb-4.1.0&q=85",
@@ -139,6 +140,7 @@ const SERVICES = [
             "Full-mouth Rehabilitation",
         ],
         img: IMG.services[0],
+        href: "/cosmetic-aesthetic-care",
     },
     {
         title: "Implants & Restoration",
@@ -420,11 +422,11 @@ export default function Landing() {
                     </Reveal>
 
                     <div className="mt-12 md:mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-8">
-                        {SERVICES.map((s, i) => (
-                            <Reveal key={s.title} delay={i * 100}>
+                        {SERVICES.map((s, i) => {
+                            const card = (
                                 <article
                                     data-testid={`service-card-${i}`}
-                                    className="flex flex-col items-center text-center group"
+                                    className={`flex flex-col items-center text-center group ${s.href ? "cursor-pointer" : ""}`}
                                 >
                                     <div className="relative">
                                         <div className="absolute inset-0 rounded-full bg-[#EB8A2C]/10 blur-2xl scale-90 group-hover:scale-110 transition-transform duration-500" />
@@ -450,8 +452,19 @@ export default function Landing() {
                                         ))}
                                     </ul>
                                 </article>
-                            </Reveal>
-                        ))}
+                            );
+                            return (
+                                <Reveal key={s.title} delay={i * 100}>
+                                    {s.href ? (
+                                        <Link to={s.href} className="block">
+                                            {card}
+                                        </Link>
+                                    ) : (
+                                        card
+                                    )}
+                                </Reveal>
+                            );
+                        })}
                     </div>
                 </div>
             </section>
