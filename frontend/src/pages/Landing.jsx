@@ -328,7 +328,7 @@ export default function Landing() {
                             </div>
 
                             {/* Trust strip — stats row */}
-                            <div className="mt-9 flex items-stretch gap-5 sm:gap-7">
+                            <div className="mt-14 md:mt-16 flex items-stretch gap-5 sm:gap-7">
                                 <div data-testid="trust-experience" className="text-left">
                                     <p className="font-dmsans font-bold text-[1.5rem] md:text-[1.85rem] text-[#1A1A1A] leading-none tracking-tight">
                                         20+
