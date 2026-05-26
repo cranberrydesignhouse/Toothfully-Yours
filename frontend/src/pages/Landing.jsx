@@ -18,6 +18,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BookingModal from "@/components/BookingModal";
 import TestimonialsCarousel from "@/components/TestimonialsCarousel";
+import GalleryCarousel from "@/components/GalleryCarousel";
 
 const IMG = {
     hero: "https://images.unsplash.com/photo-1662837625421-5fd8ed6131a0?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2ODh8MHwxfHNlYXJjaHwzfHxkZW50aXN0JTIwdHJlYXRpbmclMjBwYXRpZW50JTIwbW9kZXJuJTIwY2xpbmljfGVufDB8fHx8MTc3OTM1MTM2OHww&ixlib=rb-4.1.0&q=85",
@@ -57,6 +58,26 @@ const IMG = {
         {
             src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/akfp68ue_happy-smiles-2.webp",
             pos: "50% 30%",
+        },
+        {
+            src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/5kn1bway_happy-smiles-2%20copy.jpg",
+            pos: "50% 30%",
+        },
+        {
+            src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/jf4w2vhu_happy-smiles-4%20copy.jpg",
+            pos: "50% 40%",
+        },
+        {
+            src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/pwmpesji_happy-smiles-7%20copy.jpg",
+            pos: "50% 45%",
+        },
+        {
+            src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/ho6t0bfz_happy-smiles-11%20copy.jpg",
+            pos: "50% 40%",
+        },
+        {
+            src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/b6v1339i_happy-smiles-18%20copy.jpg",
+            pos: "50% 45%",
         },
     ],
 };
@@ -477,11 +498,17 @@ export default function Landing() {
                                     data-testid={`team-card-${i}`}
                                     className="flex flex-col items-center group"
                                 >
-                                    <img
-                                        src={m.img}
-                                        alt={m.name}
-                                        className="circle-photo w-52 h-52 md:w-60 md:h-60 border-4 border-white shadow-xl object-top"
-                                    />
+                                    <div className="w-52 h-52 md:w-60 md:h-60 rounded-full border-4 border-white shadow-xl bg-[#F5F2EF] overflow-hidden circle-photo">
+                                        <img
+                                            src={m.img}
+                                            alt={m.name}
+                                            className={`w-full h-full ${
+                                                i === 1
+                                                    ? "object-contain"
+                                                    : "object-cover object-top"
+                                            }`}
+                                        />
+                                    </div>
                                     <h3 className="font-dmsans font-semibold text-[1.05rem] md:text-[1.1rem] text-[#1A1A1A] mt-6 tracking-tight">
                                         {m.name}
                                     </h3>
@@ -556,21 +583,11 @@ export default function Landing() {
                     </Reveal>
 
                     <Reveal delay={120}>
-                        <div className="mt-10 md:mt-14 max-w-[820px] mx-auto grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
-                            {IMG.gallery.map((g, i) => (
-                                <div
-                                    key={g.src}
-                                    data-testid={`gallery-image-${i}`}
-                                    className="overflow-hidden rounded-2xl bg-white aspect-square"
-                                >
-                                    <img
-                                        src={g.src}
-                                        alt={`Patient smile ${i + 1}`}
-                                        style={{ objectPosition: g.pos }}
-                                        className="w-full h-full object-cover transition-transform duration-700 hover:scale-[1.04]"
-                                    />
-                                </div>
-                            ))}
+                        <div className="mt-10 md:mt-14 max-w-[920px] mx-auto">
+                            <GalleryCarousel
+                                items={IMG.gallery}
+                                perPage={6}
+                            />
                         </div>
                     </Reveal>
                 </div>
