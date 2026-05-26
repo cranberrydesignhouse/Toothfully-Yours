@@ -30,7 +30,7 @@ const IMG = {
     ],
     team: [
         "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/d1ptotq3_Dr.%20Manish%20Kachhara.png",
-        "https://images.unsplash.com/photo-1622253694238-3b22139576c6?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzJ8MHwxfHNlYXJjaHwyfHxmcmllbmRseSUyMG1lZGljYWwlMjBwcm9mZXNzaW9uYWwlMjBwb3J0cmFpdHxlbnwwfHx8fDE3NzkzNTEzNjh8MA&ixlib=rb-4.1.0&q=85",
+        "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/hs8mzcoo_Dr%20Prasad%20GSV.png",
         "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/n84xg6ne_Dr.%20Paras%20Kothari.jpg",
     ],
     gallery: [
@@ -602,7 +602,7 @@ export default function Landing() {
                                 <ContactRow
                                     icon={Clock}
                                     label="Clinic Hours"
-                                    value="10:00 AM – 7:00 PM"
+                                    value="Mon – Sat · 10:00 AM – 7:00 PM"
                                 />
                                 <ContactRow
                                     icon={Phone}
