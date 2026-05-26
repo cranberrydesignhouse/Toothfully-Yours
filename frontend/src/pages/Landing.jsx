@@ -355,7 +355,7 @@ export default function Landing() {
                                             className="translate-y-[-1px]"
                                         />
                                     </p>
-                                    <p className="mt-2 font-dmsans text-[0.6rem] md:text-[0.65rem] tracking-[0.2em] uppercase text-[#5C5C5C] leading-tight group-hover:text-[#EB8A2C] transition-colors inline-flex items-center gap-1.5">
+                                    <p className="mt-2 font-dmsans text-[0.6rem] md:text-[0.65rem] tracking-[0.2em] uppercase text-[#5C5C5C] leading-tight group-hover:text-[#EB8A2C] transition-colors flex items-center gap-1.5">
                                         <svg
                                             viewBox="0 0 24 24"
                                             className="h-[0.85rem] w-auto shrink-0"
