@@ -433,10 +433,10 @@ export default function Landing() {
                                         <img
                                             src={s.img}
                                             alt={s.title}
-                                            className="circle-photo relative w-44 h-44 md:w-52 md:h-52 border-4 border-white"
+                                            className={`circle-photo relative w-44 h-44 md:w-52 md:h-52 border-4 border-white transition-transform duration-500 ${s.href ? "group-hover:scale-[1.03]" : ""}`}
                                         />
                                     </div>
-                                    <h3 className="font-dmsans font-semibold text-[1.05rem] md:text-[1.15rem] text-[#1A1A1A] mt-6 tracking-tight">
+                                    <h3 className={`font-dmsans font-semibold text-[1.05rem] md:text-[1.15rem] text-[#1A1A1A] mt-6 tracking-tight transition-colors ${s.href ? "group-hover:text-[#EB8A2C]" : ""}`}>
                                         {s.title}
                                     </h3>
                                     <ul className="mt-4 flex flex-wrap justify-center gap-1.5 max-w-[19rem]">
@@ -451,6 +451,14 @@ export default function Landing() {
                                             </li>
                                         ))}
                                     </ul>
+                                    {s.href && (
+                                        <span
+                                            data-testid={`service-link-${i}`}
+                                            className="mt-5 inline-flex items-center gap-1.5 font-dmsans text-[0.78rem] tracking-[0.16em] uppercase text-[#EB8A2C] border-b border-[#EB8A2C]/30 group-hover:border-[#EB8A2C] pb-0.5 transition-all"
+                                        >
+                                            Explore <ArrowRight size={13} strokeWidth={2} />
+                                        </span>
+                                    )}
                                 </article>
                             );
                             return (

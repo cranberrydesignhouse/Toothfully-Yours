@@ -1,0 +1,38 @@
+{
+  "summary": "Frontend-only regression on /cosmetic-aesthetic-care and the new Landing→Cosmetic entry. Most flows pass (routing, hero CTAs, modal open/close, 4 'What's Possible' cards with tab mapping incl. fillings→veneers, Before/After tabs, doctor image swap, 5 FAQs with DM Sans font + no em-dashes, contact CTA modal, footer, mobile 390 + desktop 1920 no horizontal scroll, 0 console errors). Found 3 issues: tablet (768px) horizontal overflow caused by hero image, navbar in-page anchors don't navigate back to home from cosmetic page, and one broken Unsplash image in Before/After gallery. Also flagging a deviation from the brief: BookingModal hidden form-name is 'contact' (not 'booking' as stated in the review request).",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [
+      {"component": "CosmeticCare hero", "issue": "Horizontal overflow (~74px) at tablet 768x1024. Hero image container uses md:w-[460px] which activates at 768px while the md grid col-span-6 width (≈304px after px-12 + gap-16) cannot hold it. Right edge of [data-testid=cc-hero-image] = 822px vs viewport 768px.", "selector": "[data-testid=cc-hero-image]", "priority": "HIGH"},
+      {"component": "BeforeAfterGallery", "issue": "Broken Unsplash image: https://images.unsplash.com/photo-1581585093540-7e0c44a9a046 returns 404 (naturalWidth=0). Used in TABS['smile-design'].items[1].before and TABS['whitening'].items[0].before in /app/frontend/src/components/BeforeAfterGallery.jsx.", "selector": "[data-testid=ba-card-smile-design-1], [data-testid=ba-card-whitening-0]", "priority": "MEDIUM"}
+    ],
+    "integration_issues": [
+      {"flow": "Navbar links on /cosmetic-aesthetic-care", "issue": "Navbar links (Services/About/Team/Testimonials/Contact and the logo #hero) use hash hrefs and handleNavClick that only does document.querySelector(href).scrollIntoView(). On /cosmetic-aesthetic-care these IDs don't exist, so clicking nav links silently does nothing instead of navigating to /#services etc. Review request explicitly states navbar must 'link back to the home page anchors'.", "affected_selectors": ["[data-testid=site-navbar] a[href='#services']", "[data-testid=site-navbar] a[href='#about']", "[data-testid=site-navbar] a[href='#team']", "[data-testid=site-navbar] a[href='#testimonials']", "[data-testid=site-navbar] a[href='#contact']", "[data-testid=nav-logo]"]},
+      {"flow": "BookingModal form-name mismatch", "issue": "Review request says BookingModal hidden input form-name must equal 'booking' (and index.html hidden static form should be form-name=booking). Actual: BookingModal uses form name='contact' with hidden input form-name='contact' and index.html has only the original contact hidden form. If a separate 'booking' Netlify form is the intent, both the modal and the static index.html hidden form need to be renamed to booking. If shared 'contact' was intentional, the brief is stale.", "affected_selectors": ["[data-testid=booking-modal] input[name='form-name']", "/app/frontend/public/index.html hidden <form name='contact'>"]}
+    ],
+    "design_issues": [
+      {"screen": "CosmeticCare hero (768px)", "issues": ["Hero photo overflows viewport horizontally at tablet width causing a horizontal scrollbar."]}
+    ]
+  },
+  "test_report_links": [],
+  "action_items": [
+    "Fix tablet (md breakpoint) overflow on cc-hero: either constrain image (e.g., w-full max-w-[360px] at md, only allow 460px at lg+) or remove md:w-[460px] and rely on responsive sizing.",
+    "Replace broken Unsplash image photo-1581585093540-7e0c44a9a046 in BeforeAfterGallery.jsx (used in smile-design[1].before and whitening[0].before). Several other unsplash IDs (1559588944, 1559586784) intermittently 404'd on first paint too — consider hosting these on the customer-assets bucket.",
+    "Update Navbar links so when not on '/', they navigate to '/' + scroll (e.g., use react-router Link to='/' with state and scroll-on-mount, or rewrite hrefs to '/#services' etc. and handle them with useLocation check).",
+    "Clarify Netlify form intent: rename BookingModal form to 'booking' (and add a matching hidden static form in index.html) OR update review docs to reflect 'contact' form reuse."
+  ],
+  "critical_code_review_comments": [
+    "BookingModal reuses the contact form name — this conflates booking and general contact submissions in Netlify dashboards. If product wants separation, make this two distinct form names.",
+    "Navbar.handleNavClick silently no-ops when target anchor isn't on the current route. Add a fallback: if pathname !== '/', navigate('/'+href).",
+    "Reveal uses a 1.8s safety timeout which is fine, but the Reveal inside the doctor image circle covers a centered absolute background — verify the image is not clipped on smaller tablets (visually OK in test).",
+    "BeforeAfterGallery hardcodes 9 Unsplash URLs. Recommend moving to customer-assets to avoid Unsplash 404 churn."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A (frontend-only)", "frontend": "≈85% (3 issues out of ~14 verified flows)"},
+  "test_credentials": "N/A",
+  "seed_data_creation": "None",
+  "retest_needed": true,
+  "main_agent_can_self_test": true,
+  "context_for_next_testing_agent": "All cosmetic page testids verified: cosmetic-care-page, cc-hero, cc-headline (with 'right dentist.' span computed color rgb(235,138,44)), cc-hero-image (loads, 1537w), cc-cta-book opens booking-modal, cc-cta-explore smooth-scrolls to #possibilities, cc-card-{veneers|smile-design|whitening|fillings} all click & scroll-to #raw-truth and set the correct tab (fillings→veneers verified), ba-tab-* switch with bg-[#1A1A1A] active class, 3 cards per tab (ba-card-{tab}-{0..2}), cc-doctor-image loads new r7wm2nb4_Dr.%20Amruta.jpg, cosmetic-faq has 5 faq-item-* (DM Sans, single-collapsible, no em-dashes), cc-contact-cta opens modal, back link '/'. Landing service-card-0 wrapped in Link to=/cosmetic-aesthetic-care and service-link-0 also navigates. Re-test after: (a) tablet overflow fix, (b) broken Unsplash replacement, (c) navbar cross-route navigation fix.",
+  "rca of the issue": "Tablet overflow: Tailwind class md:w-[460px] sets a fixed 460px width at >=768px. At exactly 768px viewport, the 12-col grid (gap-16 = 64px, px-12 = 96px) yields ~304px per col-span-6. The image, being 460px wide and absolutely sized, sticks out 156px causing 74px doc-level overflow (after grid centering). Fix: drop the md:w-[460px]/h-[460px] step OR add overflow-hidden + max-w-full on the wrapper, OR restructure to stack <md and only show side-by-side at lg+. Navbar bug: handleNavClick(e, href) calls e.preventDefault() and document.querySelector(href).scrollIntoView() — when on /cosmetic-aesthetic-care the IDs (#services, #about, etc.) belong only to Landing.jsx, so querySelector returns null and the click silently no-ops. Use react-router useNavigate with hash on non-root paths."
+}
