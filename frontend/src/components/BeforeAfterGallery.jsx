@@ -9,19 +9,16 @@ const TABS = [
         label: "Dental Veneers",
         items: [
             {
-                before: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/0lt9d93r_happy-smiles-6.webp",
-                after: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/pwmpesji_happy-smiles-7%20copy.jpg",
-                note: "Discoloured enamel to porcelain veneers",
+                composite:
+                    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/4umcpp6y_composite-veeneers%201.png",
             },
             {
-                before: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/450lfsga_happy-smiles-10.jpg",
-                after: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/vtjot904_happy-smiles-11%20copy.jpg",
-                note: "Chipped front teeth to seamless veneers",
+                composite:
+                    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/8e8bykvc_dental-fill.png",
             },
             {
-                before: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/1352cymq_happy-smiles-16.jpg",
-                after: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/b6v1339i_happy-smiles-18%20copy.jpg",
-                note: "Uneven shape to contoured ceramics",
+                composite:
+                    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/njffdvgc_dental-fill2-scaled.png",
             },
         ],
     },
@@ -158,8 +155,8 @@ const BACard = ({ item, testId }) => (
     </article>
 );
 
-// Horizontal sideways carousel for the whitening tab.
-const WhiteningCarousel = ({ items, tabId }) => {
+// Horizontal sideways carousel for tabs that have many cases.
+const BACarousel = ({ items, tabId }) => {
     const [emblaRef, emblaApi] = useEmblaCarousel({
         loop: true,
         align: "start",
@@ -182,7 +179,7 @@ const WhiteningCarousel = ({ items, tabId }) => {
     }, [emblaApi]);
 
     return (
-        <div data-testid="ba-whitening-carousel" className="relative">
+        <div data-testid={`ba-${tabId}-carousel`} className="relative">
             <div className="overflow-hidden" ref={emblaRef}>
                 <div className="flex gap-6 md:gap-7">
                     {items.map((item, i) => (
@@ -198,7 +195,6 @@ const WhiteningCarousel = ({ items, tabId }) => {
                     ))}
                 </div>
             </div>
-
             <div className="mt-8 md:mt-10 flex items-center justify-between">
                 <div className="flex items-center gap-2 flex-wrap">
                     {snaps.map((_, i) => (
@@ -272,8 +268,8 @@ export const BeforeAfterGallery = ({ activeId, onTabChange }) => {
             </div>
 
             <div className="mt-10 md:mt-12">
-                {tab.id === "whitening" ? (
-                    <WhiteningCarousel items={tab.items} tabId={tab.id} />
+                {tab.id === "whitening" || tab.id === "smile-design" ? (
+                    <BACarousel items={tab.items} tabId={tab.id} />
                 ) : (
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-7">
                         {tab.items.map((item, i) => (
