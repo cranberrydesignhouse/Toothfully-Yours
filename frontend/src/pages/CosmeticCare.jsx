@@ -16,7 +16,7 @@ import BeforeAfterGallery from "@/components/BeforeAfterGallery";
 import CosmeticFaq from "@/components/CosmeticFaq";
 
 const HERO_IMG =
-    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/cxdgduas_T%20cosmetic%20image.jpg";
+    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/b23zov3v_cosmetic.jpg";
 
 const DOCTOR_IMG =
     "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/3izcsf0q_de1aeb63-8b3a-4c3c-8f8f-2445283a1c69.JPG";
@@ -26,25 +26,25 @@ const POSSIBILITIES = [
         id: "veneers",
         title: "Dental Veneers",
         copy: "Ultra-thin ceramic shells, shaped and shaded to feel like yours.",
-        img: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/pwmpesji_happy-smiles-7%20copy.jpg",
+        img: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/fbgf7pex_veneers.png",
     },
     {
         id: "smile-design",
         title: "Smile Makeover",
         copy: "A planned, photographed, previewed transformation of your full smile.",
-        img: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/b6v1339i_happy-smiles-18%20copy.jpg",
+        img: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/bgtz4ohb_smile%20makeover.png",
     },
     {
         id: "whitening",
         title: "Teeth Whitening",
-        copy: "Safe, dentist-supervised brightening — clinic, take-home, or both.",
-        img: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/w76lxasr_happy-smiles-15.webp",
+        copy: "Safe, dentist-supervised brightening, clinic, take-home, or both.",
+        img: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/bsq4qptd_teeth%20whitening.png",
     },
     {
         id: "fillings",
         title: "Tooth Coloured Fillings",
         copy: "Invisible composite fillings that bond, blend and protect.",
-        img: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/6ahoqdmo_happy-smiles-3.webp",
+        img: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/7ee8l3yt_fillings.png",
     },
 ];
 
@@ -114,18 +114,20 @@ export default function CosmeticCare() {
                 <div className="max-w-7xl mx-auto px-5 md:px-12 lg:px-16 grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-16 items-center">
                     <div className="md:col-span-6">
                         <Reveal>
-                            <Link
-                                to="/"
-                                className="font-dmsans text-[0.72rem] tracking-[0.22em] uppercase text-[#5C5C5C] hover:text-[#EB8A2C] transition-colors inline-flex items-center gap-2"
-                            >
-                                <span>←</span> Toothfully Yours
-                            </Link>
-                            <span className="section-label mt-5 block">
+                            <div className="mb-8">
+                                <Link
+                                    to="/"
+                                    className="font-dmsans text-[0.72rem] tracking-[0.22em] uppercase text-[#5C5C5C] hover:text-[#EB8A2C] transition-colors inline-flex items-center gap-2"
+                                >
+                                    <span>←</span> Toothfully Yours
+                                </Link>
+                            </div>
+                            <span className="section-label">
                                 Cosmetic &amp; Aesthetic Care
                             </span>
                             <h1
                                 data-testid="cc-headline"
-                                className="heading-serif text-[1.95rem] leading-[1.08] sm:text-[2.4rem] md:text-[2.9rem] lg:text-[3.3rem] text-[#1A1A1A]"
+                                className="heading-serif text-[1.55rem] leading-[1.12] sm:text-[1.85rem] md:text-[2.15rem] lg:text-[2.45rem] text-[#1A1A1A]"
                             >
                                 Your smile makeover{" "}
                                 <span className="text-[#EB8A2C]">

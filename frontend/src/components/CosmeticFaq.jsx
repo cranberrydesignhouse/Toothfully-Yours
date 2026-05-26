@@ -12,11 +12,11 @@ const FAQS = [
     },
     {
         q: "How long do veneers actually last?",
-        a: "Properly bonded porcelain veneers from a skilled clinician typically last 10–15+ years. The variables are bite, hygiene, and avoiding habits like nail-biting or opening bottles with your teeth — not the veneers themselves.",
+        a: "Properly bonded porcelain veneers from a skilled clinician typically last 10 to 15+ years. The variables are bite, hygiene, and avoiding habits like nail-biting or opening bottles with your teeth, not the veneers themselves.",
     },
     {
         q: "I've seen cosmetic dentistry go wrong. How do I know this won't?",
-        a: "Almost every visibly 'fake' smile comes from the same two shortcuts — over-prepped enamel and one-shade-fits-all veneers. Dr. Amruta's protocol is the opposite: conservative enamel reduction, custom shade-mapping, and a try-in stage before anything is permanent.",
+        a: "Almost every visibly 'fake' smile comes from the same two shortcuts: over-prepped enamel and one-shade-fits-all veneers. Dr. Amruta's protocol is the opposite: conservative enamel reduction, custom shade-mapping, and a try-in stage before anything is permanent.",
     },
     {
         q: "Is smile design only for major transformations or can it address smaller concerns?",
@@ -24,7 +24,7 @@ const FAQS = [
     },
     {
         q: "How many appointments will a cosmetic treatment take?",
-        a: "Whitening: 1 visit. Bonding or composite work: 1–2 visits. Veneers or smile design: a consultation, a design preview, prep and try-in, and final bonding — typically across 3–4 visits over 2–3 weeks.",
+        a: "Whitening: 1 visit. Bonding or composite work: 1 to 2 visits. Veneers or smile design: a consultation, a design preview, prep and try-in, and final bonding, typically across 3 to 4 visits over 2 to 3 weeks.",
     },
 ];
 
@@ -42,7 +42,7 @@ export const CosmeticFaq = () => (
                 data-testid={`faq-item-${i}`}
                 className="bg-white rounded-2xl border border-black/8 px-5 md:px-7 shadow-[0_20px_40px_-30px_rgba(0,0,0,0.15)]"
             >
-                <AccordionTrigger className="font-playfair italic text-[1.05rem] md:text-[1.2rem] text-[#1A1A1A] hover:no-underline py-5 md:py-6 text-left">
+                <AccordionTrigger className="font-dmsans font-semibold text-[0.98rem] md:text-[1.05rem] text-[#1A1A1A] hover:no-underline py-5 md:py-6 text-left tracking-tight">
                     {f.q}
                 </AccordionTrigger>
                 <AccordionContent className="font-dmsans text-[0.95rem] text-[#5C5C5C] leading-relaxed pb-6">
