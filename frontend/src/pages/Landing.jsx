@@ -36,10 +36,6 @@ const IMG = {
     ],
     gallery: [
         {
-            src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/5sspdraq_happy-smiles-1.webp",
-            pos: "50% 30%",
-        },
-        {
             src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/w76lxasr_happy-smiles-15.webp",
             pos: "50% 55%",
         },
@@ -72,12 +68,44 @@ const IMG = {
             pos: "50% 45%",
         },
         {
-            src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/ho6t0bfz_happy-smiles-11%20copy.jpg",
+            src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/vtjot904_happy-smiles-11%20copy.jpg",
             pos: "50% 40%",
         },
         {
             src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/b6v1339i_happy-smiles-18%20copy.jpg",
             pos: "50% 45%",
+        },
+        {
+            src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/450lfsga_happy-smiles-10.jpg",
+            pos: "50% 35%",
+        },
+        {
+            src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/1352cymq_happy-smiles-16.jpg",
+            pos: "50% 40%",
+        },
+        {
+            src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/9pzucz03_happy-smiles-17.jpg",
+            pos: "50% 35%",
+        },
+        {
+            src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/2jrgncoo_happy-smiles-21.jpg",
+            pos: "50% 35%",
+        },
+        {
+            src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/38stcvur_happy-smiles-23.jpg",
+            pos: "50% 40%",
+        },
+        {
+            src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/5ebsdfid_happy-smiles-26.jpg",
+            pos: "50% 35%",
+        },
+        {
+            src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/u6mx2190_happy-smiles-27.jpg",
+            pos: "50% 50%",
+        },
+        {
+            src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/ll2i0mkx_happy-smiles-29.jpg",
+            pos: "50% 35%",
         },
     ],
 };
@@ -498,16 +526,30 @@ export default function Landing() {
                                     data-testid={`team-card-${i}`}
                                     className="flex flex-col items-center group"
                                 >
-                                    <div className="w-52 h-52 md:w-60 md:h-60 rounded-full border-4 border-white shadow-xl bg-[#F5F2EF] overflow-hidden circle-photo">
-                                        <img
-                                            src={m.img}
-                                            alt={m.name}
-                                            className={`w-full h-full ${
-                                                i === 1
-                                                    ? "object-contain"
-                                                    : "object-cover object-top"
-                                            }`}
-                                        />
+                                    <div className="relative w-52 h-52 md:w-60 md:h-60 rounded-full border-4 border-white shadow-xl bg-[#F5F2EF] overflow-hidden circle-photo">
+                                        {i === 1 ? (
+                                            <>
+                                                {/* Blurred fill so the circle's edges feel continuous */}
+                                                <img
+                                                    src={m.img}
+                                                    alt=""
+                                                    aria-hidden="true"
+                                                    className="absolute inset-0 w-full h-full object-cover scale-[1.4] blur-2xl opacity-70"
+                                                />
+                                                {/* Sharp foreground */}
+                                                <img
+                                                    src={m.img}
+                                                    alt={m.name}
+                                                    className="relative w-full h-full object-contain"
+                                                />
+                                            </>
+                                        ) : (
+                                            <img
+                                                src={m.img}
+                                                alt={m.name}
+                                                className="w-full h-full object-cover object-top"
+                                            />
+                                        )}
                                     </div>
                                     <h3 className="font-dmsans font-semibold text-[1.05rem] md:text-[1.1rem] text-[#1A1A1A] mt-6 tracking-tight">
                                         {m.name}
