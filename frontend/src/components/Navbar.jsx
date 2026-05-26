@@ -73,23 +73,23 @@ export const Navbar = ({ onOpenBooking }) => {
                     : "bg-white/60 backdrop-blur-sm"
             }`}
         >
-            <nav className="max-w-7xl mx-auto px-5 md:px-10 lg:px-12 h-20 md:h-24 flex items-center justify-between">
+            <nav className="max-w-7xl mx-auto px-4 md:px-6 lg:px-10 h-16 md:h-20 flex items-center justify-between gap-4">
                 <Link
                     to="/"
                     data-testid="nav-logo"
-                    className="flex items-center group"
+                    className="flex items-center group shrink-0"
                     aria-label="Toothfully Yours — home"
                 >
-                    <div className="overflow-hidden h-12 md:h-[68px] flex items-start mt-1 md:mt-1.5">
+                    <div className="overflow-hidden h-9 md:h-11 flex items-start mt-1 md:mt-1.5">
                         <img
                             src={LOGO_URL}
                             alt="Toothfully Yours"
-                            className="h-[66px] md:h-[96px] w-auto object-contain block"
+                            className="h-[54px] md:h-[68px] w-auto object-contain block"
                         />
                     </div>
                 </Link>
 
-                <ul className="hidden md:flex items-center gap-7 lg:gap-8">
+                <ul className="hidden md:flex items-center gap-4 lg:gap-6 xl:gap-7">
                     {NAV_LINKS.map((link) => {
                         const isRoute = !!link.to;
                         const isActive =
@@ -102,11 +102,11 @@ export const Navbar = ({ onOpenBooking }) => {
                                         to={link.to}
                                         onClick={handleRouteClick}
                                         data-testid={testId}
-                                        className={
+                                        className={`whitespace-nowrap ${
                                             isActive
                                                 ? activeLinkClasses
                                                 : linkClasses
-                                        }
+                                        }`}
                                     >
                                         {link.label}
                                     </Link>
@@ -117,7 +117,7 @@ export const Navbar = ({ onOpenBooking }) => {
                                             handleAnchorClick(e, link.href)
                                         }
                                         data-testid={testId}
-                                        className={linkClasses}
+                                        className={`whitespace-nowrap ${linkClasses}`}
                                     >
                                         {link.label}
                                     </a>
@@ -127,15 +127,15 @@ export const Navbar = ({ onOpenBooking }) => {
                     })}
                 </ul>
 
-                <div className="flex items-center gap-2 md:gap-3">
+                <div className="flex items-center gap-2 shrink-0">
                     <a
                         href="tel:+918769005504"
                         data-testid="nav-call-button"
                         aria-label="Call +91 87690 05504"
-                        className="inline-flex items-center gap-2 h-10 md:h-11 px-3 md:px-4 rounded-full border border-[#1A1A1A] text-[#1A1A1A] hover:bg-[#1A1A1A] hover:text-white transition-colors"
+                        className="inline-flex items-center gap-2 h-9 md:h-10 px-3 md:px-3.5 rounded-full border border-[#1A1A1A] text-[#1A1A1A] hover:bg-[#1A1A1A] hover:text-white transition-colors whitespace-nowrap"
                     >
-                        <Phone size={16} strokeWidth={1.8} />
-                        <span className="hidden lg:inline font-dmsans text-[0.92rem] font-semibold tracking-tight">
+                        <Phone size={14} strokeWidth={1.8} />
+                        <span className="hidden xl:inline font-dmsans text-[0.85rem] font-semibold tracking-tight">
                             +91 87690 05504
                         </span>
                     </a>
@@ -144,7 +144,7 @@ export const Navbar = ({ onOpenBooking }) => {
                         type="button"
                         onClick={handleBook}
                         data-testid="nav-cta-book"
-                        className="hidden md:inline-flex btn-primary !py-2.5 !px-5 !text-[0.92rem]"
+                        className="hidden md:inline-flex btn-primary !py-2 !px-4 !text-[0.85rem] whitespace-nowrap"
                     >
                         Book My Consultation
                     </button>
@@ -153,7 +153,7 @@ export const Navbar = ({ onOpenBooking }) => {
                         aria-label="Open menu"
                         data-testid="nav-mobile-toggle"
                         onClick={() => setOpen((s) => !s)}
-                        className="md:hidden inline-flex items-center justify-center h-10 w-10 rounded-full border border-black/10 text-[#1A1A1A]"
+                        className="md:hidden inline-flex items-center justify-center h-9 w-9 rounded-full border border-black/10 text-[#1A1A1A]"
                     >
                         {open ? <X size={18} /> : <Menu size={18} />}
                     </button>
