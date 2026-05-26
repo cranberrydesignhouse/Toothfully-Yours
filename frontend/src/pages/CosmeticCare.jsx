@@ -19,7 +19,7 @@ const HERO_IMG =
     "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/b23zov3v_cosmetic.jpg";
 
 const DOCTOR_IMG =
-    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/3izcsf0q_de1aeb63-8b3a-4c3c-8f8f-2445283a1c69.JPG";
+    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/r7wm2nb4_Dr.%20Amruta.jpg";
 
 const POSSIBILITIES = [
     {
@@ -31,13 +31,13 @@ const POSSIBILITIES = [
     {
         id: "smile-design",
         title: "Smile Makeover",
-        copy: "A planned, photographed, previewed transformation of your full smile.",
+        copy: "A planned, multi-step transformation of your full smile, combining veneers, contouring and whitening.",
         img: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/bgtz4ohb_smile%20makeover.png",
     },
     {
         id: "whitening",
         title: "Teeth Whitening",
-        copy: "Safe, dentist-supervised brightening, clinic, take-home, or both.",
+        copy: "Safe, in-clinic professional whitening performed by your dentist for a brighter, natural shade.",
         img: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/bsq4qptd_teeth%20whitening.png",
     },
     {
@@ -127,11 +127,13 @@ export default function CosmeticCare() {
                             </span>
                             <h1
                                 data-testid="cc-headline"
-                                className="heading-serif text-[1.55rem] leading-[1.12] sm:text-[1.85rem] md:text-[2.15rem] lg:text-[2.45rem] text-[#1A1A1A]"
+                                className="heading-serif text-[1.55rem] leading-[1.15] sm:text-[1.85rem] md:text-[2.15rem] lg:text-[2.45rem] text-[#1A1A1A]"
                             >
-                                Your smile makeover{" "}
+                                Your smile makeover
+                                <br />
+                                starts with the{" "}
                                 <span className="text-[#EB8A2C]">
-                                    starts with the right dentist.
+                                    right dentist.
                                 </span>
                             </h1>
                             <p className="mt-6 max-w-xl font-dmsans text-[0.98rem] md:text-[1.05rem] leading-relaxed text-[#5C5C5C]">
@@ -327,7 +329,7 @@ export default function CosmeticCare() {
                                     src={DOCTOR_IMG}
                                     alt="Dr. Amruta Godbole"
                                     data-testid="cc-doctor-image"
-                                    className="circle-photo w-72 h-72 sm:w-80 sm:h-80 md:w-[26rem] md:h-[26rem] mx-auto border-[6px] border-white object-cover"
+                                    className="circle-photo w-72 h-72 sm:w-80 sm:h-80 md:w-[26rem] md:h-[26rem] mx-auto border-[6px] border-white object-cover object-top"
                                 />
                             </div>
                         </Reveal>
