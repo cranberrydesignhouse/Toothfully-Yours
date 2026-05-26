@@ -165,6 +165,7 @@ const SERVICES = [
             "Clear Aligners for Adults",
         ],
         img: IMG.services[2],
+        href: "/corrective-alignment",
     },
     {
         title: "Neuromuscular Dentistry",

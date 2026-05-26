@@ -4,6 +4,7 @@ import Landing from "@/pages/Landing";
 import ThankYou from "@/pages/ThankYou";
 import CosmeticCare from "@/pages/CosmeticCare";
 import ImplantsRestoration from "@/pages/ImplantsRestoration";
+import CorrectiveAlignment from "@/pages/CorrectiveAlignment";
 
 function App() {
     return (
@@ -18,6 +19,10 @@ function App() {
                     <Route
                         path="/implants-restoration"
                         element={<ImplantsRestoration />}
+                    />
+                    <Route
+                        path="/corrective-alignment"
+                        element={<CorrectiveAlignment />}
                     />
                     <Route path="/thank-you" element={<ThankYou />} />
                 </Routes>
