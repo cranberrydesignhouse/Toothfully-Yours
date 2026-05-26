@@ -5,6 +5,7 @@ import ThankYou from "@/pages/ThankYou";
 import CosmeticCare from "@/pages/CosmeticCare";
 import ImplantsRestoration from "@/pages/ImplantsRestoration";
 import CorrectiveAlignment from "@/pages/CorrectiveAlignment";
+import GlobalAccess from "@/pages/GlobalAccess";
 
 function App() {
     return (
@@ -23,6 +24,10 @@ function App() {
                     <Route
                         path="/corrective-alignment"
                         element={<CorrectiveAlignment />}
+                    />
+                    <Route
+                        path="/global-access"
+                        element={<GlobalAccess />}
                     />
                     <Route path="/thank-you" element={<ThankYou />} />
                 </Routes>

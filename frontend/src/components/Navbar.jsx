@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Menu, X, Phone } from "lucide-react";
 
+// `to` = react-router route. `href` = same-page anchor (only valid on "/").
 const NAV_LINKS = [
     { label: "Services", href: "#services" },
     { label: "About", href: "#about" },
     { label: "Team", href: "#team" },
     { label: "Testimonials", href: "#testimonials" },
+    { label: "Global Access", to: "/global-access" },
     { label: "Contact", href: "#contact" },
 ];
 
@@ -38,7 +40,7 @@ export const Navbar = ({ onOpenBooking }) => {
         }
     }, [onHome, location.hash, location.key]);
 
-    const handleNavClick = (e, href) => {
+    const handleAnchorClick = (e, href) => {
         e.preventDefault();
         setOpen(false);
         if (onHome) {
@@ -49,11 +51,18 @@ export const Navbar = ({ onOpenBooking }) => {
         }
     };
 
+    const handleRouteClick = () => setOpen(false);
+
     const handleBook = (e) => {
         e.preventDefault();
         setOpen(false);
         onOpenBooking?.();
     };
+
+    const linkClasses =
+        "font-dmsans text-[0.95rem] text-[#1A1A1A] hover:text-[#EB8A2C] transition-colors relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-px after:w-0 after:bg-[#EB8A2C] hover:after:w-full after:transition-all";
+    const activeLinkClasses =
+        "font-dmsans text-[0.95rem] text-[#EB8A2C] transition-colors relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-px after:w-full after:bg-[#EB8A2C]";
 
     return (
         <header
@@ -65,14 +74,12 @@ export const Navbar = ({ onOpenBooking }) => {
             }`}
         >
             <nav className="max-w-7xl mx-auto px-5 md:px-10 lg:px-12 h-20 md:h-24 flex items-center justify-between">
-                <a
-                    href="#hero"
-                    onClick={(e) => handleNavClick(e, "#hero")}
+                <Link
+                    to="/"
                     data-testid="nav-logo"
                     className="flex items-center group"
                     aria-label="Toothfully Yours — home"
                 >
-                    {/* Crop the bottom tagline of the logo for visual balance */}
                     <div className="overflow-hidden h-12 md:h-[68px] flex items-start mt-1 md:mt-1.5">
                         <img
                             src={LOGO_URL}
@@ -80,25 +87,47 @@ export const Navbar = ({ onOpenBooking }) => {
                             className="h-[66px] md:h-[96px] w-auto object-contain block"
                         />
                     </div>
-                </a>
+                </Link>
 
-                <ul className="hidden md:flex items-center gap-8">
-                    {NAV_LINKS.map((link) => (
-                        <li key={link.href}>
-                            <a
-                                href={link.href}
-                                onClick={(e) => handleNavClick(e, link.href)}
-                                data-testid={`nav-link-${link.label.toLowerCase()}`}
-                                className="font-dmsans text-[0.95rem] text-[#1A1A1A] hover:text-[#EB8A2C] transition-colors relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-px after:w-0 after:bg-[#EB8A2C] hover:after:w-full after:transition-all"
-                            >
-                                {link.label}
-                            </a>
-                        </li>
-                    ))}
+                <ul className="hidden md:flex items-center gap-7 lg:gap-8">
+                    {NAV_LINKS.map((link) => {
+                        const isRoute = !!link.to;
+                        const isActive =
+                            isRoute && location.pathname === link.to;
+                        const testId = `nav-link-${link.label.toLowerCase().replace(/\s+/g, "-")}`;
+                        return (
+                            <li key={link.label}>
+                                {isRoute ? (
+                                    <Link
+                                        to={link.to}
+                                        onClick={handleRouteClick}
+                                        data-testid={testId}
+                                        className={
+                                            isActive
+                                                ? activeLinkClasses
+                                                : linkClasses
+                                        }
+                                    >
+                                        {link.label}
+                                    </Link>
+                                ) : (
+                                    <a
+                                        href={link.href}
+                                        onClick={(e) =>
+                                            handleAnchorClick(e, link.href)
+                                        }
+                                        data-testid={testId}
+                                        className={linkClasses}
+                                    >
+                                        {link.label}
+                                    </a>
+                                )}
+                            </li>
+                        );
+                    })}
                 </ul>
 
                 <div className="flex items-center gap-2 md:gap-3">
-                    {/* Phone call button */}
                     <a
                         href="tel:+918769005504"
                         data-testid="nav-call-button"
@@ -137,19 +166,34 @@ export const Navbar = ({ onOpenBooking }) => {
                     className="md:hidden bg-white border-t border-black/5 px-6 py-6"
                 >
                     <ul className="flex flex-col gap-4">
-                        {NAV_LINKS.map((link) => (
-                            <li key={link.href}>
-                                <a
-                                    href={link.href}
-                                    onClick={(e) =>
-                                        handleNavClick(e, link.href)
-                                    }
-                                    className="font-dmsans text-base text-[#1A1A1A]"
-                                >
-                                    {link.label}
-                                </a>
-                            </li>
-                        ))}
+                        {NAV_LINKS.map((link) => {
+                            const isRoute = !!link.to;
+                            const isActive =
+                                isRoute && location.pathname === link.to;
+                            return (
+                                <li key={link.label}>
+                                    {isRoute ? (
+                                        <Link
+                                            to={link.to}
+                                            onClick={handleRouteClick}
+                                            className={`font-dmsans text-base ${isActive ? "text-[#EB8A2C]" : "text-[#1A1A1A]"}`}
+                                        >
+                                            {link.label}
+                                        </Link>
+                                    ) : (
+                                        <a
+                                            href={link.href}
+                                            onClick={(e) =>
+                                                handleAnchorClick(e, link.href)
+                                            }
+                                            className="font-dmsans text-base text-[#1A1A1A]"
+                                        >
+                                            {link.label}
+                                        </a>
+                                    )}
+                                </li>
+                            );
+                        })}
                     </ul>
                     <button
                         type="button"
