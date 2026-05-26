@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { ArrowRight, X } from "lucide-react";
 
-export const BookingModal = ({ open, onClose }) => {
+export const BookingModal = ({ open, onClose, defaultService = "" }) => {
     useEffect(() => {
         if (open) {
             document.body.style.overflow = "hidden";
@@ -115,7 +115,7 @@ export const BookingModal = ({ open, onClose }) => {
                             id="m-service"
                             name="service"
                             required
-                            defaultValue=""
+                            defaultValue={defaultService || ""}
                             data-testid="contact-select-service"
                             className="field-input appearance-none bg-white"
                         >

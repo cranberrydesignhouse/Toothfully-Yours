@@ -248,7 +248,7 @@ export default function CosmeticCare() {
                             <span className="section-label">
                                 Results We Are Proud Of
                             </span>
-                            <h2 className="heading-serif text-[2rem] sm:text-4xl md:text-[3.25rem] text-[#1A1A1A]">
+                            <h2 className="heading-serif text-[2rem] sm:text-4xl md:text-[3.25rem] text-[#1A1A1A] tracking-[-0.02em] [word-spacing:-0.08em]">
                                 The Raw{" "}
                                 <span className="text-[#EB8A2C]">Truth.</span>
                             </h2>
@@ -329,7 +329,7 @@ export default function CosmeticCare() {
                                     src={DOCTOR_IMG}
                                     alt="Dr. Amruta Godbole"
                                     data-testid="cc-doctor-image"
-                                    className="circle-photo w-72 h-72 sm:w-80 sm:h-80 md:w-[26rem] md:h-[26rem] mx-auto border-[6px] border-white object-cover object-top"
+                                    className="circle-photo w-72 h-72 sm:w-80 sm:h-80 md:w-[26rem] md:h-[26rem] mx-auto border-[6px] border-white object-cover object-[center_28%]"
                                 />
                             </div>
                         </Reveal>
@@ -463,6 +463,7 @@ export default function CosmeticCare() {
             <BookingModal
                 open={bookingOpen}
                 onClose={() => setBookingOpen(false)}
+                defaultService="Cosmetic & Aesthetic Care"
             />
         </div>
     );
