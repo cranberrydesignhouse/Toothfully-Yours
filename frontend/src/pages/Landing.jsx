@@ -153,6 +153,7 @@ const SERVICES = [
             "Preventive Care",
         ],
         img: IMG.services[1],
+        href: "/implants-restoration",
     },
     {
         title: "Corrective Alignment",

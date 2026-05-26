@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Landing from "@/pages/Landing";
 import ThankYou from "@/pages/ThankYou";
 import CosmeticCare from "@/pages/CosmeticCare";
+import ImplantsRestoration from "@/pages/ImplantsRestoration";
 
 function App() {
     return (
@@ -13,6 +14,10 @@ function App() {
                     <Route
                         path="/cosmetic-aesthetic-care"
                         element={<CosmeticCare />}
+                    />
+                    <Route
+                        path="/implants-restoration"
+                        element={<ImplantsRestoration />}
                     />
                     <Route path="/thank-you" element={<ThankYou />} />
                 </Routes>
