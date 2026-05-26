@@ -30,19 +30,25 @@ const TABS = [
         label: "Smile Design",
         items: [
             {
-                before: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/9pzucz03_happy-smiles-17.jpg",
-                after: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/c4hycjsb_happy-smiles-19.jpg",
-                note: "Full smile makeover, upper arch",
+                composite:
+                    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/s4vujdr8_cases-10.png",
             },
             {
-                before: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/5fgo7p2m_happy-smiles-20.jpg",
-                after: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/2jrgncoo_happy-smiles-21.jpg",
-                note: "Bite and alignment correction",
+                composite:
+                    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/mkob0e76_cases-11.png",
+                label: "Full Mouth Transformation",
             },
             {
-                before: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/38stcvur_happy-smiles-23.jpg",
-                after: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/5ebsdfid_happy-smiles-26.jpg",
-                note: "Reshaping and contouring",
+                composite:
+                    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/49ewoyos_cases-29.png",
+            },
+            {
+                composite:
+                    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/ndtuy3c9_cases-31.png",
+            },
+            {
+                composite:
+                    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/sr9dqtux_smile%20design%201.png",
             },
         ],
     },
@@ -50,14 +56,6 @@ const TABS = [
         id: "whitening",
         label: "Teeth Whitening",
         items: [
-            {
-                composite:
-                    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/alpglcjp_cases-10.png",
-            },
-            {
-                composite:
-                    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/wjwuxpfw_cases-11.png",
-            },
             {
                 composite:
                     "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/tcj1ecz2_cases-15.png",
@@ -112,16 +110,24 @@ const BACard = ({ item, testId }) => (
             <div className="relative aspect-square overflow-hidden group">
                 <img
                     src={item.composite}
-                    alt="Before and after"
+                    alt={item.label || "Before and after"}
                     loading="lazy"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
                 />
-                <span className="absolute top-3 left-3 font-dmsans text-[0.6rem] tracking-[0.18em] uppercase bg-white/95 text-[#1A1A1A] rounded-full px-2.5 py-1">
-                    Before
-                </span>
-                <span className="absolute top-[calc(50%+8px)] left-3 font-dmsans text-[0.6rem] tracking-[0.18em] uppercase bg-[#EB8A2C] text-white rounded-full px-2.5 py-1">
-                    After
-                </span>
+                {item.label ? (
+                    <span className="absolute top-3 left-3 font-dmsans text-[0.6rem] tracking-[0.18em] uppercase bg-[#1A1A1A] text-white rounded-full px-2.5 py-1">
+                        {item.label}
+                    </span>
+                ) : (
+                    <>
+                        <span className="absolute top-3 left-3 font-dmsans text-[0.6rem] tracking-[0.18em] uppercase bg-white/95 text-[#1A1A1A] rounded-full px-2.5 py-1">
+                            Before
+                        </span>
+                        <span className="absolute top-[calc(50%+8px)] left-3 font-dmsans text-[0.6rem] tracking-[0.18em] uppercase bg-[#EB8A2C] text-white rounded-full px-2.5 py-1">
+                            After
+                        </span>
+                    </>
+                )}
             </div>
         ) : (
             <div className="grid grid-cols-2">
