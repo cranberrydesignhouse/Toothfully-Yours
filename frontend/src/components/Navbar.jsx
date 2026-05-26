@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { Menu, X, Phone } from "lucide-react";
 
 const NAV_LINKS = [
@@ -15,6 +16,9 @@ const LOGO_URL =
 export const Navbar = ({ onOpenBooking }) => {
     const [scrolled, setScrolled] = useState(false);
     const [open, setOpen] = useState(false);
+    const location = useLocation();
+    const navigate = useNavigate();
+    const onHome = location.pathname === "/";
 
     useEffect(() => {
         const onScroll = () => setScrolled(window.scrollY > 8);
@@ -23,11 +27,26 @@ export const Navbar = ({ onOpenBooking }) => {
         return () => window.removeEventListener("scroll", onScroll);
     }, []);
 
+    // When arriving at "/" with a hash (e.g. /#services), smooth-scroll to it.
+    useEffect(() => {
+        if (onHome && location.hash) {
+            const id = location.hash;
+            requestAnimationFrame(() => {
+                const el = document.querySelector(id);
+                if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+            });
+        }
+    }, [onHome, location.hash, location.key]);
+
     const handleNavClick = (e, href) => {
         e.preventDefault();
         setOpen(false);
-        const el = document.querySelector(href);
-        if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+        if (onHome) {
+            const el = document.querySelector(href);
+            if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+        } else {
+            navigate(`/${href}`);
+        }
     };
 
     const handleBook = (e) => {

@@ -171,7 +171,7 @@ export default function CosmeticCare() {
                     </div>
                     <div className="md:col-span-6 flex justify-center">
                         <Reveal delay={120}>
-                            <div className="relative w-[280px] h-[280px] sm:w-[360px] sm:h-[360px] md:w-[460px] md:h-[460px]">
+                            <div className="relative w-[260px] h-[260px] sm:w-[320px] sm:h-[320px] md:w-[300px] md:h-[300px] lg:w-[440px] lg:h-[440px]">
                                 <div className="absolute -inset-5 rounded-full bg-white -z-10" />
                                 <img
                                     src={HERO_IMG}

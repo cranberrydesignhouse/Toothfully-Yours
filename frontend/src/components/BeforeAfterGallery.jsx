@@ -1,24 +1,26 @@
 import { useState } from "react";
 
+// NOTE: These are placeholder pairings using existing customer-asset patient photos.
+// Replace with real before/after pairs once supplied by the clinic.
 const TABS = [
     {
         id: "veneers",
         label: "Dental Veneers",
         items: [
             {
-                before: "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=900&q=80",
-                after: "https://images.unsplash.com/photo-1581059729226-c493d3086748?auto=format&fit=crop&w=900&q=80",
-                note: "Discoloured enamel → porcelain veneers",
+                before: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/0lt9d93r_happy-smiles-6.webp",
+                after: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/pwmpesji_happy-smiles-7%20copy.jpg",
+                note: "Discoloured enamel to porcelain veneers",
             },
             {
-                before: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=900&q=80",
-                after: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=900&q=80",
-                note: "Chipped front teeth → seamless veneers",
+                before: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/450lfsga_happy-smiles-10.jpg",
+                after: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/vtjot904_happy-smiles-11%20copy.jpg",
+                note: "Chipped front teeth to seamless veneers",
             },
             {
-                before: "https://images.unsplash.com/photo-1581585093540-7e0c44a9a046?auto=format&fit=crop&w=900&q=80",
-                after: "https://images.unsplash.com/photo-1612277795421-9bc7706a4a34?auto=format&fit=crop&w=900&q=80",
-                note: "Uneven shape → contoured ceramics",
+                before: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/1352cymq_happy-smiles-16.jpg",
+                after: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/b6v1339i_happy-smiles-18%20copy.jpg",
+                note: "Uneven shape to contoured ceramics",
             },
         ],
     },
@@ -27,19 +29,19 @@ const TABS = [
         label: "Smile Design",
         items: [
             {
-                before: "https://images.unsplash.com/photo-1559588944-c2b9fbd8b8a3?auto=format&fit=crop&w=900&q=80",
-                after: "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=900&q=80",
+                before: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/9pzucz03_happy-smiles-17.jpg",
+                after: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/c4hycjsb_happy-smiles-19.jpg",
                 note: "Full smile makeover, upper arch",
             },
             {
-                before: "https://images.unsplash.com/photo-1581585093540-7e0c44a9a046?auto=format&fit=crop&w=900&q=80",
-                after: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=900&q=80",
-                note: "Bite + alignment correction",
+                before: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/5fgo7p2m_happy-smiles-20.jpg",
+                after: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/2jrgncoo_happy-smiles-21.jpg",
+                note: "Bite and alignment correction",
             },
             {
-                before: "https://images.unsplash.com/photo-1559586784-3f1c39e7d59e?auto=format&fit=crop&w=900&q=80",
-                after: "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=900&q=80",
-                note: "Reshaping & contouring",
+                before: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/38stcvur_happy-smiles-23.jpg",
+                after: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/5ebsdfid_happy-smiles-26.jpg",
+                note: "Reshaping and contouring",
             },
         ],
     },
@@ -48,19 +50,19 @@ const TABS = [
         label: "Teeth Whitening",
         items: [
             {
-                before: "https://images.unsplash.com/photo-1581585093540-7e0c44a9a046?auto=format&fit=crop&w=900&q=80",
-                after: "https://images.unsplash.com/photo-1612277795421-9bc7706a4a34?auto=format&fit=crop&w=900&q=80",
+                before: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/u6mx2190_happy-smiles-27.jpg",
+                after: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/ll2i0mkx_happy-smiles-29.jpg",
                 note: "In-clinic professional whitening",
             },
             {
-                before: "https://images.unsplash.com/photo-1559588944-c2b9fbd8b8a3?auto=format&fit=crop&w=900&q=80",
-                after: "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?auto=format&fit=crop&w=900&q=80",
+                before: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/5kn1bway_happy-smiles-2%20copy.jpg",
+                after: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/jf4w2vhu_happy-smiles-4%20copy.jpg",
                 note: "Coffee staining lifted",
             },
             {
-                before: "https://images.unsplash.com/photo-1559586784-3f1c39e7d59e?auto=format&fit=crop&w=900&q=80",
-                after: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=900&q=80",
-                note: "Take-home + clinic combo",
+                before: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/6ahoqdmo_happy-smiles-3.webp",
+                after: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/w76lxasr_happy-smiles-15.webp",
+                note: "Brighter natural shade",
             },
         ],
     },
