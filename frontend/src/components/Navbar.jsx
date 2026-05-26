@@ -87,7 +87,7 @@ export const Navbar = ({ onOpenBooking }) => {
                         className="inline-flex items-center gap-2 h-10 md:h-11 px-3 md:px-4 rounded-full border border-[#1A1A1A] text-[#1A1A1A] hover:bg-[#1A1A1A] hover:text-white transition-colors"
                     >
                         <Phone size={16} strokeWidth={1.8} />
-                        <span className="hidden lg:inline font-dmsans text-[0.92rem] font-medium tracking-tight">
+                        <span className="hidden lg:inline font-dmsans text-[0.92rem] font-semibold tracking-tight">
                             +91 87690 05504
                         </span>
                     </a>

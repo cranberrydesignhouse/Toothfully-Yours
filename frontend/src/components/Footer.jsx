@@ -53,7 +53,7 @@ export const Footer = () => {
                         <p className="mt-5 font-dmsans text-[0.95rem] text-white/75 leading-relaxed max-w-sm">
                             A NYU-trained, Mumbai-based dental practice
                             crafting cosmetic, restorative, and corrective
-                            smiles — with quiet precision, in Khar West.
+                            smiles with quiet precision, in Khar West.
                         </p>
 
                         <div className="mt-7 flex items-center gap-3">

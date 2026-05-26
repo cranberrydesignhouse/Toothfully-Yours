@@ -34,14 +34,35 @@ const IMG = {
         "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/n84xg6ne_Dr.%20Paras%20Kothari.jpg",
     ],
     gallery: [
-        "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/5sspdraq_happy-smiles-1.webp",
-        "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/w76lxasr_happy-smiles-15.webp",
-        "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/0lt9d93r_happy-smiles-6.webp",
-        "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/x16srlj0_happy-smiles-8.webp",
-        "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/6ahoqdmo_happy-smiles-3.webp",
-        "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/akfp68ue_happy-smiles-2.webp",
+        {
+            src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/5sspdraq_happy-smiles-1.webp",
+            pos: "50% 30%",
+        },
+        {
+            src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/w76lxasr_happy-smiles-15.webp",
+            pos: "50% 55%",
+        },
+        {
+            src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/0lt9d93r_happy-smiles-6.webp",
+            pos: "50% 45%",
+        },
+        {
+            src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/x16srlj0_happy-smiles-8.webp",
+            pos: "65% 25%",
+        },
+        {
+            src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/6ahoqdmo_happy-smiles-3.webp",
+            pos: "50% 35%",
+        },
+        {
+            src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/akfp68ue_happy-smiles-2.webp",
+            pos: "50% 30%",
+        },
     ],
 };
+
+const HERO_VIDEO =
+    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/92an86dq_TY%20hero%20section%20video.mp4";
 
 const ADDRESS_TEXT =
     "Homeo House, 15th Road, Diagonally Opp. Lane to Starbucks (Red Chillies Bldg.), Khar West, Mumbai, Maharashtra 400052";
@@ -228,7 +249,10 @@ export default function Landing() {
                             <div className="mt-9 flex items-center gap-5 sm:gap-10">
                                 <div data-testid="trust-experience" className="text-left">
                                     <p className="font-dmsans font-bold text-[1.7rem] md:text-[2rem] text-[#EB8A2C] leading-none tracking-tight">
-                                        10+ yrs
+                                        10+
+                                        <span className="font-dmsans font-medium text-[0.85rem] md:text-[0.95rem] text-[#EB8A2C]/85 ml-1.5 align-middle">
+                                            yrs
+                                        </span>
                                     </p>
                                     <p className="mt-2 font-dmsans text-[0.7rem] md:text-[0.78rem] text-[#1A1A1A] leading-tight">
                                         Across two continents
@@ -242,12 +266,12 @@ export default function Landing() {
                                     data-testid="trust-google-reviews"
                                     className="text-left group"
                                 >
-                                    <p className="font-dmsans font-bold text-[1.7rem] md:text-[2rem] text-[#EB8A2C] leading-none tracking-tight inline-flex items-center gap-1">
-                                        5
+                                    <p className="font-dmsans font-bold text-[1.7rem] md:text-[2rem] leading-none tracking-tight inline-flex items-center gap-1">
+                                        <span className="text-[#1A1A1A]">5</span>
                                         <Star
-                                            size={20}
-                                            fill="#EB8A2C"
-                                            color="#EB8A2C"
+                                            size={22}
+                                            fill="#FBBC05"
+                                            color="#FBBC05"
                                             strokeWidth={0}
                                             className="translate-y-[-1px]"
                                         />
@@ -264,11 +288,15 @@ export default function Landing() {
                         <Reveal delay={120}>
                             <div className="relative">
                                 <div className="absolute -inset-3 md:-inset-5 rounded-[40px] bg-[#F5F2EF] -z-10" />
-                                <img
-                                    src={IMG.hero}
-                                    alt="Dentist treating a relaxed patient in a modern clinic"
-                                    data-testid="hero-image"
-                                    className="w-full h-[340px] sm:h-[420px] md:h-[560px] object-cover rounded-[28px] md:rounded-[32px] shadow-[0_30px_60px_-30px_rgba(0,0,0,0.35)]"
+                                <video
+                                    src={HERO_VIDEO}
+                                    autoPlay
+                                    loop
+                                    muted
+                                    playsInline
+                                    preload="auto"
+                                    data-testid="hero-video"
+                                    className="w-full h-[340px] sm:h-[420px] md:h-[560px] object-cover rounded-[28px] md:rounded-[32px] shadow-[0_30px_60px_-30px_rgba(0,0,0,0.35)] bg-[#F5F2EF]"
                                 />
                             </div>
                         </Reveal>
@@ -528,17 +556,18 @@ export default function Landing() {
                     </Reveal>
 
                     <Reveal delay={120}>
-                        <div className="mt-10 md:mt-14 grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-5">
-                            {IMG.gallery.map((src, i) => (
+                        <div className="mt-10 md:mt-14 max-w-[820px] mx-auto grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+                            {IMG.gallery.map((g, i) => (
                                 <div
-                                    key={src}
+                                    key={g.src}
                                     data-testid={`gallery-image-${i}`}
                                     className="overflow-hidden rounded-2xl bg-white aspect-square"
                                 >
                                     <img
-                                        src={src}
+                                        src={g.src}
                                         alt={`Patient smile ${i + 1}`}
-                                        className="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-[1.04]"
+                                        style={{ objectPosition: g.pos }}
+                                        className="w-full h-full object-cover transition-transform duration-700 hover:scale-[1.04]"
                                     />
                                 </div>
                             ))}

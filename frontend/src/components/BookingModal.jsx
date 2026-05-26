@@ -51,7 +51,7 @@ export const BookingModal = ({ open, onClose }) => {
                 <div className="px-7 pt-9 pb-3 sm:px-10 sm:pt-12">
                     <span className="section-label">Book Your Visit</span>
                     <h3 className="heading-serif text-3xl sm:text-4xl text-[#1A1A1A]">
-                        Let's find a time that suits you.
+                        Start wherever feels comfortable.
                     </h3>
                     <p className="mt-3 font-dmsans text-sm sm:text-[0.95rem] text-[#5C5C5C] max-w-md leading-relaxed">
                         Share a few details and our team will reach out within
