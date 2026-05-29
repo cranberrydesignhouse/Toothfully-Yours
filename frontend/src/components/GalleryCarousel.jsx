@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-// Split items into pages of `perPage` size. Last page may be partial — we no
+// Split items into pages of `perPage` size. Last page may be partial, we no
 // longer pad with looped items because the visible repeat reads as a duplicate.
 const paginate = (items, perPage) => {
     if (items.length === 0) return [];

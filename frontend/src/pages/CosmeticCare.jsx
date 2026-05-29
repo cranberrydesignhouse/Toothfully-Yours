@@ -288,7 +288,7 @@ export default function CosmeticCare() {
                                     Dr. Amruta Godbole has spent two decades
                                     moving between New York and Mumbai, refining
                                     one of the most demanding crafts in
-                                    modern dentistry — making a cosmetic result
+                                    modern dentistry, making a cosmetic result
                                     look like it was always there.
                                 </p>
                                 <p>
@@ -296,7 +296,7 @@ export default function CosmeticCare() {
                                     her work with the Academy of Cosmetic
                                     Dentistry (an affiliate of the AACD) means
                                     every smile design begins long before the
-                                    drill — with study models, photographs,
+                                    drill, with study models, photographs,
                                     shade-mapping and a face-led plan. Patients
                                     walk in for veneers and walk out feeling
                                     like the better version of themselves they
@@ -377,7 +377,7 @@ export default function CosmeticCare() {
                             </h2>
                             <p className="mt-5 font-dmsans text-[#5C5C5C] max-w-md leading-relaxed">
                                 Curious about veneers, whitening, or a full
-                                smile design? Walk in for a consult — no
+                                smile design? Walk in for a consult, no
                                 pressure, all options on the table.
                             </p>
 
@@ -390,8 +390,8 @@ export default function CosmeticCare() {
                                 <ContactRow
                                     icon={Phone}
                                     label="Phone"
-                                    value="+91 87690 05504"
-                                    href="tel:+918769005504"
+                                    value="+91 97690 05504"
+                                    href="tel:+919769005504"
                                 />
                                 <ContactRow
                                     icon={Mail}

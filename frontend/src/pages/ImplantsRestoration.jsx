@@ -298,7 +298,7 @@ export default function ImplantsRestoration() {
                                 <p>
                                     Dr. Amruta Godbole has spent two decades
                                     quietly mastering the side of dentistry
-                                    that most people never see — the
+                                    that most people never see, the
                                     restorations that hold a tooth together
                                     when it is on the brink, and the implants
                                     that bring back what was already gone.
@@ -390,7 +390,7 @@ export default function ImplantsRestoration() {
                             <p className="mt-5 font-dmsans text-[#5C5C5C] max-w-md leading-relaxed">
                                 Whether it's a sudden ache, a tooth you've
                                 been putting off, or a plan for the long term
-                                — walk in for a consult. No pressure, all
+                               , walk in for a consult. No pressure, all
                                 options on the table.
                             </p>
 
@@ -403,8 +403,8 @@ export default function ImplantsRestoration() {
                                 <ContactRow
                                     icon={Phone}
                                     label="Phone"
-                                    value="+91 87690 05504"
-                                    href="tel:+918769005504"
+                                    value="+91 97690 05504"
+                                    href="tel:+919769005504"
                                 />
                                 <ContactRow
                                     icon={Mail}

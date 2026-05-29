@@ -22,7 +22,7 @@ const HERO_IMG =
     "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/2atd5hyi_global%20access%20hero.png";
 
 const DOCTOR_IMG =
-    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/r7wm2nb4_Dr.%20Amruta.jpg";
+    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/tcs2i6u0_IMG_8096.jpg";
 
 const SIGNATURE_TREATMENTS = [
     {
@@ -406,7 +406,7 @@ export default function GlobalAccess() {
                 </div>
             </section>
 
-            {/* 6. CONTACT — Welcome to Mumbai */}
+            {/* 6. CONTACT, Welcome to Mumbai */}
             <section
                 data-testid="ga-contact"
                 className="bg-[#F5F2EF] py-16 md:py-32"
@@ -436,8 +436,8 @@ export default function GlobalAccess() {
                                 <ContactRow
                                     icon={Phone}
                                     label="Phone / WhatsApp"
-                                    value="+91 87690 05504"
-                                    href="tel:+918769005504"
+                                    value="+91 97690 05504"
+                                    href="tel:+919769005504"
                                 />
                                 <ContactRow
                                     icon={Mail}
@@ -484,7 +484,7 @@ export default function GlobalAccess() {
                                     <ArrowRight size={16} strokeWidth={2} />
                                 </button>
                                 <a
-                                    href="https://wa.me/918769005504"
+                                    href="https://wa.me/919769005504"
                                     target="_blank"
                                     rel="noreferrer"
                                     data-testid="ga-whatsapp-cta"

@@ -7,6 +7,7 @@ import ImplantsRestoration from "@/pages/ImplantsRestoration";
 import CorrectiveAlignment from "@/pages/CorrectiveAlignment";
 import GlobalAccess from "@/pages/GlobalAccess";
 import NeuromuscularDentistry from "@/pages/NeuromuscularDentistry";
+import WhatsappFab from "@/components/WhatsappFab";
 
 function App() {
     return (
@@ -36,6 +37,7 @@ function App() {
                     />
                     <Route path="/thank-you" element={<ThankYou />} />
                 </Routes>
+                <WhatsappFab />
             </BrowserRouter>
         </div>
     );

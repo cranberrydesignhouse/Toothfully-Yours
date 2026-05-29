@@ -368,8 +368,8 @@ export default function CorrectiveAlignment() {
                                 <ContactRow
                                     icon={Phone}
                                     label="Phone"
-                                    value="+91 87690 05504"
-                                    href="tel:+918769005504"
+                                    value="+91 97690 05504"
+                                    href="tel:+919769005504"
                                 />
                                 <ContactRow
                                     icon={Mail}

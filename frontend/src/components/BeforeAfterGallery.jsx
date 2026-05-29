@@ -131,7 +131,7 @@ const BACard = ({ item, testId }) => (
                 <div className="relative aspect-[4/5] overflow-hidden group">
                     <img
                         src={item.before}
-                        alt={`Before — ${item.note}`}
+                        alt={`Before, ${item.note}`}
                         loading="lazy"
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.05]"
                     />
@@ -142,7 +142,7 @@ const BACard = ({ item, testId }) => (
                 <div className="relative aspect-[4/5] overflow-hidden group">
                     <img
                         src={item.after}
-                        alt={`After — ${item.note}`}
+                        alt={`After, ${item.note}`}
                         loading="lazy"
                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.05]"
                     />

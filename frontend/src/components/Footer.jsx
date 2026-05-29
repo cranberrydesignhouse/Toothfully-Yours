@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Instagram, Linkedin } from "lucide-react";
 
 const QUICK_LINKS = [
@@ -5,31 +6,32 @@ const QUICK_LINKS = [
     { label: "Our Team", href: "#team" },
     { label: "Testimonials", href: "#testimonials" },
     { label: "Gallery", href: "#gallery" },
+    { label: "Global Access", to: "/global-access" },
     { label: "Contact", href: "#contact" },
 ];
 
 const SERVICES = [
-    { label: "Cosmetic & Aesthetic Care" },
-    { label: "Implants & Restoration" },
-    { label: "Corrective Alignment" },
-    { label: "Neuromuscular Dentistry" },
-    { label: "General Checkup" },
+    { label: "Cosmetic & Aesthetic Care", to: "/cosmetic-aesthetic-care" },
+    { label: "Implants & Restoration", to: "/implants-restoration" },
+    { label: "Corrective Alignment", to: "/corrective-alignment" },
+    { label: "Neuromuscular Dentistry", to: "/neuromuscular-dentistry" },
 ];
 
 const LOGO_INVERTED =
     "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/9mp1q9ea_TY%20inverted%20logo.png";
 
 export const Footer = () => {
-    const handleClick = (e, href) => {
-        e.preventDefault();
-        const el = document.querySelector(href);
-        if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
-    };
+    const onHome =
+        typeof window !== "undefined" && window.location.pathname === "/";
 
-    const handleServiceClick = (e) => {
+    const handleAnchorClick = (e, href) => {
         e.preventDefault();
-        const el = document.querySelector("#services");
-        if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+        if (onHome) {
+            const el = document.querySelector(href);
+            if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+        } else {
+            window.location.href = `/${href}`;
+        }
     };
 
     return (
@@ -88,14 +90,13 @@ export const Footer = () => {
                         <ul className="space-y-3">
                             {SERVICES.map((s) => (
                                 <li key={s.label}>
-                                    <a
-                                        href="#services"
-                                        onClick={handleServiceClick}
+                                    <Link
+                                        to={s.to}
                                         data-testid={`footer-service-${s.label.toLowerCase().replace(/[^a-z]+/g, "-")}`}
                                         className="font-dmsans text-sm text-white/80 hover:text-[#EB8A2C] transition-colors"
                                     >
                                         {s.label}
-                                    </a>
+                                    </Link>
                                 </li>
                             ))}
                         </ul>
@@ -108,17 +109,27 @@ export const Footer = () => {
                         </p>
                         <ul className="space-y-3">
                             {QUICK_LINKS.map((link) => (
-                                <li key={link.href}>
-                                    <a
-                                        href={link.href}
-                                        onClick={(e) =>
-                                            handleClick(e, link.href)
-                                        }
-                                        data-testid={`footer-link-${link.label.toLowerCase().replace(/\s+/g, "-")}`}
-                                        className="font-dmsans text-sm text-white/80 hover:text-[#EB8A2C] transition-colors"
-                                    >
-                                        {link.label}
-                                    </a>
+                                <li key={link.label}>
+                                    {link.to ? (
+                                        <Link
+                                            to={link.to}
+                                            data-testid={`footer-link-${link.label.toLowerCase().replace(/\s+/g, "-")}`}
+                                            className="font-dmsans text-sm text-white/80 hover:text-[#EB8A2C] transition-colors"
+                                        >
+                                            {link.label}
+                                        </Link>
+                                    ) : (
+                                        <a
+                                            href={link.href}
+                                            onClick={(e) =>
+                                                handleAnchorClick(e, link.href)
+                                            }
+                                            data-testid={`footer-link-${link.label.toLowerCase().replace(/\s+/g, "-")}`}
+                                            className="font-dmsans text-sm text-white/80 hover:text-[#EB8A2C] transition-colors"
+                                        >
+                                            {link.label}
+                                        </a>
+                                    )}
                                 </li>
                             ))}
                         </ul>
@@ -138,10 +149,10 @@ export const Footer = () => {
                                     className="mt-0.5 shrink-0"
                                 />
                                 <a
-                                    href="tel:+918769005504"
+                                    href="tel:+919769005504"
                                     className="hover:text-[#EB8A2C] transition-colors"
                                 >
-                                    +91 87690 05504
+                                    +91 97690 05504
                                 </a>
                             </li>
                             <li className="flex items-start gap-3">

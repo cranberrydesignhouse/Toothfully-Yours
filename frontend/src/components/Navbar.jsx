@@ -1,10 +1,18 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X, Phone, ChevronDown } from "lucide-react";
+
+const SERVICE_ROUTES = [
+    { label: "Cosmetic & Aesthetic Care", to: "/cosmetic-aesthetic-care" },
+    { label: "Implants & Restoration", to: "/implants-restoration" },
+    { label: "Corrective Alignment", to: "/corrective-alignment" },
+    { label: "Neuromuscular Dentistry", to: "/neuromuscular-dentistry" },
+];
 
 // `to` = react-router route. `href` = same-page anchor (only valid on "/").
+// `submenu` = list of dropdown links.
 const NAV_LINKS = [
-    { label: "Services", href: "#services" },
+    { label: "Services", submenu: SERVICE_ROUTES },
     { label: "About", href: "#about" },
     { label: "Team", href: "#team" },
     { label: "Testimonials", href: "#testimonials" },
@@ -78,7 +86,7 @@ export const Navbar = ({ onOpenBooking }) => {
                     to="/"
                     data-testid="nav-logo"
                     className="flex items-center group shrink-0"
-                    aria-label="Toothfully Yours — home"
+                    aria-label="Toothfully Yours, home"
                 >
                     <div className="overflow-hidden h-9 md:h-11 flex items-start mt-1 md:mt-1.5">
                         <img
@@ -92,9 +100,69 @@ export const Navbar = ({ onOpenBooking }) => {
                 <ul className="hidden md:flex items-center gap-4 lg:gap-6 xl:gap-7">
                     {NAV_LINKS.map((link) => {
                         const isRoute = !!link.to;
-                        const isActive =
-                            isRoute && location.pathname === link.to;
+                        const hasSubmenu = !!link.submenu;
+                        const isActive = hasSubmenu
+                            ? link.submenu.some(
+                                  (s) => s.to === location.pathname,
+                              )
+                            : isRoute && location.pathname === link.to;
                         const testId = `nav-link-${link.label.toLowerCase().replace(/\s+/g, "-")}`;
+
+                        if (hasSubmenu) {
+                            return (
+                                <li
+                                    key={link.label}
+                                    className="relative group"
+                                >
+                                    <button
+                                        type="button"
+                                        data-testid={testId}
+                                        className={`whitespace-nowrap inline-flex items-center gap-1 ${
+                                            isActive
+                                                ? activeLinkClasses
+                                                : linkClasses
+                                        }`}
+                                    >
+                                        {link.label}
+                                        <ChevronDown
+                                            size={14}
+                                            strokeWidth={1.8}
+                                            className="transition-transform group-hover:rotate-180"
+                                        />
+                                    </button>
+                                    <div className="absolute left-1/2 -translate-x-1/2 top-full pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                                        <ul
+                                            data-testid="nav-services-dropdown"
+                                            className="min-w-[260px] bg-white rounded-2xl border border-black/8 shadow-[0_20px_50px_-15px_rgba(0,0,0,0.25)] py-2 overflow-hidden"
+                                        >
+                                            {link.submenu.map((s) => {
+                                                const sActive =
+                                                    location.pathname === s.to;
+                                                return (
+                                                    <li key={s.to}>
+                                                        <Link
+                                                            to={s.to}
+                                                            onClick={
+                                                                handleRouteClick
+                                                            }
+                                                            data-testid={`nav-services-${s.to.replace("/", "")}`}
+                                                            className={`block px-5 py-3 font-dmsans text-[0.92rem] tracking-tight transition-colors ${
+                                                                sActive
+                                                                    ? "text-[#EB8A2C] bg-[#F5F2EF]"
+                                                                    : "text-[#1A1A1A] hover:text-[#EB8A2C] hover:bg-[#F5F2EF]"
+                                                            }`}
+                                                        >
+                                                            {s.label}
+                                                        </Link>
+                                                    </li>
+                                                );
+                                            })}
+                                        </ul>
+                                    </div>
+                                </li>
+                            );
+                        }
+
                         return (
                             <li key={link.label}>
                                 {isRoute ? (
@@ -129,14 +197,14 @@ export const Navbar = ({ onOpenBooking }) => {
 
                 <div className="flex items-center gap-2 shrink-0">
                     <a
-                        href="tel:+918769005504"
+                        href="tel:+919769005504"
                         data-testid="nav-call-button"
-                        aria-label="Call +91 87690 05504"
+                        aria-label="Call +91 97690 05504"
                         className="inline-flex items-center gap-2 h-9 md:h-10 px-3 md:px-3.5 rounded-full border border-[#1A1A1A] text-[#1A1A1A] hover:bg-[#1A1A1A] hover:text-white transition-colors whitespace-nowrap"
                     >
                         <Phone size={14} strokeWidth={1.8} />
                         <span className="hidden xl:inline font-dmsans text-[0.85rem] font-semibold tracking-tight">
-                            +91 87690 05504
+                            +91 97690 05504
                         </span>
                     </a>
 
@@ -168,8 +236,37 @@ export const Navbar = ({ onOpenBooking }) => {
                     <ul className="flex flex-col gap-4">
                         {NAV_LINKS.map((link) => {
                             const isRoute = !!link.to;
+                            const hasSubmenu = !!link.submenu;
                             const isActive =
                                 isRoute && location.pathname === link.to;
+                            if (hasSubmenu) {
+                                return (
+                                    <li key={link.label}>
+                                        <p className="font-dmsans text-[0.7rem] tracking-[0.2em] uppercase text-[#5C5C5C] mb-2">
+                                            {link.label}
+                                        </p>
+                                        <ul className="pl-3 border-l border-black/10 space-y-3">
+                                            {link.submenu.map((s) => {
+                                                const sActive =
+                                                    location.pathname === s.to;
+                                                return (
+                                                    <li key={s.to}>
+                                                        <Link
+                                                            to={s.to}
+                                                            onClick={
+                                                                handleRouteClick
+                                                            }
+                                                            className={`font-dmsans text-[0.95rem] ${sActive ? "text-[#EB8A2C]" : "text-[#1A1A1A]"}`}
+                                                        >
+                                                            {s.label}
+                                                        </Link>
+                                                    </li>
+                                                );
+                                            })}
+                                        </ul>
+                                    </li>
+                                );
+                            }
                             return (
                                 <li key={link.label}>
                                     {isRoute ? (

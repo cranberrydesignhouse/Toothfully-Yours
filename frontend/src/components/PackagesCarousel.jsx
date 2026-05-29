@@ -141,7 +141,7 @@ const PACKAGES = [
     },
 ];
 
-// Static FX table — approximate rates as of early 2026.
+// Static FX table, approximate rates as of early 2026.
 // `rate` = how many of this currency equal 1 INR.
 const CURRENCIES = [
     { code: "USD", label: "US Dollar", flag: "🇺🇸", rate: 1 / 84.5 },

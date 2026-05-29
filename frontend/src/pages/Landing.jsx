@@ -302,7 +302,7 @@ export default function Landing() {
                                 className="mt-5 max-w-xl font-dmsans text-[0.95rem] md:text-[1.05rem] leading-relaxed text-[#5C5C5C]"
                             >
                                 Cosmetic and Comprehensive Dentistry,
-                                designed around you — by Dr. Amruta Godbole, in
+                                designed around you, by Dr. Amruta Godbole, in
                                 the heart of Khar West, Mumbai.
                             </p>
                             <div className="mt-9 flex flex-col sm:flex-row gap-3 sm:gap-4">
@@ -332,7 +332,7 @@ export default function Landing() {
                                 </a>
                             </div>
 
-                            {/* Trust strip — stats row */}
+                            {/* Trust strip, stats row */}
                             <div className="mt-14 md:mt-16 flex items-stretch gap-5 sm:gap-7">
                                 <div data-testid="trust-experience" className="text-left">
                                     <p className="font-dmsans font-bold text-[1.5rem] md:text-[1.85rem] text-[#1A1A1A] leading-none tracking-tight">
@@ -454,14 +454,6 @@ export default function Landing() {
                                             </li>
                                         ))}
                                     </ul>
-                                    {s.href && (
-                                        <span
-                                            data-testid={`service-link-${i}`}
-                                            className="mt-5 inline-flex items-center gap-1.5 font-dmsans text-[0.78rem] tracking-[0.16em] uppercase text-[#EB8A2C] border-b border-[#EB8A2C]/30 group-hover:border-[#EB8A2C] pb-0.5 transition-all"
-                                        >
-                                            Explore <ArrowRight size={13} strokeWidth={2} />
-                                        </span>
-                                    )}
                                 </article>
                             );
                             return (
@@ -498,7 +490,7 @@ export default function Landing() {
                             <div className="mt-7 font-dmsans text-[#5C5C5C] text-base md:text-[1.05rem] leading-relaxed space-y-5 max-w-2xl">
                                 <p>
                                     Dr. Amruta Godbole is a Mumbai-born,
-                                    NYU-trained dentist with over a decade of
+                                    NYU-trained dentist with over two decades of
                                     clinical experience across two continents.
                                     She earned her DDS from NYU College of
                                     Dentistry in 2010, served as a teaching
@@ -751,8 +743,8 @@ export default function Landing() {
                                 <ContactRow
                                     icon={Phone}
                                     label="Phone"
-                                    value="+91 87690 05504"
-                                    href="tel:+918769005504"
+                                    value="+91 97690 05504"
+                                    href="tel:+919769005504"
                                     testId="contact-phone"
                                 />
                                 <ContactRow
