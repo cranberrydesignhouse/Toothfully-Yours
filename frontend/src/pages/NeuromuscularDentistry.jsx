@@ -16,7 +16,7 @@ import BookingModal from "@/components/BookingModal";
 import NeuromuscularFaq from "@/components/NeuromuscularFaq";
 
 const HERO_IMG =
-    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/9rrz4g9h_TMJ.jpg";
+    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/v986au7b_TMJ.png";
 
 const DOCTOR_IMG =
     "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/r7wm2nb4_Dr.%20Amruta.jpg";
@@ -96,6 +96,7 @@ const TREATMENTS = [
     "Airway-Focused Planning",
     "Restorative Correction",
     "Night Guards",
+    "Anti-Snoring Devices",
 ];
 
 const Reveal = ({ children, delay = 0, className = "" }) => {
@@ -213,7 +214,7 @@ export default function NeuromuscularDentistry() {
                                     src={HERO_IMG}
                                     alt="Neuromuscular Dentistry at Toothfully Yours"
                                     data-testid="nm-hero-image"
-                                    className="circle-photo w-full h-full border-[6px] border-white object-cover object-center"
+                                    className="circle-photo w-full h-full border-[6px] border-white object-cover object-[60%_45%]"
                                 />
                             </div>
                         </Reveal>
@@ -231,7 +232,7 @@ export default function NeuromuscularDentistry() {
                     <Reveal>
                         <div className="max-w-2xl">
                             <span className="section-label">Let's Assess</span>
-                            <h2 className="heading-serif text-[2rem] sm:text-4xl md:text-[3.25rem] text-[#1A1A1A] leading-[1.05]">
+                            <h2 className="heading-serif text-[2rem] sm:text-4xl md:text-[3.25rem] text-[#1A1A1A] leading-[1.2]">
                                 Are you experiencing
                                 <br />
                                 these{" "}
@@ -240,7 +241,7 @@ export default function NeuromuscularDentistry() {
                                 </span>
                             </h2>
                             <p className="mt-5 font-dmsans text-[#5C5C5C] text-[0.95rem] md:text-base leading-relaxed">
-                                Tick the ones that feel familiar. If even two
+                                Note the ones that feel familiar. If even two
                                 or three apply, a neuromuscular evaluation is
                                 worth a conversation.
                             </p>
@@ -288,7 +289,7 @@ export default function NeuromuscularDentistry() {
             {/* 3. ROOT-CAUSE ANALYSIS (dark) */}
             <section
                 data-testid="nm-root-cause"
-                className="bg-[#1F1D1B] py-16 md:py-32 text-white"
+                className="bg-[#545454] py-16 md:py-32 text-white"
             >
                 <div className="max-w-7xl mx-auto px-5 md:px-12 lg:px-16">
                     <Reveal>
@@ -296,7 +297,7 @@ export default function NeuromuscularDentistry() {
                             <span className="font-dmsans text-[0.72rem] tracking-[0.22em] uppercase text-[#EB8A2C]">
                                 Root-Cause Analysis
                             </span>
-                            <h2 className="mt-4 heading-serif text-[2rem] sm:text-4xl md:text-[3.25rem] text-white leading-[1.05]">
+                            <h2 className="mt-4 heading-serif text-[2rem] sm:text-4xl md:text-[3.25rem] text-white leading-[1.2]">
                                 Understanding the
                                 <br />
                                 jaw-muscle{" "}
@@ -304,7 +305,7 @@ export default function NeuromuscularDentistry() {
                                     connection.
                                 </span>
                             </h2>
-                            <p className="mt-5 font-dmsans text-white/65 text-[0.95rem] md:text-base leading-relaxed">
+                            <p className="mt-5 font-dmsans text-white/70 text-[0.95rem] md:text-base leading-relaxed">
                                 Most jaw pain isn't random. It follows a
                                 pattern, and once you can see it, the path to
                                 relief becomes obvious.
@@ -313,19 +314,19 @@ export default function NeuromuscularDentistry() {
                     </Reveal>
 
                     <div className="relative mt-14 md:mt-20">
-                        {/* Connecting line on desktop */}
+                        {/* Connecting line spans only between step 1 and step 3 centers (1/6 to 5/6 of row width) */}
                         <div
                             aria-hidden
-                            className="hidden md:block absolute top-[34px] left-[16%] right-[16%] h-px bg-white/15"
+                            className="hidden md:block absolute top-[34px] left-[16.67%] right-[16.67%] h-px bg-white/25"
                         />
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8 relative">
                             {ROOT_CAUSE.map((item, i) => (
                                 <Reveal key={item.n} delay={i * 110}>
                                     <div
                                         data-testid={`nm-rc-${i}`}
-                                        className="text-center md:text-left"
+                                        className="text-center flex flex-col items-center"
                                     >
-                                        <div className="relative inline-flex items-center justify-center h-[70px] w-[70px] rounded-full bg-[#1F1D1B] border border-white/15">
+                                        <div className="relative inline-flex items-center justify-center h-[70px] w-[70px] rounded-full bg-[#545454] border border-white/25">
                                             <span className="heading-serif text-[1.4rem] text-[#EB8A2C]">
                                                 {item.n}
                                             </span>
@@ -333,7 +334,7 @@ export default function NeuromuscularDentistry() {
                                         <h3 className="mt-7 font-dmsans font-semibold text-[1.1rem] md:text-[1.2rem] text-white tracking-tight">
                                             {item.title}
                                         </h3>
-                                        <p className="mt-3 font-dmsans text-[0.95rem] text-white/65 leading-relaxed max-w-md md:max-w-none">
+                                        <p className="mt-3 font-dmsans text-[0.95rem] text-white/70 leading-relaxed max-w-[20rem]">
                                             {item.copy}
                                         </p>
                                     </div>
@@ -353,7 +354,7 @@ export default function NeuromuscularDentistry() {
                     <Reveal>
                         <div className="max-w-2xl">
                             <span className="section-label">Scope of Care</span>
-                            <h2 className="heading-serif text-[2rem] sm:text-4xl md:text-[3.25rem] text-[#1A1A1A] leading-[1.05]">
+                            <h2 className="heading-serif text-[2rem] sm:text-4xl md:text-[3.25rem] text-[#1A1A1A] leading-[1.2]">
                                 Common conditions we{" "}
                                 <span className="text-[#EB8A2C]">address.</span>
                             </h2>
@@ -370,10 +371,10 @@ export default function NeuromuscularDentistry() {
                                     <span className="font-dmsans text-[0.66rem] tracking-[0.22em] uppercase text-[#EB8A2C]">
                                         {String(i + 1).padStart(2, "0")}
                                     </span>
-                                    <h3 className="mt-3 heading-serif text-[1.3rem] md:text-[1.45rem] text-[#1A1A1A] leading-[1.15]">
+                                    <h3 className="mt-3 font-dmsans font-semibold text-[1rem] md:text-[1.05rem] text-[#1A1A1A] tracking-tight leading-snug">
                                         {c.title}
                                     </h3>
-                                    <p className="mt-3 font-dmsans text-[0.92rem] text-[#5C5C5C] leading-relaxed">
+                                    <p className="mt-3 font-dmsans text-[0.9rem] text-[#5C5C5C] leading-relaxed">
                                         {c.copy}
                                     </p>
                                 </article>
@@ -481,12 +482,12 @@ export default function NeuromuscularDentistry() {
                             <Reveal key={t} delay={i * 50}>
                                 <li
                                     data-testid={`nm-treatment-${i}`}
-                                    className="group flex items-baseline gap-5 py-5 border-b border-black/10 transition-colors hover:border-[#EB8A2C]"
+                                    className="group flex items-center gap-5 py-5 border-b border-black/10 transition-colors hover:border-[#EB8A2C]"
                                 >
                                     <span className="font-dmsans text-[0.7rem] tracking-[0.2em] text-[#5C5C5C] group-hover:text-[#EB8A2C] transition-colors">
                                         {String(i + 1).padStart(2, "0")}
                                     </span>
-                                    <span className="heading-serif text-[1.25rem] md:text-[1.4rem] text-[#1A1A1A] group-hover:text-[#EB8A2C] transition-colors leading-[1.2]">
+                                    <span className="font-dmsans font-semibold text-[1rem] md:text-[1.05rem] text-[#1A1A1A] group-hover:text-[#EB8A2C] transition-colors tracking-tight">
                                         {t}
                                     </span>
                                     <ArrowRight
