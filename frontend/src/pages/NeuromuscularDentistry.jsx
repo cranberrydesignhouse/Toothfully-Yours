@@ -461,7 +461,7 @@ export default function NeuromuscularDentistry() {
                                         </p>
                                         <h3
                                             data-testid="nm-result-primary-title"
-                                            className="mt-2 heading-serif text-[1.6rem] sm:text-3xl md:text-[2.1rem] text-[#1A1A1A] !leading-[1.25]"
+                                            className="mt-2 font-dmsans font-semibold tracking-tight text-[1.85rem] sm:text-[2.2rem] md:text-[2.6rem] leading-[1.18] text-[#1A1A1A]"
                                         >
                                             {primary.title}
                                         </h3>
@@ -499,7 +499,7 @@ export default function NeuromuscularDentistry() {
                                 <div className="mt-5">
                                     <h3
                                         data-testid="nm-result-empty-title"
-                                        className="heading-serif text-[1.6rem] sm:text-3xl md:text-[2.1rem] text-[#1A1A1A] !leading-[1.25]"
+                                        className="font-dmsans font-semibold tracking-tight text-[1.85rem] sm:text-[2.2rem] md:text-[2.6rem] leading-[1.18] text-[#1A1A1A]"
                                     >
                                         No Clear Pattern Identified
                                     </h3>
