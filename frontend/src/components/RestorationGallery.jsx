@@ -9,16 +9,15 @@ const TABS = [
         items: [
             {
                 composite:
-                    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/mkob0e76_cases-11.png",
-                label: "Full Mouth Transformation",
+                    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/z1kdjnff_cases-12.jpg",
             },
             {
                 composite:
-                    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/s4vujdr8_cases-10.png",
+                    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/ricdxjwi_cases-13.jpg",
             },
             {
                 composite:
-                    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/ndtuy3c9_cases-31.png",
+                    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/81g14o68_implants2.jpg",
             },
         ],
     },
@@ -37,24 +36,6 @@ const TABS = [
             {
                 composite:
                     "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/sr9dqtux_smile%20design%201.png",
-            },
-        ],
-    },
-    {
-        id: "whitening",
-        label: "Teeth Whitening",
-        items: [
-            {
-                composite:
-                    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/tcj1ecz2_cases-15.png",
-            },
-            {
-                composite:
-                    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/it1msw5j_cases-16.png",
-            },
-            {
-                composite:
-                    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/jr436qjn_cases-17.png",
             },
         ],
     },

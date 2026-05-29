@@ -16,7 +16,7 @@ import RestorationGallery from "@/components/RestorationGallery";
 import ImplantsFaq from "@/components/ImplantsFaq";
 
 const HERO_IMG =
-    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/gjc4aqb9_RESTORATIVE%20tv.jpg";
+    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/hyxh2hgk_hero.png";
 
 const DOCTOR_IMG =
     "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/r7wm2nb4_Dr.%20Amruta.jpg";
@@ -40,7 +40,7 @@ const SERVICES = [
         id: "extraction",
         title: "Tooth Extraction",
         copy: "Gentle, precise removal when restoration isn't the kindest path forward.",
-        img: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/450lfsga_happy-smiles-10.jpg",
+        img: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/4k8wf4eo_tooth%20extraction.png",
     },
     {
         id: "crowns-bridges",
