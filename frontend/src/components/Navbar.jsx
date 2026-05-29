@@ -81,14 +81,14 @@ export const Navbar = ({ onOpenBooking }) => {
                     : "bg-white/60 backdrop-blur-sm"
             }`}
         >
-            <nav className="max-w-7xl mx-auto px-4 md:px-6 lg:px-10 h-16 md:h-20 flex items-center justify-between gap-4">
+            <nav className="max-w-7xl mx-auto px-4 md:px-6 lg:px-10 h-20 md:h-24 flex items-center justify-between gap-4">
                 <Link
                     to="/"
                     data-testid="nav-logo"
                     className="flex items-center group shrink-0"
                     aria-label="Toothfully Yours, home"
                 >
-                    <div className="h-11 md:h-14 flex items-center">
+                    <div className="h-16 md:h-20 flex items-center">
                         <img
                             src={LOGO_URL}
                             alt="Toothfully Yours"
