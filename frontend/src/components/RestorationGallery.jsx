@@ -10,6 +10,7 @@ const TABS = [
             {
                 composite:
                     "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/z1kdjnff_cases-12.jpg",
+                afterAt: "bottom",
             },
             {
                 composite:
@@ -27,15 +28,23 @@ const TABS = [
         items: [
             {
                 composite:
-                    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/49ewoyos_cases-29.png",
+                    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/3f9o1npx_cases-4.jpg",
             },
             {
                 composite:
-                    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/4umcpp6y_composite-veeneers%201.png",
+                    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/fhu7syql_cases-5.jpg",
             },
             {
                 composite:
-                    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/sr9dqtux_smile%20design%201.png",
+                    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/3aod77gk_cases-34.jpg",
+            },
+            {
+                composite:
+                    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/m8l7efux_crown4.jpg",
+            },
+            {
+                composite:
+                    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/fjw7wp0f_crowns2.jpg",
             },
         ],
     },
@@ -80,7 +89,9 @@ const RGCard = ({ item, testId }) => (
                     <span className="absolute top-3 left-3 font-dmsans text-[0.6rem] tracking-[0.18em] uppercase bg-white/95 text-[#1A1A1A] rounded-full px-2.5 py-1">
                         Before
                     </span>
-                    <span className="absolute top-[calc(50%+8px)] left-3 font-dmsans text-[0.6rem] tracking-[0.18em] uppercase bg-[#EB8A2C] text-white rounded-full px-2.5 py-1">
+                    <span
+                        className={`absolute left-3 font-dmsans text-[0.6rem] tracking-[0.18em] uppercase bg-[#EB8A2C] text-white rounded-full px-2.5 py-1 ${item.afterAt === "bottom" ? "bottom-3" : "top-[calc(50%+8px)]"}`}
+                    >
                         After
                     </span>
                 </>

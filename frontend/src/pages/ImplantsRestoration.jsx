@@ -214,10 +214,6 @@ export default function ImplantsRestoration() {
                         <h2 className="heading-serif text-[2rem] sm:text-4xl md:text-[3.25rem] text-[#1A1A1A]">
                             What we can do for you.
                         </h2>
-                        <p className="mt-5 font-dmsans text-[#5C5C5C] text-[0.95rem] md:text-base max-w-xl mx-auto">
-                            Tap any treatment to see real outcomes from the
-                            practice.
-                        </p>
                     </Reveal>
 
                     <div className="mt-12 md:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-y-14 md:gap-x-8">
