@@ -214,7 +214,7 @@ const CurrencyPicker = ({ value, onChange }) => (
         >
             {CURRENCIES.map((c) => (
                 <option key={c.code} value={c.code}>
-                    {c.flag} {c.code} · {c.label}
+                    {`${c.flag} ${c.code} · ${c.label}`}
                 </option>
             ))}
         </select>
