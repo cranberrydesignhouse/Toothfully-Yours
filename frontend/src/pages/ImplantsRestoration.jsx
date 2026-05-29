@@ -27,7 +27,7 @@ const SERVICES = [
     {
         id: "implants",
         title: "Dental Implants",
-        copy: "Lifelike replacements that restore your bite, your bone and your full smile.",
+        copy: "Life-like replacements that restore your bite, your bone and your full smile.",
         img: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/bmeyg5mf_dental%20implants%20image.png",
     },
     {
@@ -237,7 +237,7 @@ export default function ImplantsRestoration() {
                                     <h3 className="font-dmsans font-semibold text-[1.05rem] md:text-[1.15rem] text-[#1A1A1A] mt-6 tracking-tight group-hover:text-[#EB8A2C] transition-colors">
                                         {s.title}
                                     </h3>
-                                    <p className="mt-2 font-dmsans text-sm text-[#5C5C5C] leading-snug max-w-[17rem]">
+                                    <p className="mt-1 font-dmsans text-sm text-[#5C5C5C] leading-snug max-w-[17rem]">
                                         {s.copy}
                                     </p>
                                 </button>

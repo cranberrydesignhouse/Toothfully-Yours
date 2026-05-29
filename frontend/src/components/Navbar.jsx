@@ -21,7 +21,7 @@ const NAV_LINKS = [
 ];
 
 const LOGO_URL =
-    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/kh779mbu_TOOTHFULLY-YOURS-LOGO-FINAL-1.png";
+    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/huinelt5_TY%20LOGO%20for%20website.png";
 
 export const Navbar = ({ onOpenBooking }) => {
     const [scrolled, setScrolled] = useState(false);
