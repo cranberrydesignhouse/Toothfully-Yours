@@ -9,15 +9,7 @@ const TABS = [
         items: [
             {
                 composite:
-                    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/sr9dqtux_smile%20design%201.png",
-            },
-            {
-                composite:
-                    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/2tuf1fi7_cases-18.png",
-            },
-            {
-                composite:
-                    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/49ewoyos_cases-29.png",
+                    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/75xrqpeu_alligners1.jpg",
             },
         ],
     },
@@ -80,7 +72,15 @@ export const AlignmentGallery = () => {
                 })}
             </div>
 
-            <div className="mt-10 md:mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-7">
+            <div
+                className={`mt-10 md:mt-12 grid gap-6 md:gap-7 ${
+                    tab.items.length === 1
+                        ? "grid-cols-1 max-w-md mx-auto"
+                        : tab.items.length === 2
+                          ? "grid-cols-1 md:grid-cols-2 max-w-3xl mx-auto"
+                          : "grid-cols-1 md:grid-cols-3"
+                }`}
+            >
                 {tab.items.map((item, i) => (
                     <AGCard
                         key={`${tab.id}-${i}`}

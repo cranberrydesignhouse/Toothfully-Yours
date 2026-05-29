@@ -16,7 +16,7 @@ import AlignmentGallery from "@/components/AlignmentGallery";
 import AlignmentFaq from "@/components/AlignmentFaq";
 
 const HERO_IMG =
-    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/hgm3tltf_alignemnt%20TY.jpg";
+    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/uhx89csm_invalisgn%20hero.png";
 
 const DOCTOR_IMG =
     "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/r7wm2nb4_Dr.%20Amruta.jpg";
@@ -28,13 +28,13 @@ const SERVICES = [
         id: "clear-aligners",
         title: "Clear Aligners",
         copy: "Nearly invisible, removable, and quietly transformative. Designed around your lifestyle, not the other way around.",
-        img: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/jf4w2vhu_happy-smiles-4%20copy.jpg",
+        img: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/4fx7fiyg_invisalign.png",
     },
     {
         id: "dental-braces",
         title: "Dental Braces",
         copy: "The most reliable way to move teeth, refined with modern brackets that are smaller, smoother and far more comfortable than they used to be.",
-        img: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/vtjot904_happy-smiles-11%20copy.jpg",
+        img: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/fvmjyyez_braces.png",
     },
 ];
 
