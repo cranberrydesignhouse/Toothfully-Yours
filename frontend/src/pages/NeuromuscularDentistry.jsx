@@ -437,6 +437,21 @@ export default function NeuromuscularDentistry() {
                                 <span className="font-semibold text-[#1A1A1A] tabular-nums">
                                     {selectedCount}
                                 </span>
+                                {selectedCount > 0 && (
+                                    <>
+                                        <span className="mx-3 text-[#5C5C5C]/40">
+                                            ·
+                                        </span>
+                                        <button
+                                            type="button"
+                                            onClick={handleReset}
+                                            data-testid="nm-clear-selection"
+                                            className="font-dmsans text-sm md:text-[0.95rem] text-[#EB8A2C] hover:text-[#1A1A1A] underline underline-offset-4 decoration-[#EB8A2C]/40 hover:decoration-[#1A1A1A]/60 transition-colors"
+                                        >
+                                            Clear selection
+                                        </button>
+                                    </>
+                                )}
                             </p>
                             <button
                                 type="button"
@@ -569,7 +584,7 @@ export default function NeuromuscularDentistry() {
                                         data-testid="nm-result-reset"
                                         className="btn-secondary-dark w-full sm:w-auto"
                                     >
-                                        Reset & Take Again
+                                        Take Test Again
                                     </button>
                                 </div>
                             </div>
