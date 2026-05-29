@@ -28,13 +28,13 @@ const SERVICES = [
         id: "implants",
         title: "Dental Implants",
         copy: "Lifelike replacements that restore your bite, your bone and your full smile.",
-        img: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/0lt9d93r_happy-smiles-6.webp",
+        img: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/bmeyg5mf_dental%20implants%20image.png",
     },
     {
         id: "rct",
         title: "Root Canal Treatment",
         copy: "Pain relief, infection control and your natural tooth saved without compromise.",
-        img: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/pwmpesji_happy-smiles-7%20copy.jpg",
+        img: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/32qu51b8_root%20canal.png",
     },
     {
         id: "extraction",
@@ -46,19 +46,19 @@ const SERVICES = [
         id: "crowns-bridges",
         title: "Crowns & Bridges",
         copy: "Custom-crafted restorations that protect weakened teeth and rebuild missing ones.",
-        img: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/vtjot904_happy-smiles-11%20copy.jpg",
+        img: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/vkj85svy_crwons%20bridges.png",
     },
     {
         id: "gum",
         title: "Gum Treatment",
         copy: "Healthy gums are the foundation. We treat inflammation, recession and disease at the root.",
-        img: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/1352cymq_happy-smiles-16.jpg",
+        img: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/xi6krqmq_gum%20treatment.png",
     },
     {
         id: "dentures",
         title: "Dentures",
         copy: "Modern, secure, comfortable, made to look like teeth you've always had.",
-        img: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/b6v1339i_happy-smiles-18%20copy.jpg",
+        img: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/lttalq38_dentures.png",
     },
 ];
 
