@@ -4,132 +4,238 @@ import { ChevronLeft, ChevronRight, Check } from "lucide-react";
 
 const PACKAGES = [
     {
-        name: "The Essential",
-        summary:
-            "A clean, calm first visit to set a strong oral health baseline.",
-        sessions: "1 session",
-        duration: "1 day",
-        stay: "1 – 2 days",
+        name: "Consultation & Preventive Care",
+        bestFor: "Routine dental evaluation & cleaning",
+        sessions: "1",
+        treatmentTime: "Approx. 1.5 hours",
+        stay: "Same day",
+        result: "Immediate tartar & stain removal",
+        startsFrom: "₹5,000",
         includes: [
-            "Complete oral examination",
-            "Professional scaling & polishing",
-            "Digital X-rays & treatment plan",
+            "Comprehensive examination",
+            "Diagnostic radiographs",
+            "Oral prophylaxis",
+            "Fluoride treatment",
         ],
-        startsFrom: "₹15,000",
     },
     {
-        name: "The Refresh",
-        summary:
-            "A radiant reset, professional whitening with a thorough cleaning.",
-        sessions: "2 sessions",
-        duration: "3 – 5 days",
+        name: "Professional Teeth Whitening",
+        bestFor: "Brighter, photo-ready smiles",
+        sessions: "2",
+        gap: "2 – 3 days",
+        treatmentTime: "Approx. 1 hour per session",
         stay: "4 – 5 days",
+        result: "Up to 5 – 7 shades lighter",
+        startsFrom: "₹35,000",
         includes: [
-            "Professional in-clinic whitening",
-            "Deep cleaning & polish",
-            "Minor cosmetic touch-ups",
+            "Consultation & examination",
+            "Philips Zoom whitening",
+            "Optional at-home whitening gel",
         ],
-        startsFrom: "₹45,000",
     },
     {
-        name: "The Smile Edit",
-        summary:
-            "Targeted cosmetic refinement, planned around your face and bite.",
-        sessions: "3 sessions",
-        duration: "7 – 10 days",
-        stay: "8 – 10 days",
+        name: "Cosmetic Bonding / Veneers",
+        bestFor: "Gaps, chipped teeth & smile refinement",
+        sessions: "2 – 3",
+        gap: "Approx. 1 day",
+        treatmentTime: "Approx. 1 hour per session",
+        stay: "3 – 5 days",
+        result: "Improved smile symmetry & aesthetics",
+        startsFrom: "₹15,000",
+        priceUnit: "/ tooth",
         includes: [
-            "2 – 4 porcelain veneers",
-            "Edge bonding & contouring",
-            "Professional whitening",
+            "Smile analysis & photography",
+            "Diagnostic study models",
+            "Resin bonding",
+            "Fine-tuning & adjustments",
         ],
-        startsFrom: "₹2,50,000",
     },
     {
-        name: "Full Smile Design",
-        summary:
-            "A photographed, previewed, face-led transformation of your full smile.",
-        sessions: "4 sessions",
-        duration: "10 – 14 days",
-        stay: "12 – 14 days",
+        name: "Smile Design with Porcelain Veneers",
+        bestFor: "Complete smile enhancement",
+        sessions: "3 – 4",
+        gap: "2 – 3 days",
+        treatmentTime: "Approx. 2 – 3 hours per session",
+        stay: "8 – 12 days",
+        result: "Correction of gaps, crowding, angulation & smile proportions",
+        startsFrom: "₹20,000",
+        priceUnit: "/ tooth",
         includes: [
-            "8 – 10 porcelain veneers",
-            "Digital smile design preview",
-            "Final shade & finish review",
+            "Digital smile designing",
+            "Wax-up & photography",
+            "Veneer preparation & temporaries",
+            "Final cementation & fine-tuning",
         ],
-        startsFrom: "₹6,00,000",
     },
     {
-        name: "Single Implant Plan",
-        summary:
-            "One missing tooth, one quiet surgery, one final crown that feels like yours.",
-        sessions: "2 visits",
-        duration: "4 – 5 months",
-        stay: "5 – 7 days per visit",
+        name: "Single / Multiple Dental Implants",
+        bestFor: "Replacing one or more missing teeth",
+        sessions: "3 initial visits",
+        gap: "Approx. 7 days",
+        treatmentTime: "Approx. 2 – 3 hours per session",
+        stay: "Approximately 3 weeks",
+        finalProsthesis: "Typically completed after 4 months",
+        result: "Permanent tooth replacement & bite restoration",
+        startsFrom: "₹80,000",
+        priceUnit: "/ implant, including crown",
         includes: [
+            "Consultation & examination",
+            "Dental scan",
             "Implant placement",
-            "Custom abutment & final crown",
-            "All review appointments",
+            "Follow-up & suture removal",
         ],
-        startsFrom: "₹1,20,000",
     },
     {
-        name: "Multi-Implant Plan",
-        summary:
-            "Three to four implants, sequenced for healing and a stable, lifelong bite.",
-        sessions: "3 visits",
-        duration: "5 – 6 months",
-        stay: "7 days per visit",
+        name: "Full-Mouth Rehabilitation",
+        bestFor: "Complex bite issues, worn teeth & full smile restoration",
+        sessions: "5 – 6",
+        gap: "2 – 3 days",
+        treatmentTime: "Approx. 2 – 3 hours per session",
+        stay: "Approximately 2 – 3 weeks",
+        result: "Functional and aesthetic smile restoration with bite improvement",
+        startsFrom: "₹5 – 6 Lakhs",
         includes: [
-            "3 – 4 implants placed in stages",
-            "Custom crowns & bridge work",
-            "Bone graft, if needed",
+            "Digital smile designing",
+            "Bite raise & impressions",
+            "Mock-up trials",
+            "Crown / veneer preparations",
+            "Final cementation & fine-tuning",
         ],
-        startsFrom: "₹4,50,000",
     },
     {
-        name: "Full Mouth Rehabilitation",
-        summary:
-            "When everything needs attention, planned beautifully and executed in phases.",
-        sessions: "5 – 6 sessions",
-        duration: "7 – 8 months",
-        stay: "Phased, 2 – 3 trips",
+        name: "Full Mouth Reconstruction with Implants",
+        bestFor: "Extensive tooth loss or full-arch replacement",
+        sessions: "4 – 5 initial visits",
+        gap: "2 – 3 days",
+        treatmentTime: "Approx. 4 hours per session",
+        stay: "Approximately 2 – 3 weeks",
+        finalProsthesis: "Typically completed after 4 months",
+        result: "Full smile and bite reconstruction",
+        startsFrom: "₹9 – 10 Lakhs",
+        priceUnit: "including final prosthesis",
         includes: [
-            "Implants + bridges + crowns",
-            "Bite & alignment correction",
-            "Gum health stabilisation",
+            "Dental scan",
+            "Implant placement",
+            "Temporary prosthesis",
+            "Follow-ups & healing assessment",
         ],
-        startsFrom: "₹12,00,000",
     },
     {
-        name: "Aligners Express",
-        summary:
-            "Minor crowding refined with nearly invisible, removable aligners.",
-        sessions: "2 visits",
-        duration: "9 – 12 months",
-        stay: "3 – 5 days per visit",
+        name: "Invisalign / Clear Aligners",
+        bestFor: "Gaps, crowding & misaligned teeth",
+        sessions: "3 initial visits",
+        gap: "Approx. 7 days",
+        treatmentTime: "Approx. 1 hour per session",
+        stay: "Approximately 3 weeks",
+        continuation:
+            "Aligners couriered internationally with remote monitoring",
+        result: "Straighter teeth with minimal disruption to daily life",
+        startsFrom: "₹2.75 – 4.5 Lakhs",
         includes: [
-            "Limited treatment Invisalign",
-            "Refinement aligners",
-            "Custom retainers",
+            "Consultation & examination",
+            "Digital scan",
+            "Treatment planning",
+            "Remote progress monitoring",
         ],
-        startsFrom: "₹2,80,000",
-    },
-    {
-        name: "Aligners Comprehensive",
-        summary:
-            "Full orthodontic alignment, treatment that quietly transforms your bite.",
-        sessions: "4 – 5 visits",
-        duration: "12 – 18 months",
-        stay: "3 – 5 days per visit",
-        includes: [
-            "Full Invisalign treatment",
-            "Mid-course refinements",
-            "Long-term retainers",
-        ],
-        startsFrom: "₹4,50,000",
     },
 ];
+
+const Stat = ({ label, value }) => (
+    <div>
+        <dt className="font-dmsans text-[0.62rem] tracking-[0.18em] uppercase text-[#5C5C5C]">
+            {label}
+        </dt>
+        <dd className="mt-1 font-dmsans text-[0.92rem] text-[#1A1A1A] leading-snug">
+            {value}
+        </dd>
+    </div>
+);
+
+const PackageCard = ({ p, index }) => (
+    <article
+        data-testid={`package-card-${index}`}
+        className="h-full bg-white rounded-3xl border border-black/8 p-7 md:p-9 shadow-[0_30px_60px_-50px_rgba(0,0,0,0.3)] hover:shadow-[0_40px_70px_-45px_rgba(0,0,0,0.35)] hover:-translate-y-1 transition-all duration-500 flex flex-col"
+    >
+        <span className="font-dmsans text-[0.66rem] tracking-[0.22em] uppercase text-[#EB8A2C]">
+            {`Package ${String(index + 1).padStart(2, "0")}`}
+        </span>
+        <h3 className="mt-3 font-dmsans font-semibold text-[1.35rem] md:text-[1.45rem] text-[#1A1A1A] leading-[1.2] tracking-tight">
+            {p.name}
+        </h3>
+
+        <div className="mt-5 pt-5 border-t border-black/8">
+            <p className="font-dmsans text-[0.62rem] tracking-[0.18em] uppercase text-[#5C5C5C]">
+                Best for
+            </p>
+            <p className="mt-1.5 font-dmsans text-[0.95rem] text-[#1A1A1A] leading-snug">
+                {p.bestFor}
+            </p>
+        </div>
+
+        <dl className="mt-6 grid grid-cols-2 gap-x-5 gap-y-4">
+            <Stat label="Sessions" value={p.sessions} />
+            {p.gap && <Stat label="Gap between sessions" value={p.gap} />}
+            <Stat label="Treatment time" value={p.treatmentTime} />
+            <Stat label="Typical stay" value={p.stay} />
+            {p.finalProsthesis && (
+                <div className="col-span-2">
+                    <Stat label="Final prosthesis" value={p.finalProsthesis} />
+                </div>
+            )}
+            {p.continuation && (
+                <div className="col-span-2">
+                    <Stat label="Continuation" value={p.continuation} />
+                </div>
+            )}
+        </dl>
+
+        <div className="mt-6 pt-5 border-t border-black/8">
+            <p className="font-dmsans text-[0.62rem] tracking-[0.18em] uppercase text-[#EB8A2C]">
+                Expected result
+            </p>
+            <p className="mt-1.5 font-dmsans text-[0.95rem] text-[#1A1A1A] leading-relaxed">
+                {p.result}
+            </p>
+        </div>
+
+        <ul className="mt-6 space-y-2.5">
+            <li className="font-dmsans text-[0.62rem] tracking-[0.18em] uppercase text-[#5C5C5C] mb-2">
+                Includes
+            </li>
+            {p.includes.map((line) => (
+                <li
+                    key={line}
+                    className="flex items-start gap-2.5 font-dmsans text-[0.9rem] text-[#1A1A1A]"
+                >
+                    <Check
+                        size={15}
+                        strokeWidth={2}
+                        className="mt-[3px] text-[#EB8A2C] shrink-0"
+                    />
+                    <span>{line}</span>
+                </li>
+            ))}
+        </ul>
+
+        <div className="mt-auto pt-8">
+            <div className="bg-[#F5F2EF] rounded-2xl px-5 py-4">
+                <p className="font-dmsans text-[0.66rem] tracking-[0.18em] uppercase text-[#5C5C5C]">
+                    Starting at
+                </p>
+                <div className="mt-1 flex items-baseline gap-1.5 flex-wrap">
+                    <span className="font-dmsans font-semibold text-[1.4rem] md:text-[1.55rem] text-[#1A1A1A] tracking-tight">
+                        {p.startsFrom}
+                    </span>
+                    {p.priceUnit && (
+                        <span className="font-dmsans text-[0.78rem] text-[#5C5C5C]">
+                            {p.priceUnit}
+                        </span>
+                    )}
+                </div>
+            </div>
+        </div>
+    </article>
+);
 
 export const PackagesCarousel = () => {
     const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -157,75 +263,14 @@ export const PackagesCarousel = () => {
     return (
         <div data-testid="packages-carousel" className="relative">
             <div className="overflow-hidden" ref={emblaRef}>
-                <div className="flex gap-5 md:gap-6">
+                <div className="flex gap-5 md:gap-6 items-stretch">
                     {PACKAGES.map((p, i) => (
-                        <article
+                        <div
                             key={p.name}
-                            data-testid={`package-card-${i}`}
-                            className="flex-[0_0_86%] sm:flex-[0_0_55%] lg:flex-[0_0_34%] xl:flex-[0_0_30%] min-w-0 bg-white rounded-3xl border border-black/8 p-7 md:p-9 shadow-[0_30px_60px_-50px_rgba(0,0,0,0.3)] hover:shadow-[0_40px_70px_-45px_rgba(0,0,0,0.35)] hover:-translate-y-1 transition-all duration-500"
+                            className="flex-[0_0_88%] sm:flex-[0_0_60%] lg:flex-[0_0_38%] xl:flex-[0_0_32%] min-w-0 flex"
                         >
-                            <span className="font-dmsans text-[0.66rem] tracking-[0.22em] uppercase text-[#EB8A2C]">
-                                Package
-                            </span>
-                            <h3 className="mt-3 heading-serif text-[1.7rem] md:text-[2rem] text-[#1A1A1A] leading-[1.1]">
-                                {p.name}
-                            </h3>
-                            <p className="mt-3 font-dmsans text-[0.92rem] text-[#5C5C5C] leading-relaxed">
-                                {p.summary}
-                            </p>
-
-                            <dl className="mt-7 grid grid-cols-2 gap-x-4 gap-y-3">
-                                <div>
-                                    <dt className="font-dmsans text-[0.62rem] tracking-[0.18em] uppercase text-[#5C5C5C]">
-                                        Sessions
-                                    </dt>
-                                    <dd className="mt-1 font-dmsans text-[0.92rem] text-[#1A1A1A]">
-                                        {p.sessions}
-                                    </dd>
-                                </div>
-                                <div>
-                                    <dt className="font-dmsans text-[0.62rem] tracking-[0.18em] uppercase text-[#5C5C5C]">
-                                        Treatment
-                                    </dt>
-                                    <dd className="mt-1 font-dmsans text-[0.92rem] text-[#1A1A1A]">
-                                        {p.duration}
-                                    </dd>
-                                </div>
-                                <div className="col-span-2">
-                                    <dt className="font-dmsans text-[0.62rem] tracking-[0.18em] uppercase text-[#5C5C5C]">
-                                        Ideal Stay
-                                    </dt>
-                                    <dd className="mt-1 font-dmsans text-[0.92rem] text-[#1A1A1A]">
-                                        {p.stay}
-                                    </dd>
-                                </div>
-                            </dl>
-
-                            <ul className="mt-7 space-y-2.5 border-t border-black/8 pt-6">
-                                {p.includes.map((line) => (
-                                    <li
-                                        key={line}
-                                        className="flex items-start gap-2.5 font-dmsans text-[0.9rem] text-[#1A1A1A]"
-                                    >
-                                        <Check
-                                            size={15}
-                                            strokeWidth={2}
-                                            className="mt-[3px] text-[#EB8A2C] shrink-0"
-                                        />
-                                        <span>{line}</span>
-                                    </li>
-                                ))}
-                            </ul>
-
-                            <div className="mt-8 pt-6 border-t border-black/8 flex items-baseline justify-between">
-                                <span className="font-dmsans text-[0.7rem] tracking-[0.16em] uppercase text-[#5C5C5C]">
-                                    Starting from
-                                </span>
-                                <span className="heading-serif text-[1.5rem] md:text-[1.65rem] text-[#1A1A1A]">
-                                    {p.startsFrom}
-                                </span>
-                            </div>
-                        </article>
+                            <PackageCard p={p} index={i} />
+                        </div>
                     ))}
                 </div>
             </div>
