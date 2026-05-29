@@ -6,6 +6,7 @@ import CosmeticCare from "@/pages/CosmeticCare";
 import ImplantsRestoration from "@/pages/ImplantsRestoration";
 import CorrectiveAlignment from "@/pages/CorrectiveAlignment";
 import GlobalAccess from "@/pages/GlobalAccess";
+import NeuromuscularDentistry from "@/pages/NeuromuscularDentistry";
 
 function App() {
     return (
@@ -24,6 +25,10 @@ function App() {
                     <Route
                         path="/corrective-alignment"
                         element={<CorrectiveAlignment />}
+                    />
+                    <Route
+                        path="/neuromuscular-dentistry"
+                        element={<NeuromuscularDentistry />}
                     />
                     <Route
                         path="/global-access"
