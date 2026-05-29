@@ -60,7 +60,7 @@ export const Footer = () => {
 
                         <div className="mt-7 flex items-center gap-3">
                             <a
-                                href="https://instagram.com/"
+                                href="https://www.instagram.com/toothfully_yours_dental?igsh=MW90ajViN29qczZpeg=="
                                 target="_blank"
                                 rel="noreferrer"
                                 data-testid="footer-social-instagram"
@@ -70,7 +70,7 @@ export const Footer = () => {
                                 <Instagram size={16} strokeWidth={1.6} />
                             </a>
                             <a
-                                href="https://linkedin.com/"
+                                href="https://www.linkedin.com/in/amruta-godbole-272522186/"
                                 target="_blank"
                                 rel="noreferrer"
                                 data-testid="footer-social-linkedin"
