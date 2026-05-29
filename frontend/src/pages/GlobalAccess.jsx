@@ -282,7 +282,7 @@ export default function GlobalAccess() {
             {/* 4. STEP-BY-STEP PROCESS */}
             <section
                 data-testid="ga-process"
-                className="bg-[#1F1D1B] py-16 md:py-32 text-white"
+                className="bg-[#545454] py-16 md:py-32 text-white"
             >
                 <div className="max-w-7xl mx-auto px-5 md:px-12 lg:px-16">
                     <Reveal>
@@ -290,11 +290,11 @@ export default function GlobalAccess() {
                             <span className="font-dmsans text-[0.72rem] tracking-[0.22em] uppercase text-[#EB8A2C]">
                                 Step-by-step Process
                             </span>
-                            <h2 className="mt-4 heading-serif text-[2rem] sm:text-4xl md:text-[3.25rem] text-white">
+                            <h2 className="mt-4 heading-serif text-[2rem] sm:text-4xl md:text-[3.25rem] text-white !leading-[1.35]">
                                 Plan Your Treatment{" "}
                                 <span className="text-[#EB8A2C]">Journey.</span>
                             </h2>
-                            <p className="mt-5 font-dmsans text-white/65 text-[0.95rem] md:text-base">
+                            <p className="mt-5 font-dmsans text-white/70 text-[0.95rem] md:text-base">
                                 Four quiet steps between your first message and
                                 your final smile.
                             </p>
@@ -305,7 +305,7 @@ export default function GlobalAccess() {
                         {/* Connecting line on desktop */}
                         <div
                             aria-hidden
-                            className="hidden md:block absolute top-9 left-[12.5%] right-[12.5%] h-px bg-white/15"
+                            className="hidden md:block absolute top-9 left-[12.5%] right-[12.5%] h-px bg-white/25"
                         />
                         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-6 relative">
                             {STEPS.map((step, i) => {
@@ -316,7 +316,7 @@ export default function GlobalAccess() {
                                             data-testid={`ga-step-${i}`}
                                             className="flex flex-col items-center text-center group"
                                         >
-                                            <div className="relative h-[72px] w-[72px] rounded-full bg-[#1F1D1B] border border-white/15 flex items-center justify-center transition-all duration-500 group-hover:border-[#EB8A2C] group-hover:bg-[#EB8A2C]/10">
+                                            <div className="relative h-[72px] w-[72px] rounded-full bg-[#545454] border border-white/25 flex items-center justify-center transition-all duration-500 group-hover:border-[#EB8A2C] group-hover:bg-[#EB8A2C]/10">
                                                 <Icon
                                                     size={26}
                                                     strokeWidth={1.6}
@@ -329,7 +329,7 @@ export default function GlobalAccess() {
                                             <h3 className="mt-7 font-dmsans font-semibold text-[1.05rem] md:text-[1.15rem] text-white tracking-tight">
                                                 {step.title}
                                             </h3>
-                                            <p className="mt-3 font-dmsans text-sm text-white/65 leading-relaxed max-w-[15rem]">
+                                            <p className="mt-3 font-dmsans text-sm text-white/70 leading-relaxed max-w-[15rem]">
                                                 {step.copy}
                                             </p>
                                         </div>
