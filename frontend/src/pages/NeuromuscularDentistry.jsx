@@ -16,7 +16,7 @@ import BookingModal from "@/components/BookingModal";
 import NeuromuscularFaq from "@/components/NeuromuscularFaq";
 
 const HERO_IMG =
-    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/v986au7b_TMJ.png";
+    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/txdxjwzw_tmj%20hero.png";
 
 const DOCTOR_IMG =
     "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/r7wm2nb4_Dr.%20Amruta.jpg";
@@ -337,7 +337,7 @@ export default function NeuromuscularDentistry() {
                                     data-testid="nm-cta-tmj"
                                     className="btn-secondary-dark w-full sm:w-auto"
                                 >
-                                    TMJ Evaluation
+                                    Start Assessment
                                 </a>
                             </div>
                         </Reveal>
@@ -350,7 +350,7 @@ export default function NeuromuscularDentistry() {
                                     src={HERO_IMG}
                                     alt="Neuromuscular Dentistry at Toothfully Yours"
                                     data-testid="nm-hero-image"
-                                    className="circle-photo w-full h-full border-[6px] border-white object-cover object-[60%_45%]"
+                                    className="circle-photo w-full h-full border-[6px] border-white object-cover object-center"
                                 />
                             </div>
                         </Reveal>
