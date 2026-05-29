@@ -22,16 +22,89 @@ const DOCTOR_IMG =
     "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/r7wm2nb4_Dr.%20Amruta.jpg";
 
 const SYMPTOMS = [
-    "Jaw pain or tightness",
-    "Clicking or popping jaw",
-    "Neck & shoulder tension",
-    "Frequent headaches",
-    "Difficulty chewing",
-    "Teeth grinding (Bruxism)",
-    "Limited jaw opening",
-    "Poor sleep or snoring",
-    "Facial pain or fatigue",
-    "Ear pain or ringing",
+    {
+        name: "Jaw pain or tightness",
+        scores: { tmj: 3, bruxism: 2, bite: 1, airway: 0 },
+    },
+    {
+        name: "Clicking or popping jaw",
+        scores: { tmj: 4, bruxism: 0, bite: 2, airway: 0 },
+    },
+    {
+        name: "Neck & shoulder tension",
+        scores: { tmj: 2, bruxism: 2, bite: 1, airway: 1 },
+    },
+    {
+        name: "Frequent headaches",
+        scores: { tmj: 2, bruxism: 3, bite: 1, airway: 1 },
+    },
+    {
+        name: "Difficulty chewing",
+        scores: { tmj: 3, bruxism: 0, bite: 3, airway: 0 },
+    },
+    {
+        name: "Teeth grinding (Bruxism)",
+        scores: { tmj: 1, bruxism: 5, bite: 1, airway: 2 },
+    },
+    {
+        name: "Limited jaw opening",
+        scores: { tmj: 4, bruxism: 1, bite: 1, airway: 0 },
+    },
+    {
+        name: "Poor sleep or snoring",
+        scores: { tmj: 0, bruxism: 2, bite: 0, airway: 5 },
+    },
+    {
+        name: "Facial pain or fatigue",
+        scores: { tmj: 3, bruxism: 2, bite: 1, airway: 1 },
+    },
+    {
+        name: "Ear pain or ringing",
+        scores: { tmj: 3, bruxism: 0, bite: 1, airway: 0 },
+    },
+];
+
+const CATEGORIES = [
+    {
+        key: "tmj",
+        label: "TMJ Dysfunction",
+        threshold: 6,
+        title: "Possible TMJ Dysfunction",
+        description:
+            "Your responses may be consistent with temporomandibular joint dysfunction. Joint strain, inflammation, or altered jaw mechanics could be contributing to your symptoms.",
+        recommendation:
+            "A comprehensive neuromuscular consultation may help determine whether joint mechanics, muscle activity, and bite relationships are contributing factors.",
+    },
+    {
+        key: "bruxism",
+        label: "Bruxism & Muscle Overload",
+        threshold: 6,
+        title: "Possible Bruxism & Muscle Overload",
+        description:
+            "Your responses may be consistent with chronic clenching or grinding that can place excessive stress on the jaw muscles and surrounding structures.",
+        recommendation:
+            "A comprehensive neuromuscular consultation may help determine whether muscle overload and bite-related factors are contributing to your symptoms.",
+    },
+    {
+        key: "bite",
+        label: "Bite Imbalance",
+        threshold: 5,
+        title: "Possible Bite Imbalance",
+        description:
+            "Your responses may indicate uneven bite mechanics that may be placing excess stress on muscles, joints, and surrounding structures.",
+        recommendation:
+            "A comprehensive neuromuscular consultation may help identify whether bite imbalance is contributing to your symptoms.",
+    },
+    {
+        key: "airway",
+        label: "Airway-Related Dysfunction",
+        threshold: 5,
+        title: "Possible Airway-Related Dysfunction",
+        description:
+            "Your responses may be consistent with airway-related concerns that can influence sleep quality, jaw posture, muscle activity, and nighttime grinding.",
+        recommendation:
+            "A comprehensive neuromuscular consultation may help determine whether airway factors are influencing your symptoms.",
+    },
 ];
 
 const ROOT_CAUSE = [
@@ -137,10 +210,61 @@ const Reveal = ({ children, delay = 0, className = "" }) => {
 
 export default function NeuromuscularDentistry() {
     const [bookingOpen, setBookingOpen] = useState(false);
-    const [ticked, setTicked] = useState({});
+    const [selected, setSelected] = useState(() => new Set());
+    const [showResults, setShowResults] = useState(false);
+    const resultsRef = useRef(null);
 
-    const toggleSymptom = (i) =>
-        setTicked((prev) => ({ ...prev, [i]: !prev[i] }));
+    const toggleSymptom = (i) => {
+        setSelected((prev) => {
+            const next = new Set(prev);
+            if (next.has(i)) next.delete(i);
+            else next.add(i);
+            return next;
+        });
+        setShowResults(false);
+    };
+
+    const selectedCount = selected.size;
+
+    const computeFindings = () => {
+        const totals = { tmj: 0, bruxism: 0, bite: 0, airway: 0 };
+        selected.forEach((idx) => {
+            const s = SYMPTOMS[idx].scores;
+            totals.tmj += s.tmj;
+            totals.bruxism += s.bruxism;
+            totals.bite += s.bite;
+            totals.airway += s.airway;
+        });
+        const findings = CATEGORIES.map((c) => ({
+            ...c,
+            score: totals[c.key],
+        }))
+            .filter((c) => c.score >= c.threshold)
+            .sort((a, b) => b.score - a.score);
+        return { totals, findings };
+    };
+
+    const findings = showResults ? computeFindings().findings : [];
+    const primary = findings[0];
+    const secondary = findings.slice(1);
+    const highBurden = showResults && selectedCount >= 5;
+
+    const handleViewAssessment = () => {
+        setShowResults(true);
+        // Defer scroll so results panel mounts first
+        setTimeout(() => {
+            resultsRef.current?.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+            });
+        }, 80);
+    };
+
+    const scrollToContact = () => {
+        document
+            .querySelector("#contact")
+            ?.scrollIntoView({ behavior: "smooth", block: "start" });
+    };
 
     return (
         <div data-testid="neuromuscular-page" className="bg-white">
@@ -252,31 +376,41 @@ export default function NeuromuscularDentistry() {
                         </div>
                     </Reveal>
 
-                    <div className="mt-12 md:mt-16 grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-4 md:gap-y-5">
+                    <div className="mt-12 md:mt-16 grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
                         {SYMPTOMS.map((s, i) => {
-                            const isTicked = !!ticked[i];
+                            const isSelected = selected.has(i);
                             return (
-                                <Reveal key={s} delay={i * 35}>
+                                <Reveal key={s.name} delay={i * 30}>
                                     <button
                                         type="button"
                                         onClick={() => toggleSymptom(i)}
-                                        aria-pressed={isTicked}
+                                        aria-pressed={isSelected}
                                         data-testid={`nm-symptom-${i}`}
-                                        className={`group w-full text-left flex items-center gap-4 py-3 border-b transition-colors ${isTicked ? "border-[#EB8A2C]" : "border-black/8 hover:border-[#EB8A2C]/40"}`}
+                                        className={`group w-full text-left flex items-center gap-4 p-4 md:p-5 rounded-2xl border transition-all duration-300 ease-out ${
+                                            isSelected
+                                                ? "bg-[#FBF6EF] border-[#EB8A2C] shadow-[0_18px_36px_-22px_rgba(235,138,44,0.55)] -translate-y-[1px]"
+                                                : "bg-white border-black/10 hover:border-[#EB8A2C]/45 hover:bg-[#FBF8F4]"
+                                        }`}
                                     >
                                         <span
-                                            className={`h-9 w-9 rounded-full flex items-center justify-center shrink-0 transition-colors ${isTicked ? "bg-[#EB8A2C]" : "bg-[#F5F2EF] group-hover:bg-[#EB8A2C]/15"}`}
+                                            className={`h-9 w-9 rounded-full flex items-center justify-center shrink-0 transition-all duration-300 ${
+                                                isSelected
+                                                    ? "bg-[#EB8A2C] ring-4 ring-[#EB8A2C]/15"
+                                                    : "bg-[#F5F2EF] group-hover:bg-[#EB8A2C]/15"
+                                            }`}
                                         >
                                             <Check
                                                 size={16}
-                                                strokeWidth={2.2}
-                                                className={`transition-colors ${isTicked ? "text-white" : "text-[#EB8A2C]"}`}
+                                                strokeWidth={2.4}
+                                                className={`transition-colors ${
+                                                    isSelected
+                                                        ? "text-white"
+                                                        : "text-[#EB8A2C]"
+                                                }`}
                                             />
                                         </span>
-                                        <span
-                                            className={`font-dmsans text-[0.98rem] md:text-[1.02rem] tracking-tight transition-colors ${isTicked ? "text-[#EB8A2C] line-through decoration-[#EB8A2C]/50 decoration-1" : "text-[#1A1A1A]"}`}
-                                        >
-                                            {s}
+                                        <span className="font-dmsans text-[0.98rem] md:text-[1.02rem] tracking-tight text-[#1A1A1A]">
+                                            {s.name}
                                         </span>
                                     </button>
                                 </Reveal>
@@ -285,18 +419,146 @@ export default function NeuromuscularDentistry() {
                     </div>
 
                     <Reveal delay={250}>
-                        <div className="mt-12 md:mt-14">
+                        <div className="mt-10 md:mt-12 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5">
+                            <p
+                                data-testid="nm-selected-count"
+                                className="font-dmsans text-sm md:text-[0.95rem] tracking-tight text-[#5C5C5C]"
+                                aria-live="polite"
+                            >
+                                Selected Symptoms:{" "}
+                                <span className="font-semibold text-[#1A1A1A] tabular-nums">
+                                    {selectedCount}
+                                </span>
+                            </p>
                             <button
                                 type="button"
-                                onClick={() => setBookingOpen(true)}
-                                data-testid="nm-symptoms-cta"
-                                className="btn-primary"
+                                onClick={handleViewAssessment}
+                                disabled={selectedCount === 0}
+                                data-testid="nm-view-assessment"
+                                className={`btn-primary self-start sm:self-auto ${selectedCount === 0 ? "opacity-50 cursor-not-allowed pointer-events-none" : ""}`}
                             >
-                                Book My Evaluation
+                                View My Assessment
                                 <ArrowRight size={16} strokeWidth={2} />
                             </button>
                         </div>
                     </Reveal>
+
+                    {showResults && (
+                        <div
+                            ref={resultsRef}
+                            data-testid="nm-assessment-results"
+                            className="mt-12 md:mt-16 rounded-3xl bg-[#FBF6EF] border border-[#EB8A2C]/20 shadow-[0_40px_80px_-50px_rgba(0,0,0,0.35)] p-7 md:p-12 transition-opacity duration-500"
+                        >
+                            <span className="font-dmsans text-[0.72rem] tracking-[0.22em] uppercase text-[#EB8A2C] font-semibold">
+                                Your Assessment
+                            </span>
+
+                            {primary ? (
+                                <>
+                                    <div className="mt-5">
+                                        <p className="font-dmsans text-[0.72rem] tracking-[0.18em] uppercase text-[#5C5C5C]">
+                                            Primary Finding
+                                        </p>
+                                        <h3
+                                            data-testid="nm-result-primary-title"
+                                            className="mt-2 heading-serif text-[1.6rem] sm:text-3xl md:text-[2.1rem] text-[#1A1A1A] !leading-[1.25]"
+                                        >
+                                            {primary.title}
+                                        </h3>
+                                        <p className="mt-4 font-dmsans text-[0.98rem] md:text-base leading-relaxed text-[#1A1A1A]/85 max-w-3xl">
+                                            {primary.description}
+                                        </p>
+                                        <p className="mt-4 font-dmsans text-[0.95rem] md:text-[0.98rem] leading-relaxed text-[#5C5C5C] max-w-3xl">
+                                            {primary.recommendation}
+                                        </p>
+                                    </div>
+
+                                    {secondary.length > 0 && (
+                                        <div className="mt-8 pt-7 border-t border-[#EB8A2C]/20">
+                                            <p className="font-dmsans text-[0.72rem] tracking-[0.18em] uppercase text-[#5C5C5C]">
+                                                Secondary Considerations
+                                            </p>
+                                            <ul
+                                                data-testid="nm-result-secondary"
+                                                className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3"
+                                            >
+                                                {secondary.map((c) => (
+                                                    <li
+                                                        key={c.key}
+                                                        className="flex items-start gap-3 font-dmsans text-[0.97rem] text-[#1A1A1A]"
+                                                    >
+                                                        <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[#EB8A2C] shrink-0" />
+                                                        <span>{c.label}</span>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
+                                    )}
+                                </>
+                            ) : (
+                                <div className="mt-5">
+                                    <h3
+                                        data-testid="nm-result-empty-title"
+                                        className="heading-serif text-[1.6rem] sm:text-3xl md:text-[2.1rem] text-[#1A1A1A] !leading-[1.25]"
+                                    >
+                                        No Clear Pattern Identified
+                                    </h3>
+                                    <p className="mt-4 font-dmsans text-[0.98rem] md:text-base leading-relaxed text-[#1A1A1A]/85 max-w-3xl">
+                                        Your responses do not strongly indicate
+                                        a specific neuromuscular pattern.
+                                        However, persistent symptoms may still
+                                        benefit from professional evaluation.
+                                    </p>
+                                    <p className="mt-4 font-dmsans text-[0.95rem] md:text-[0.98rem] leading-relaxed text-[#5C5C5C] max-w-3xl">
+                                        If symptoms continue or worsen,
+                                        consider scheduling a consultation for
+                                        a comprehensive assessment.
+                                    </p>
+                                </div>
+                            )}
+
+                            {highBurden && (
+                                <div
+                                    data-testid="nm-result-burden"
+                                    className="mt-8 rounded-2xl bg-white/70 border border-[#EB8A2C]/30 p-5 md:p-6"
+                                >
+                                    <p className="font-dmsans text-[0.95rem] md:text-[0.98rem] leading-relaxed text-[#1A1A1A]">
+                                        Multiple symptoms are present. While
+                                        symptoms can have many causes, your
+                                        responses suggest that a comprehensive
+                                        neuromuscular consultation may be
+                                        worthwhile to identify whether
+                                        multiple contributing factors are
+                                        interacting simultaneously.
+                                    </p>
+                                </div>
+                            )}
+
+                            <div className="mt-9 md:mt-10 pt-7 border-t border-[#EB8A2C]/20 flex flex-col gap-5">
+                                <p className="font-dmsans text-[0.92rem] md:text-[0.95rem] leading-relaxed text-[#5C5C5C] max-w-2xl">
+                                    Neuromuscular symptoms often involve
+                                    multiple contributing factors. A
+                                    consultation helps identify the root cause
+                                    and determine the most appropriate next
+                                    steps.
+                                </p>
+                                <div>
+                                    <button
+                                        type="button"
+                                        onClick={scrollToContact}
+                                        data-testid="nm-result-book-cta"
+                                        className="btn-primary"
+                                    >
+                                        Book My Consultation
+                                        <ArrowRight
+                                            size={16}
+                                            strokeWidth={2}
+                                        />
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    )}
                 </div>
             </section>
 
@@ -538,6 +800,7 @@ export default function NeuromuscularDentistry() {
 
             {/* 8. CONTACT */}
             <section
+                id="contact"
                 data-testid="nm-contact"
                 className="bg-white py-16 md:py-32"
             >
