@@ -486,7 +486,24 @@ export default function GlobalAccess() {
                                 <a
                                     href="https://wa.me/919769005504"
                                     target="_blank"
-                                    rel="noreferrer"
+                                    rel="noopener noreferrer"
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        const win =
+                                            (typeof window !== "undefined" &&
+                                                window.top) ||
+                                            window;
+                                        try {
+                                            win.open(
+                                                "https://wa.me/919769005504",
+                                                "_blank",
+                                                "noopener,noreferrer"
+                                            );
+                                        } catch {
+                                            window.location.href =
+                                                "https://wa.me/919769005504";
+                                        }
+                                    }}
                                     data-testid="ga-whatsapp-cta"
                                     className="btn-secondary-dark w-full sm:w-auto"
                                 >
