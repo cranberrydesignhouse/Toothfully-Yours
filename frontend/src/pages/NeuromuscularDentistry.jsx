@@ -266,6 +266,14 @@ export default function NeuromuscularDentistry() {
             ?.scrollIntoView({ behavior: "smooth", block: "start" });
     };
 
+    const handleReset = () => {
+        setSelected(new Set());
+        setShowResults(false);
+        document
+            .querySelector("#assess")
+            ?.scrollIntoView({ behavior: "smooth", block: "start" });
+    };
+
     return (
         <div data-testid="neuromuscular-page" className="bg-white">
             <Navbar onOpenBooking={() => setBookingOpen(true)} />
@@ -542,18 +550,26 @@ export default function NeuromuscularDentistry() {
                                     and determine the most appropriate next
                                     steps.
                                 </p>
-                                <div>
+                                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                                     <button
                                         type="button"
                                         onClick={scrollToContact}
                                         data-testid="nm-result-book-cta"
-                                        className="btn-primary"
+                                        className="btn-primary w-full sm:w-auto"
                                     >
                                         Book My Consultation
                                         <ArrowRight
                                             size={16}
                                             strokeWidth={2}
                                         />
+                                    </button>
+                                    <button
+                                        type="button"
+                                        onClick={handleReset}
+                                        data-testid="nm-result-reset"
+                                        className="btn-secondary-dark w-full sm:w-auto"
+                                    >
+                                        Reset & Take Again
                                     </button>
                                 </div>
                             </div>
