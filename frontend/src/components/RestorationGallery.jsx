@@ -54,15 +54,23 @@ const TABS = [
         items: [
             {
                 composite:
-                    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/8e8bykvc_dental-fill.png",
+                    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/mrwtjiyt_cases-7.jpg",
             },
             {
                 composite:
-                    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/njffdvgc_dental-fill2-scaled.png",
+                    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/2f77zsto_cases-30.jpg",
             },
             {
                 composite:
-                    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/krs23l9j_cases-22.png",
+                    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/qp1cut2c_cases-32.jpg",
+            },
+            {
+                composite:
+                    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/8p1xkysv_cases-33.jpg",
+            },
+            {
+                composite:
+                    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/glxiuuky_filling-5.jpg",
             },
         ],
     },
@@ -90,7 +98,7 @@ const RGCard = ({ item, testId }) => (
                         Before
                     </span>
                     <span
-                        className={`absolute left-3 font-dmsans text-[0.6rem] tracking-[0.18em] uppercase bg-[#EB8A2C] text-white rounded-full px-2.5 py-1 ${item.afterAt === "bottom" ? "bottom-3" : "top-[calc(50%+8px)]"}`}
+                        className={`absolute left-3 font-dmsans text-[0.6rem] tracking-[0.18em] uppercase bg-[#EB8A2C] text-white rounded-full px-2.5 py-1 ${item.afterAt === "bottom" ? "top-[calc(66.67%+8px)]" : "top-[calc(50%+8px)]"}`}
                     >
                         After
                     </span>
