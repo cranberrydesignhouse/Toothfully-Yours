@@ -19,7 +19,7 @@ import BookingModal from "@/components/BookingModal";
 import PackagesCarousel from "@/components/PackagesCarousel";
 
 const HERO_IMG =
-    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/b23zov3v_cosmetic.jpg";
+    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/2atd5hyi_global%20access%20hero.png";
 
 const DOCTOR_IMG =
     "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/r7wm2nb4_Dr.%20Amruta.jpg";
@@ -28,19 +28,19 @@ const SIGNATURE_TREATMENTS = [
     {
         title: "Cosmetic & Elective",
         copy: "Veneers, smile design, teeth whitening, cosmetic bonding, gum contouring and full mouth aesthetic rehabilitation.",
-        img: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/cxdgduas_T%20cosmetic%20image.jpg",
+        img: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/ztin3o2z_cosmetic%20and%20elective%20global.png",
         href: "/cosmetic-aesthetic-care",
     },
     {
         title: "General & Preventative",
         copy: "Dental check-ups, oral examination, professional teeth cleaning, scaling & polishing, gum health assessments.",
-        img: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/9rrz4g9h_TMJ.jpg",
+        img: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/kdlt7jvi_general%20and%20preventative%20global%20.png",
         href: null,
     },
     {
         title: "Full Mouth Transformation",
         copy: "Dental implants, root canal treatment, crowns, bridges, full-mouth rehabilitation, gum treatment and restorative care.",
-        img: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/gjc4aqb9_RESTORATIVE%20tv.jpg",
+        img: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/f1j6sd6t_full%20mouth.png",
         href: "/implants-restoration",
     },
 ];
