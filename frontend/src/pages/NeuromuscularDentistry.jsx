@@ -137,6 +137,10 @@ const Reveal = ({ children, delay = 0, className = "" }) => {
 
 export default function NeuromuscularDentistry() {
     const [bookingOpen, setBookingOpen] = useState(false);
+    const [ticked, setTicked] = useState({});
+
+    const toggleSymptom = (i) =>
+        setTicked((prev) => ({ ...prev, [i]: !prev[i] }));
 
     return (
         <div data-testid="neuromuscular-page" className="bg-white">
@@ -232,7 +236,7 @@ export default function NeuromuscularDentistry() {
                     <Reveal>
                         <div className="max-w-2xl">
                             <span className="section-label">Let's Assess</span>
-                            <h2 className="heading-serif text-[2rem] sm:text-4xl md:text-[3.25rem] text-[#1A1A1A] leading-[1.2]">
+                            <h2 className="heading-serif text-[2rem] sm:text-4xl md:text-[3.25rem] text-[#1A1A1A] !leading-[1.35]">
                                 Are you experiencing
                                 <br />
                                 these{" "}
@@ -241,7 +245,7 @@ export default function NeuromuscularDentistry() {
                                 </span>
                             </h2>
                             <p className="mt-5 font-dmsans text-[#5C5C5C] text-[0.95rem] md:text-base leading-relaxed">
-                                Note the ones that feel familiar. If even two
+                                Tap the ones that feel familiar. If even two
                                 or three apply, a neuromuscular evaluation is
                                 worth a conversation.
                             </p>
@@ -249,25 +253,35 @@ export default function NeuromuscularDentistry() {
                     </Reveal>
 
                     <div className="mt-12 md:mt-16 grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-4 md:gap-y-5">
-                        {SYMPTOMS.map((s, i) => (
-                            <Reveal key={s} delay={i * 35}>
-                                <div
-                                    data-testid={`nm-symptom-${i}`}
-                                    className="group flex items-center gap-4 py-3 border-b border-black/8 transition-colors hover:border-[#EB8A2C]/40"
-                                >
-                                    <span className="h-9 w-9 rounded-full bg-[#F5F2EF] flex items-center justify-center shrink-0 transition-colors group-hover:bg-[#EB8A2C]">
-                                        <Check
-                                            size={16}
-                                            strokeWidth={2.2}
-                                            className="text-[#EB8A2C] transition-colors group-hover:text-white"
-                                        />
-                                    </span>
-                                    <span className="font-dmsans text-[0.98rem] md:text-[1.02rem] text-[#1A1A1A] tracking-tight">
-                                        {s}
-                                    </span>
-                                </div>
-                            </Reveal>
-                        ))}
+                        {SYMPTOMS.map((s, i) => {
+                            const isTicked = !!ticked[i];
+                            return (
+                                <Reveal key={s} delay={i * 35}>
+                                    <button
+                                        type="button"
+                                        onClick={() => toggleSymptom(i)}
+                                        aria-pressed={isTicked}
+                                        data-testid={`nm-symptom-${i}`}
+                                        className={`group w-full text-left flex items-center gap-4 py-3 border-b transition-colors ${isTicked ? "border-[#EB8A2C]" : "border-black/8 hover:border-[#EB8A2C]/40"}`}
+                                    >
+                                        <span
+                                            className={`h-9 w-9 rounded-full flex items-center justify-center shrink-0 transition-colors ${isTicked ? "bg-[#EB8A2C]" : "bg-[#F5F2EF] group-hover:bg-[#EB8A2C]/15"}`}
+                                        >
+                                            <Check
+                                                size={16}
+                                                strokeWidth={2.2}
+                                                className={`transition-colors ${isTicked ? "text-white" : "text-[#EB8A2C]"}`}
+                                            />
+                                        </span>
+                                        <span
+                                            className={`font-dmsans text-[0.98rem] md:text-[1.02rem] tracking-tight transition-colors ${isTicked ? "text-[#EB8A2C] line-through decoration-[#EB8A2C]/50 decoration-1" : "text-[#1A1A1A]"}`}
+                                        >
+                                            {s}
+                                        </span>
+                                    </button>
+                                </Reveal>
+                            );
+                        })}
                     </div>
 
                     <Reveal delay={250}>
@@ -297,7 +311,7 @@ export default function NeuromuscularDentistry() {
                             <span className="font-dmsans text-[0.72rem] tracking-[0.22em] uppercase text-[#EB8A2C]">
                                 Root-Cause Analysis
                             </span>
-                            <h2 className="mt-4 heading-serif text-[2rem] sm:text-4xl md:text-[3.25rem] text-white leading-[1.2]">
+                            <h2 className="mt-4 heading-serif text-[2rem] sm:text-4xl md:text-[3.25rem] text-white !leading-[1.35]">
                                 Understanding the
                                 <br />
                                 jaw-muscle{" "}
@@ -354,7 +368,7 @@ export default function NeuromuscularDentistry() {
                     <Reveal>
                         <div className="max-w-2xl">
                             <span className="section-label">Scope of Care</span>
-                            <h2 className="heading-serif text-[2rem] sm:text-4xl md:text-[3.25rem] text-[#1A1A1A] leading-[1.2]">
+                            <h2 className="heading-serif text-[2rem] sm:text-4xl md:text-[3.25rem] text-[#1A1A1A] !leading-[1.35]">
                                 Common conditions we{" "}
                                 <span className="text-[#EB8A2C]">address.</span>
                             </h2>
@@ -482,19 +496,14 @@ export default function NeuromuscularDentistry() {
                             <Reveal key={t} delay={i * 50}>
                                 <li
                                     data-testid={`nm-treatment-${i}`}
-                                    className="group flex items-center gap-5 py-5 border-b border-black/10 transition-colors hover:border-[#EB8A2C]"
+                                    className="flex items-center gap-5 py-5 border-b border-black/10"
                                 >
-                                    <span className="font-dmsans text-[0.7rem] tracking-[0.2em] text-[#5C5C5C] group-hover:text-[#EB8A2C] transition-colors">
+                                    <span className="font-dmsans text-[0.7rem] tracking-[0.2em] text-[#5C5C5C]">
                                         {String(i + 1).padStart(2, "0")}
                                     </span>
-                                    <span className="font-dmsans font-semibold text-[1rem] md:text-[1.05rem] text-[#1A1A1A] group-hover:text-[#EB8A2C] transition-colors tracking-tight">
+                                    <span className="font-dmsans font-semibold text-[1rem] md:text-[1.05rem] text-[#1A1A1A] tracking-tight">
                                         {t}
                                     </span>
-                                    <ArrowRight
-                                        size={16}
-                                        strokeWidth={1.6}
-                                        className="ml-auto text-[#5C5C5C] opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 group-hover:text-[#EB8A2C] transition-all duration-300"
-                                    />
                                 </li>
                             </Reveal>
                         ))}
