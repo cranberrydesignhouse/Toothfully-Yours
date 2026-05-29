@@ -21,7 +21,7 @@ const NAV_LINKS = [
 ];
 
 const LOGO_URL =
-    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/huinelt5_TY%20LOGO%20for%20website.png";
+    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/kh779mbu_TOOTHFULLY-YOURS-LOGO-FINAL-1.png";
 
 export const Navbar = ({ onOpenBooking }) => {
     const [scrolled, setScrolled] = useState(false);
@@ -88,11 +88,11 @@ export const Navbar = ({ onOpenBooking }) => {
                     className="flex items-center group shrink-0"
                     aria-label="Toothfully Yours, home"
                 >
-                    <div className="overflow-hidden h-9 md:h-11 flex items-start mt-1 md:mt-1.5">
+                    <div className="h-11 md:h-14 flex items-center">
                         <img
                             src={LOGO_URL}
                             alt="Toothfully Yours"
-                            className="h-[54px] md:h-[68px] w-auto object-contain block"
+                            className="h-full w-auto object-contain block"
                         />
                     </div>
                 </Link>
