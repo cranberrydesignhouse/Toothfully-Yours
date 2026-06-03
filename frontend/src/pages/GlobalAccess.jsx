@@ -195,13 +195,13 @@ export default function GlobalAccess() {
                 data-testid="ga-treatments"
                 className="bg-white py-16 md:py-32"
             >
-                <div className="max-w-7xl mx-auto px-5 md:px-12 lg:px-16 text-center">
+                <div className="max-w-7xl mx-auto px-5 md:px-12 lg:px-16 text-left md:text-center">
                     <Reveal>
                         <span className="section-label">Our Services</span>
                         <h2 className="heading-serif text-[2.25rem] sm:text-4xl md:text-[3.25rem] text-[#1A1A1A]">
                             Signature Treatments.
                         </h2>
-                        <p className="mt-5 font-dmsans text-[#5C5C5C] text-[0.95rem] md:text-base max-w-xl mx-auto">
+                        <p className="mt-5 font-dmsans text-[#5C5C5C] text-[0.95rem] md:text-base max-w-xl md:mx-auto">
                             Three pathways into the practice, each planned
                             around your time and travel.
                         </p>
@@ -290,7 +290,7 @@ export default function GlobalAccess() {
             >
                 <div className="max-w-7xl mx-auto px-5 md:px-12 lg:px-16">
                     <Reveal>
-                        <div className="text-center max-w-2xl mx-auto">
+                        <div className="text-left md:text-center max-w-2xl mx-auto">
                             <span className="font-dmsans text-[0.72rem] tracking-[0.22em] uppercase text-[#EB8A2C]">
                                 Step-by-step Process
                             </span>

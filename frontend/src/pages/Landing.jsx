@@ -429,7 +429,7 @@ export default function Landing() {
                 data-testid="section-services"
                 className="bg-[#F5F2EF] py-16 md:py-32"
             >
-                <div className="max-w-7xl mx-auto px-5 md:px-12 lg:px-16 text-center">
+                <div className="max-w-7xl mx-auto px-5 md:px-12 lg:px-16 text-left md:text-center">
                     <Reveal>
                         <span className="section-label">Our Services</span>
                         <h2 className="heading-serif text-[2.25rem] sm:text-4xl md:text-[3.25rem] text-[#1A1A1A] max-w-2xl mx-auto">
@@ -576,13 +576,13 @@ export default function Landing() {
             >
                 <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
                     <Reveal>
-                        <div className="text-center max-w-3xl mx-auto">
+                        <div className="text-left md:text-center max-w-3xl mx-auto">
                             <span className="section-label">Our Values</span>
                             <h2 className="heading-serif text-4xl sm:text-5xl md:text-[3.25rem] text-white">
                                 Rooted in{" "}
                                 <span className="text-[#EB8A2C]">care.</span>
                             </h2>
-                            <p className="mt-5 font-dmsans text-white/70 text-base md:text-lg max-w-xl mx-auto">
+                            <p className="mt-5 font-dmsans text-white/70 text-base md:text-lg max-w-xl md:mx-auto">
                                 Five principles that shape every appointment,
                                 every procedure, every conversation.
                             </p>
@@ -632,7 +632,7 @@ export default function Landing() {
                 data-testid="section-team"
                 className="bg-white py-16 md:py-32"
             >
-                <div className="max-w-7xl mx-auto px-5 md:px-12 lg:px-16 text-center">
+                <div className="max-w-7xl mx-auto px-5 md:px-12 lg:px-16 text-left md:text-center">
                     <Reveal>
                         <span className="section-label">Meet the Team</span>
                         <h2 className="heading-serif text-[2.25rem] sm:text-4xl md:text-[3.25rem] text-[#1A1A1A]">
@@ -690,7 +690,7 @@ export default function Landing() {
             >
                 <div className="max-w-7xl mx-auto px-5 md:px-12 lg:px-16">
                     <Reveal>
-                        <div className="text-center max-w-2xl mx-auto">
+                        <div className="text-left md:text-center max-w-2xl mx-auto">
                             <span className="section-label">Testimonials</span>
                             <h2 className="heading-serif text-[2.25rem] sm:text-4xl md:text-[3.25rem] text-[#1A1A1A]">
                                 The Tooth{" "}
@@ -708,7 +708,7 @@ export default function Landing() {
                             <TestimonialsCarousel />
                         </div>
 
-                        <div className="mt-10 text-center">
+                        <div className="mt-10 text-left md:text-center">
                             <a
                                 href={GOOGLE_REVIEWS_URL}
                                 target="_blank"
@@ -731,7 +731,7 @@ export default function Landing() {
             >
                 <div className="max-w-[1400px] mx-auto px-5 md:px-12 lg:px-16">
                     <Reveal>
-                        <div className="text-center max-w-2xl mx-auto">
+                        <div className="text-left md:text-center max-w-2xl mx-auto">
                             <span className="section-label">Happy Smiles</span>
                             <h2 className="heading-serif text-[2.25rem] sm:text-4xl md:text-[3.25rem] text-[#1A1A1A]">
                                 Unfiltered.

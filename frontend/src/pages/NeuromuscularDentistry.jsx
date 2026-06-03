@@ -831,7 +831,7 @@ export default function NeuromuscularDentistry() {
             >
                 <div className="max-w-3xl mx-auto px-5 md:px-12 lg:px-8">
                     <Reveal>
-                        <div className="text-center">
+                        <div className="text-left md:text-center">
                             <span className="section-label">
                                 Frequently Asked Questions
                             </span>

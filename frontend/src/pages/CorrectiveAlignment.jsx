@@ -183,7 +183,7 @@ export default function CorrectiveAlignment() {
                 data-testid="ca-services"
                 className="bg-white py-16 md:py-32"
             >
-                <div className="max-w-7xl mx-auto px-5 md:px-12 lg:px-16 text-center">
+                <div className="max-w-7xl mx-auto px-5 md:px-12 lg:px-16 text-left md:text-center">
                     <Reveal>
                         <span className="section-label">
                             Corrective Alignment
@@ -191,7 +191,7 @@ export default function CorrectiveAlignment() {
                         <h2 className="heading-serif text-[2.25rem] sm:text-4xl md:text-[3.25rem] text-[#1A1A1A]">
                             Get in <span className="text-[#EB8A2C]">line.</span>
                         </h2>
-                        <p className="mt-5 font-dmsans text-[#5C5C5C] text-[0.95rem] md:text-base max-w-xl mx-auto">
+                        <p className="mt-5 font-dmsans text-[#5C5C5C] text-[0.95rem] md:text-base max-w-xl md:mx-auto">
                             Tap a treatment to see real outcomes from the
                             practice.
                         </p>
@@ -240,7 +240,7 @@ export default function CorrectiveAlignment() {
             >
                 <div className="max-w-7xl mx-auto px-5 md:px-12 lg:px-16">
                     <Reveal>
-                        <div className="text-center max-w-2xl mx-auto">
+                        <div className="text-left md:text-center max-w-2xl mx-auto">
                             <span className="section-label">
                                 Results We Are Proud Of
                             </span>
@@ -337,7 +337,7 @@ export default function CorrectiveAlignment() {
             >
                 <div className="max-w-3xl mx-auto px-5 md:px-12 lg:px-8">
                     <Reveal>
-                        <div className="text-center">
+                        <div className="text-left md:text-center">
                             <span className="section-label">
                                 Frequently Asked Questions
                             </span>

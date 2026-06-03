@@ -191,7 +191,7 @@ export default function CosmeticCare() {
                 data-testid="cc-possibilities"
                 className="bg-white py-16 md:py-32"
             >
-                <div className="max-w-7xl mx-auto px-5 md:px-12 lg:px-16 text-center">
+                <div className="max-w-7xl mx-auto px-5 md:px-12 lg:px-16 text-left md:text-center">
                     <Reveal>
                         <span className="section-label">
                             Cosmetic &amp; Aesthetic Care
@@ -199,7 +199,7 @@ export default function CosmeticCare() {
                         <h2 className="heading-serif text-[2.25rem] sm:text-4xl md:text-[3.25rem] text-[#1A1A1A]">
                             What's possible?
                         </h2>
-                        <p className="mt-5 font-dmsans text-[#5C5C5C] text-[0.95rem] md:text-base max-w-xl mx-auto">
+                        <p className="mt-5 font-dmsans text-[#5C5C5C] text-[0.95rem] md:text-base max-w-xl md:mx-auto">
                             Tap any procedure to see real outcomes from the
                             practice.
                         </p>
@@ -248,7 +248,7 @@ export default function CosmeticCare() {
             >
                 <div className="max-w-7xl mx-auto px-5 md:px-12 lg:px-16">
                     <Reveal>
-                        <div className="text-center max-w-2xl mx-auto">
+                        <div className="text-left md:text-center max-w-2xl mx-auto">
                             <span className="section-label">
                                 Results We Are Proud Of
                             </span>
@@ -348,7 +348,7 @@ export default function CosmeticCare() {
             >
                 <div className="max-w-3xl mx-auto px-5 md:px-12 lg:px-8">
                     <Reveal>
-                        <div className="text-center">
+                        <div className="text-left md:text-center">
                             <span className="section-label">
                                 Frequently Asked Questions
                             </span>

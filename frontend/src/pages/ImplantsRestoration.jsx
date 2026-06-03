@@ -206,7 +206,7 @@ export default function ImplantsRestoration() {
                 data-testid="ir-services"
                 className="bg-white py-16 md:py-32"
             >
-                <div className="max-w-7xl mx-auto px-5 md:px-12 lg:px-16 text-center">
+                <div className="max-w-7xl mx-auto px-5 md:px-12 lg:px-16 text-left md:text-center">
                     <Reveal>
                         <span className="section-label">
                             Implants &amp; Restoration
@@ -259,7 +259,7 @@ export default function ImplantsRestoration() {
             >
                 <div className="max-w-7xl mx-auto px-5 md:px-12 lg:px-16">
                     <Reveal>
-                        <div className="text-center max-w-2xl mx-auto">
+                        <div className="text-left md:text-center max-w-2xl mx-auto">
                             <span className="section-label">
                                 Results We Are Proud Of
                             </span>
@@ -360,7 +360,7 @@ export default function ImplantsRestoration() {
             >
                 <div className="max-w-3xl mx-auto px-5 md:px-12 lg:px-8">
                     <Reveal>
-                        <div className="text-center">
+                        <div className="text-left md:text-center">
                             <span className="section-label">
                                 Frequently Asked Questions
                             </span>
