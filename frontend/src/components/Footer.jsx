@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Phone, Mail, MapPin, Instagram, Linkedin } from "lucide-react";
 
 const QUICK_LINKS = [
@@ -21,8 +21,9 @@ const LOGO_INVERTED =
     "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/9mp1q9ea_TY%20inverted%20logo.png";
 
 export const Footer = () => {
-    const onHome =
-        typeof window !== "undefined" && window.location.pathname === "/";
+    const location = useLocation();
+    const navigate = useNavigate();
+    const onHome = location.pathname === "/";
 
     const handleAnchorClick = (e, href) => {
         e.preventDefault();
@@ -30,7 +31,8 @@ export const Footer = () => {
             const el = document.querySelector(href);
             if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
         } else {
-            window.location.href = `/${href}`;
+            // SPA route to home with hash; Landing scrolls to anchor on mount.
+            navigate(`/${href}`);
         }
     };
 

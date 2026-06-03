@@ -1,0 +1,37 @@
+{
+  "summary": "Frontend-only testing for Toothfully Yours. Tested navbar/footer routing, currency auto-detection + persistence + manual switching, mobile responsiveness, and Neuromuscular self-assessment. 22/23 functional checks passed. Found ONE CRITICAL mobile bug: the desktop 'Book My Consultation' CTA in the navbar is not actually hidden on mobile (Tailwind `hidden` overridden by `.btn-primary`'s `display:inline-flex`), which pushes the hamburger toggle off-screen (x=428 at 375px viewport). Mobile users cannot reach the hamburger menu via tap; it only opens via scripted click. All other flows (routing, currency, assessment) work correctly.",
+  "backend_issues": {
+    "critical": [],
+    "minor": []
+  },
+  "frontend_issues": {
+    "ui_bugs": [
+      {
+        "component": "Navbar (nav-cta-book)",
+        "issue": "Desktop 'Book My Consultation' button stays visible on mobile (375px). It has class `hidden md:inline-flex btn-primary`, but the global `.btn-primary { display: inline-flex }` in /app/frontend/src/index.css (lines 79-98) wins over Tailwind's `.hidden` due to load order/specificity. Result: at 375px viewport the hamburger toggle (data-testid='nav-mobile-toggle') is rendered at x=428px (vw=375) — completely OUTSIDE the visible viewport. Real users cannot tap it. Programmatic .click() still opens the panel correctly, but UI is unreachable.",
+        "selector": "[data-testid='nav-cta-book'] / [data-testid='nav-mobile-toggle']",
+        "priority": "CRITICAL"
+      }
+    ],
+    "integration_issues": [],
+    "design_issues": []
+  },
+  "test_report_links": [],
+  "action_items": [
+    "Fix mobile navbar: ensure `nav-cta-book` is truly hidden below md breakpoint. Recommended fixes (any one): (a) wrap `.btn-primary` inside `@layer components { ... }` in index.css so Tailwind utilities like `hidden` win; (b) change the className to `!hidden md:!inline-flex btn-primary ...` to force Tailwind importance; (c) explicitly add `display: none` when below md via a media query on `.btn-primary` is NOT recommended — option (a) or (b) is cleanest. After fix, re-verify hamburger x-coordinate is inside viewport at 375px."
+  ],
+  "critical_code_review_comments": [
+    "index.css `.btn-primary` is declared outside `@layer components`, so it competes with Tailwind utilities at equal specificity and wins by source order. This same problem will silently break ANY future `hidden`/`block`/etc. utility applied to elements using `.btn-primary`. Strong recommendation: move all custom button classes into `@layer components`.",
+    "PackagesCarousel.jsx: live FX fetch (fetchLiveRates) uses USD-base then divides by INR rate — works, but if open.er-api.com returns success with a missing currency code, the code falls back to per-currency `c.fallback` correctly. Good. No NaN observed.",
+    "ipapi.co was blocked by CORS in the preview environment (console shows ERR_FAILED). The graceful fallback to locale + USD default works, so it's not a bug — but in production deployments behind some CDNs/networks this CORS block may also occur. Consider adding a server-side proxy or a secondary geo provider as resilience.",
+    "Footer.jsx anchor click on sub-page navigates to `/${href}` resulting in `/#about`. Landing.jsx hash-scroll then runs. Verified working. Slight nit: history will contain `/#about` rather than `/`, harmless."
+  ],
+  "updated_files": [],
+  "success_rate": {"backend": "N/A (no backend)", "frontend": "96% (22/23)"},
+  "test_credentials": "N/A",
+  "seed_data_creation": "None",
+  "retest_needed": true,
+  "main_agent_can_self_test": true,
+  "context_for_next_testing_agent": "All routing (4 nav-services links, 4 footer-service links, footer global-access, footer about/team/testimonials/gallery/contact anchors from sub-pages) confirmed working. Currency detection: auto-detected USD from test env, live rates loaded (₹5000 → $52, plausible), localStorage persistence verified (set AED → reload → still AED). Manual currency switch updates all package prices instantly for EUR/AED/INR. 'Show in' label correctly hidden at <=640px. Neuromuscular page: nm-symptom-{0..9} (10 buttons), nm-selected-count, nm-clear-selection, nm-view-assessment, nm-assessment-results, nm-result-reset — all wired correctly; selecting 5 → counter 5 → submit shows results → reset returns counter to 0; clear-selection also works. ONLY outstanding bug = mobile hamburger pushed off-screen due to btn-primary overriding Tailwind hidden. After main agent fixes the btn-primary CSS layering or adds ! importance markers, retest mobile menu open on 375px viewport with real tap (NOT JS click).",
+  "rca of the issue": "Reproduction: 1) Open https://amruta-dentistry.preview.emergentagent.com/ in mobile viewport (375x812). 2) Inspect [data-testid='nav-cta-book'] — computed style shows `display: flex` (Tailwind `hidden` lost). 3) [data-testid='nav-mobile-toggle'] bounding rect: x=428.5, w=36, viewport=375 → entirely off-screen right side. Root cause: /app/frontend/src/index.css line 79-98 declares `.btn-primary { display: inline-flex; ... }` at root scope (no @layer). Tailwind's preflight/utilities and `.btn-primary` end up at equal CSS specificity (single class); cascade order then decides, and the global stylesheet wins, overriding `display:none` from `.hidden`. Mitigation: either (a) move `.btn-primary` block into `@layer components { .btn-primary { ... } }` so Tailwind utility `.hidden` (which lives in the utilities layer, loaded after components) beats it; or (b) change Navbar.jsx className to `!hidden md:!inline-flex` so Tailwind emits `!important` and wins regardless."
+}

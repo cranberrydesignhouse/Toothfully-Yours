@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { useLocation } from "react-router-dom";
 import {
     GraduationCap,
     Activity,
@@ -271,6 +272,18 @@ export default function Landing() {
     const [bookingOpen, setBookingOpen] = useState(false);
     const openBooking = () => setBookingOpen(true);
     const closeBooking = () => setBookingOpen(false);
+    const location = useLocation();
+
+    // When user lands on "/" with a hash (e.g. via SPA navigation from footer/nav), scroll to the section.
+    useEffect(() => {
+        if (!location.hash) return;
+        const id = location.hash;
+        // Defer one frame so the section is mounted.
+        requestAnimationFrame(() => {
+            const el = document.querySelector(id);
+            if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+    }, [location.hash, location.key]);
 
     return (
         <div data-testid="landing-page" className="bg-white">

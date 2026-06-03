@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { ChevronLeft, ChevronRight, Check, ChevronDown } from "lucide-react";
 
@@ -141,30 +141,85 @@ const PACKAGES = [
     },
 ];
 
-// Static FX table, approximate rates as of early 2026.
-// `rate` = how many of this currency equal 1 INR.
+// FX rates: `fallback` = target currency per 1 INR (approximate, early 2026).
+// Live rates from open.er-api.com override these on mount.
 const CURRENCIES = [
-    { code: "USD", label: "US Dollar", flag: "🇺🇸", rate: 1 / 84.5 },
-    { code: "EUR", label: "Euro", flag: "🇪🇺", rate: 1 / 91 },
-    { code: "GBP", label: "British Pound", flag: "🇬🇧", rate: 1 / 106 },
-    { code: "AED", label: "UAE Dirham", flag: "🇦🇪", rate: 1 / 23 },
-    { code: "SAR", label: "Saudi Riyal", flag: "🇸🇦", rate: 1 / 22.5 },
-    { code: "QAR", label: "Qatari Riyal", flag: "🇶🇦", rate: 1 / 23.2 },
-    { code: "KWD", label: "Kuwaiti Dinar", flag: "🇰🇼", rate: 1 / 274 },
-    { code: "OMR", label: "Omani Rial", flag: "🇴🇲", rate: 1 / 219 },
-    { code: "BHD", label: "Bahraini Dinar", flag: "🇧🇭", rate: 1 / 224 },
-    { code: "AUD", label: "Australian Dollar", flag: "🇦🇺", rate: 1 / 55 },
-    { code: "CAD", label: "Canadian Dollar", flag: "🇨🇦", rate: 1 / 60.5 },
-    { code: "NZD", label: "NZ Dollar", flag: "🇳🇿", rate: 1 / 50 },
-    { code: "SGD", label: "Singapore Dollar", flag: "🇸🇬", rate: 1 / 63 },
-    { code: "HKD", label: "Hong Kong Dollar", flag: "🇭🇰", rate: 1 / 10.8 },
-    { code: "JPY", label: "Japanese Yen", flag: "🇯🇵", rate: 0.55 },
-    { code: "CHF", label: "Swiss Franc", flag: "🇨🇭", rate: 1 / 93 },
-    { code: "MYR", label: "Malaysian Ringgit", flag: "🇲🇾", rate: 1 / 18.5 },
-    { code: "THB", label: "Thai Baht", flag: "🇹🇭", rate: 0.4 },
-    { code: "ZAR", label: "South African Rand", flag: "🇿🇦", rate: 0.21 },
-    { code: "INR", label: "Indian Rupee", flag: "🇮🇳", rate: 1 },
+    { code: "USD", label: "US Dollar", flag: "🇺🇸", fallback: 1 / 84.5 },
+    { code: "EUR", label: "Euro", flag: "🇪🇺", fallback: 1 / 91 },
+    { code: "GBP", label: "British Pound", flag: "🇬🇧", fallback: 1 / 106 },
+    { code: "AED", label: "UAE Dirham", flag: "🇦🇪", fallback: 1 / 23 },
+    { code: "SAR", label: "Saudi Riyal", flag: "🇸🇦", fallback: 1 / 22.5 },
+    { code: "QAR", label: "Qatari Riyal", flag: "🇶🇦", fallback: 1 / 23.2 },
+    { code: "KWD", label: "Kuwaiti Dinar", flag: "🇰🇼", fallback: 1 / 274 },
+    { code: "OMR", label: "Omani Rial", flag: "🇴🇲", fallback: 1 / 219 },
+    { code: "BHD", label: "Bahraini Dinar", flag: "🇧🇭", fallback: 1 / 224 },
+    { code: "AUD", label: "Australian Dollar", flag: "🇦🇺", fallback: 1 / 55 },
+    { code: "CAD", label: "Canadian Dollar", flag: "🇨🇦", fallback: 1 / 60.5 },
+    { code: "NZD", label: "NZ Dollar", flag: "🇳🇿", fallback: 1 / 50 },
+    { code: "SGD", label: "Singapore Dollar", flag: "🇸🇬", fallback: 1 / 63 },
+    { code: "HKD", label: "Hong Kong Dollar", flag: "🇭🇰", fallback: 1 / 10.8 },
+    { code: "JPY", label: "Japanese Yen", flag: "🇯🇵", fallback: 0.55 },
+    { code: "CHF", label: "Swiss Franc", flag: "🇨🇭", fallback: 1 / 93 },
+    { code: "MYR", label: "Malaysian Ringgit", flag: "🇲🇾", fallback: 1 / 18.5 },
+    { code: "THB", label: "Thai Baht", flag: "🇹🇭", fallback: 0.4 },
+    { code: "ZAR", label: "South African Rand", flag: "🇿🇦", fallback: 0.21 },
+    { code: "INR", label: "Indian Rupee", flag: "🇮🇳", fallback: 1 },
 ];
+
+// ISO country code → supported currency code.
+const COUNTRY_TO_CURRENCY = {
+    // GCC
+    AE: "AED", SA: "SAR", QA: "QAR", KW: "KWD", OM: "OMR", BH: "BHD",
+    // Anglosphere & APAC
+    US: "USD", GB: "GBP", CA: "CAD", AU: "AUD", NZ: "NZD",
+    SG: "SGD", HK: "HKD", JP: "JPY", CH: "CHF", MY: "MYR", TH: "THB",
+    ZA: "ZAR", IN: "INR",
+    // Eurozone
+    DE: "EUR", FR: "EUR", IT: "EUR", ES: "EUR", NL: "EUR", BE: "EUR",
+    AT: "EUR", PT: "EUR", IE: "EUR", FI: "EUR", GR: "EUR", LU: "EUR",
+    CY: "EUR", MT: "EUR", SK: "EUR", SI: "EUR", EE: "EUR", LV: "EUR",
+    LT: "EUR", HR: "EUR",
+};
+
+const SUPPORTED_CODES = new Set(CURRENCIES.map((c) => c.code));
+const STORAGE_KEY = "ty_currency";
+
+const detectFromLocale = () => {
+    if (typeof navigator === "undefined") return null;
+    const region = (navigator.language || "").split("-")[1]?.toUpperCase();
+    return region ? COUNTRY_TO_CURRENCY[region] || null : null;
+};
+
+const detectFromIP = async () => {
+    try {
+        const res = await fetch("https://ipapi.co/json/", {
+            cache: "no-store",
+        });
+        if (!res.ok) return null;
+        const data = await res.json();
+        const byCountry = COUNTRY_TO_CURRENCY[data?.country_code];
+        if (byCountry) return byCountry;
+        if (data?.currency && SUPPORTED_CODES.has(data.currency))
+            return data.currency;
+        return null;
+    } catch {
+        return null;
+    }
+};
+
+const fetchLiveRates = async () => {
+    try {
+        const res = await fetch("https://open.er-api.com/v6/latest/USD", {
+            cache: "no-store",
+        });
+        if (!res.ok) return null;
+        const data = await res.json();
+        if (data?.result !== "success" || !data?.rates?.INR) return null;
+        return data.rates;
+    } catch {
+        return null;
+    }
+};
 
 const roundNice = (n) => {
     if (n >= 10000) return Math.round(n / 1000) * 1000;
@@ -196,8 +251,8 @@ const formatPrice = (priceInr, currency) => {
 };
 
 const CurrencyPicker = ({ value, onChange }) => (
-    <div className="relative inline-flex items-center">
-        <span className="absolute left-4 font-dmsans text-[0.62rem] tracking-[0.18em] uppercase text-[#5C5C5C] pointer-events-none">
+    <div className="relative inline-flex items-center w-full sm:w-auto">
+        <span className="hidden sm:block absolute left-4 font-dmsans text-[0.62rem] tracking-[0.18em] uppercase text-[#5C5C5C] pointer-events-none">
             Show in
         </span>
         <select
@@ -210,7 +265,7 @@ const CurrencyPicker = ({ value, onChange }) => (
             }
             data-testid="packages-currency-select"
             aria-label="Choose pricing currency"
-            className="appearance-none pl-[5.25rem] pr-10 py-3 rounded-full bg-white border border-black/10 font-dmsans text-[0.92rem] font-semibold text-[#1A1A1A] tracking-tight hover:border-[#EB8A2C] focus:outline-none focus:border-[#EB8A2C] transition-colors cursor-pointer"
+            className="appearance-none w-full sm:w-auto pl-4 sm:pl-[5.25rem] pr-10 py-3 rounded-full bg-white border border-black/10 font-dmsans text-[0.92rem] font-semibold text-[#1A1A1A] tracking-tight hover:border-[#EB8A2C] focus:outline-none focus:border-[#EB8A2C] transition-colors cursor-pointer"
         >
             {CURRENCIES.map((c) => (
                 <option key={c.code} value={c.code}>
@@ -327,7 +382,84 @@ const PackageCard = ({ p, index, currency }) => (
 );
 
 export const PackagesCarousel = () => {
-    const [currency, setCurrency] = useState(CURRENCIES[0]);
+    // Currency code state (USD default, hydrated from localStorage synchronously to avoid flash for returning users).
+    const [currencyCode, setCurrencyCode] = useState(() => {
+        try {
+            const stored =
+                typeof window !== "undefined" &&
+                window.localStorage.getItem(STORAGE_KEY);
+            if (stored && SUPPORTED_CODES.has(stored)) return stored;
+        } catch {
+            /* ignore */
+        }
+        return "USD";
+    });
+    const [liveRates, setLiveRates] = useState(null);
+    const [userPicked, setUserPicked] = useState(false);
+
+    // Auto-detect on first visit (no stored choice yet).
+    useEffect(() => {
+        let cancelled = false;
+        const stored =
+            typeof window !== "undefined" &&
+            window.localStorage.getItem(STORAGE_KEY);
+        if (stored && SUPPORTED_CODES.has(stored)) return; // respect stored
+        // Fast locale guess, then IP refinement
+        const localeGuess = detectFromLocale();
+        if (localeGuess && SUPPORTED_CODES.has(localeGuess)) {
+            setCurrencyCode(localeGuess);
+        }
+        (async () => {
+            const ip = await detectFromIP();
+            if (cancelled || userPicked) return;
+            if (ip && SUPPORTED_CODES.has(ip)) {
+                setCurrencyCode(ip);
+            }
+        })();
+        return () => {
+            cancelled = true;
+        };
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
+    // Live FX rates (USD base) → compute per-INR multipliers.
+    useEffect(() => {
+        let cancelled = false;
+        (async () => {
+            const rates = await fetchLiveRates();
+            if (cancelled || !rates) return;
+            const inrPerUsd = rates.INR;
+            const computed = {};
+            CURRENCIES.forEach((c) => {
+                const r = rates[c.code];
+                computed[c.code] = r ? r / inrPerUsd : c.fallback;
+            });
+            setLiveRates(computed);
+        })();
+        return () => {
+            cancelled = true;
+        };
+    }, []);
+
+    const currency = useMemo(() => {
+        const meta =
+            CURRENCIES.find((c) => c.code === currencyCode) || CURRENCIES[0];
+        const rate = liveRates?.[meta.code] ?? meta.fallback;
+        return { ...meta, rate };
+    }, [currencyCode, liveRates]);
+
+    const setCurrency = useCallback((next) => {
+        const code = typeof next === "string" ? next : next?.code;
+        if (!code || !SUPPORTED_CODES.has(code)) return;
+        setCurrencyCode(code);
+        setUserPicked(true);
+        try {
+            window.localStorage.setItem(STORAGE_KEY, code);
+        } catch {
+            /* ignore */
+        }
+    }, []);
+
     const [emblaRef, emblaApi] = useEmblaCarousel({
         loop: false,
         align: "start",
