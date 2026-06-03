@@ -110,11 +110,22 @@ export default function CorrectiveAlignment() {
                                 data-testid="ca-headline"
                                 className="heading-serif text-[2.15rem] leading-[1.1] sm:text-[2.4rem] md:text-[2.6rem] lg:text-[2.9rem] text-[#1A1A1A]"
                             >
-                                Tailored to your timeline
-                                <br />
-                                and{" "}
-                                <span className="text-[#EB8A2C]">
-                                    lifestyle.
+                                <span className="md:hidden">
+                                    Tailored to your
+                                    <br />
+                                    timeline and
+                                    <br />
+                                    <span className="text-[#EB8A2C]">
+                                        lifestyle.
+                                    </span>
+                                </span>
+                                <span className="hidden md:inline">
+                                    Tailored to your timeline
+                                    <br />
+                                    and{" "}
+                                    <span className="text-[#EB8A2C]">
+                                        lifestyle.
+                                    </span>
                                 </span>
                             </h1>
                             <p className="mt-6 max-w-xl font-dmsans text-[0.85rem] md:text-[1.05rem] leading-relaxed text-[#5C5C5C]">

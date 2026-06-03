@@ -433,7 +433,14 @@ export default function Landing() {
                     <Reveal>
                         <span className="section-label">Our Services</span>
                         <h2 className="heading-serif text-[2.25rem] sm:text-4xl md:text-[3.25rem] text-[#1A1A1A] max-w-2xl mx-auto">
-                            Solutions that adapt to you.
+                            <span className="md:hidden">
+                                Solutions that adapt
+                                <br />
+                                to you.
+                            </span>
+                            <span className="hidden md:inline">
+                                Solutions that adapt to you.
+                            </span>
                         </h2>
                     </Reveal>
 

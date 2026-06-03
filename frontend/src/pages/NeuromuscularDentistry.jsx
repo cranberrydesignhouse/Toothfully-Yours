@@ -606,11 +606,22 @@ export default function NeuromuscularDentistry() {
                                 Root-Cause Analysis
                             </span>
                             <h2 className="mt-4 heading-serif text-[2.25rem] sm:text-4xl md:text-[3.25rem] text-white !leading-[1.35]">
-                                Understanding the
-                                <br />
-                                jaw-muscle{" "}
-                                <span className="text-[#EB8A2C]">
-                                    connection.
+                                <span className="md:hidden">
+                                    Understanding
+                                    <br />
+                                    the jaw-muscle
+                                    <br />
+                                    <span className="text-[#EB8A2C]">
+                                        connection.
+                                    </span>
+                                </span>
+                                <span className="hidden md:inline">
+                                    Understanding the
+                                    <br />
+                                    jaw-muscle{" "}
+                                    <span className="text-[#EB8A2C]">
+                                        connection.
+                                    </span>
                                 </span>
                             </h2>
                             <p className="mt-5 font-dmsans text-white/70 text-[0.95rem] md:text-base leading-relaxed">
