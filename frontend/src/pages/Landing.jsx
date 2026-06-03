@@ -303,7 +303,7 @@ export default function Landing() {
                             </span>
                             <h1
                                 data-testid="hero-headline"
-                                className="heading-serif text-[1.85rem] leading-[1.1] sm:text-[2.3rem] md:text-[2.7rem] lg:text-[3.1rem] text-[#1A1A1A]"
+                                className="heading-serif text-[2.15rem] leading-[1.1] sm:text-[2.4rem] md:text-[2.7rem] lg:text-[3.1rem] text-[#1A1A1A]"
                             >
                                 Every version of you deserves a{" "}
                                 <span className="text-[#EB8A2C]">
@@ -432,12 +432,12 @@ export default function Landing() {
                 <div className="max-w-7xl mx-auto px-5 md:px-12 lg:px-16 text-center">
                     <Reveal>
                         <span className="section-label">Our Services</span>
-                        <h2 className="heading-serif text-[2rem] sm:text-4xl md:text-[3.25rem] text-[#1A1A1A] max-w-2xl mx-auto">
+                        <h2 className="heading-serif text-[2.25rem] sm:text-4xl md:text-[3.25rem] text-[#1A1A1A] max-w-2xl mx-auto">
                             Solutions that adapt to you.
                         </h2>
                     </Reveal>
 
-                    <div className="mt-12 md:mt-20 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-8">
+                    <div className="mt-12 md:mt-20 -mx-5 md:mx-0 px-5 md:px-0 flex md:grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 overflow-x-auto md:overflow-visible snap-x snap-mandatory md:snap-none pb-4 md:pb-0 scrollbar-none">
                         {SERVICES.map((s, i) => {
                             const card = (
                                 <article
@@ -470,7 +470,11 @@ export default function Landing() {
                                 </article>
                             );
                             return (
-                                <Reveal key={s.title} delay={i * 100}>
+                                <Reveal
+                                    key={s.title}
+                                    delay={i * 100}
+                                    className="snap-start shrink-0 md:shrink w-[78%] sm:w-[60%] md:w-auto"
+                                >
                                     {s.href ? (
                                         <Link to={s.href} className="block">
                                             {card}
@@ -543,13 +547,13 @@ export default function Landing() {
                     </div>
                     <div className="md:col-span-5 order-1 md:order-2">
                         <Reveal delay={120}>
-                            <div className="relative">
+                            <div className="relative w-fit mx-auto">
                                 <div className="absolute -inset-4 rounded-full bg-[#F5F2EF] -z-10" />
                                 <img
                                     src={IMG.doctor}
                                     alt="Dr. Amruta Godbole"
                                     data-testid="about-doctor-image"
-                                    className="circle-photo w-72 h-72 sm:w-80 sm:h-80 md:w-[26rem] md:h-[26rem] mx-auto border-[6px] border-white object-cover"
+                                    className="circle-photo w-72 h-72 sm:w-80 sm:h-80 md:w-[26rem] md:h-[26rem] border-[6px] border-white object-cover"
                                 />
                             </div>
                         </Reveal>
@@ -578,14 +582,14 @@ export default function Landing() {
                         </div>
                     </Reveal>
 
-                    <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+                    <div className="mt-12 md:mt-16 grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
                         {VALUES.slice(0, 3).map((v, i) => (
                             <Reveal key={v.title} delay={i * 90}>
                                 <ValueCard {...v} testId={`value-card-${i}`} />
                             </Reveal>
                         ))}
                     </div>
-                    <div className="mt-5 md:mt-6 grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-6 lg:max-w-3xl lg:mx-auto">
+                    <div className="mt-3 md:mt-6 grid grid-cols-2 gap-3 md:gap-6 lg:max-w-3xl lg:mx-auto">
                         {VALUES.slice(3).map((v, i) => (
                             <Reveal key={v.title} delay={i * 90}>
                                 <ValueCard
@@ -607,7 +611,7 @@ export default function Landing() {
                 <div className="max-w-7xl mx-auto px-5 md:px-12 lg:px-16 text-center">
                     <Reveal>
                         <span className="section-label">Meet the Team</span>
-                        <h2 className="heading-serif text-[2rem] sm:text-4xl md:text-[3.25rem] text-[#1A1A1A]">
+                        <h2 className="heading-serif text-[2.25rem] sm:text-4xl md:text-[3.25rem] text-[#1A1A1A]">
                             You're in{" "}
                             <span className="text-[#EB8A2C]">good</span> hands.
                         </h2>
@@ -664,7 +668,7 @@ export default function Landing() {
                     <Reveal>
                         <div className="text-center max-w-2xl mx-auto">
                             <span className="section-label">Testimonials</span>
-                            <h2 className="heading-serif text-[2rem] sm:text-4xl md:text-[3.25rem] text-[#1A1A1A]">
+                            <h2 className="heading-serif text-[2.25rem] sm:text-4xl md:text-[3.25rem] text-[#1A1A1A]">
                                 The Tooth{" "}
                                 <span className="text-[#EB8A2C]">Speaks.</span>
                             </h2>
@@ -705,7 +709,7 @@ export default function Landing() {
                     <Reveal>
                         <div className="text-center max-w-2xl mx-auto">
                             <span className="section-label">Happy Smiles</span>
-                            <h2 className="heading-serif text-[2rem] sm:text-4xl md:text-[3.25rem] text-[#1A1A1A]">
+                            <h2 className="heading-serif text-[2.25rem] sm:text-4xl md:text-[3.25rem] text-[#1A1A1A]">
                                 Unfiltered.
                             </h2>
                             <p className="mt-4 font-dmsans text-[#5C5C5C] text-[0.95rem] md:text-base">
@@ -853,15 +857,15 @@ export default function Landing() {
 const ValueCard = ({ icon: Icon, title, copy, testId }) => (
     <div
         data-testid={testId}
-        className="h-full bg-white/[0.04] border border-white/10 rounded-2xl p-8 backdrop-blur-sm transition-all duration-300 hover:bg-white/[0.07] hover:border-[#EB8A2C]/40 hover:-translate-y-1"
+        className="h-full bg-white/[0.04] border border-white/10 rounded-2xl p-4 md:p-8 backdrop-blur-sm transition-all duration-300 hover:bg-white/[0.07] hover:border-[#EB8A2C]/40 hover:-translate-y-1"
     >
-        <div className="h-12 w-12 rounded-full border border-[#EB8A2C]/40 flex items-center justify-center mb-6">
-            <Icon size={22} strokeWidth={1.6} color="#EB8A2C" />
+        <div className="h-10 w-10 md:h-12 md:w-12 rounded-full border border-[#EB8A2C]/40 flex items-center justify-center mb-4 md:mb-6">
+            <Icon size={18} strokeWidth={1.6} color="#EB8A2C" />
         </div>
-        <h3 className="font-dmsans font-semibold text-base md:text-[1.05rem] text-white tracking-tight">
+        <h3 className="font-dmsans font-semibold text-[0.95rem] md:text-[1.05rem] text-white tracking-tight">
             {title}
         </h3>
-        <p className="mt-2 font-dmsans text-sm text-white/70 leading-relaxed">
+        <p className="mt-2 font-dmsans text-[0.78rem] md:text-sm text-white/70 leading-relaxed">
             {copy}
         </p>
     </div>

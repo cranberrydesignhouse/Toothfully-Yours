@@ -127,7 +127,7 @@ export default function CosmeticCare() {
                             </span>
                             <h1
                                 data-testid="cc-headline"
-                                className="heading-serif text-[1.55rem] leading-[1.15] sm:text-[1.85rem] md:text-[2.15rem] lg:text-[2.45rem] text-[#1A1A1A]"
+                                className="heading-serif text-[2.15rem] leading-[1.1] sm:text-[2.4rem] md:text-[2.6rem] lg:text-[2.9rem] text-[#1A1A1A]"
                             >
                                 Your smile makeover
                                 <br />
@@ -196,7 +196,7 @@ export default function CosmeticCare() {
                         <span className="section-label">
                             Cosmetic &amp; Aesthetic Care
                         </span>
-                        <h2 className="heading-serif text-[2rem] sm:text-4xl md:text-[3.25rem] text-[#1A1A1A]">
+                        <h2 className="heading-serif text-[2.25rem] sm:text-4xl md:text-[3.25rem] text-[#1A1A1A]">
                             What's possible?
                         </h2>
                         <p className="mt-5 font-dmsans text-[#5C5C5C] text-[0.95rem] md:text-base max-w-xl mx-auto">
@@ -248,7 +248,7 @@ export default function CosmeticCare() {
                             <span className="section-label">
                                 Results We Are Proud Of
                             </span>
-                            <h2 className="heading-serif text-[2rem] sm:text-4xl md:text-[3.25rem] text-[#1A1A1A] tracking-[-0.02em] [word-spacing:-0.08em]">
+                            <h2 className="heading-serif text-[2.25rem] sm:text-4xl md:text-[3.25rem] text-[#1A1A1A] tracking-[-0.02em] [word-spacing:-0.08em]">
                                 The Raw{" "}
                                 <span className="text-[#EB8A2C]">Truth.</span>
                             </h2>
@@ -280,7 +280,7 @@ export default function CosmeticCare() {
                             <span className="section-label">
                                 About Dr. Amruta Godbole
                             </span>
-                            <h2 className="heading-serif text-[2rem] sm:text-4xl md:text-[3.25rem] text-[#1A1A1A]">
+                            <h2 className="heading-serif text-[2.25rem] sm:text-4xl md:text-[3.25rem] text-[#1A1A1A]">
                                 Tooth be told.
                             </h2>
                             <div className="mt-7 font-dmsans text-[#5C5C5C] text-[0.98rem] md:text-[1.05rem] leading-relaxed space-y-5 max-w-2xl">
@@ -323,13 +323,13 @@ export default function CosmeticCare() {
                     </div>
                     <div className="md:col-span-5 order-1 md:order-2">
                         <Reveal delay={120}>
-                            <div className="relative">
+                            <div className="relative w-fit mx-auto">
                                 <div className="absolute -inset-4 rounded-full bg-[#F5F2EF] -z-10" />
                                 <img
                                     src={DOCTOR_IMG}
                                     alt="Dr. Amruta Godbole"
                                     data-testid="cc-doctor-image"
-                                    className="circle-photo w-72 h-72 sm:w-80 sm:h-80 md:w-[26rem] md:h-[26rem] mx-auto border-[6px] border-white object-cover object-[center_28%]"
+                                    className="circle-photo w-72 h-72 sm:w-80 sm:h-80 md:w-[26rem] md:h-[26rem] border-[6px] border-white object-cover object-[center_28%]"
                                 />
                             </div>
                         </Reveal>
@@ -348,7 +348,7 @@ export default function CosmeticCare() {
                             <span className="section-label">
                                 Frequently Asked Questions
                             </span>
-                            <h2 className="heading-serif text-[2rem] sm:text-4xl md:text-[3.25rem] text-[#1A1A1A]">
+                            <h2 className="heading-serif text-[2.25rem] sm:text-4xl md:text-[3.25rem] text-[#1A1A1A]">
                                 Let's fill those{" "}
                                 <span className="text-[#EB8A2C]">gaps.</span>
                             </h2>

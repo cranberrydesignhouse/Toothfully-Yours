@@ -132,7 +132,7 @@ export default function GlobalAccess() {
                             </span>
                             <h1
                                 data-testid="ga-headline"
-                                className="heading-serif text-[1.55rem] leading-[1.15] sm:text-[1.85rem] md:text-[2.15rem] lg:text-[2.45rem] text-[#1A1A1A]"
+                                className="heading-serif text-[2.15rem] leading-[1.1] sm:text-[2.4rem] md:text-[2.6rem] lg:text-[2.9rem] text-[#1A1A1A]"
                             >
                                 Fly In,{" "}
                                 <span className="text-[#EB8A2C]">
@@ -198,7 +198,7 @@ export default function GlobalAccess() {
                 <div className="max-w-7xl mx-auto px-5 md:px-12 lg:px-16 text-center">
                     <Reveal>
                         <span className="section-label">Our Services</span>
-                        <h2 className="heading-serif text-[2rem] sm:text-4xl md:text-[3.25rem] text-[#1A1A1A]">
+                        <h2 className="heading-serif text-[2.25rem] sm:text-4xl md:text-[3.25rem] text-[#1A1A1A]">
                             Signature Treatments.
                         </h2>
                         <p className="mt-5 font-dmsans text-[#5C5C5C] text-[0.95rem] md:text-base max-w-xl mx-auto">
@@ -260,7 +260,7 @@ export default function GlobalAccess() {
                     <Reveal>
                         <div className="max-w-2xl">
                             <span className="section-label">Our Packages</span>
-                            <h2 className="heading-serif text-[2rem] sm:text-4xl md:text-[3.25rem] text-[#1A1A1A]">
+                            <h2 className="heading-serif text-[2.25rem] sm:text-4xl md:text-[3.25rem] text-[#1A1A1A]">
                                 Curated Treatment{" "}
                                 <span className="text-[#EB8A2C]">Plans.</span>
                             </h2>
@@ -290,7 +290,7 @@ export default function GlobalAccess() {
                             <span className="font-dmsans text-[0.72rem] tracking-[0.22em] uppercase text-[#EB8A2C]">
                                 Step-by-step Process
                             </span>
-                            <h2 className="mt-4 heading-serif text-[2rem] sm:text-4xl md:text-[3.25rem] text-white !leading-[1.35]">
+                            <h2 className="mt-4 heading-serif text-[2.25rem] sm:text-4xl md:text-[3.25rem] text-white !leading-[1.35]">
                                 Plan Your Treatment{" "}
                                 <span className="text-[#EB8A2C]">Journey.</span>
                             </h2>
@@ -352,7 +352,7 @@ export default function GlobalAccess() {
                             <span className="section-label">
                                 About Dr. Amruta Godbole
                             </span>
-                            <h2 className="heading-serif text-[2rem] sm:text-4xl md:text-[3.25rem] text-[#1A1A1A]">
+                            <h2 className="heading-serif text-[2.25rem] sm:text-4xl md:text-[3.25rem] text-[#1A1A1A]">
                                 Tooth be told.
                             </h2>
                             <div className="mt-7 font-dmsans text-[#5C5C5C] text-[0.98rem] md:text-[1.05rem] leading-relaxed space-y-5 max-w-2xl">
@@ -392,13 +392,13 @@ export default function GlobalAccess() {
                     </div>
                     <div className="md:col-span-5 order-1 md:order-2">
                         <Reveal delay={120}>
-                            <div className="relative">
+                            <div className="relative w-fit mx-auto">
                                 <div className="absolute -inset-4 rounded-full bg-[#F5F2EF] -z-10" />
                                 <img
                                     src={DOCTOR_IMG}
                                     alt="Dr. Amruta Godbole"
                                     data-testid="ga-doctor-image"
-                                    className="circle-photo w-72 h-72 sm:w-80 sm:h-80 md:w-[26rem] md:h-[26rem] mx-auto border-[6px] border-white object-cover object-[center_28%]"
+                                    className="circle-photo w-72 h-72 sm:w-80 sm:h-80 md:w-[26rem] md:h-[26rem] border-[6px] border-white object-cover object-[center_28%]"
                                 />
                             </div>
                         </Reveal>

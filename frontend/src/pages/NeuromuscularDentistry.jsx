@@ -299,7 +299,7 @@ export default function NeuromuscularDentistry() {
                             </span>
                             <h1
                                 data-testid="nm-headline"
-                                className="heading-serif text-[1.55rem] leading-[1.15] sm:text-[1.85rem] md:text-[2.15rem] lg:text-[2.45rem] text-[#1A1A1A]"
+                                className="heading-serif text-[2.15rem] leading-[1.1] sm:text-[2.4rem] md:text-[2.6rem] lg:text-[2.9rem] text-[#1A1A1A]"
                             >
                                 When your bite is off,
                                 <br />
@@ -368,7 +368,7 @@ export default function NeuromuscularDentistry() {
                     <Reveal>
                         <div className="max-w-2xl">
                             <span className="section-label">Let's Assess</span>
-                            <h2 className="heading-serif text-[2rem] sm:text-4xl md:text-[3.25rem] text-[#1A1A1A] !leading-[1.35]">
+                            <h2 className="heading-serif text-[2.25rem] sm:text-4xl md:text-[3.25rem] text-[#1A1A1A] !leading-[1.35]">
                                 Are you experiencing
                                 <br />
                                 these{" "}
@@ -604,7 +604,7 @@ export default function NeuromuscularDentistry() {
                             <span className="font-dmsans text-[0.72rem] tracking-[0.22em] uppercase text-[#EB8A2C]">
                                 Root-Cause Analysis
                             </span>
-                            <h2 className="mt-4 heading-serif text-[2rem] sm:text-4xl md:text-[3.25rem] text-white !leading-[1.35]">
+                            <h2 className="mt-4 heading-serif text-[2.25rem] sm:text-4xl md:text-[3.25rem] text-white !leading-[1.35]">
                                 Understanding the
                                 <br />
                                 jaw-muscle{" "}
@@ -661,19 +661,23 @@ export default function NeuromuscularDentistry() {
                     <Reveal>
                         <div className="max-w-2xl">
                             <span className="section-label">Scope of Care</span>
-                            <h2 className="heading-serif text-[2rem] sm:text-4xl md:text-[3.25rem] text-[#1A1A1A] !leading-[1.35]">
+                            <h2 className="heading-serif text-[2.25rem] sm:text-4xl md:text-[3.25rem] text-[#1A1A1A] !leading-[1.35]">
                                 Common conditions we{" "}
                                 <span className="text-[#EB8A2C]">address.</span>
                             </h2>
                         </div>
                     </Reveal>
 
-                    <div className="mt-12 md:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-8 gap-y-10 md:gap-y-12">
+                    <div className="mt-12 md:mt-16 -mx-5 md:mx-0 px-5 md:px-0 flex md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 md:gap-x-8 md:gap-y-12 overflow-x-auto md:overflow-visible snap-x snap-mandatory md:snap-none pb-4 md:pb-0 scrollbar-none">
                         {CONDITIONS.map((c, i) => (
-                            <Reveal key={c.title} delay={i * 60}>
+                            <Reveal
+                                key={c.title}
+                                delay={i * 60}
+                                className="snap-start shrink-0 md:shrink w-[78%] sm:w-[60%] md:w-auto"
+                            >
                                 <article
                                     data-testid={`nm-condition-${i}`}
-                                    className="border-t border-black/15 pt-6"
+                                    className="h-full border-t border-black/15 pt-6"
                                 >
                                     <span className="font-dmsans text-[0.66rem] tracking-[0.22em] uppercase text-[#EB8A2C]">
                                         {String(i + 1).padStart(2, "0")}
@@ -702,7 +706,7 @@ export default function NeuromuscularDentistry() {
                             <span className="section-label">
                                 About Dr. Amruta Godbole
                             </span>
-                            <h2 className="heading-serif text-[2rem] sm:text-4xl md:text-[3.25rem] text-[#1A1A1A]">
+                            <h2 className="heading-serif text-[2.25rem] sm:text-4xl md:text-[3.25rem] text-[#1A1A1A]">
                                 Tooth be told.
                             </h2>
                             <div className="mt-7 font-dmsans text-[#5C5C5C] text-[0.98rem] md:text-[1.05rem] leading-relaxed space-y-5 max-w-2xl">
@@ -745,13 +749,13 @@ export default function NeuromuscularDentistry() {
                     </div>
                     <div className="md:col-span-5 order-1 md:order-2">
                         <Reveal delay={120}>
-                            <div className="relative">
+                            <div className="relative w-fit mx-auto">
                                 <div className="absolute -inset-4 rounded-full bg-white -z-10" />
                                 <img
                                     src={DOCTOR_IMG}
                                     alt="Dr. Amruta Godbole"
                                     data-testid="nm-doctor-image"
-                                    className="circle-photo w-72 h-72 sm:w-80 sm:h-80 md:w-[26rem] md:h-[26rem] mx-auto border-[6px] border-white object-cover object-[center_28%]"
+                                    className="circle-photo w-72 h-72 sm:w-80 sm:h-80 md:w-[26rem] md:h-[26rem] border-[6px] border-white object-cover object-[center_28%]"
                                 />
                             </div>
                         </Reveal>
@@ -770,7 +774,7 @@ export default function NeuromuscularDentistry() {
                             <span className="section-label">
                                 Treatment Pathways
                             </span>
-                            <h2 className="heading-serif text-[2rem] sm:text-4xl md:text-[3.25rem] text-[#1A1A1A] leading-[1.05]">
+                            <h2 className="heading-serif text-[2.25rem] sm:text-4xl md:text-[3.25rem] text-[#1A1A1A] leading-[1.05]">
                                 Possible{" "}
                                 <span className="text-[#EB8A2C]">
                                     treatments.
@@ -784,12 +788,16 @@ export default function NeuromuscularDentistry() {
                         </div>
                     </Reveal>
 
-                    <ul className="mt-12 md:mt-16 grid grid-cols-1 sm:grid-cols-2 gap-x-12">
+                    <ul className="mt-12 md:mt-16 -mx-5 md:mx-0 px-5 md:px-0 flex md:grid md:grid-cols-2 md:gap-x-12 gap-4 overflow-x-auto md:overflow-visible snap-x snap-mandatory md:snap-none pb-4 md:pb-0 scrollbar-none">
                         {TREATMENTS.map((t, i) => (
-                            <Reveal key={t} delay={i * 50}>
+                            <Reveal
+                                key={t}
+                                delay={i * 50}
+                                className="snap-start shrink-0 md:shrink w-[72%] sm:w-[55%] md:w-auto"
+                            >
                                 <li
                                     data-testid={`nm-treatment-${i}`}
-                                    className="flex items-center gap-5 py-5 border-b border-black/10"
+                                    className="h-full flex flex-col gap-3 md:flex-row md:items-center md:gap-5 p-5 md:p-0 md:py-5 rounded-2xl md:rounded-none bg-[#F5F2EF] md:bg-transparent md:border-b border-black/10"
                                 >
                                     <span className="font-dmsans text-[0.7rem] tracking-[0.2em] text-[#5C5C5C]">
                                         {String(i + 1).padStart(2, "0")}
@@ -815,7 +823,7 @@ export default function NeuromuscularDentistry() {
                             <span className="section-label">
                                 Frequently Asked Questions
                             </span>
-                            <h2 className="heading-serif text-[2rem] sm:text-4xl md:text-[3.25rem] text-[#1A1A1A]">
+                            <h2 className="heading-serif text-[2.25rem] sm:text-4xl md:text-[3.25rem] text-[#1A1A1A]">
                                 Let's fill those{" "}
                                 <span className="text-[#EB8A2C]">gaps.</span>
                             </h2>
