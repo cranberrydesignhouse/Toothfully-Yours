@@ -268,19 +268,11 @@ export const BeforeAfterGallery = ({ activeId, onTabChange }) => {
             </div>
 
             <div className="mt-10 md:mt-12">
-                {tab.id === "whitening" || tab.id === "smile-design" ? (
-                    <BACarousel items={tab.items} tabId={tab.id} />
-                ) : (
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-7">
-                        {tab.items.map((item, i) => (
-                            <BACard
-                                key={`${tab.id}-${i}`}
-                                item={item}
-                                testId={`ba-card-${tab.id}-${i}`}
-                            />
-                        ))}
-                    </div>
-                )}
+                <BACarousel
+                    key={tab.id}
+                    items={tab.items}
+                    tabId={tab.id}
+                />
             </div>
         </div>
     );

@@ -139,7 +139,7 @@ export default function GlobalAccess() {
                                     Smile Out.
                                 </span>
                             </h1>
-                            <p className="mt-6 max-w-xl font-dmsans text-[0.98rem] md:text-[1.05rem] leading-relaxed text-[#5C5C5C]">
+                            <p className="mt-6 max-w-xl font-dmsans text-[0.85rem] md:text-[1.05rem] leading-relaxed text-[#5C5C5C]">
                                 Expert dental care for international patients.
                                 Thoughtfully planned, transparently managed,
                                 and designed to make every visit feel seamless
@@ -207,7 +207,7 @@ export default function GlobalAccess() {
                         </p>
                     </Reveal>
 
-                    <div className="mt-12 md:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-x-8 md:gap-y-12">
+                    <div className="mt-12 md:mt-16 -mx-5 md:mx-0 px-5 md:px-0 flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-x-8 md:gap-y-12 overflow-x-auto md:overflow-visible snap-x snap-mandatory md:snap-none pb-4 md:pb-0 scrollbar-none">
                         {SIGNATURE_TREATMENTS.map((s, i) => {
                             const Inner = (
                                 <article
@@ -232,7 +232,11 @@ export default function GlobalAccess() {
                                 </article>
                             );
                             return (
-                                <Reveal key={s.title} delay={i * 100}>
+                                <Reveal
+                                    key={s.title}
+                                    delay={i * 100}
+                                    className="snap-start shrink-0 md:shrink w-[78%] sm:w-[60%] md:w-auto"
+                                >
                                     {s.href ? (
                                         <Link
                                             to={s.href}

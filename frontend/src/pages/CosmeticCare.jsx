@@ -136,7 +136,7 @@ export default function CosmeticCare() {
                                     right dentist.
                                 </span>
                             </h1>
-                            <p className="mt-6 max-w-xl font-dmsans text-[0.98rem] md:text-[1.05rem] leading-relaxed text-[#5C5C5C]">
+                            <p className="mt-6 max-w-xl font-dmsans text-[0.85rem] md:text-[1.05rem] leading-relaxed text-[#5C5C5C]">
                                 Every Cosmetic &amp; Aesthetic procedure
                                 crafted with precision, every result built to
                                 last.
@@ -205,9 +205,13 @@ export default function CosmeticCare() {
                         </p>
                     </Reveal>
 
-                    <div className="mt-12 md:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-8">
+                    <div className="mt-12 md:mt-16 -mx-5 md:mx-0 px-5 md:px-0 flex md:grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 overflow-x-auto md:overflow-visible snap-x snap-mandatory md:snap-none pb-4 md:pb-0 scrollbar-none">
                         {POSSIBILITIES.map((s, i) => (
-                            <Reveal key={s.id} delay={i * 90}>
+                            <Reveal
+                                key={s.id}
+                                delay={i * 90}
+                                className="snap-start shrink-0 md:shrink w-[78%] sm:w-[60%] md:w-auto"
+                            >
                                 <button
                                     type="button"
                                     onClick={() => handleCardClick(s.id)}

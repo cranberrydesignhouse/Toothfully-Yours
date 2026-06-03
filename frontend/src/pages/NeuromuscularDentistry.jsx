@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import {
     ArrowRight,
     Check,
+    ChevronDown,
     Clock,
     Phone,
     Mail,
@@ -308,7 +309,7 @@ export default function NeuromuscularDentistry() {
                                     entire jaw feels it.
                                 </span>
                             </h1>
-                            <p className="mt-6 max-w-xl font-dmsans text-[0.98rem] md:text-[1.05rem] leading-relaxed text-[#5C5C5C]">
+                            <p className="mt-6 max-w-xl font-dmsans text-[0.85rem] md:text-[1.05rem] leading-relaxed text-[#5C5C5C]">
                                 Neuromuscular dentistry focuses on the harmony
                                 between your teeth, jaw joints, muscles and
                                 airway to restore comfort, function and
@@ -668,30 +669,30 @@ export default function NeuromuscularDentistry() {
                         </div>
                     </Reveal>
 
-                    <div className="mt-12 md:mt-16 -mx-5 md:mx-0 px-5 md:px-0 flex md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 md:gap-x-8 md:gap-y-12 overflow-x-auto md:overflow-visible snap-x snap-mandatory md:snap-none pb-4 md:pb-0 scrollbar-none">
+                    <div className="mt-12 md:mt-16 grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-4 gap-y-7 md:gap-x-8 md:gap-y-12">
                         {CONDITIONS.map((c, i) => (
-                            <Reveal
-                                key={c.title}
-                                delay={i * 60}
-                                className="snap-start shrink-0 md:shrink w-[78%] sm:w-[60%] md:w-auto"
-                            >
+                            <Reveal key={c.title} delay={i * 60}>
                                 <article
                                     data-testid={`nm-condition-${i}`}
-                                    className="h-full border-t border-black/15 pt-6"
+                                    className="h-full border-t border-black/15 pt-5 md:pt-6"
                                 >
-                                    <span className="font-dmsans text-[0.66rem] tracking-[0.22em] uppercase text-[#EB8A2C]">
+                                    <span className="font-dmsans text-[0.62rem] md:text-[0.66rem] tracking-[0.18em] md:tracking-[0.22em] uppercase text-[#EB8A2C]">
                                         {String(i + 1).padStart(2, "0")}
                                     </span>
-                                    <h3 className="mt-3 font-dmsans font-semibold text-[1rem] md:text-[1.05rem] text-[#1A1A1A] tracking-tight leading-snug">
+                                    <h3 className="mt-2 md:mt-3 font-dmsans font-semibold text-[0.92rem] md:text-[1.05rem] text-[#1A1A1A] tracking-tight leading-snug">
                                         {c.title}
                                     </h3>
-                                    <p className="mt-3 font-dmsans text-[0.9rem] text-[#5C5C5C] leading-relaxed">
+                                    <p className="mt-2 md:mt-3 font-dmsans text-[0.8rem] md:text-[0.9rem] text-[#5C5C5C] leading-relaxed">
                                         {c.copy}
                                     </p>
                                 </article>
                             </Reveal>
                         ))}
                     </div>
+                    <p className="md:hidden mt-8 flex items-center justify-center gap-2 font-dmsans text-[0.72rem] tracking-[0.18em] uppercase text-[#5C5C5C]">
+                        <ChevronDown size={14} strokeWidth={1.8} className="animate-bounce" />
+                        Scroll for more
+                    </p>
                 </div>
             </section>
 
@@ -788,27 +789,27 @@ export default function NeuromuscularDentistry() {
                         </div>
                     </Reveal>
 
-                    <ul className="mt-12 md:mt-16 -mx-5 md:mx-0 px-5 md:px-0 flex md:grid md:grid-cols-2 md:gap-x-12 gap-4 overflow-x-auto md:overflow-visible snap-x snap-mandatory md:snap-none pb-4 md:pb-0 scrollbar-none">
+                    <ul className="mt-12 md:mt-16 grid grid-cols-2 md:gap-x-12 gap-x-3 gap-y-3 md:gap-y-0">
                         {TREATMENTS.map((t, i) => (
-                            <Reveal
-                                key={t}
-                                delay={i * 50}
-                                className="snap-start shrink-0 md:shrink w-[72%] sm:w-[55%] md:w-auto"
-                            >
+                            <Reveal key={t} delay={i * 50}>
                                 <li
                                     data-testid={`nm-treatment-${i}`}
-                                    className="h-full flex flex-col gap-3 md:flex-row md:items-center md:gap-5 p-5 md:p-0 md:py-5 rounded-2xl md:rounded-none bg-[#F5F2EF] md:bg-transparent md:border-b border-black/10"
+                                    className="h-full flex flex-col gap-2 md:flex-row md:items-center md:gap-5 p-4 md:p-0 md:py-5 rounded-2xl md:rounded-none bg-[#F5F2EF] md:bg-transparent md:border-b border-black/10"
                                 >
-                                    <span className="font-dmsans text-[0.7rem] tracking-[0.2em] text-[#5C5C5C]">
+                                    <span className="font-dmsans text-[0.66rem] md:text-[0.7rem] tracking-[0.18em] md:tracking-[0.2em] text-[#5C5C5C]">
                                         {String(i + 1).padStart(2, "0")}
                                     </span>
-                                    <span className="font-dmsans font-semibold text-[1rem] md:text-[1.05rem] text-[#1A1A1A] tracking-tight">
+                                    <span className="font-dmsans font-semibold text-[0.92rem] md:text-[1.05rem] text-[#1A1A1A] tracking-tight leading-snug">
                                         {t}
                                     </span>
                                 </li>
                             </Reveal>
                         ))}
                     </ul>
+                    <p className="md:hidden mt-7 flex items-center justify-center gap-2 font-dmsans text-[0.72rem] tracking-[0.18em] uppercase text-[#5C5C5C]">
+                        <ChevronDown size={14} strokeWidth={1.8} className="animate-bounce" />
+                        Scroll for more
+                    </p>
                 </div>
             </section>
 

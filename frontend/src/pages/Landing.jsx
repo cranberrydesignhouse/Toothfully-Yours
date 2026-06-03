@@ -312,7 +312,7 @@ export default function Landing() {
                             </h1>
                             <p
                                 data-testid="hero-subheadline"
-                                className="mt-5 max-w-xl font-dmsans text-[0.95rem] md:text-[1.05rem] leading-relaxed text-[#5C5C5C]"
+                                className="mt-5 max-w-xl font-dmsans text-[0.85rem] md:text-[1.05rem] leading-relaxed text-[#5C5C5C]"
                             >
                                 Cosmetic and Comprehensive Dentistry,
                                 designed around you, by Dr. Amruta Godbole, in
@@ -582,19 +582,36 @@ export default function Landing() {
                         </div>
                     </Reveal>
 
-                    <div className="mt-12 md:mt-16 grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
-                        {VALUES.slice(0, 3).map((v, i) => (
-                            <Reveal key={v.title} delay={i * 90}>
+                    {/* Mobile: single horizontal carousel with all 5 values */}
+                    <div className="md:hidden mt-12 -mx-6 px-6 flex gap-4 overflow-x-auto snap-x snap-mandatory pb-4 scrollbar-none">
+                        {VALUES.map((v, i) => (
+                            <Reveal
+                                key={v.title}
+                                delay={i * 90}
+                                className="snap-start shrink-0 w-[70%] sm:w-[55%]"
+                            >
                                 <ValueCard {...v} testId={`value-card-${i}`} />
                             </Reveal>
                         ))}
                     </div>
-                    <div className="mt-3 md:mt-6 grid grid-cols-2 gap-3 md:gap-6 lg:max-w-3xl lg:mx-auto">
+
+                    {/* Desktop: original 3 + 2 grid */}
+                    <div className="hidden md:grid mt-16 grid-cols-3 gap-6">
+                        {VALUES.slice(0, 3).map((v, i) => (
+                            <Reveal key={v.title} delay={i * 90}>
+                                <ValueCard
+                                    {...v}
+                                    testId={`value-card-md-${i}`}
+                                />
+                            </Reveal>
+                        ))}
+                    </div>
+                    <div className="hidden md:grid mt-6 grid-cols-2 gap-6 lg:max-w-3xl lg:mx-auto">
                         {VALUES.slice(3).map((v, i) => (
                             <Reveal key={v.title} delay={i * 90}>
                                 <ValueCard
                                     {...v}
-                                    testId={`value-card-${i + 3}`}
+                                    testId={`value-card-md-${i + 3}`}
                                 />
                             </Reveal>
                         ))}

@@ -8,11 +8,13 @@ import CorrectiveAlignment from "@/pages/CorrectiveAlignment";
 import GlobalAccess from "@/pages/GlobalAccess";
 import NeuromuscularDentistry from "@/pages/NeuromuscularDentistry";
 import WhatsappFab from "@/components/WhatsappFab";
+import ScrollToTop from "@/components/ScrollToTop";
 
 function App() {
     return (
         <div className="App">
             <BrowserRouter>
+                <ScrollToTop />
                 <Routes>
                     <Route path="/" element={<Landing />} />
                     <Route
