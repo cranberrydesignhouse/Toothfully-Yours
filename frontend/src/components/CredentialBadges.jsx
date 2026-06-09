@@ -91,6 +91,36 @@ export const CREDENTIALS = {
             },
         ],
     },
+    "impart-education": {
+        id: "impart-education",
+        label: "Impart Education",
+        certs: [
+            {
+                title: "Extraction & Immediate Implant Placement Protocols · Hands-on Training, 2022",
+                src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/nh68clbp_Impart%20education.pdf",
+            },
+        ],
+    },
+    biohorizons: {
+        id: "biohorizons",
+        label: "BioHorizons",
+        certs: [
+            {
+                title: "BioHorizons Implant Training · Extraction & Immediate Placement, 2022",
+                src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/nh68clbp_Impart%20education.pdf",
+            },
+        ],
+    },
+    "smile-usa": {
+        id: "smile-usa",
+        label: "Smile USA",
+        certs: [
+            {
+                title: "Smile USA Academy · Biomaterials, Biomechanics & Biologics Lecture, Mumbai, 2023",
+                src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/5rzr94ry_Smile%20USA.pdf",
+            },
+        ],
+    },
 };
 
 // Page → credential id list. Only IDs present in CREDENTIALS will render.
@@ -98,7 +128,7 @@ export const PAGE_CREDENTIALS = {
     home: ["nyu-dds", "nj-license", "dentist-registration", "bachelors-degree"],
     "global-access": ["nyu-dds", "nj-license"],
     cosmetic: ["nyu-dds", "acdi", "pearl-academy"],
-    implants: ["nyu-dds"],
+    implants: ["nyu-dds", "impart-education", "biohorizons", "smile-usa"],
     neuromuscular: ["nyu-dds", "sleep-apnea"],
     alignment: ["nyu-dds"],
 };
