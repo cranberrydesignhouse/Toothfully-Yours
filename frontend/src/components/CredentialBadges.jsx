@@ -1,5 +1,9 @@
 import { useCallback, useEffect, useState } from "react";
-import { ChevronLeft, ChevronRight, X } from "lucide-react";
+import { ChevronLeft, ChevronRight, X, ZoomIn, ZoomOut } from "lucide-react";
+
+const isImage = (src) =>
+    /\.(jpe?g|png|webp|gif|avif|heic|heif)(\?|#|$)/i.test(src || "");
+const isPdf = (src) => /\.pdf(\?|#|$)/i.test(src || "");
 
 // Each credential maps to one or more certificate PDFs.
 // `id` is used for stable keys, `label` is the badge text,
@@ -55,13 +59,45 @@ export const CREDENTIALS = {
             },
         ],
     },
+    acdi: {
+        id: "acdi",
+        label: "Academy of Cosmetic Dentistry India",
+        certs: [
+            {
+                title: "8th ACDI Conference, Novotel Juhu, Mumbai · 2024",
+                src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/z3atb094_ACDI%203.jpeg",
+            },
+            {
+                title: "Masterclass on Tooth Wear, Le Meridien New Delhi · 2026",
+                src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/3gtqxu20_ACDI%20Masterclass.jpg",
+            },
+            {
+                title: "3rd Cons Asia & 9th ACDI Conference · Indirect Anterior Bonded Restorations",
+                src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/gnwh6usv_ACDI%201.jpg",
+            },
+            {
+                title: "3rd Cons Asia & 9th ACDI Conference · Injectable Composite Workshop",
+                src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/x9byl3p6_ACDI%202.jpg",
+            },
+        ],
+    },
+    "pearl-academy": {
+        id: "pearl-academy",
+        label: "Pearl Academy",
+        certs: [
+            {
+                title: "Posterior Complex Restoration Course · Chennai, India",
+                src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/ogk1y1r0_PEARL%20ACADEMY.jpg",
+            },
+        ],
+    },
 };
 
 // Page → credential id list. Only IDs present in CREDENTIALS will render.
 export const PAGE_CREDENTIALS = {
     home: ["nyu-dds", "nj-license", "dentist-registration", "bachelors-degree"],
     "global-access": ["nyu-dds", "nj-license"],
-    cosmetic: ["nyu-dds"],
+    cosmetic: ["nyu-dds", "acdi", "pearl-academy"],
     implants: ["nyu-dds"],
     neuromuscular: ["nyu-dds", "sleep-apnea"],
     alignment: ["nyu-dds"],
@@ -70,14 +106,18 @@ export const PAGE_CREDENTIALS = {
 const CertificateViewer = ({ credential, onClose }) => {
     const { certs, label } = credential;
     const [idx, setIdx] = useState(0);
+    const [zoomed, setZoomed] = useState(false);
     const total = certs.length;
     const cur = certs[idx];
 
-    const prev = useCallback(
-        () => setIdx((i) => (i - 1 + total) % total),
-        [total]
-    );
-    const next = useCallback(() => setIdx((i) => (i + 1) % total), [total]);
+    const prev = useCallback(() => {
+        setIdx((i) => (i - 1 + total) % total);
+        setZoomed(false);
+    }, [total]);
+    const next = useCallback(() => {
+        setIdx((i) => (i + 1) % total);
+        setZoomed(false);
+    }, [total]);
 
     // Keyboard navigation + body scroll lock.
     useEffect(() => {
@@ -99,11 +139,63 @@ const CertificateViewer = ({ credential, onClose }) => {
     const [touchStart, setTouchStart] = useState(null);
     const onTouchStart = (e) => setTouchStart(e.touches[0].clientX);
     const onTouchEnd = (e) => {
-        if (touchStart == null || total < 2) return;
+        if (touchStart == null || total < 2 || zoomed) {
+            setTouchStart(null);
+            return;
+        }
         const delta = e.changedTouches[0].clientX - touchStart;
         if (delta > 60) prev();
         else if (delta < -60) next();
         setTouchStart(null);
+    };
+
+    const renderBody = () => {
+        if (isImage(cur.src)) {
+            return (
+                <div
+                    className="relative w-full h-full overflow-auto flex items-center justify-center select-none"
+                    onContextMenu={(e) => e.preventDefault()}
+                >
+                    <img
+                        src={cur.src}
+                        alt={cur.title}
+                        draggable={false}
+                        onClick={() => setZoomed((z) => !z)}
+                        className={`block max-w-none transition-transform duration-300 ease-out ${
+                            zoomed
+                                ? "cursor-zoom-out scale-[1.85]"
+                                : "cursor-zoom-in max-w-full max-h-[80vh] object-contain"
+                        }`}
+                        style={zoomed ? { width: "100%", height: "auto" } : {}}
+                    />
+                    <button
+                        type="button"
+                        onClick={() => setZoomed((z) => !z)}
+                        aria-label={zoomed ? "Zoom out" : "Zoom in"}
+                        data-testid="credential-modal-zoom"
+                        className="absolute top-3 right-3 h-9 w-9 rounded-full bg-white/90 backdrop-blur-sm text-[#1A1A1A] shadow-[0_6px_16px_-6px_rgba(0,0,0,0.35)] hover:bg-white flex items-center justify-center"
+                    >
+                        {zoomed ? (
+                            <ZoomOut size={15} strokeWidth={1.8} />
+                        ) : (
+                            <ZoomIn size={15} strokeWidth={1.8} />
+                        )}
+                    </button>
+                </div>
+            );
+        }
+        if (isPdf(cur.src)) {
+            return (
+                <iframe
+                    key={cur.src}
+                    src={`${cur.src}#toolbar=0&navpanes=0&scrollbar=0&view=FitH`}
+                    title={cur.title}
+                    className="w-full h-full min-h-[60vh]"
+                    loading="lazy"
+                />
+            );
+        }
+        return null;
     };
 
     return (
@@ -147,16 +239,9 @@ const CertificateViewer = ({ credential, onClose }) => {
                     </button>
                 </div>
 
-                {/* Body — PDF embed */}
+                {/* Body */}
                 <div className="relative flex-1 min-h-0 bg-[#E9E4DC] select-none">
-                    {/* Disable right-click & drag on the iframe wrapper for a more "view-only" feel */}
-                    <iframe
-                        key={cur.src}
-                        src={`${cur.src}#toolbar=0&navpanes=0&scrollbar=0&view=FitH`}
-                        title={cur.title}
-                        className="w-full h-full min-h-[60vh]"
-                        loading="lazy"
-                    />
+                    {renderBody()}
                     {total > 1 && (
                         <>
                             <button
@@ -164,7 +249,7 @@ const CertificateViewer = ({ credential, onClose }) => {
                                 onClick={prev}
                                 aria-label="Previous certificate"
                                 data-testid="credential-modal-prev"
-                                className="absolute top-1/2 left-3 -translate-y-1/2 h-11 w-11 rounded-full bg-white text-[#1A1A1A] shadow-[0_10px_28px_-12px_rgba(0,0,0,0.4)] hover:bg-[#1A1A1A] hover:text-white flex items-center justify-center transition-colors"
+                                className="absolute top-1/2 left-3 -translate-y-1/2 h-11 w-11 rounded-full bg-white text-[#1A1A1A] shadow-[0_10px_28px_-12px_rgba(0,0,0,0.4)] hover:bg-[#1A1A1A] hover:text-white flex items-center justify-center transition-colors z-10"
                             >
                                 <ChevronLeft size={18} strokeWidth={1.7} />
                             </button>
@@ -173,7 +258,7 @@ const CertificateViewer = ({ credential, onClose }) => {
                                 onClick={next}
                                 aria-label="Next certificate"
                                 data-testid="credential-modal-next"
-                                className="absolute top-1/2 right-3 -translate-y-1/2 h-11 w-11 rounded-full bg-[#EB8A2C] text-white shadow-[0_10px_28px_-12px_rgba(235,138,44,0.55)] hover:bg-[#D97A1B] flex items-center justify-center transition-colors"
+                                className="absolute top-1/2 right-3 -translate-y-1/2 h-11 w-11 rounded-full bg-[#EB8A2C] text-white shadow-[0_10px_28px_-12px_rgba(235,138,44,0.55)] hover:bg-[#D97A1B] flex items-center justify-center transition-colors z-10"
                             >
                                 <ChevronRight size={18} strokeWidth={1.7} />
                             </button>
@@ -188,7 +273,10 @@ const CertificateViewer = ({ credential, onClose }) => {
                             <button
                                 key={i}
                                 type="button"
-                                onClick={() => setIdx(i)}
+                                onClick={() => {
+                                    setIdx(i);
+                                    setZoomed(false);
+                                }}
                                 aria-label={`Show certificate ${i + 1}`}
                                 className={`h-1.5 rounded-full transition-all duration-300 ${
                                     idx === i
