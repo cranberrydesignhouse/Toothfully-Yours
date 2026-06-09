@@ -2,6 +2,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Phone, Mail, MapPin, Instagram, Linkedin } from "lucide-react";
 
 const QUICK_LINKS = [
+    { label: "Home", to: "/" },
     { label: "About", href: "#about" },
     { label: "Our Team", href: "#team" },
     { label: "Testimonials", href: "#testimonials" },

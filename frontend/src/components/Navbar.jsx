@@ -12,6 +12,7 @@ const SERVICE_ROUTES = [
 // `to` = react-router route. `href` = same-page anchor (only valid on "/").
 // `submenu` = list of dropdown links.
 const NAV_LINKS = [
+    { label: "Home", to: "/" },
     { label: "Services", submenu: SERVICE_ROUTES },
     { label: "About", href: "#about" },
     { label: "Team", href: "#team" },
@@ -68,9 +69,9 @@ export const Navbar = ({ onOpenBooking }) => {
     };
 
     const linkClasses =
-        "font-dmsans text-[0.95rem] text-[#1A1A1A] hover:text-[#EB8A2C] transition-colors relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-px after:w-0 after:bg-[#EB8A2C] hover:after:w-full after:transition-all";
+        "font-dmsans text-[0.88rem] lg:text-[0.92rem] text-[#1A1A1A] hover:text-[#EB8A2C] transition-colors relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-px after:w-0 after:bg-[#EB8A2C] hover:after:w-full after:transition-all";
     const activeLinkClasses =
-        "font-dmsans text-[0.95rem] text-[#EB8A2C] transition-colors relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-px after:w-full after:bg-[#EB8A2C]";
+        "font-dmsans text-[0.88rem] lg:text-[0.92rem] text-[#EB8A2C] transition-colors relative after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-px after:w-full after:bg-[#EB8A2C]";
 
     return (
         <header
@@ -97,7 +98,7 @@ export const Navbar = ({ onOpenBooking }) => {
                     </div>
                 </Link>
 
-                <ul className="hidden md:flex items-center gap-4 lg:gap-6 xl:gap-7">
+                <ul className="hidden md:flex items-center gap-3 lg:gap-5 xl:gap-6">
                     {NAV_LINKS.map((link) => {
                         const isRoute = !!link.to;
                         const hasSubmenu = !!link.submenu;
