@@ -15,7 +15,7 @@ export const CREDENTIALS = {
         certs: [
             {
                 title: "Doctor of Dental Surgery, New York University",
-                src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/fyqn9pf8_NYU%20DDS.pdf",
+                src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/37fgzm6e_NYU%20DDS_page-0001.jpg",
             },
         ],
     },
@@ -25,7 +25,7 @@ export const CREDENTIALS = {
         certs: [
             {
                 title: "New Jersey Dental License",
-                src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/tfi11s22_New%20Jersey%20License.pdf",
+                src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/2orhnhyb_New%20Jersey%20License_page-0001.jpg",
             },
         ],
     },
@@ -35,7 +35,7 @@ export const CREDENTIALS = {
         certs: [
             {
                 title: "Dentist Registration",
-                src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/nccvaden_Dentist%20Registration%20-%20Am%20copy.pdf",
+                src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/kzfo6qjw_Dentist%20Registration%20-%20Am%20copy_page-0001.jpg",
             },
         ],
     },
@@ -44,8 +44,8 @@ export const CREDENTIALS = {
         label: "Bachelor's Degree",
         certs: [
             {
-                title: "Bachelor's Degree",
-                src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/tmhvkyt0_Bachelors%20degree.pdf",
+                title: "Bachelor of Dental Surgery, Maharashtra University of Health Sciences",
+                src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/4gt4ks6t_Bachelors%20degree_page-0001.jpg",
             },
         ],
     },
@@ -54,8 +54,8 @@ export const CREDENTIALS = {
         label: "Sleep Apnea Training",
         certs: [
             {
-                title: "Sleep Apnea Training",
-                src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/des1rdvx_Sleep%20apnea.pdf",
+                title: "Smile USA · TMJ / TMD / Orofacial Pain · Sleep Medicine & OSA Program, 2019",
+                src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/9eekao7t_Sleep%20apnea_page-0001.jpg",
             },
         ],
     },
@@ -106,8 +106,22 @@ export const CREDENTIALS = {
         label: "BioHorizons",
         certs: [
             {
-                title: "BioHorizons Implant Training · Extraction & Immediate Placement, 2022",
-                src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/nh68clbp_Impart%20education.pdf",
+                title: "BioHorizons Implant Training · Certificate I",
+                src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/nugjy3tp_Bio%20Horizons%201.jpg",
+            },
+            {
+                title: "BioHorizons Implant Training · Certificate II",
+                src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/zjqy9hsx_Bio%20horizons%202.jpg",
+            },
+        ],
+    },
+    iti: {
+        id: "iti",
+        label: "ITI Curriculum",
+        certs: [
+            {
+                title: "ITI Curriculum · International Team for Implantology",
+                src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/eifav263_ITI%20Curiculum.jpg",
             },
         ],
     },
@@ -128,7 +142,7 @@ export const PAGE_CREDENTIALS = {
     home: ["nyu-dds", "nj-license", "dentist-registration", "bachelors-degree"],
     "global-access": ["nyu-dds", "nj-license"],
     cosmetic: ["nyu-dds", "acdi", "pearl-academy"],
-    implants: ["nyu-dds", "impart-education", "biohorizons", "smile-usa"],
+    implants: ["nyu-dds", "iti", "impart-education", "biohorizons", "smile-usa"],
     neuromuscular: ["nyu-dds", "sleep-apnea"],
     alignment: ["nyu-dds"],
 };
