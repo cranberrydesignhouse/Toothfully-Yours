@@ -30,7 +30,7 @@ export const CREDENTIALS = {
     },
     "dentist-registration": {
         id: "dentist-registration",
-        label: "Dentist Registration",
+        label: "Dental Registration, India",
         certs: [
             {
                 title: "Dentist Registration Certificate · India",
@@ -96,7 +96,7 @@ export const CREDENTIALS = {
         certs: [
             {
                 title: "Extraction & Immediate Implant Placement Protocols · Hands-on Training, 2022",
-                src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/nh68clbp_Impart%20education.pdf",
+                src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/tunql45n_Impart%20education_page-0001.jpg",
             },
         ],
     },
@@ -130,7 +130,7 @@ export const CREDENTIALS = {
         certs: [
             {
                 title: "Smile USA Academy · Biomaterials, Biomechanics & Biologics · Mumbai, 2023",
-                src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/5rzr94ry_Smile%20USA.pdf",
+                src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/c9t73fme_Smile%20USA_page-0001.jpg",
             },
         ],
     },

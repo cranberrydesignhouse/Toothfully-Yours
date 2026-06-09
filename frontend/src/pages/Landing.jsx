@@ -121,8 +121,8 @@ const IMG = {
     ],
 };
 
-const HERO_VIDEO =
-    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/92an86dq_TY%20hero%20section%20video.mp4";
+const HERO_IMAGE =
+    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/44axawww_HERO.JPG";
 
 const ADDRESS_TEXT =
     "Homeo House, 15th Road, Diagonally Opp. Lane to Starbucks (Red Chillies Bldg.), Khar West, Mumbai, Maharashtra 400052";
@@ -406,17 +406,13 @@ export default function Landing() {
 
                     <div className="md:col-span-6 lg:col-span-6 relative">
                         <Reveal delay={120}>
-                            <div className="relative">
-                                <div className="absolute -inset-3 md:-inset-5 rounded-[40px] bg-[#F5F2EF] -z-10" />
-                                <video
-                                    src={HERO_VIDEO}
-                                    autoPlay
-                                    loop
-                                    muted
-                                    playsInline
-                                    preload="auto"
-                                    data-testid="hero-video"
-                                    className="w-full h-[340px] sm:h-[420px] md:h-[560px] object-cover rounded-[28px] md:rounded-[32px] shadow-[0_30px_60px_-30px_rgba(0,0,0,0.35)] bg-[#F5F2EF]"
+                            <div className="relative w-fit mx-auto">
+                                <div className="absolute -inset-4 md:-inset-6 rounded-full bg-[#F5F2EF] -z-10" />
+                                <img
+                                    src={HERO_IMAGE}
+                                    alt="Dr. Amruta Godbole treating a patient at Toothfully Yours"
+                                    data-testid="hero-image"
+                                    className="circle-photo w-[280px] h-[280px] sm:w-[360px] sm:h-[360px] md:w-[480px] md:h-[480px] lg:w-[540px] lg:h-[540px] border-[6px] border-white shadow-[0_30px_60px_-30px_rgba(0,0,0,0.35)] object-cover"
                                 />
                             </div>
                         </Reveal>
