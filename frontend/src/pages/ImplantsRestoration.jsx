@@ -12,6 +12,7 @@ import {
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BookingModal from "@/components/BookingModal";
+import CredentialBadges from "@/components/CredentialBadges";
 import RestorationGallery from "@/components/RestorationGallery";
 import ImplantsFaq from "@/components/ImplantsFaq";
 
@@ -212,7 +213,14 @@ export default function ImplantsRestoration() {
                             Implants &amp; Restoration
                         </span>
                         <h2 className="heading-serif text-[2.25rem] sm:text-4xl md:text-[3.25rem] text-[#1A1A1A]">
-                            What we can do for you.
+                            <span className="md:hidden">
+                                What we can do
+                                <br />
+                                for you.
+                            </span>
+                            <span className="hidden md:inline">
+                                What we can do for you.
+                            </span>
                         </h2>
                     </Reveal>
 
@@ -320,21 +328,7 @@ export default function ImplantsRestoration() {
                                 </p>
                             </div>
 
-                            <div className="mt-9 flex flex-wrap gap-2.5">
-                                {[
-                                    "NYU DDS, 2010",
-                                    "ADA",
-                                    "IDA",
-                                    "Implant Continuum Trained",
-                                ].map((chip) => (
-                                    <span
-                                        key={chip}
-                                        className="font-dmsans text-xs tracking-wider uppercase px-3.5 py-2 rounded-full border border-[#EB8A2C]/40 text-[#EB8A2C]"
-                                    >
-                                        {chip}
-                                    </span>
-                                ))}
-                            </div>
+                            <CredentialBadges page="implants" />
                         </Reveal>
                     </div>
                     <div className="md:col-span-5 order-1 md:order-2">

@@ -14,6 +14,7 @@ import {
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BookingModal from "@/components/BookingModal";
+import CredentialBadges from "@/components/CredentialBadges";
 import NeuromuscularFaq from "@/components/NeuromuscularFaq";
 
 const HERO_IMG =
@@ -742,21 +743,7 @@ export default function NeuromuscularDentistry() {
                                 </p>
                             </div>
 
-                            <div className="mt-9 flex flex-wrap gap-2.5">
-                                {[
-                                    "NYU DDS, 2010",
-                                    "ADA",
-                                    "IDA",
-                                    "Functional & Neuromuscular Trained",
-                                ].map((chip) => (
-                                    <span
-                                        key={chip}
-                                        className="font-dmsans text-xs tracking-wider uppercase px-3.5 py-2 rounded-full border border-[#EB8A2C]/40 text-[#EB8A2C]"
-                                    >
-                                        {chip}
-                                    </span>
-                                ))}
-                            </div>
+                            <CredentialBadges page="neuromuscular" />
                         </Reveal>
                     </div>
                     <div className="md:col-span-5 order-1 md:order-2">
