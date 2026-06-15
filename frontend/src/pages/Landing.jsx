@@ -37,6 +37,7 @@ const IMG = {
         "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/d1ptotq3_Dr.%20Manish%20Kachhara.png",
         "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/58hir0cg_image.png",
         "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/n84xg6ne_Dr.%20Paras%20Kothari.jpg",
+        "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/1idl33e5_Profile%20photo%20_page-0001.jpg",
     ],
     gallery: [
         {
@@ -228,6 +229,11 @@ const TEAM = [
         role: "MDS, Micro-Endodontist",
         img: IMG.team[2],
     },
+    {
+        name: "Dr. Satish K. Bhalgat",
+        role: "Dental Sleep Medicine Specialist",
+        img: IMG.team[3],
+    },
 ];
 
 const TESTIMONIALS_REMOVED = null; // testimonials now live in TestimonialsCarousel component
@@ -289,6 +295,7 @@ export default function Landing() {
 
     return (
         <div data-testid="landing-page" className="bg-white">
+            <SeoSchema page="home" />
             <Navbar onOpenBooking={openBooking} />
 
             {/* HERO */}
@@ -625,43 +632,54 @@ export default function Landing() {
                         </h2>
                     </Reveal>
 
-                    <div className="mt-12 md:mt-16 grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
-                        {TEAM.map((m, i) => (
-                            <Reveal key={m.name} delay={i * 100}>
-                                <article
-                                    data-testid={`team-card-${i}`}
-                                    className="flex flex-col items-center group"
-                                >
-                                    <div className="relative w-52 h-52 md:w-60 md:h-60 rounded-full border-4 border-white shadow-xl bg-[#F5F2EF] overflow-hidden circle-photo">
-                                        <img
-                                            src={m.img}
-                                            alt={m.name}
-                                            className="w-full h-full object-cover"
-                                            style={{
-                                                transform:
-                                                    i === 1
-                                                        ? "scale(1.18)"
-                                                        : "none",
-                                                transformOrigin:
-                                                    i === 1
-                                                        ? "50% 35%"
-                                                        : "center",
-                                                objectPosition:
-                                                    i === 1
-                                                        ? "50% 28%"
-                                                        : "50% 15%",
-                                            }}
-                                        />
-                                    </div>
-                                    <h3 className="font-dmsans font-semibold text-[1.05rem] md:text-[1.1rem] text-[#1A1A1A] mt-6 tracking-tight">
-                                        {m.name}
-                                    </h3>
-                                    <p className="mt-1.5 font-dmsans text-xs tracking-wider text-[#EB8A2C]">
-                                        {m.role}
-                                    </p>
-                                </article>
-                            </Reveal>
-                        ))}
+                    <div className="mt-12 md:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-8">
+                        {TEAM.map((m, i) => {
+                            const needsBlurBg = i === 2 || i === 3;
+                            return (
+                                <Reveal key={m.name} delay={i * 100}>
+                                    <article
+                                        data-testid={`team-card-${i}`}
+                                        className="flex flex-col items-center group"
+                                    >
+                                        <div className="relative w-52 h-52 md:w-60 md:h-60 rounded-full border-4 border-white shadow-xl bg-[#F5F2EF] overflow-hidden circle-photo">
+                                            {needsBlurBg && (
+                                                <img
+                                                    src={m.img}
+                                                    alt=""
+                                                    aria-hidden="true"
+                                                    className="absolute inset-0 w-full h-full object-cover scale-150 blur-2xl opacity-60 saturate-150"
+                                                />
+                                            )}
+                                            <img
+                                                src={m.img}
+                                                alt={m.name}
+                                                className="relative w-full h-full object-cover"
+                                                style={{
+                                                    transform:
+                                                        i === 1
+                                                            ? "scale(1.18)"
+                                                            : "none",
+                                                    transformOrigin:
+                                                        i === 1
+                                                            ? "50% 35%"
+                                                            : "center",
+                                                    objectPosition:
+                                                        i === 1
+                                                            ? "50% 28%"
+                                                            : "50% 15%",
+                                                }}
+                                            />
+                                        </div>
+                                        <h3 className="font-dmsans font-semibold text-[1.05rem] md:text-[1.1rem] text-[#1A1A1A] mt-6 tracking-tight text-center">
+                                            {m.name}
+                                        </h3>
+                                        <p className="mt-1.5 font-dmsans text-xs tracking-wider text-[#EB8A2C] text-center">
+                                            {m.role}
+                                        </p>
+                                    </article>
+                                </Reveal>
+                            );
+                        })}
                     </div>
                 </div>
             </section>

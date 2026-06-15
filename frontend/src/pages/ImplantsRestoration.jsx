@@ -122,6 +122,7 @@ export default function ImplantsRestoration() {
 
     return (
         <div data-testid="implants-restoration-page" className="bg-white">
+            <SeoSchema page="implants" />
             <Navbar onOpenBooking={() => setBookingOpen(true)} />
 
             {/* 1. HERO */}

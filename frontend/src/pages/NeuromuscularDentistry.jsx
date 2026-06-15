@@ -12,6 +12,7 @@ import {
     Linkedin,
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
+import SeoSchema from "@/components/SeoSchema";
 import Footer from "@/components/Footer";
 import BookingModal from "@/components/BookingModal";
 import CredentialBadges from "@/components/CredentialBadges";
@@ -278,6 +279,7 @@ export default function NeuromuscularDentistry() {
 
     return (
         <div data-testid="neuromuscular-page" className="bg-white">
+            <SeoSchema page="neuromuscular" />
             <Navbar onOpenBooking={() => setBookingOpen(true)} />
 
             {/* 1. HERO */}

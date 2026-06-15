@@ -10,6 +10,7 @@ import {
     Linkedin,
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
+import SeoSchema from "@/components/SeoSchema";
 import Footer from "@/components/Footer";
 import BookingModal from "@/components/BookingModal";
 import CredentialBadges from "@/components/CredentialBadges";
@@ -86,6 +87,7 @@ export default function CorrectiveAlignment() {
 
     return (
         <div data-testid="corrective-alignment-page" className="bg-white">
+            <SeoSchema page="alignment" />
             <Navbar onOpenBooking={() => setBookingOpen(true)} />
 
             {/* 1. HERO */}

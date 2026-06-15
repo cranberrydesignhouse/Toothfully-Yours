@@ -14,6 +14,7 @@ import {
     Smile,
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
+import SeoSchema from "@/components/SeoSchema";
 import Footer from "@/components/Footer";
 import BookingModal from "@/components/BookingModal";
 import CredentialBadges from "@/components/CredentialBadges";
@@ -110,6 +111,7 @@ export default function GlobalAccess() {
 
     return (
         <div data-testid="global-access-page" className="bg-white">
+            <SeoSchema page="global-access" />
             <Navbar onOpenBooking={() => setBookingOpen(true)} />
 
             {/* 1. HERO */}

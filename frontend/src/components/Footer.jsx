@@ -19,7 +19,7 @@ const SERVICES = [
 ];
 
 const LOGO_INVERTED =
-    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/9mp1q9ea_TY%20inverted%20logo.png";
+    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/2fz5qthw_TY%20logo%20website%20inverted.png";
 
 export const Footer = () => {
     const location = useLocation();

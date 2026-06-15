@@ -106,6 +106,7 @@ export default function CosmeticCare() {
 
     return (
         <div data-testid="cosmetic-care-page" className="bg-white">
+            <SeoSchema page="cosmetic" />
             <Navbar onOpenBooking={() => setBookingOpen(true)} />
 
             {/* 1. HERO */}
