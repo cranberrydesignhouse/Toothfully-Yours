@@ -634,7 +634,7 @@ export default function Landing() {
 
                     <div className="mt-12 md:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-8">
                         {TEAM.map((m, i) => {
-                            const needsBlurBg = i === 2 || i === 3;
+                            const needsClinicBg = i === 2 || i === 3;
                             return (
                                 <Reveal key={m.name} delay={i * 100}>
                                     <article
@@ -642,12 +642,13 @@ export default function Landing() {
                                         className="flex flex-col items-center group"
                                     >
                                         <div className="relative w-52 h-52 md:w-60 md:h-60 rounded-full border-4 border-white shadow-xl bg-[#F5F2EF] overflow-hidden circle-photo">
-                                            {needsBlurBg && (
+                                            {needsClinicBg && (
                                                 <img
-                                                    src={m.img}
+                                                    src={IMG.team[0]}
                                                     alt=""
                                                     aria-hidden="true"
-                                                    className="absolute inset-0 w-full h-full object-cover scale-150 blur-2xl opacity-60 saturate-150"
+                                                    className="absolute inset-0 w-full h-full object-cover scale-150 blur-2xl opacity-90"
+                                                    style={{ objectPosition: "50% 30%" }}
                                                 />
                                             )}
                                             <img
