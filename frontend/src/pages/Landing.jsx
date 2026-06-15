@@ -36,8 +36,8 @@ const IMG = {
     team: [
         "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/d1ptotq3_Dr.%20Manish%20Kachhara.png",
         "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/58hir0cg_image.png",
-        "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/n84xg6ne_Dr.%20Paras%20Kothari.jpg",
-        "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/1idl33e5_Profile%20photo%20_page-0001.jpg",
+        "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/c7xiwblf_dr%20Paras.png",
+        "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/4ns2mxdo_Dr.%20Satish%20Bhalgat.jpg",
     ],
     gallery: [
         {
@@ -633,54 +633,42 @@ export default function Landing() {
                     </Reveal>
 
                     <div className="mt-12 md:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-8">
-                        {TEAM.map((m, i) => {
-                            const needsClinicBg = i === 2 || i === 3;
-                            return (
-                                <Reveal key={m.name} delay={i * 100}>
-                                    <article
-                                        data-testid={`team-card-${i}`}
-                                        className="flex flex-col items-center group"
-                                    >
-                                        <div className="relative w-52 h-52 md:w-60 md:h-60 rounded-full border-4 border-white shadow-xl bg-[#F5F2EF] overflow-hidden circle-photo">
-                                            {needsClinicBg && (
-                                                <img
-                                                    src={IMG.team[0]}
-                                                    alt=""
-                                                    aria-hidden="true"
-                                                    className="absolute inset-0 w-full h-full object-cover scale-150 blur-2xl opacity-90"
-                                                    style={{ objectPosition: "50% 30%" }}
-                                                />
-                                            )}
-                                            <img
-                                                src={m.img}
-                                                alt={m.name}
-                                                className="relative w-full h-full object-cover"
-                                                style={{
-                                                    transform:
-                                                        i === 1
-                                                            ? "scale(1.18)"
-                                                            : "none",
-                                                    transformOrigin:
-                                                        i === 1
-                                                            ? "50% 35%"
-                                                            : "center",
-                                                    objectPosition:
-                                                        i === 1
-                                                            ? "50% 28%"
-                                                            : "50% 15%",
-                                                }}
-                                            />
-                                        </div>
-                                        <h3 className="font-dmsans font-semibold text-[1.05rem] md:text-[1.1rem] text-[#1A1A1A] mt-6 tracking-tight text-center">
-                                            {m.name}
-                                        </h3>
-                                        <p className="mt-1.5 font-dmsans text-xs tracking-wider text-[#EB8A2C] text-center">
-                                            {m.role}
-                                        </p>
-                                    </article>
-                                </Reveal>
-                            );
-                        })}
+                        {TEAM.map((m, i) => (
+                            <Reveal key={m.name} delay={i * 100}>
+                                <article
+                                    data-testid={`team-card-${i}`}
+                                    className="flex flex-col items-center group"
+                                >
+                                    <div className="relative w-52 h-52 md:w-60 md:h-60 rounded-full border-4 border-white shadow-xl bg-[#F5F2EF] overflow-hidden circle-photo">
+                                        <img
+                                            src={m.img}
+                                            alt={m.name}
+                                            className="w-full h-full object-cover"
+                                            style={{
+                                                transform:
+                                                    i === 1
+                                                        ? "scale(1.18)"
+                                                        : "none",
+                                                transformOrigin:
+                                                    i === 1
+                                                        ? "50% 35%"
+                                                        : "center",
+                                                objectPosition:
+                                                    i === 1
+                                                        ? "50% 28%"
+                                                        : "50% 15%",
+                                            }}
+                                        />
+                                    </div>
+                                    <h3 className="font-dmsans font-semibold text-[1.05rem] md:text-[1.1rem] text-[#1A1A1A] mt-6 tracking-tight text-center">
+                                        {m.name}
+                                    </h3>
+                                    <p className="mt-1.5 font-dmsans text-xs tracking-wider text-[#EB8A2C] text-center">
+                                        {m.role}
+                                    </p>
+                                </article>
+                            </Reveal>
+                        ))}
                     </div>
                 </div>
             </section>
