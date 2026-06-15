@@ -632,7 +632,7 @@ export default function Landing() {
                         </h2>
                     </Reveal>
 
-                    <div className="mt-12 md:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-8">
+                    <div className="mt-12 md:mt-16 -mx-5 md:mx-0 px-5 md:px-0 flex md:grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 overflow-x-auto md:overflow-visible snap-x snap-mandatory md:snap-none pb-4 md:pb-0 scrollbar-none">
                         {TEAM.map((m, i) => {
                             // Per-portrait framing — keeps each doctor visually balanced inside the circle.
                             const frameStyle = (() => {
@@ -667,7 +667,11 @@ export default function Landing() {
                             })();
 
                             return (
-                                <Reveal key={m.name} delay={i * 100}>
+                                <Reveal
+                                    key={m.name}
+                                    delay={i * 100}
+                                    className="snap-start shrink-0 md:shrink w-[72%] sm:w-[55%] md:w-auto"
+                                >
                                     <article
                                         data-testid={`team-card-${i}`}
                                         className="flex flex-col items-center group"
