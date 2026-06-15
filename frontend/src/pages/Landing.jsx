@@ -633,42 +633,63 @@ export default function Landing() {
                     </Reveal>
 
                     <div className="mt-12 md:mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-8">
-                        {TEAM.map((m, i) => (
-                            <Reveal key={m.name} delay={i * 100}>
-                                <article
-                                    data-testid={`team-card-${i}`}
-                                    className="flex flex-col items-center group"
-                                >
-                                    <div className="relative w-52 h-52 md:w-60 md:h-60 rounded-full border-4 border-white shadow-xl bg-[#F5F2EF] overflow-hidden circle-photo">
-                                        <img
-                                            src={m.img}
-                                            alt={m.name}
-                                            className="w-full h-full object-cover"
-                                            style={{
-                                                transform:
-                                                    i === 1
-                                                        ? "scale(1.18)"
-                                                        : "none",
-                                                transformOrigin:
-                                                    i === 1
-                                                        ? "50% 35%"
-                                                        : "center",
-                                                objectPosition:
-                                                    i === 1
-                                                        ? "50% 28%"
-                                                        : "50% 15%",
-                                            }}
-                                        />
-                                    </div>
-                                    <h3 className="font-dmsans font-semibold text-[1.05rem] md:text-[1.1rem] text-[#1A1A1A] mt-6 tracking-tight text-center">
-                                        {m.name}
-                                    </h3>
-                                    <p className="mt-1.5 font-dmsans text-xs tracking-wider text-[#EB8A2C] text-center">
-                                        {m.role}
-                                    </p>
-                                </article>
-                            </Reveal>
-                        ))}
+                        {TEAM.map((m, i) => {
+                            // Per-portrait framing — keeps each doctor visually balanced inside the circle.
+                            const frameStyle = (() => {
+                                if (i === 0) {
+                                    // Dr. Manish — zoom in more + shift slightly lower
+                                    return {
+                                        transform:
+                                            "scale(1.22) translateY(8%)",
+                                        transformOrigin: "center",
+                                        objectPosition: "50% 18%",
+                                    };
+                                }
+                                if (i === 1) {
+                                    // Dr. Prasad — existing crop
+                                    return {
+                                        transform: "scale(1.18)",
+                                        transformOrigin: "50% 35%",
+                                        objectPosition: "50% 28%",
+                                    };
+                                }
+                                if (i === 2) {
+                                    // Dr. Paras — shift up
+                                    return {
+                                        transform:
+                                            "scale(1.05) translateY(-7%)",
+                                        transformOrigin: "center",
+                                        objectPosition: "50% 15%",
+                                    };
+                                }
+                                // Default (Dr. Satish + future entries)
+                                return { objectPosition: "50% 15%" };
+                            })();
+
+                            return (
+                                <Reveal key={m.name} delay={i * 100}>
+                                    <article
+                                        data-testid={`team-card-${i}`}
+                                        className="flex flex-col items-center group"
+                                    >
+                                        <div className="relative w-52 h-52 md:w-60 md:h-60 rounded-full border-4 border-white shadow-xl bg-[#F5F2EF] overflow-hidden circle-photo">
+                                            <img
+                                                src={m.img}
+                                                alt={m.name}
+                                                className="w-full h-full object-cover"
+                                                style={frameStyle}
+                                            />
+                                        </div>
+                                        <h3 className="font-dmsans font-semibold text-[1.05rem] md:text-[1.1rem] text-[#1A1A1A] mt-6 tracking-tight text-center">
+                                            {m.name}
+                                        </h3>
+                                        <p className="mt-1.5 font-dmsans text-xs tracking-wider text-[#EB8A2C] text-center">
+                                            {m.role}
+                                        </p>
+                                    </article>
+                                </Reveal>
+                            );
+                        })}
                     </div>
                 </div>
             </section>
