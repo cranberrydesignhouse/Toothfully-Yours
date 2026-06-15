@@ -654,10 +654,10 @@ export default function Landing() {
                                     };
                                 }
                                 if (i === 2) {
-                                    // Dr. Paras — shift up
+                                    // Dr. Paras — zoom in to cover the circle + shift up
                                     return {
                                         transform:
-                                            "scale(1.05) translateY(-7%)",
+                                            "scale(1.22) translateY(-6%)",
                                         transformOrigin: "center",
                                         objectPosition: "50% 15%",
                                     };
