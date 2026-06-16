@@ -1,0 +1,231 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #1a1a1a;
+    background: #ffffff;
+}
+
+::selection {
+    background-color: #eb8a2c;
+    color: #ffffff;
+}
+
+@layer base {
+    :root {
+        --background: 0 0% 100%;
+        --foreground: 0 0% 10%;
+        --card: 0 0% 100%;
+        --card-foreground: 0 0% 10%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 0 0% 10%;
+        --primary: 27 84% 55%;
+        --primary-foreground: 0 0% 100%;
+        --secondary: 30 17% 95%;
+        --secondary-foreground: 0 0% 20%;
+        --muted: 30 17% 95%;
+        --muted-foreground: 0 0% 40%;
+        --accent: 27 84% 55%;
+        --accent-foreground: 0 0% 100%;
+        --destructive: 0 84.2% 60.2%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 0 0% 89.8%;
+        --input: 0 0% 89.8%;
+        --ring: 27 84% 55%;
+        --radius: 0.5rem;
+    }
+}
+
+@layer base {
+    body {
+        background-color: #ffffff;
+        color: #1a1a1a;
+    }
+}
+
+/* Section label small-caps */
+.section-label {
+    font-family: "DM Sans", sans-serif;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #eb8a2c;
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.heading-serif {
+    font-family: "Playfair Display", serif;
+    font-style: italic;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    line-height: 1.05;
+}
+
+/* Pill buttons — wrapped in @layer components so Tailwind utilities (hidden, w-*, etc.) override these defaults. */
+@layer components {
+    .btn-primary {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 0.875rem 1.75rem;
+        border-radius: 9999px;
+        background-color: #eb8a2c;
+        color: #ffffff;
+        font-family: "DM Sans", sans-serif;
+        font-weight: 500;
+        font-size: 0.95rem;
+        letter-spacing: 0.01em;
+        transition:
+            transform 220ms cubic-bezier(0.22, 1, 0.36, 1),
+            background-color 220ms ease,
+            box-shadow 220ms ease;
+        border: 1px solid #eb8a2c;
+        cursor: pointer;
+    }
+    .btn-primary:hover {
+        background-color: #d97a1b;
+        border-color: #d97a1b;
+        transform: translateY(-1px);
+        box-shadow: 0 10px 24px -12px rgba(235, 138, 44, 0.55);
+    }
+
+    .btn-secondary {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 0.875rem 1.75rem;
+        border-radius: 9999px;
+        background-color: transparent;
+        color: #eb8a2c;
+        border: 1.5px solid #eb8a2c;
+        font-family: "DM Sans", sans-serif;
+        font-weight: 500;
+        font-size: 0.95rem;
+        letter-spacing: 0.01em;
+        transition:
+            background-color 220ms ease,
+            color 220ms ease,
+            transform 220ms cubic-bezier(0.22, 1, 0.36, 1);
+        cursor: pointer;
+    }
+    .btn-secondary:hover {
+        background-color: #eb8a2c;
+        color: #ffffff;
+        transform: translateY(-1px);
+    }
+
+    .btn-secondary-dark {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 0.875rem 1.75rem;
+        border-radius: 9999px;
+        background-color: transparent;
+        color: #1a1a1a;
+        border: 1.5px solid #1a1a1a;
+        font-family: "DM Sans", sans-serif;
+        font-weight: 500;
+        font-size: 0.95rem;
+        letter-spacing: 0.01em;
+        transition:
+            background-color 220ms ease,
+            color 220ms ease,
+            transform 220ms cubic-bezier(0.22, 1, 0.36, 1);
+        cursor: pointer;
+    }
+    .btn-secondary-dark:hover {
+        background-color: #1a1a1a;
+        color: #ffffff;
+        transform: translateY(-1px);
+    }
+}
+
+/* Circular avatar with subtle white ring */
+.circle-photo {
+    border-radius: 9999px;
+    object-fit: cover;
+    overflow: hidden;
+    box-shadow:
+        0 1px 0 rgba(0, 0, 0, 0.02),
+        0 20px 40px -22px rgba(0, 0, 0, 0.25);
+    transition:
+        transform 500ms cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 500ms ease;
+}
+.circle-photo:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 30px 50px -22px rgba(0, 0, 0, 0.35);
+}
+
+/* Form fields */
+.field-input {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    border-radius: 12px;
+    border: 1px solid #e5e0d9;
+    background-color: #ffffff;
+    font-family: "DM Sans", sans-serif;
+    font-size: 0.95rem;
+    color: #1a1a1a;
+    transition:
+        border-color 200ms ease,
+        box-shadow 200ms ease;
+    outline: none;
+}
+.field-input:focus {
+    border-color: #eb8a2c;
+    box-shadow: 0 0 0 4px rgba(235, 138, 44, 0.12);
+}
+
+.field-label {
+    font-family: "DM Sans", sans-serif;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #5c5c5c;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+/* Reveal on scroll */
+.reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+        opacity 900ms cubic-bezier(0.22, 1, 0.36, 1),
+        transform 900ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal.in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Hide native scrollbar on horizontal mobile carousels while keeping scroll. */
+.scrollbar-none {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+    display: none;
+}
+.App {
+    min-height: 100vh;
+    background: #ffffff;
+}
