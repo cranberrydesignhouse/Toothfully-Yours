@@ -183,8 +183,9 @@ export const Footer = () => {
                                     className="mt-0.5 shrink-0"
                                 />
                                 <span className="leading-relaxed">
-                                    Homeo House, 15th Road, Khar West, Mumbai
-                                    400052
+                                    Ganga Jamuna Building, B-204,
+                                    14th Rd, above Mizu Restaurant,
+                                    Khar West, Pali, Mumbai 400052
                                 </span>
                             </li>
                             <li className="pt-1 font-dmsans text-xs text-white/55">

@@ -129,9 +129,9 @@ const HERO_IMAGE =
     "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/44axawww_HERO.JPG";
 
 const ADDRESS_TEXT =
-    "Homeo House, 15th Road, Diagonally Opp. Lane to Starbucks (Red Chillies Bldg.), Khar West, Mumbai, Maharashtra 400052";
+    "Ganga Jamuna Building, B-204, 14th Rd, above Mizu Restaurant, Khar West, Pali, Mumbai, Maharashtra 400052";
 const MAP_EMBED_SRC =
-    "https://www.google.com/maps?q=Toothfully+Yours+Dental+Care+Homeo+House+15th+Road+Khar+West+Mumbai&output=embed";
+    "https://www.google.com/maps?q=Toothfully+Yours+Dental+Care+Ganga+Jamuna+Building+B-204+14th+Rd+Khar+West+Mumbai+400052&output=embed";
 const MAP_DIRECTIONS_URL = "https://maps.app.goo.gl/ewPtPEuq9jfuq8Ea7";
 const GOOGLE_REVIEWS_URL = "https://share.google/CUmUWCUzr3muFYeo4";
 

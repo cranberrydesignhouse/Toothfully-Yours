@@ -13,7 +13,7 @@ const BUSINESS = {
     priceRange: "$$-$$$",
     address: {
         "@type": "PostalAddress",
-        streetAddress: "Khar West",
+        streetAddress: "Ganga Jamuna Building, B-204, 14th Rd, above Mizu Restaurant, Khar West, Pali",
         addressLocality: "Mumbai",
         addressRegion: "Maharashtra",
         postalCode: "400052",

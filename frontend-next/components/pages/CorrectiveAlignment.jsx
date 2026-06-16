@@ -386,7 +386,7 @@ export default function CorrectiveAlignment() {
                                 <ContactRow
                                     icon={MapPin}
                                     label="Address"
-                                    value="Homeo House, 15th Road, Khar West, Mumbai 400052"
+                                    value="Ganga Jamuna Building, B-204, 14th Rd, above Mizu Restaurant, Khar West, Pali, Mumbai 400052"
                                 />
                             </ul>
 
@@ -427,7 +427,7 @@ export default function CorrectiveAlignment() {
                             <div className="relative rounded-3xl overflow-hidden bg-[#F5F2EF] border border-black/5 shadow-[0_30px_60px_-40px_rgba(0,0,0,0.25)]">
                                 <iframe
                                     title="Toothfully Yours clinic location"
-                                    src="https://www.google.com/maps?q=Toothfully+Yours+Dental+Care+Homeo+House+15th+Road+Khar+West+Mumbai&output=embed"
+                                    src="https://www.google.com/maps?q=Toothfully+Yours+Dental+Care+Ganga+Jamuna+Building+B-204+14th+Rd+Khar+West+Mumbai+400052&output=embed"
                                     width="100%"
                                     height="380"
                                     style={{ border: 0, display: "block" }}
