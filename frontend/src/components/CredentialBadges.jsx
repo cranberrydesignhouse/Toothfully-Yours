@@ -63,7 +63,7 @@ export const CREDENTIALS = {
         label: "Academy of Cosmetic Dentistry India",
         certs: [
             {
-                title: "8th ACDI Conference · Novotel Juhu, Mumbai · 2024",
+                title: "3rd Cons Asia & 9th ACDI Conference · Chennai · 2025",
                 src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/z3atb094_ACDI%203.jpeg",
             },
             {
