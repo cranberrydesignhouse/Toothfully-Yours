@@ -1,8 +1,6 @@
-"use client";
+// Server-renderable schema component: emits JSON-LD <script> directly into the JSX tree
+// so it appears in the static HTML output and is visible to crawlers without JS execution.
 
-import { useEffect } from "react";
-
-// Site-wide static facts used across schemas.
 const BUSINESS = {
     "@type": "Dentist",
     name: "Toothfully Yours · Dr. Amruta Godbole",
@@ -148,24 +146,16 @@ const buildSchemas = (page) => {
     return schemas;
 };
 
-// Mounts a JSON-LD <script> tag tagged with data-page so React-managed routes can swap it cleanly.
+// Renders the JSON-LD schema as a real <script> tag in the SSR/SSG output.
 export const SeoSchema = ({ page }) => {
-    useEffect(() => {
-        const id = "ty-schema-jsonld";
-        let el = document.getElementById(id);
-        if (!el) {
-            el = document.createElement("script");
-            el.id = id;
-            el.type = "application/ld+json";
-            document.head.appendChild(el);
-        }
-        el.textContent = JSON.stringify(buildSchemas(page));
-        return () => {
-            // Leave the schema in place between routes so crawlers picking up after navigation still see something valid.
-        };
-    }, [page]);
-
-    return null;
+    const schemas = buildSchemas(page);
+    return (
+        <script
+            type="application/ld+json"
+            // dangerouslySetInnerHTML is the standard pattern for JSON-LD in React/Next.
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(schemas) }}
+        />
+    );
 };
 
 export default SeoSchema;
