@@ -25,7 +25,7 @@ const NAV_LINKS = [
 ];
 
 const LOGO_URL =
-    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/p63j16r0_TY%20logo%20for%20website%20with%20TM.png";
+    "/images/ty-logo-for-website-with-tm.webp";
 
 export const Navbar = ({ onOpenBooking }) => {
     const [scrolled, setScrolled] = useState(false);
@@ -96,8 +96,7 @@ export const Navbar = ({ onOpenBooking }) => {
                         <img
                             src={LOGO_URL}
                             alt="Toothfully Yours"
-                            className="h-full w-auto object-contain block"
-                        />
+                            className="h-full w-auto object-contain block" loading="eager" fetchPriority="high" />
                     </div>
                 </Link>
 

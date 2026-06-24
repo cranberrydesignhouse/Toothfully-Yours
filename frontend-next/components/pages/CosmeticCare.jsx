@@ -20,35 +20,35 @@ import BeforeAfterGallery from "@/components/BeforeAfterGallery";
 import CosmeticFaq from "@/components/CosmeticFaq";
 
 const HERO_IMG =
-    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/b23zov3v_cosmetic.jpg";
+    "/images/cosmetic.webp";
 
 const DOCTOR_IMG =
-    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/r7wm2nb4_Dr.%20Amruta.jpg";
+    "/images/dr-amruta.webp";
 
 const POSSIBILITIES = [
     {
         id: "veneers",
         title: "Dental Veneers",
         copy: "Ultra-thin ceramic shells, shaped and shaded to feel like yours.",
-        img: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/fbgf7pex_veneers.png",
+        img: "/images/veneers.webp",
     },
     {
         id: "smile-design",
         title: "Smile Makeover",
         copy: "A planned, multi-step transformation of your full smile, combining veneers, contouring and whitening.",
-        img: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/bgtz4ohb_smile%20makeover.png",
+        img: "/images/smile-makeover.webp",
     },
     {
         id: "whitening",
         title: "Teeth Whitening",
         copy: "Safe, in-clinic professional whitening performed by your dentist for a brighter, natural shade.",
-        img: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/bsq4qptd_teeth%20whitening.png",
+        img: "/images/teeth-whitening.webp",
     },
     {
         id: "fillings",
         title: "Tooth Coloured Fillings",
         copy: "Invisible composite fillings that bond, blend and protect.",
-        img: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/7ee8l3yt_fillings.png",
+        img: "/images/fillings.webp",
     },
 ];
 
@@ -182,8 +182,7 @@ export default function CosmeticCare() {
                                     src={HERO_IMG}
                                     alt="Cosmetic & Aesthetic Care at Toothfully Yours"
                                     data-testid="cc-hero-image"
-                                    className="circle-photo w-full h-full border-[6px] border-white object-cover object-top"
-                                />
+                                    className="circle-photo w-full h-full border-[6px] border-white object-cover object-top" loading="eager" fetchPriority="high" />
                             </div>
                         </Reveal>
                     </div>
@@ -324,8 +323,7 @@ export default function CosmeticCare() {
                                     src={DOCTOR_IMG}
                                     alt="Dr. Amruta Godbole"
                                     data-testid="cc-doctor-image"
-                                    className="circle-photo w-72 h-72 sm:w-80 sm:h-80 md:w-[26rem] md:h-[26rem] border-[6px] border-white object-cover object-[center_28%]"
-                                />
+                                    className="circle-photo w-72 h-72 sm:w-80 sm:h-80 md:w-[26rem] md:h-[26rem] border-[6px] border-white object-cover object-[center_28%]" loading="lazy" decoding="async" />
                             </div>
                         </Reveal>
                     </div>

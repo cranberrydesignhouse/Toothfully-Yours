@@ -20,10 +20,10 @@ import RestorationGallery from "@/components/RestorationGallery";
 import ImplantsFaq from "@/components/ImplantsFaq";
 
 const HERO_IMG =
-    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/hyxh2hgk_hero.png";
+    "/images/hero.webp";
 
 const DOCTOR_IMG =
-    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/r7wm2nb4_Dr.%20Amruta.jpg";
+    "/images/dr-amruta.webp";
 
 // PLACEHOLDER images using existing patient photos.
 // Replace with treatment-specific premium images supplied by the clinic.
@@ -32,37 +32,37 @@ const SERVICES = [
         id: "implants",
         title: "Dental Implants",
         copy: "Life-like replacements that restore your bite, your bone and your full smile.",
-        img: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/bmeyg5mf_dental%20implants%20image.png",
+        img: "/images/dental-implants-image.webp",
     },
     {
         id: "rct",
         title: "Root Canal Treatment",
         copy: "Pain relief, infection control and your natural tooth saved without compromise.",
-        img: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/32qu51b8_root%20canal.png",
+        img: "/images/root-canal.webp",
     },
     {
         id: "extraction",
         title: "Tooth Extraction",
         copy: "Gentle, precise removal when restoration isn't the kindest path forward.",
-        img: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/4k8wf4eo_tooth%20extraction.png",
+        img: "/images/tooth-extraction.webp",
     },
     {
         id: "crowns-bridges",
         title: "Crowns & Bridges",
         copy: "Custom-crafted restorations that protect weakened teeth and rebuild missing ones.",
-        img: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/vkj85svy_crwons%20bridges.png",
+        img: "/images/crwons-bridges.webp",
     },
     {
         id: "gum",
         title: "Gum Treatment",
         copy: "Healthy gums are the foundation. We treat inflammation, recession and disease at the root.",
-        img: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/xi6krqmq_gum%20treatment.png",
+        img: "/images/gum-treatment.webp",
     },
     {
         id: "dentures",
         title: "Dentures",
         copy: "Modern, secure, comfortable, made to look like teeth you've always had.",
-        img: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/lttalq38_dentures.png",
+        img: "/images/dentures.webp",
     },
 ];
 
@@ -197,8 +197,7 @@ export default function ImplantsRestoration() {
                                     src={HERO_IMG}
                                     alt="Implants & Restoration at Toothfully Yours"
                                     data-testid="ir-hero-image"
-                                    className="circle-photo w-full h-full border-[6px] border-white object-cover object-center"
-                                />
+                                    className="circle-photo w-full h-full border-[6px] border-white object-cover object-center" loading="eager" fetchPriority="high" />
                             </div>
                         </Reveal>
                     </div>
@@ -343,8 +342,7 @@ export default function ImplantsRestoration() {
                                     src={DOCTOR_IMG}
                                     alt="Dr. Amruta Godbole"
                                     data-testid="ir-doctor-image"
-                                    className="circle-photo w-72 h-72 sm:w-80 sm:h-80 md:w-[26rem] md:h-[26rem] border-[6px] border-white object-cover object-[center_28%]"
-                                />
+                                    className="circle-photo w-72 h-72 sm:w-80 sm:h-80 md:w-[26rem] md:h-[26rem] border-[6px] border-white object-cover object-[center_28%]" loading="lazy" decoding="async" />
                             </div>
                         </Reveal>
                     </div>

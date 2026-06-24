@@ -12,15 +12,15 @@ const TABS = [
         items: [
             {
                 composite:
-                    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/4umcpp6y_composite-veeneers%201.png",
+                    "/images/composite-veeneers-1.webp",
             },
             {
                 composite:
-                    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/8e8bykvc_dental-fill.png",
+                    "/images/dental-fill.webp",
             },
             {
                 composite:
-                    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/njffdvgc_dental-fill2-scaled.png",
+                    "/images/dental-fill2-scaled.webp",
             },
         ],
     },
@@ -30,24 +30,24 @@ const TABS = [
         items: [
             {
                 composite:
-                    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/s4vujdr8_cases-10.png",
+                    "/images/cases-10.webp",
             },
             {
                 composite:
-                    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/mkob0e76_cases-11.png",
+                    "/images/cases-11.webp",
                 label: "Full Mouth Transformation",
             },
             {
                 composite:
-                    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/49ewoyos_cases-29.png",
+                    "/images/cases-29.webp",
             },
             {
                 composite:
-                    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/ndtuy3c9_cases-31.png",
+                    "/images/cases-31.webp",
             },
             {
                 composite:
-                    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/sr9dqtux_smile%20design%201.png",
+                    "/images/smile-design-1.webp",
             },
         ],
     },
@@ -57,43 +57,43 @@ const TABS = [
         items: [
             {
                 composite:
-                    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/tcj1ecz2_cases-15.png",
+                    "/images/cases-15.webp",
             },
             {
                 composite:
-                    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/it1msw5j_cases-16.png",
+                    "/images/cases-16.webp",
             },
             {
                 composite:
-                    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/jr436qjn_cases-17.png",
+                    "/images/cases-17.webp",
             },
             {
                 composite:
-                    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/2tuf1fi7_cases-18.png",
+                    "/images/cases-18.webp",
             },
             {
                 composite:
-                    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/uiyw0qpw_cases-19.png",
+                    "/images/cases-19.webp",
             },
             {
                 composite:
-                    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/efrs2m1b_cases-20.png",
+                    "/images/cases-20.webp",
             },
             {
                 composite:
-                    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/um415liy_cases-21.png",
+                    "/images/cases-21.webp",
             },
             {
                 composite:
-                    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/krs23l9j_cases-22.png",
+                    "/images/cases-22.webp",
             },
             {
                 composite:
-                    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/8hvaldj4_cases-26.png",
+                    "/images/cases-26.webp",
             },
             {
                 composite:
-                    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/ufbmkm2u_whitening2.png",
+                    "/images/whitening2.webp",
             },
         ],
     },

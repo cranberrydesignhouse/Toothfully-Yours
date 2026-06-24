@@ -11,7 +11,7 @@ const TABS = [
         items: [
             {
                 composite:
-                    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/75xrqpeu_alligners1.jpg",
+                    "/images/alligners1.webp",
             },
         ],
     },

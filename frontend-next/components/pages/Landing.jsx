@@ -28,105 +28,105 @@ import Link from "next/link";
 
 const IMG = {
     hero: "https://images.unsplash.com/photo-1662837625421-5fd8ed6131a0?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2ODh8MHwxfHNlYXJjaHwzfHxkZW50aXN0JTIwdHJlYXRpbmclMjBwYXRpZW50JTIwbW9kZXJuJTIwY2xpbmljfGVufDB8fHx8MTc3OTM1MTM2OHww&ixlib=rb-4.1.0&q=85",
-    doctor: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/3izcsf0q_de1aeb63-8b3a-4c3c-8f8f-2445283a1c69.JPG",
+    doctor: "/images/de1aeb63-8b3a-4c3c-8f8f-2445283a1c69.webp",
     services: [
-        "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/cxdgduas_T%20cosmetic%20image.jpg",
-        "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/gjc4aqb9_RESTORATIVE%20tv.jpg",
-        "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/hgm3tltf_alignemnt%20TY.jpg",
-        "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/9rrz4g9h_TMJ.jpg",
+        "/images/t-cosmetic-image.webp",
+        "/images/restorative-tv.webp",
+        "/images/alignemnt-ty.webp",
+        "/images/tmj.webp",
     ],
     team: [
-        "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/d1ptotq3_Dr.%20Manish%20Kachhara.png",
-        "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/58hir0cg_image.png",
-        "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/c7xiwblf_dr%20Paras.png",
-        "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/4ns2mxdo_Dr.%20Satish%20Bhalgat.jpg",
+        "/images/dr-manish-kachhara.webp",
+        "/images/image.webp",
+        "/images/dr-paras.webp",
+        "/images/dr-satish-bhalgat.webp",
     ],
     gallery: [
         {
-            src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/w76lxasr_happy-smiles-15.webp",
+            src: "/images/happy-smiles-15.webp",
             pos: "50% 30%",
         },
         {
-            src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/0lt9d93r_happy-smiles-6.webp",
+            src: "/images/happy-smiles-6.webp",
             pos: "50% 25%",
         },
         {
-            src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/x16srlj0_happy-smiles-8.webp",
+            src: "/images/happy-smiles-8.webp",
             pos: "62% 18%",
         },
         {
-            src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/6ahoqdmo_happy-smiles-3.webp",
+            src: "/images/happy-smiles-3.webp",
             pos: "50% 22%",
         },
         {
-            src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/5kn1bway_happy-smiles-2%20copy.jpg",
+            src: "/images/happy-smiles-2-copy.webp",
             pos: "50% 18%",
         },
         {
-            src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/jf4w2vhu_happy-smiles-4%20copy.jpg",
+            src: "/images/happy-smiles-4-copy.webp",
             pos: "50% 22%",
         },
         {
-            src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/pwmpesji_happy-smiles-7%20copy.jpg",
+            src: "/images/happy-smiles-7-copy.webp",
             pos: "50% 35%",
         },
         {
-            src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/vtjot904_happy-smiles-11%20copy.jpg",
+            src: "/images/happy-smiles-11-copy.webp",
             pos: "50% 30%",
         },
         {
-            src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/b6v1339i_happy-smiles-18%20copy.jpg",
+            src: "/images/happy-smiles-18-copy.webp",
             pos: "50% 35%",
         },
         {
-            src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/450lfsga_happy-smiles-10.jpg",
+            src: "/images/happy-smiles-10.webp",
             pos: "50% 22%",
         },
         {
-            src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/1352cymq_happy-smiles-16.jpg",
+            src: "/images/happy-smiles-16.webp",
             pos: "50% 25%",
         },
         {
-            src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/9pzucz03_happy-smiles-17.jpg",
+            src: "/images/happy-smiles-17.webp",
             pos: "50% 25%",
         },
         {
-            src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/2jrgncoo_happy-smiles-21.jpg",
+            src: "/images/happy-smiles-21.webp",
             pos: "50% 25%",
         },
         {
-            src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/38stcvur_happy-smiles-23.jpg",
+            src: "/images/happy-smiles-23.webp",
             pos: "50% 30%",
         },
         {
-            src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/5ebsdfid_happy-smiles-26.jpg",
+            src: "/images/happy-smiles-26.webp",
             pos: "50% 25%",
         },
         {
-            src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/u6mx2190_happy-smiles-27.jpg",
+            src: "/images/happy-smiles-27.webp",
             pos: "50% 40%",
         },
         {
-            src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/ll2i0mkx_happy-smiles-29.jpg",
+            src: "/images/happy-smiles-29.webp",
             pos: "50% 25%",
         },
         {
-            src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/wm8k64lh_CCE184C7-DF3E-47BE-8E60-43AD7C6518E3.JPG",
+            src: "/images/cce184c7-df3e-47be-8e60-43ad7c6518e3.webp",
             pos: "50% 30%",
         },
         {
-            src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/c4hycjsb_happy-smiles-19.jpg",
+            src: "/images/happy-smiles-19.webp",
             pos: "50% 22%",
         },
         {
-            src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/5fgo7p2m_happy-smiles-20.jpg",
+            src: "/images/happy-smiles-20.webp",
             pos: "50% 30%",
         },
     ],
 };
 
 const HERO_IMAGE =
-    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/44axawww_HERO.JPG";
+    "/images/hero.webp";
 
 const ADDRESS_TEXT =
     "Ganga Jamuna Building, B-204, 14th Rd, above Mizu Restaurant, Khar West, Pali, Mumbai, Maharashtra 400052";
@@ -424,8 +424,7 @@ export default function Landing() {
                                     src={HERO_IMAGE}
                                     alt="Dr. Amruta Godbole treating a patient at Toothfully Yours"
                                     data-testid="hero-image"
-                                    className="circle-photo w-[280px] h-[280px] sm:w-[360px] sm:h-[360px] md:w-[480px] md:h-[480px] lg:w-[540px] lg:h-[540px] border-[6px] border-white shadow-[0_30px_60px_-30px_rgba(0,0,0,0.35)] object-cover"
-                                />
+                                    className="circle-photo w-[280px] h-[280px] sm:w-[360px] sm:h-[360px] md:w-[480px] md:h-[480px] lg:w-[540px] lg:h-[540px] border-[6px] border-white shadow-[0_30px_60px_-30px_rgba(0,0,0,0.35)] object-cover" loading="eager" fetchPriority="high" />
                             </div>
                         </Reveal>
                     </div>
@@ -465,8 +464,7 @@ export default function Landing() {
                                         <img
                                             src={s.img}
                                             alt={s.title}
-                                            className={`circle-photo relative w-44 h-44 md:w-52 md:h-52 border-4 border-white transition-transform duration-500 ${s.href ? "group-hover:scale-[1.03]" : ""}`}
-                                        />
+                                            className={`circle-photo relative w-44 h-44 md:w-52 md:h-52 border-4 border-white transition-transform duration-500 ${s.href ? "group-hover:scale-[1.03]" : ""}`} loading="lazy" decoding="async" />
                                     </div>
                                     <h3 className={`font-dmsans font-semibold text-[1.05rem] md:text-[1.15rem] text-[#1A1A1A] mt-6 tracking-tight transition-colors ${s.href ? "group-hover:text-[#EB8A2C]" : ""}`}>
                                         {s.title}
@@ -555,8 +553,7 @@ export default function Landing() {
                                     src={IMG.doctor}
                                     alt="Dr. Amruta Godbole"
                                     data-testid="about-doctor-image"
-                                    className="circle-photo w-72 h-72 sm:w-80 sm:h-80 md:w-[26rem] md:h-[26rem] border-[6px] border-white object-cover"
-                                />
+                                    className="circle-photo w-72 h-72 sm:w-80 sm:h-80 md:w-[26rem] md:h-[26rem] border-[6px] border-white object-cover" loading="lazy" decoding="async" />
                             </div>
                         </Reveal>
                     </div>
@@ -685,8 +682,7 @@ export default function Landing() {
                                                 src={m.img}
                                                 alt={m.name}
                                                 className="w-full h-full object-cover"
-                                                style={frameStyle}
-                                            />
+                                                style={frameStyle} loading="lazy" decoding="async" />
                                         </div>
                                         <h3 className="font-dmsans font-semibold text-[1.05rem] md:text-[1.1rem] text-[#1A1A1A] mt-6 tracking-tight text-center">
                                             {m.name}

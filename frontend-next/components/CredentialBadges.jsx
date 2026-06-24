@@ -16,7 +16,7 @@ export const CREDENTIALS = {
         certs: [
             {
                 title: "Doctor of Dental Surgery · New York University",
-                src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/37fgzm6e_NYU%20DDS_page-0001.jpg",
+                src: "/images/nyu-dds-page-0001.webp",
             },
         ],
     },
@@ -26,7 +26,7 @@ export const CREDENTIALS = {
         certs: [
             {
                 title: "New Jersey State Board of Dentistry · Licensed to Practice",
-                src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/2orhnhyb_New%20Jersey%20License_page-0001.jpg",
+                src: "/images/new-jersey-license-page-0001.webp",
             },
         ],
     },
@@ -36,7 +36,7 @@ export const CREDENTIALS = {
         certs: [
             {
                 title: "Dentist Registration Certificate · India",
-                src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/kzfo6qjw_Dentist%20Registration%20-%20Am%20copy_page-0001.jpg",
+                src: "/images/dentist-registration-am-copy-page-0001.webp",
             },
         ],
     },
@@ -46,7 +46,7 @@ export const CREDENTIALS = {
         certs: [
             {
                 title: "Bachelor of Dental Surgery · Maharashtra University of Health Sciences",
-                src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/4gt4ks6t_Bachelors%20degree_page-0001.jpg",
+                src: "/images/bachelors-degree-page-0001.webp",
             },
         ],
     },
@@ -56,7 +56,7 @@ export const CREDENTIALS = {
         certs: [
             {
                 title: "Smile USA · TMJ / TMD / Orofacial Pain · Sleep Medicine & OSA Program, 2019",
-                src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/9eekao7t_Sleep%20apnea_page-0001.jpg",
+                src: "/images/sleep-apnea-page-0001.webp",
             },
         ],
     },
@@ -66,19 +66,19 @@ export const CREDENTIALS = {
         certs: [
             {
                 title: "3rd Cons Asia & 9th ACDI Conference · Chennai · 2025",
-                src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/z3atb094_ACDI%203.jpeg",
+                src: "/images/acdi-3.webp",
             },
             {
                 title: "Masterclass on Tooth Wear · Le Meridien New Delhi · 2026",
-                src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/3gtqxu20_ACDI%20Masterclass.jpg",
+                src: "/images/acdi-masterclass.webp",
             },
             {
                 title: "3rd Cons Asia & 9th ACDI · Indirect Anterior Bonded Restorations",
-                src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/gnwh6usv_ACDI%201.jpg",
+                src: "/images/acdi-1.webp",
             },
             {
                 title: "3rd Cons Asia & 9th ACDI · Injectable Composite Workshop",
-                src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/x9byl3p6_ACDI%202.jpg",
+                src: "/images/acdi-2.webp",
             },
         ],
     },
@@ -88,7 +88,7 @@ export const CREDENTIALS = {
         certs: [
             {
                 title: "Posterior Complex Restoration Course · Pearl Dental Academy, Chennai",
-                src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/ogk1y1r0_PEARL%20ACADEMY.jpg",
+                src: "/images/pearl-academy.webp",
             },
         ],
     },
@@ -98,7 +98,7 @@ export const CREDENTIALS = {
         certs: [
             {
                 title: "Extraction & Immediate Implant Placement Protocols · Hands-on Training, 2022",
-                src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/tunql45n_Impart%20education_page-0001.jpg",
+                src: "/images/impart-education-page-0001.webp",
             },
         ],
     },
@@ -108,11 +108,11 @@ export const CREDENTIALS = {
         certs: [
             {
                 title: "BioHorizons Implant Training · Certificate I",
-                src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/nugjy3tp_Bio%20Horizons%201.jpg",
+                src: "/images/bio-horizons-1.webp",
             },
             {
                 title: "BioHorizons Implant Training · Certificate II",
-                src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/zjqy9hsx_Bio%20horizons%202.jpg",
+                src: "/images/bio-horizons-2.webp",
             },
         ],
     },
@@ -122,7 +122,7 @@ export const CREDENTIALS = {
         certs: [
             {
                 title: "ITI Certificate in Implant Dentistry · Foundation Level, 2019",
-                src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/eifav263_ITI%20Curiculum.jpg",
+                src: "/images/iti-curiculum.webp",
             },
         ],
     },
@@ -132,7 +132,7 @@ export const CREDENTIALS = {
         certs: [
             {
                 title: "Smile USA Academy · Biomaterials, Biomechanics & Biologics · Mumbai, 2023",
-                src: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/c9t73fme_Smile%20USA_page-0001.jpg",
+                src: "/images/smile-usa-page-0001.webp",
             },
         ],
     },
@@ -344,8 +344,7 @@ const Lightbox = ({ credential, onClose }) => {
                                 dragging
                                     ? "none"
                                     : "transform 240ms cubic-bezier(0.22, 1, 0.36, 1)",
-                        }}
-                    />
+                        }} loading="lazy" decoding="async" />
                 </div>
             );
         }

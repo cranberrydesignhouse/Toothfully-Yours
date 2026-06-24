@@ -21,10 +21,10 @@ import CredentialBadges from "@/components/CredentialBadges";
 import NeuromuscularFaq from "@/components/NeuromuscularFaq";
 
 const HERO_IMG =
-    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/txdxjwzw_tmj%20hero.png";
+    "/images/tmj-hero.webp";
 
 const DOCTOR_IMG =
-    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/r7wm2nb4_Dr.%20Amruta.jpg";
+    "/images/dr-amruta.webp";
 
 const SYMPTOMS = [
     {
@@ -356,8 +356,7 @@ export default function NeuromuscularDentistry() {
                                     src={HERO_IMG}
                                     alt="Neuromuscular Dentistry at Toothfully Yours"
                                     data-testid="nm-hero-image"
-                                    className="circle-photo w-full h-full border-[6px] border-white object-cover object-center"
-                                />
+                                    className="circle-photo w-full h-full border-[6px] border-white object-cover object-center" loading="eager" fetchPriority="high" />
                             </div>
                         </Reveal>
                     </div>
@@ -758,8 +757,7 @@ export default function NeuromuscularDentistry() {
                                     src={DOCTOR_IMG}
                                     alt="Dr. Amruta Godbole"
                                     data-testid="nm-doctor-image"
-                                    className="circle-photo w-72 h-72 sm:w-80 sm:h-80 md:w-[26rem] md:h-[26rem] border-[6px] border-white object-cover object-[center_28%]"
-                                />
+                                    className="circle-photo w-72 h-72 sm:w-80 sm:h-80 md:w-[26rem] md:h-[26rem] border-[6px] border-white object-cover object-[center_28%]" loading="lazy" decoding="async" />
                             </div>
                         </Reveal>
                     </div>

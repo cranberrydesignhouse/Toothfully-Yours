@@ -20,10 +20,10 @@ import AlignmentGallery from "@/components/AlignmentGallery";
 import AlignmentFaq from "@/components/AlignmentFaq";
 
 const HERO_IMG =
-    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/uhx89csm_invalisgn%20hero.png";
+    "/images/invalisgn-hero.webp";
 
 const DOCTOR_IMG =
-    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/r7wm2nb4_Dr.%20Amruta.jpg";
+    "/images/dr-amruta.webp";
 
 // PLACEHOLDER service images using existing patient portraits.
 // Replace with treatment-specific aligner and braces images once supplied.
@@ -32,13 +32,13 @@ const SERVICES = [
         id: "clear-aligners",
         title: "Clear Aligners",
         copy: "Nearly invisible, removable, and quietly transformative. Designed around your lifestyle, not the other way around.",
-        img: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/4fx7fiyg_invisalign.png",
+        img: "/images/invisalign.webp",
     },
     {
         id: "dental-braces",
         title: "Dental Braces",
         copy: "The most reliable way to move teeth, refined with modern brackets that are smaller, smoother and far more comfortable than they used to be.",
-        img: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/fvmjyyez_braces.png",
+        img: "/images/braces.webp",
     },
 ];
 
@@ -174,8 +174,7 @@ export default function CorrectiveAlignment() {
                                     src={HERO_IMG}
                                     alt="Corrective Alignment at Toothfully Yours"
                                     data-testid="ca-hero-image"
-                                    className="circle-photo w-full h-full border-[6px] border-white object-cover object-center"
-                                />
+                                    className="circle-photo w-full h-full border-[6px] border-white object-cover object-center" loading="eager" fetchPriority="high" />
                             </div>
                         </Reveal>
                     </div>
@@ -313,8 +312,7 @@ export default function CorrectiveAlignment() {
                                     src={DOCTOR_IMG}
                                     alt="Dr. Amruta Godbole"
                                     data-testid="ca-doctor-image"
-                                    className="circle-photo w-72 h-72 sm:w-80 sm:h-80 md:w-[26rem] md:h-[26rem] border-[6px] border-white object-cover object-[center_28%]"
-                                />
+                                    className="circle-photo w-72 h-72 sm:w-80 sm:h-80 md:w-[26rem] md:h-[26rem] border-[6px] border-white object-cover object-[center_28%]" loading="lazy" decoding="async" />
                             </div>
                         </Reveal>
                     </div>

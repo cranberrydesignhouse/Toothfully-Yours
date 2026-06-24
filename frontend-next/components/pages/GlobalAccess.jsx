@@ -23,28 +23,28 @@ import CredentialBadges from "@/components/CredentialBadges";
 import PackagesCarousel from "@/components/PackagesCarousel";
 
 const HERO_IMG =
-    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/2atd5hyi_global%20access%20hero.png";
+    "/images/global-access-hero.webp";
 
 const DOCTOR_IMG =
-    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/tcs2i6u0_IMG_8096.jpg";
+    "/images/img-8096.webp";
 
 const SIGNATURE_TREATMENTS = [
     {
         title: "Cosmetic & Elective",
         copy: "Veneers, smile design, teeth whitening, cosmetic bonding, gum contouring and full mouth aesthetic rehabilitation.",
-        img: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/ztin3o2z_cosmetic%20and%20elective%20global.png",
+        img: "/images/cosmetic-and-elective-global.webp",
         href: "/cosmetic-aesthetic-care",
     },
     {
         title: "General & Preventative",
         copy: "Dental check-ups, oral examination, professional teeth cleaning, scaling & polishing, gum health assessments.",
-        img: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/kdlt7jvi_general%20and%20preventative%20global%20.png",
+        img: "/images/general-and-preventative-global.webp",
         href: null,
     },
     {
         title: "Full Mouth Transformation",
         copy: "Dental implants, root canal treatment, crowns, bridges, full-mouth rehabilitation, gum treatment and restorative care.",
-        img: "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/f1j6sd6t_full%20mouth.png",
+        img: "/images/full-mouth.webp",
         href: "/implants-restoration",
     },
 ];
@@ -186,8 +186,7 @@ export default function GlobalAccess() {
                                     src={HERO_IMG}
                                     alt="Global Access at Toothfully Yours"
                                     data-testid="ga-hero-image"
-                                    className="circle-photo w-full h-full border-[6px] border-white object-cover object-center"
-                                />
+                                    className="circle-photo w-full h-full border-[6px] border-white object-cover object-center" loading="eager" fetchPriority="high" />
                             </div>
                         </Reveal>
                     </div>
@@ -393,8 +392,7 @@ export default function GlobalAccess() {
                                     src={DOCTOR_IMG}
                                     alt="Dr. Amruta Godbole"
                                     data-testid="ga-doctor-image"
-                                    className="circle-photo w-72 h-72 sm:w-80 sm:h-80 md:w-[26rem] md:h-[26rem] border-[6px] border-white object-cover object-[center_28%]"
-                                />
+                                    className="circle-photo w-72 h-72 sm:w-80 sm:h-80 md:w-[26rem] md:h-[26rem] border-[6px] border-white object-cover object-[center_28%]" loading="lazy" decoding="async" />
                             </div>
                         </Reveal>
                     </div>

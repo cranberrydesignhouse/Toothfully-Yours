@@ -54,18 +54,38 @@ Brand: clean minimal luxury. Colors — primary #EB8A2C; alternating section bac
 
 ## P0 / P1 / P2 Backlog
 P0
-- Swap placeholder images with client-provided photos (Hero, Doctor, 4 service icons, 3 team headshots, 5 gallery images).
+- Deploy the Next.js build to Netlify (point Netlify at `frontend-next/out`).
+- Decommission the legacy CRA app at `/app/frontend/` once the Next.js deployment is verified live.
 
 P1
-- Add embedded Google Map under the contact address.
-- Add favicon and `<meta>` Open Graph / Twitter cards (clinic name, hero image, description).
 - Apply smooth-scroll to hero in-page anchor links (currently uses native jump; nav links already smooth-scroll).
+- Add Open Graph image (`og:image`) for richer link previews on WhatsApp / LinkedIn / Twitter.
 
 P2
-- "Before / After" smile gallery module.
-- FAQ accordion (insurance, payment, sterilisation, first-visit info).
 - Multi-language toggle (English / Hindi / Marathi).
 - Connect form to a secondary inbox (e.g., Formspree / SendGrid) as backup so submissions also work outside Netlify hosting.
+- Service-worker / offline PWA shell using the existing `site.webmanifest`.
+
+## Recent Updates
+
+### Feb 24, 2026 — Favicon + Sitewide Image Optimization
+- **Favicon set**: Generated multi-format favicons from the user-supplied "Favicon TY.png":
+  - `/favicon.ico` (16/32/48 multi-resolution)
+  - `/favicon-16x16.png`, `/favicon-32x32.png`, `/favicon-48x48.png`
+  - `/apple-touch-icon.png` (180x180)
+  - `/android-chrome-192x192.png`, `/android-chrome-512x512.png`, `/icon-maskable-512x512.png`
+  - `/site.webmanifest` (PWA-ready, theme color #EB8A2C, brand name "Toothfully Yours")
+  - Wired into Next.js metadata via `app/layout.js` `icons`, `manifest`, and `viewport` exports.
+- **Image optimization**: Downloaded 103 remote `customer-assets.emergentagent.com` JPG/PNG/WEBP assets and re-encoded them locally to `/public/images/*.webp` with sensible per-asset sizing:
+  - Doctor profile photos: 1.7MB PNG → 20-30 KB WebP (~98% reduction)
+  - Hero image (HERO.JPG): 178 KB → 76 KB (57% reduction)
+  - Largest credential (Bachelors degree, was 16 MB JPG): now 322 KB (98% reduction)
+  - Total image bundle on disk: 7.6 MB (was previously offloaded to remote CDN; now self-hosted)
+- All 13 components/pages had their hard-coded customer-asset URLs swapped to `/images/<slug>.webp`.
+- All 27 `<img>` tags now have explicit `loading` + `decoding` attributes — hero/logo images use `loading="eager" fetchPriority="high"`, every other below-the-fold image uses `loading="lazy" decoding="async"` for instant first-paint with deferred work.
+- Verified: `yarn build` ✅, all 7 routes ✅, credential lightbox loads 1800px WebP ✅, mobile + desktop layouts unchanged ✅, zero broken images across all pages.
+
+## P0 / P1 / P2 Backlog (legacy)
 
 ## Next Tasks
 1. Replace placeholder Unsplash/Pexels imagery with client uploads.

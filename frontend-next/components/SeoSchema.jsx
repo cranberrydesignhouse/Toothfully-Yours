@@ -13,9 +13,9 @@
 const SITE_URL = "https://www.toothfullyyoursdentalcare.com";
 const SITE_NAME = "Toothfully Yours";
 const LOGO_URL =
-    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/p63j16r0_TY%20logo%20for%20website%20with%20TM.png";
+    "/images/ty-logo-for-website-with-tm.webp";
 const HERO_IMAGE =
-    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/44axawww_HERO.JPG";
+    "/images/hero.webp";
 
 const BUSINESS_ID = `${SITE_URL}/#dentist`;
 const ORG_ID = `${SITE_URL}/#organization`;

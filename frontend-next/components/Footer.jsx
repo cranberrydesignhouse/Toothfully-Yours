@@ -22,7 +22,7 @@ const SERVICES = [
 ];
 
 const LOGO_INVERTED =
-    "https://customer-assets.emergentagent.com/job_amruta-dentistry/artifacts/2fz5qthw_TY%20logo%20website%20inverted.png";
+    "/images/ty-logo-website-inverted.webp";
 
 export const Footer = () => {
     const pathname = usePathname();
@@ -55,8 +55,7 @@ export const Footer = () => {
                         src={LOGO_INVERTED}
                         alt="Toothfully Yours"
                         className="h-[120px] md:h-[160px] w-auto object-contain block"
-                        data-testid="footer-logo"
-                    />
+                        data-testid="footer-logo" loading="eager" fetchPriority="high" />
                 </div>
                         <p className="mt-5 font-dmsans text-[0.95rem] text-white/75 leading-relaxed max-w-sm">
                             A NYU-trained, Mumbai-based dental practice
