@@ -15,16 +15,25 @@
       "static/css/9eb9281871195743.css",
       "static/chunks/app/layout-0b4ea0e730c0757b.js"
     ],
-    "/implants-restoration/page": [
+    "/global-access/page": [
+      "static/chunks/webpack-cb86a99cd2f791d1.js",
+      "static/chunks/fd9d1056-90a5663d04652c75.js",
+      "static/chunks/23-a4ad864a6542c0d9.js",
+      "static/chunks/main-app-9121336b31aecb58.js",
+      "static/chunks/48-564d8a5e129c06ab.js",
+      "static/chunks/300-42869a63fbe0c9d7.js",
+      "static/chunks/499-7847cd6d474394a6.js",
+      "static/chunks/app/global-access/page-65ef36dd4c8d7879.js"
+    ],
+    "/corrective-alignment/page": [
       "static/chunks/webpack-cb86a99cd2f791d1.js",
       "static/chunks/fd9d1056-90a5663d04652c75.js",
       "static/chunks/23-a4ad864a6542c0d9.js",
       "static/chunks/main-app-9121336b31aecb58.js",
       "static/chunks/48-564d8a5e129c06ab.js",
       "static/chunks/18-67a8cf3304f298b3.js",
-      "static/chunks/300-42869a63fbe0c9d7.js",
-      "static/chunks/499-0210b6a4a9c715da.js",
-      "static/chunks/app/implants-restoration/page-84f032284faa1b7b.js"
+      "static/chunks/499-7847cd6d474394a6.js",
+      "static/chunks/app/corrective-alignment/page-2003617d73ba0a44.js"
     ],
     "/cosmetic-aesthetic-care/page": [
       "static/chunks/webpack-cb86a99cd2f791d1.js",
@@ -34,28 +43,19 @@
       "static/chunks/48-564d8a5e129c06ab.js",
       "static/chunks/18-67a8cf3304f298b3.js",
       "static/chunks/300-42869a63fbe0c9d7.js",
-      "static/chunks/499-0210b6a4a9c715da.js",
+      "static/chunks/499-7847cd6d474394a6.js",
       "static/chunks/app/cosmetic-aesthetic-care/page-d6c68371ebd580a0.js"
     ],
-    "/corrective-alignment/page": [
+    "/implants-restoration/page": [
       "static/chunks/webpack-cb86a99cd2f791d1.js",
       "static/chunks/fd9d1056-90a5663d04652c75.js",
       "static/chunks/23-a4ad864a6542c0d9.js",
       "static/chunks/main-app-9121336b31aecb58.js",
       "static/chunks/48-564d8a5e129c06ab.js",
       "static/chunks/18-67a8cf3304f298b3.js",
-      "static/chunks/499-0210b6a4a9c715da.js",
-      "static/chunks/app/corrective-alignment/page-2003617d73ba0a44.js"
-    ],
-    "/global-access/page": [
-      "static/chunks/webpack-cb86a99cd2f791d1.js",
-      "static/chunks/fd9d1056-90a5663d04652c75.js",
-      "static/chunks/23-a4ad864a6542c0d9.js",
-      "static/chunks/main-app-9121336b31aecb58.js",
-      "static/chunks/48-564d8a5e129c06ab.js",
       "static/chunks/300-42869a63fbe0c9d7.js",
-      "static/chunks/499-0210b6a4a9c715da.js",
-      "static/chunks/app/global-access/page-65ef36dd4c8d7879.js"
+      "static/chunks/499-7847cd6d474394a6.js",
+      "static/chunks/app/implants-restoration/page-84f032284faa1b7b.js"
     ],
     "/thank-you/page": [
       "static/chunks/webpack-cb86a99cd2f791d1.js",
@@ -72,7 +72,7 @@
       "static/chunks/main-app-9121336b31aecb58.js",
       "static/chunks/48-564d8a5e129c06ab.js",
       "static/chunks/300-42869a63fbe0c9d7.js",
-      "static/chunks/499-0210b6a4a9c715da.js",
+      "static/chunks/499-7847cd6d474394a6.js",
       "static/chunks/app/page-d2e19186b8d9d41b.js"
     ],
     "/neuromuscular-dentistry/page": [
@@ -82,7 +82,7 @@
       "static/chunks/main-app-9121336b31aecb58.js",
       "static/chunks/48-564d8a5e129c06ab.js",
       "static/chunks/18-67a8cf3304f298b3.js",
-      "static/chunks/499-0210b6a4a9c715da.js",
+      "static/chunks/499-7847cd6d474394a6.js",
       "static/chunks/app/neuromuscular-dentistry/page-63a8b2613886f936.js"
     ]
   }
