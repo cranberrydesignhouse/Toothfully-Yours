@@ -326,8 +326,10 @@ export default function Landing() {
                                 className="mt-5 max-w-xl font-dmsans text-[0.85rem] md:text-[1.05rem] leading-relaxed text-[#5C5C5C]"
                             >
                                 Cosmetic and Comprehensive Dentistry,
-                                designed around you, by Dr. Amruta Godbole, in
-                                the heart of Khar West, Mumbai.
+                                designed around you, by
+                                <br />
+                                Dr. Amruta Godbole, in the heart of Khar West,
+                                Mumbai.
                             </p>
                             <div className="mt-9 flex flex-col sm:flex-row gap-3 sm:gap-4">
                                 <button
