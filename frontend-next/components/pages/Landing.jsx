@@ -422,7 +422,7 @@ export default function Landing() {
                                 <div className="absolute -inset-4 md:-inset-6 rounded-full bg-[#F5F2EF] -z-10" />
                                 <img
                                     src={HERO_IMAGE}
-                                    alt="Dr. Amruta Godbole treating a patient at Toothfully Yours"
+                                    alt="Dr. Amruta Godbole, best dentist in Khar West, Mumbai, treating a patient at Toothfully Yours Dental Clinic"
                                     data-testid="hero-image"
                                     className="circle-photo w-[280px] h-[280px] sm:w-[360px] sm:h-[360px] md:w-[480px] md:h-[480px] lg:w-[540px] lg:h-[540px] border-[6px] border-white shadow-[0_30px_60px_-30px_rgba(0,0,0,0.35)] object-cover" loading="eager" fetchPriority="high" />
                             </div>
@@ -527,18 +527,20 @@ export default function Landing() {
                                     Dentistry in 2010, served as a teaching
                                     assistant, and completed a specialised
                                     aesthetics program before building a
-                                    practice in New York and returning to
-                                    Mumbai.
+                                    practice in New York and returning to lead
+                                    her dental clinic in Khar West, Mumbai.
                                 </p>
                                 <p>
-                                    Her focus spans smile design, ceramic
-                                    veneers, implants, and restorative care.
-                                    She holds membership with the ADA, IDA, and
-                                    Academy of Cosmetic Dentistry (an affiliate
-                                    of the American Academy of Cosmetic
-                                    Dentistry). At Toothfully Yours, patients
-                                    feel this standard of care from their very
-                                    first consultation.
+                                    Her focus spans smile design, dental
+                                    veneers, dental implants, Invisalign and
+                                    restorative care. She holds membership with
+                                    the ADA, IDA, and Academy of Cosmetic
+                                    Dentistry (an affiliate of the American
+                                    Academy of Cosmetic Dentistry). At
+                                    Toothfully Yours, our dental clinic in Khar
+                                    West near Bandra West, patients feel this
+                                    standard of care from their very first
+                                    consultation.
                                 </p>
                             </div>
 
@@ -551,7 +553,7 @@ export default function Landing() {
                                 <div className="absolute -inset-4 rounded-full bg-[#F5F2EF] -z-10" />
                                 <img
                                     src={IMG.doctor}
-                                    alt="Dr. Amruta Godbole"
+                                    alt="Dr. Amruta Godbole, cosmetic dentist in Khar West, Mumbai"
                                     data-testid="about-doctor-image"
                                     className="circle-photo w-72 h-72 sm:w-80 sm:h-80 md:w-[26rem] md:h-[26rem] border-[6px] border-white object-cover" loading="lazy" decoding="async" />
                             </div>

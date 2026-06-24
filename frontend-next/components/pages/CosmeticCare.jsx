@@ -180,7 +180,7 @@ export default function CosmeticCare() {
                                 <div className="absolute -inset-5 rounded-full bg-white -z-10" />
                                 <img
                                     src={HERO_IMG}
-                                    alt="Cosmetic & Aesthetic Care at Toothfully Yours"
+                                    alt="Cosmetic dentist in Khar West, Mumbai – smile design, dental veneers and teeth whitening at Toothfully Yours"
                                     data-testid="cc-hero-image"
                                     className="circle-photo w-full h-full border-[6px] border-white object-cover object-top" loading="eager" fetchPriority="high" />
                             </div>
@@ -294,7 +294,8 @@ export default function CosmeticCare() {
                             <div className="mt-7 font-dmsans text-[#5C5C5C] text-[0.98rem] md:text-[1.05rem] leading-relaxed space-y-5 max-w-2xl">
                                 <p>
                                     Dr. Amruta Godbole has spent two decades
-                                    moving between New York and Mumbai, refining
+                                    between New York and her cosmetic dentistry
+                                    practice in Khar West, Mumbai, refining
                                     one of the most demanding crafts in
                                     modern dentistry, making a cosmetic result
                                     look like it was always there.
@@ -303,12 +304,13 @@ export default function CosmeticCare() {
                                     Her training in advanced aesthetics and
                                     her work with the Academy of Cosmetic
                                     Dentistry (an affiliate of the AACD) means
-                                    every smile design begins long before the
-                                    drill, with study models, photographs,
-                                    shade-mapping and a face-led plan. Patients
-                                    walk in for veneers and walk out feeling
-                                    like the better version of themselves they
-                                    recognise.
+                                    every smile design and smile makeover
+                                    begins long before the drill, with study
+                                    models, photographs, shade-mapping and a
+                                    face-led plan. Patients across India and
+                                    abroad walk in for veneers and walk out
+                                    feeling like the better version of
+                                    themselves they recognise.
                                 </p>
                             </div>
 
@@ -321,7 +323,7 @@ export default function CosmeticCare() {
                                 <div className="absolute -inset-4 rounded-full bg-[#F5F2EF] -z-10" />
                                 <img
                                     src={DOCTOR_IMG}
-                                    alt="Dr. Amruta Godbole"
+                                    alt="Dr. Amruta Godbole, cosmetic dentist in Khar West, Mumbai"
                                     data-testid="cc-doctor-image"
                                     className="circle-photo w-72 h-72 sm:w-80 sm:h-80 md:w-[26rem] md:h-[26rem] border-[6px] border-white object-cover object-[center_28%]" loading="lazy" decoding="async" />
                             </div>

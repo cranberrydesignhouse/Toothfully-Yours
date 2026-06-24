@@ -68,6 +68,29 @@ P2
 
 ## Recent Updates
 
+### Feb 24, 2026 — SEO Keyword Optimization (Khar West + International Patient targeting)
+Comprehensive keyword optimization across all 6 pages with unique primary targets to avoid cannibalization:
+
+| Page | Primary Keyword | Key Secondary |
+|------|-----------------|---------------|
+| `/` | Best Dentist in Khar West | Dental Clinic in Khar West, Family Dentist, Dentist Near Bandra West |
+| `/cosmetic-aesthetic-care` | Cosmetic Dentist in Khar West | Smile Design, Smile Makeover, Dental Veneers, Teeth Whitening, Cosmetic Dentistry India |
+| `/implants-restoration` | Dental Implants in Khar West | Root Canal Treatment, Dental Implants India, Full Mouth Rehabilitation India |
+| `/corrective-alignment` | Invisalign in Khar West | Clear Aligners, Invisalign India |
+| `/neuromuscular-dentistry` | TMJ Treatment Mumbai | Neuromuscular Dentistry Mumbai |
+| `/global-access` | Dental Tourism Mumbai | Dental Tourism India, NRI Patients, International Patients, Implants/Smile Makeover/Invisalign India |
+
+Surfaces updated:
+- Page `<title>` and meta `description` (all 6 routes + root layout).
+- Meta `keywords` arrays per route + sitewide catalogue in root layout.
+- `openGraph` + `twitter` titles/descriptions aligned per route.
+- JSON-LD: `MedicalBusiness.description` expanded with full keyword themes; founder `knowsAbout` extended with location + service keywords.
+- Image `alt` text on hero + doctor portraits across all pages now carries page-specific primary keyword (e.g., "Dental implants in Khar West, Mumbai — single tooth, full arch and full mouth rehabilitation").
+- Subtle body-copy enrichment in About paragraphs + Neuromuscular / Global Access hero subtitles. H1 brand statements left intact to preserve editorial design.
+- Internal linking (Home → service pages) preserved.
+
+No design, layout, animation, or interactive behavior changed.
+
 ### Feb 24, 2026 — Favicon + Sitewide Image Optimization
 - **Favicon set**: Generated multi-format favicons from the user-supplied "Favicon TY.png":
   - `/favicon.ico` (16/32/48 multi-resolution)

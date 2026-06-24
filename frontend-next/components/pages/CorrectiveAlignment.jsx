@@ -172,7 +172,7 @@ export default function CorrectiveAlignment() {
                                 <div className="absolute -inset-5 rounded-full bg-white -z-10" />
                                 <img
                                     src={HERO_IMG}
-                                    alt="Corrective Alignment at Toothfully Yours"
+                                    alt="Invisalign and clear aligners in Khar West, Mumbai – certified Invisalign provider at Toothfully Yours"
                                     data-testid="ca-hero-image"
                                     className="circle-photo w-full h-full border-[6px] border-white object-cover object-center" loading="eager" fetchPriority="high" />
                             </div>
@@ -290,14 +290,17 @@ export default function CorrectiveAlignment() {
                                     not a template.
                                 </p>
                                 <p>
-                                    Whether it's a few months of clear
-                                    aligners to refine a smile, or a longer,
-                                    fully planned orthodontic journey, every
-                                    case begins with a digital scan, a
+                                    Whether it's a few months of Invisalign
+                                    clear aligners to refine a smile, or a
+                                    longer, fully planned orthodontic journey
+                                    with ceramic or metal braces, every
+                                    Invisalign and braces case at our Khar
+                                    West clinic begins with a digital scan, a
                                     face-led plan, and an honest conversation
-                                    about what's worth doing. Patients leave
-                                    with straighter teeth, a balanced bite,
-                                    and a result built to hold.
+                                    about what's worth doing. Patients across
+                                    Mumbai and India leave with straighter
+                                    teeth, a balanced bite, and a result built
+                                    to hold.
                                 </p>
                             </div>
 
@@ -310,7 +313,7 @@ export default function CorrectiveAlignment() {
                                 <div className="absolute -inset-4 rounded-full bg-[#F5F2EF] -z-10" />
                                 <img
                                     src={DOCTOR_IMG}
-                                    alt="Dr. Amruta Godbole"
+                                    alt="Dr. Amruta Godbole, Invisalign provider in Khar West, Mumbai"
                                     data-testid="ca-doctor-image"
                                     className="circle-photo w-72 h-72 sm:w-80 sm:h-80 md:w-[26rem] md:h-[26rem] border-[6px] border-white object-cover object-[center_28%]" loading="lazy" decoding="async" />
                             </div>

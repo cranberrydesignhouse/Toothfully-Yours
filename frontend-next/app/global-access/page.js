@@ -1,14 +1,28 @@
 import GlobalAccess from "@/components/pages/GlobalAccess";
 
 export const metadata = {
-    title: "Global Access · Dental Care for International Patients",
+    title:
+        "Dental Tourism Mumbai · Dental Care for International & NRI Patients",
     description:
-        "Curated dental treatment packages for international patients visiting Mumbai. Concierge care, local-currency pricing and US-trained expertise with Dr. Amruta Godbole, DDS (NYU).",
+        "Dental tourism in Mumbai for international and NRI patients. Curated treatment plans including dental implants India, smile makeover India, Invisalign India and full mouth rehabilitation India. US-trained expertise with Dr. Amruta Godbole, DDS (NYU) at Toothfully Yours, Khar West.",
+    keywords: [
+        "Dental Tourism Mumbai",
+        "Dental Tourism India",
+        "Dental Care in Mumbai for International Patients",
+        "Dentist in Mumbai for International Patients",
+        "Dentist in Mumbai for NRI Patients",
+        "Dental Implants India",
+        "Smile Makeover India",
+        "Cosmetic Dentistry India",
+        "Invisalign India",
+        "Full Mouth Rehabilitation India",
+    ],
     alternates: { canonical: "/global-access" },
     openGraph: {
-        title: "Global Access · Toothfully Yours",
+        title:
+            "Dental Tourism Mumbai · NRI & International Patients · Toothfully Yours",
         description:
-            "Treatment packages and concierge care for international patients visiting Mumbai.",
+            "Dental tourism in Mumbai for international and NRI patients. Implants, smile makeover, Invisalign and full mouth rehabilitation in India by Dr. Amruta Godbole, DDS (NYU).",
         url: "/global-access",
     },
 };

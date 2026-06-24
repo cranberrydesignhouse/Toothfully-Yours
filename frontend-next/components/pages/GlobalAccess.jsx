@@ -145,10 +145,11 @@ export default function GlobalAccess() {
                                 </span>
                             </h1>
                             <p className="mt-6 max-w-xl font-dmsans text-[0.85rem] md:text-[1.05rem] leading-relaxed text-[#5C5C5C]">
-                                Expert dental care for international patients.
-                                Thoughtfully planned, transparently managed,
-                                and designed to make every visit feel seamless
-                                from arrival to aftercare.
+                                Expert dental care in Mumbai for international
+                                and NRI patients. Thoughtfully planned,
+                                transparently managed, and designed to make
+                                every dental tourism visit feel seamless from
+                                arrival to aftercare.
                             </p>
                             <div className="mt-9 flex flex-col sm:flex-row gap-3 sm:gap-4">
                                 <button
@@ -184,7 +185,7 @@ export default function GlobalAccess() {
                                 <div className="absolute -inset-5 rounded-full bg-white -z-10" />
                                 <img
                                     src={HERO_IMG}
-                                    alt="Global Access at Toothfully Yours"
+                                    alt="Dental tourism in Mumbai for international and NRI patients – Toothfully Yours Global Access"
                                     data-testid="ga-hero-image"
                                     className="circle-photo w-full h-full border-[6px] border-white object-cover object-center" loading="eager" fetchPriority="high" />
                             </div>
@@ -369,11 +370,16 @@ export default function GlobalAccess() {
                                     moving between New York and Mumbai. That
                                     rhythm shaped the way the practice works
                                     today, calm, planned, and tuned for
-                                    patients arriving from elsewhere.
+                                    international and NRI patients arriving
+                                    from elsewhere for dental tourism in
+                                    Mumbai.
                                 </p>
                                 <p>
-                                    Every international case begins with a
-                                    remote consultation and ends with a clear,
+                                    Every international case, whether it's
+                                    dental implants India, smile makeover
+                                    India, Invisalign India or full mouth
+                                    rehabilitation India, begins with a remote
+                                    consultation and ends with a clear,
                                     written plan. No surprises. No last-minute
                                     upgrades. Patients fly in knowing exactly
                                     what their visit looks like, and fly out
@@ -390,7 +396,7 @@ export default function GlobalAccess() {
                                 <div className="absolute -inset-4 rounded-full bg-[#F5F2EF] -z-10" />
                                 <img
                                     src={DOCTOR_IMG}
-                                    alt="Dr. Amruta Godbole"
+                                    alt="Dr. Amruta Godbole, NYU-trained dentist serving international and NRI patients in Mumbai"
                                     data-testid="ga-doctor-image"
                                     className="circle-photo w-72 h-72 sm:w-80 sm:h-80 md:w-[26rem] md:h-[26rem] border-[6px] border-white object-cover object-[center_28%]" loading="lazy" decoding="async" />
                             </div>

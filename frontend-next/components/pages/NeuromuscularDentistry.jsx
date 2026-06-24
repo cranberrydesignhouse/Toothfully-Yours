@@ -315,10 +315,11 @@ export default function NeuromuscularDentistry() {
                                 </span>
                             </h1>
                             <p className="mt-6 max-w-xl font-dmsans text-[0.85rem] md:text-[1.05rem] leading-relaxed text-[#5C5C5C]">
-                                Neuromuscular dentistry focuses on the harmony
-                                between your teeth, jaw joints, muscles and
-                                airway to restore comfort, function and
-                                long-term stability.
+                                Neuromuscular dentistry in Mumbai focuses on
+                                the harmony between your teeth, jaw joints,
+                                muscles and airway. TMJ treatment that
+                                restores comfort, function and long-term
+                                stability.
                             </p>
                             <div className="mt-9 flex flex-col sm:flex-row gap-3 sm:gap-4">
                                 <button
@@ -354,7 +355,7 @@ export default function NeuromuscularDentistry() {
                                 <div className="absolute -inset-5 rounded-full bg-white -z-10" />
                                 <img
                                     src={HERO_IMG}
-                                    alt="Neuromuscular Dentistry at Toothfully Yours"
+                                    alt="TMJ treatment and neuromuscular dentistry in Mumbai – jaw pain, bruxism and sleep apnea care at Toothfully Yours"
                                     data-testid="nm-hero-image"
                                     className="circle-photo w-full h-full border-[6px] border-white object-cover object-center" loading="eager" fetchPriority="high" />
                             </div>
@@ -728,21 +729,23 @@ export default function NeuromuscularDentistry() {
                             <div className="mt-7 font-dmsans text-[#5C5C5C] text-[0.98rem] md:text-[1.05rem] leading-relaxed space-y-5 max-w-2xl">
                                 <p>
                                     Dr. Amruta Godbole's training in
-                                    neuromuscular and functional dentistry
-                                    sits at the intersection of restoration,
-                                    occlusion and airway. Her approach is
-                                    diagnostic before it is corrective, the
+                                    neuromuscular dentistry in Mumbai sits at
+                                    the intersection of restoration, occlusion
+                                    and airway. Her approach to TMJ treatment
+                                    is diagnostic before it is corrective, the
                                     bite, the joints, the muscles and the way
                                     you breathe at night are all part of the
                                     same picture.
                                 </p>
                                 <p>
-                                    Patients walk in with headaches, ear
-                                    pressure, clicking jaws or grinding
-                                    habits, and walk out with a clear
-                                    explanation of what is causing them and a
-                                    layered plan to fix it, starting with the
-                                    least invasive option that actually works.
+                                    Patients walk into our Khar West clinic
+                                    with headaches, ear pressure, clicking
+                                    jaws, bruxism or sleep-apnea concerns, and
+                                    walk out with a clear explanation of what
+                                    is causing them and a layered TMJ and
+                                    neuromuscular plan to fix it, starting
+                                    with the least invasive option that
+                                    actually works.
                                 </p>
                             </div>
 
@@ -755,7 +758,7 @@ export default function NeuromuscularDentistry() {
                                 <div className="absolute -inset-4 rounded-full bg-white -z-10" />
                                 <img
                                     src={DOCTOR_IMG}
-                                    alt="Dr. Amruta Godbole"
+                                    alt="Dr. Amruta Godbole, neuromuscular and TMJ-trained dentist in Mumbai"
                                     data-testid="nm-doctor-image"
                                     className="circle-photo w-72 h-72 sm:w-80 sm:h-80 md:w-[26rem] md:h-[26rem] border-[6px] border-white object-cover object-[center_28%]" loading="lazy" decoding="async" />
                             </div>

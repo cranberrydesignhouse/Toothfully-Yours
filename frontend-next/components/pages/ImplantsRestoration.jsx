@@ -195,7 +195,7 @@ export default function ImplantsRestoration() {
                                 <div className="absolute -inset-5 rounded-full bg-white -z-10" />
                                 <img
                                     src={HERO_IMG}
-                                    alt="Implants & Restoration at Toothfully Yours"
+                                    alt="Dental implants in Khar West, Mumbai – single tooth, full arch and full mouth rehabilitation at Toothfully Yours"
                                     data-testid="ir-hero-image"
                                     className="circle-photo w-full h-full border-[6px] border-white object-cover object-center" loading="eager" fetchPriority="high" />
                             </div>
@@ -315,19 +315,21 @@ export default function ImplantsRestoration() {
                                     quietly mastering the side of dentistry
                                     that most people never see, the
                                     restorations that hold a tooth together
-                                    when it is on the brink, and the implants
-                                    that bring back what was already gone.
+                                    when it is on the brink, and the dental
+                                    implants in Khar West that bring back what
+                                    was already gone.
                                 </p>
                                 <p>
                                     Her approach is unhurried, evidence-led
-                                    and conservative. Every root canal,
-                                    crown, implant and bridge begins with a
-                                    full diagnostic workup so the plan is
-                                    honest before it is started. Patients walk
-                                    in worried and walk out with their pain
-                                    handled, their tooth saved where possible,
-                                    and a long-term plan they actually
-                                    understand.
+                                    and conservative. Every root canal
+                                    treatment, crown, implant and full mouth
+                                    rehabilitation begins with a full
+                                    diagnostic workup so the plan is honest
+                                    before it is started. Patients from across
+                                    Mumbai and abroad walk in worried and walk
+                                    out with their pain handled, their tooth
+                                    saved where possible, and a long-term plan
+                                    they actually understand.
                                 </p>
                             </div>
 
@@ -340,7 +342,7 @@ export default function ImplantsRestoration() {
                                 <div className="absolute -inset-4 rounded-full bg-[#F5F2EF] -z-10" />
                                 <img
                                     src={DOCTOR_IMG}
-                                    alt="Dr. Amruta Godbole"
+                                    alt="Dr. Amruta Godbole, implant and restorative dentist in Khar West, Mumbai"
                                     data-testid="ir-doctor-image"
                                     className="circle-photo w-72 h-72 sm:w-80 sm:h-80 md:w-[26rem] md:h-[26rem] border-[6px] border-white object-cover object-[center_28%]" loading="lazy" decoding="async" />
                             </div>

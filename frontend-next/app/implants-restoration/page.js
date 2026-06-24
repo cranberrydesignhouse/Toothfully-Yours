@@ -2,14 +2,25 @@ import ImplantsRestoration from "@/components/pages/ImplantsRestoration";
 
 export const metadata = {
     title:
-        "Implants & Restoration · Single Tooth, Full Arch, Crowns & Fillings",
+        "Dental Implants in Khar West, Mumbai · Root Canal & Restoration",
     description:
-        "Dental implants, crowns, bridges, root canal therapy and tooth-coloured fillings with Dr. Amruta Godbole, DDS (NYU) and a team of ITI- and BioHorizons-trained specialists.",
+        "Dental implants in Khar West, Mumbai by Dr. Amruta Godbole, DDS (NYU). Single-tooth and full-arch implants, root canal treatment, crowns, bridges and full mouth rehabilitation. Trusted dental implant care in India for local and international patients.",
+    keywords: [
+        "Dental Implants in Khar West",
+        "Root Canal Treatment in Khar West",
+        "Dental Implants India",
+        "Full Mouth Rehabilitation India",
+        "Crowns and Bridges Mumbai",
+        "Tooth Replacement Khar West",
+        "All-on-4 Implants Mumbai",
+        "Best Implant Dentist Mumbai",
+    ],
     alternates: { canonical: "/implants-restoration" },
     openGraph: {
-        title: "Implants & Restoration · Toothfully Yours",
+        title:
+            "Dental Implants in Khar West, Mumbai · Toothfully Yours",
         description:
-            "Single-tooth, full-arch implants and restorative dentistry in Mumbai.",
+            "Single-tooth implants, full-arch implants, root canal treatment and full mouth rehabilitation in Khar West, Mumbai with Dr. Amruta Godbole, DDS (NYU).",
         url: "/implants-restoration",
     },
 };
