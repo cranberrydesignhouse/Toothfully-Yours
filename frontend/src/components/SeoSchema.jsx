@@ -252,7 +252,7 @@ const buildSchemas = (page) => {
         logo: LOGO_URL,
         image: [LOGO_URL, HERO_IMAGE],
         telephone: "+91-97690-05504",
-        email: "info@toothfullyyoursdentalcare.com",
+        email: "dramrutagodbole@gmail.com",
         priceRange: "$$-$$$",
         address: POSTAL_ADDRESS,
         geo: GEO_COORDS,
@@ -294,7 +294,7 @@ const buildSchemas = (page) => {
         contactPoint: {
             "@type": "ContactPoint",
             telephone: "+91-97690-05504",
-            email: "info@toothfullyyoursdentalcare.com",
+            email: "dramrutagodbole@gmail.com",
             contactType: "customer service",
             areaServed: ["IN", "AE", "GB", "US"],
             availableLanguage: ["English", "Hindi", "Marathi"],
