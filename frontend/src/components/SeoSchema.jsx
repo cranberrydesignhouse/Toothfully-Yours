@@ -25,7 +25,7 @@ const BUSINESS = {
         longitude: 72.8333,
     },
     sameAs: [
-        "https://www.instagram.com/toothfully_yours_dental",
+        "https://www.instagram.com/toothfullyyours/",
         "https://www.linkedin.com/in/amruta-godbole-272522186/",
     ],
     aggregateRating: {

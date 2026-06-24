@@ -63,7 +63,7 @@ export const Footer = () => {
 
                         <div className="mt-7 flex items-center gap-3">
                             <a
-                                href="https://www.instagram.com/toothfully_yours_dental?igsh=MW90ajViN29qczZpeg=="
+                                href="https://www.instagram.com/toothfullyyours/"
                                 target="_blank"
                                 rel="noreferrer"
                                 data-testid="footer-social-instagram"

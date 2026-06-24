@@ -822,7 +822,7 @@ export default function Landing() {
 
                             <div className="mt-10 flex items-center gap-3">
                                 <a
-                                    href="https://instagram.com/"
+                                    href="https://www.instagram.com/toothfullyyours/"
                                     target="_blank"
                                     rel="noreferrer"
                                     data-testid="social-instagram"
@@ -832,7 +832,7 @@ export default function Landing() {
                                     <Instagram size={18} strokeWidth={1.6} />
                                 </a>
                                 <a
-                                    href="https://linkedin.com/"
+                                    href="https://www.linkedin.com/in/amruta-godbole-272522186/"
                                     target="_blank"
                                     rel="noreferrer"
                                     data-testid="social-linkedin"
